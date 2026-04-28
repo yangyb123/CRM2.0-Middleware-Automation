@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    ============================================================================
+    JMeter 自动化测试框架 - Ant Build 脚本
+    ============================================================================
+    项目名称: Mercury 2.0 自动化测试
+    功能描述: 自动执行 JMeter 测试脚本、生成测试报告、发送邮件通知
+    
+    使用方式:
+        1. 修改配置部分的路径和邮件信息
+        2. 运行: ant -f build.xml sendEmail (完整流程)
+        3. 或运行: ant -f build.xml runJMeter (仅执行测试)
+    
+    依赖项:
+        - Apache Ant 1.9+
+        - Apache JMeter 5.6+
+        - JMeter Ant Task 插件
+        - Apache Commons Email 库
+    
+    目录结构:
+        Jmeterautotest/mercury2.0/
+        ├── build.xml (本文件)
+        ├── scripts/ (存放 .jmx 测试脚本)
+        ├── result/
+        │   ├── jtl/ (JTL 原始结果文件)
+        │   └── html/ (HTML 报告)
+        └── xsl/ (XSL 报告模板)
+    ============================================================================
+-->
+<project name="JMeterAutoTest" default="sendEmail" basedir=".">
+    
+    <!-- ========================================================================
+         第一部分：JMeter 基础配置
+         说明: 根据实际环境修改以下路径
+         ======================================================================== -->
+    <property name="jmeter.home" value="C:\softer\jmeter\apache-jmeter-5.6\apache-jmeter-5.6" />
+    <!-- JMeter 安装目录，需要包含 lib、bin 等子目录 -->
+    
+    <!-- ========================================================================
+         第二部分：目录配置
+         说明: 定义测试脚本、结果文件的存储位置
+         ======================================================================== -->
+    <property name="script.dir" value="${basedir}\scripts" />
+    <!-- 存放所有 .jmx 测试脚本的目录 -->
+    
+    <property name="result.dir" value="${basedir}\result" />
+    <!-- 测试结果根目录 -->
+    
+    <property name="jtl.dir" value="${result.dir}\jtl" />
+    <!-- JTL 原始结果文件目录（JMeter 生成的 XML 格式结果） -->
+    
+    <property name="html.dir" value="${result.dir}\html" />
+    <!-- HTML 报告输出目录 -->
+    
+    <property name="xsl.dir" value="${basedir}\xsl" />
+	
+	
+	<!-- 如需修改已定义的属性，需加override="true" -->
+     <property name="project.name" value="水星2.0"/>
+	
+    <!-- XSL 报告模板目录（用于转换 JTL 为 HTML） -->
+    
+    <!-- ========================================================================
+         第三部分：时间戳配置
+         说明: 用于生成唯一的报告文件名
+         ======================================================================== -->
+    <tstamp>
+        <format property="timestamp.full" pattern="yyyy-MM-dd_HH-mm-ss" />
+        <format property="timestamp.date" pattern="yyyy-MM-dd" />
+        <format property="timestamp.time" pattern="HH:mm:ss" />
+    </tstamp>
+    
+    <property name="report.prefix" value="TestReport_${timestamp.full}" />
+    <!-- 报告文件前缀（包含日期和时间，确保唯一性） -->
+    
+	<target name="generate-allure-report">
+    <exec executable="allure">
+        <arg value="generate"/>
+        <arg value="${basedir}/result/allure-results"/>
+        <arg value="-o"/>
+        <arg value="${basedir}/result/allure-report"/>
+        <arg value="--clean"/>
+    </exec>
+    </target>
+
+	
+    <!-- ========================================================================
+         第四部分：邮件配置
+         说明: 根据邮箱类型修改 SMTP 服务器和认证信息
+         常见 SMTP 服务器:
+            - QQ 邮箱: smtp.qq.com (端口 465 SSL)
+            - 163 邮箱: smtp.163.com (端口 465 SSL)
+            - Gmail: smtp.gmail.com (端口 587 TLS)
+            - 企业邮箱: 根据公司配置
+         ======================================================================== -->
+    <property name="mail.host" value="smtp.qq.com" />
+    <!-- SMTP 服务器地址 -->
+    
+    <property name="mail.port" value="587" />
+    <!-- SMTP 端口（TLS 通常为 587，SSL 通常为 465） -->
+    
+    <property name="mail.from" value="1047720097@qq.com" />
+    <!-- 发件人邮箱地址 -->
+    
+    <property name="mail.password" value="juhzfcffbcuxbfba" />
+    <!-- 邮箱授权码（不是邮箱密码，需要在邮箱设置中生成） -->
+    
+    <property name="mail.to" value="1047720097@qq.com" />
+    <!-- 主收件人邮箱 -->
+    
+    <property name="mail.cc" value="lance.yang@mhmarkets.com" />
+    <!-- 抄送收件人（多个用逗号分隔） -->
+    
+    <property name="mail.subject" value="${project.name} 自动化测试报告 - ${timestamp.date}" />
+    <!-- 邮件主题 -->
+    
+    <!-- ========================================================================
+         第五部分：项目信息配置（新增）
+         说明: 根据实际项目修改以下信息
+         ======================================================================== -->
+    <property name="project.name" value="${project.name}" />
+    <!-- 项目名称 -->
+    
+    <property name="test.type" value="接口测试" />
+    <!-- 测试类型（如：接口测试、功能测试、性能测试等） -->
+    
+    <property name="test.environment" value="测试环境" />
+    <!-- 测试环境（如：测试环境、预发布环境等） -->
+    
+    <property name="test.description" value="自动化接口测试" />
+    <!-- 测试描述 -->
+    
+    <!-- ========================================================================
+         第五部分：初始化任务
+         说明: 创建必要的目录结构
+         ======================================================================== -->
+    <target name="init" description="初始化目录结构">
+        <echo message="========================================" />
+        <echo message="初始化目录结构..." />
+        <echo message="========================================" />
+        
+        <mkdir dir="${script.dir}" />
+        <echo message="✓ 创建脚本目录: ${script.dir}" />
+        
+        <mkdir dir="${jtl.dir}" />
+        <echo message="✓ 创建 JTL 结果目录: ${jtl.dir}" />
+        
+        <mkdir dir="${html.dir}" />
+        <echo message="✓ 创建 HTML 报告目录: ${html.dir}" />
+        
+        <mkdir dir="${xsl.dir}" />
+        <echo message="✓ 创建 XSL 模板目录: ${xsl.dir}" />
+        
+        <echo message="初始化完成！" />
+    </target>
+    
+    <!-- ========================================================================
+         第六部分：执行 JMeter 测试
+         说明: 使用命令行方式执行 JMeter，避免 Ant Task 的兼容性问题
+         ======================================================================== -->
+    <target name="runJMeter" depends="init" description="执行 JMeter 测试脚本">
+        <echo message="========================================" />
+        <echo message="开始执行 JMeter 测试..." />
+        <echo message="========================================" />
+        <echo message="JMeter 主目录: ${jmeter.home}" />
+        <echo message="测试脚本目录: ${script.dir}" />
+        <echo message="结果输出目录: ${jtl.dir}" />
+        <echo message="========================================" />
+        
+        <!-- 直接执行 JMeter，使用英文文件名避免编码问题 -->
+        <exec executable="cmd.exe" 
+              failonerror="true"
+              timeout="900000"
+              dir="${basedir}">
+            <env key="HEAP" value="-Xmx256m -Xms128m" />
+            <arg value="/c" />
+            <arg value="${jmeter.home}\bin\jmeter.bat -n -t scripts\*.jmx -l result\jtl\${report.prefix}.jtl -j result\jtl\${report.prefix}.log -Djmeter.save.saveservice.output_format=xml -Djmeter.save.saveservice.response_data.on_error=false -Djmeter.save.saveservice.samplerData=false -Djmeter.save.saveservice.responseHeaders=false -Djmeter.save.saveservice.requestHeaders=false -Djmeter.save.saveservice.encoding=false -Djmeter.save.saveservice.latency=true -Djmeter.save.saveservice.connect_time=true -Dhttpclient.socket.timeout=10000 -Dhttpclient.connection.timeout=10000 -Djmeter.gui.action.action.listener.classname=org.apache.jmeter.visualizers.SimpleResultCollector -Dlog_level.jmeter=WARN" />
+        </exec>
+        
+        <!-- 验证 JTL 文件是否生成 -->
+        <available file="${jtl.dir}/${report.prefix}.jtl" property="jtl.generated" />
+        <fail unless="jtl.generated" message="错误: JMeter 测试执行失败，未生成 JTL 文件" />
+        
+        <echo message="JMeter 测试执行完成！" />
+        <echo message="结果文件: ${jtl.dir}/${report.prefix}.jtl" />
+        <echo message="日志文件: ${jtl.dir}/${report.prefix}.log" />
+    </target>
+    
+    <!-- ========================================================================
+         第七部分：生成详细报告
+         说明: 使用 XSL 样式表将 JTL 文件转换为详细的 HTML 报告
+         ======================================================================== -->
+    <target name="generateDetailReport" depends="runJMeter" 
+            description="生成详细的 HTML 测试报告">
+        <echo message="========================================" />
+        <echo message="生成详细测试报告..." />
+        <echo message="========================================" />
+        
+        <!-- 检查 JTL 文件是否存在 -->
+        <available file="${jtl.dir}/${report.prefix}.jtl" property="jtl.file.exists" />
+        
+        <fail unless="jtl.file.exists" 
+              message="错误: JTL 结果文件不存在 - ${jtl.dir}/${report.prefix}.jtl" />
+        
+        <echo message="✓ 找到 JTL 文件: ${jtl.dir}/${report.prefix}.jtl" />
+        
+        <!-- 使用 XSL 样式表转换 JTL 为 HTML -->
+        <xslt in="${jtl.dir}/${report.prefix}.jtl" 
+              out="${html.dir}/${report.prefix}_Detail.html" 
+              style="${xsl.dir}/jmeter-results-detail-report_21.xsl"
+              force="true">
+            <param name="titleReport" expression="JMeter 详细测试报告 - ${report.prefix}" />
+            <param name="dateReport" expression="${timestamp.full}" />
+        </xslt>
+        
+        <echo message="✓ 详细报告生成完成: ${html.dir}/${report.prefix}_Detail.html" />
+    </target>
+    
+    <!-- ========================================================================
+         第八部分：生成汇总报告
+         说明: 使用增强的 XSL 样式表生成汇总报告（包含图表）
+         ======================================================================== -->
+    <target name="generateSummaryReport" depends="generateDetailReport" 
+            description="生成汇总测试报告">
+        <echo message="========================================" />
+        <echo message="生成汇总测试报告..." />
+        <echo message="========================================" />
+        
+        <!-- 检查 JTL 文件是否存在 -->
+        <available file="${jtl.dir}/${report.prefix}.jtl" property="jtl.file.for.summary.exists" />
+        
+        <fail unless="jtl.file.for.summary.exists" 
+              message="错误: JTL 结果文件不存在，无法生成汇总报告 - ${jtl.dir}/${report.prefix}.jtl" />
+        
+        <!-- 使用增强的 XSL 样式表转换 JTL 为 HTML（包含图表） -->
+        <xslt in="${jtl.dir}/${report.prefix}.jtl" 
+              out="${html.dir}/${report.prefix}_Summary.html" 
+              style="${xsl.dir}/jmeter-results-report-enhanced.xsl"
+              force="true">
+            <param name="titleReport" expression="${project.name}接口测试报告 - ${report.prefix}" />
+            <param name="dateReport" expression="${timestamp.full}" />
+        </xslt>
+        
+        <!-- 验证汇总报告是否生成成功 -->
+        <available file="${html.dir}/${report.prefix}_Summary.html" property="summary.report.exists" />
+        
+        <fail unless="summary.report.exists" 
+              message="错误: 汇总报告生成失败。请检查 JTL 文件是否有效。" />
+        
+        <echo message="✓ 汇总报告生成完成: ${html.dir}/${report.prefix}_Summary.html" />
+        
+        <!-- 列出生成的所有报告文件 -->
+        <echo message="========================================" />
+        <echo message="生成的报告文件:" />
+        <fileset dir="${html.dir}" id="report.files">
+            <include name="${report.prefix}*.html" />
+        </fileset>
+        <pathconvert pathsep="${line.separator}" property="report.list" refid="report.files" />
+        <echo message="${report.list}" />
+        <echo message="========================================" />
+    </target>
+    
+    <!-- ========================================================================
+         第八部分（新增）：提取测试统计数据
+         说明: 从 Summary.html 报告中提取测试统计数据，用于邮件内容
+         ======================================================================== -->
+    <target name="extractStats" depends="generateSummaryReport" 
+            description="提取测试统计数据">
+        <echo message="========================================" />
+        <echo message="从 Summary.html 中提取测试统计数据..." />
+        <echo message="========================================" />
+        
+        <!-- 调用 Python 脚本从 Summary.html 中提取数据并生成属性文件 -->
+        <exec executable="python" failonerror="false">
+            <arg value="${basedir}/extract_stats_to_properties.py" />
+            <arg value="${html.dir}/${report.prefix}_Summary.html" />
+            <arg value="${basedir}/stats.properties" />
+        </exec>
+        
+        <!-- 加载生成的属性文件 -->
+        <property file="${basedir}/stats.properties" />
+        
+        <!-- 设置默认值（如果属性未被设置） -->
+        <property name="stats.total" value="-" />
+        <property name="stats.success" value="-" />
+        <property name="stats.failure" value="-" />
+        <property name="stats.success_rate" value="-" />
+        
+        <echo message="✓ 统计数据提取完成" />
+        <echo message="  总请求数: ${stats.total}" />
+        <echo message="  成功数: ${stats.success}" />
+        <echo message="  失败数: ${stats.failure}" />
+        <echo message="  成功率: ${stats.success_rate}%" />
+        <echo message="========================================" />
+    </target>
+    
+    <!-- ========================================================================
+         第九部分（新增）：压缩 JTL 文件
+         说明: 将最新的 JTL 文件压缩为 ZIP 格式，用于邮件附件
+         ======================================================================== -->
+    <target name="compressJTL" depends="extractStats" 
+            description="压缩最新的 JTL 文件">
+        <echo message="========================================" />
+        <echo message="准备压缩 JTL 文件..." />
+        <echo message="========================================" />
+        
+        <!-- 定义压缩文件名 -->
+        <property name="jtl.zip.file" value="${jtl.dir}/${report.prefix}_JTL.zip" />
+        
+        <!-- 压缩 JTL 文件和日志文件 -->
+        <zip destfile="${jtl.zip.file}" basedir="${jtl.dir}">
+            <include name="${report.prefix}.jtl" />
+            <include name="${report.prefix}.log" />
+        </zip>
+        
+        <!-- 验证压缩文件是否生成 -->
+        <available file="${jtl.zip.file}" property="jtl.zip.generated" />
+        <fail unless="jtl.zip.generated" message="错误: JTL 压缩文件生成失败" />
+        
+        <echo message="✓ JTL 文件压缩完成！" />
+        <echo message="压缩文件: ${jtl.zip.file}" />
+    </target>
+    
+    <!-- ========================================================================
+         第九部分：发送邮件通知
+         说明: 将测试报告通过邮件发送给相关人员
+         ======================================================================== -->
+    <target name="sendEmail" depends="compressJTL" 
+            description="发送测试报告邮件">
+        <echo message="========================================" />
+        <echo message="准备发送测试报告邮件..." />
+        <echo message="========================================" />
+        <echo message="收件人: ${mail.to}" />
+        <echo message="抄送: ${mail.cc}" />
+        <echo message="邮件主题: ${mail.subject}" />
+        
+        <!-- 设置默认的统计数据值（如果未被 extractStats 设置） -->
+        <property name="stats.total" value="-" />
+        <property name="stats.success" value="-" />
+        <property name="stats.failure" value="-" />
+        <property name="stats.success_rate" value="-" />
+        
+        <!-- 发送邮件 - 使用 TLS 而不是 SSL，避免 JSSE 问题 -->
+        <mail mailhost="${mail.host}" 
+              mailport="${mail.port}" 
+              subject="${mail.subject}" 
+              from="${mail.from}" 
+              user="${mail.from}"
+              password="${mail.password}"
+              ssl="false"
+              enableStartTLS="true"
+              charset="UTF-8">
+            
+            <!-- 主收件人 -->
+            <to address="${mail.to}" />
+            
+            <!-- 抄送收件人 -->
+            <cc address="${mail.cc}" />
+            
+            <!-- 邮件正文（HTML 格式） -->
+            <message mimeType="text/html">
+                <![CDATA[
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <style>
+                        * { margin: 0; padding: 0; }
+                        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; background-color: #f5f5f5; }
+                        .container { max-width: 900px; margin: 0 auto; background-color: #fff; padding: 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+                        .header { background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%); color: white; padding: 30px 20px; text-align: center; }
+                        .header h1 { font-size: 28px; margin-bottom: 8px; font-weight: bold; }
+                        .header p { font-size: 14px; opacity: 0.95; }
+                        .content { padding: 20px; }
+                        .section { margin: 25px 0; }
+                        .section-title { font-size: 18px; font-weight: bold; color: #fff; background-color: #0066cc; padding: 12px 15px; margin: -20px -20px 15px -20px; border-left: 4px solid #0052a3; }
+                        .info-box { background-color: #f0f8ff; padding: 15px; margin: 10px 0; border-left: 4px solid #0066cc; border-radius: 4px; }
+                        .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e0e0e0; }
+                        .info-row:last-child { border-bottom: none; }
+                        .info-label { font-weight: bold; color: #0066cc; min-width: 140px; }
+                        .info-value { color: #333; text-align: right; flex: 1; }
+                        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 15px 0; }
+                        .stat-card { background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%); padding: 15px; border-radius: 6px; border-left: 4px solid #0066cc; text-align: center; }
+                        .stat-label { font-size: 12px; color: #666; margin-bottom: 8px; }
+                        .stat-value { font-size: 28px; font-weight: bold; color: #0066cc; }
+                        .stat-unit { font-size: 12px; color: #999; }
+                        .success { border-left-color: #28a745; }
+                        .success .stat-value { color: #28a745; }
+                        .warning { border-left-color: #ffc107; }
+                        .warning .stat-value { color: #ffc107; }
+                        .error { border-left-color: #dc3545; }
+                        .error .stat-value { color: #dc3545; }
+                        .link-box { background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin: 10px 0; }
+                        .link-item { margin: 12px 0; padding: 10px; background-color: #fff; border-radius: 4px; border-left: 3px solid #0066cc; }
+                        .link-item a { color: #0066cc; text-decoration: none; font-weight: bold; font-size: 14px; }
+                        .link-item a:hover { text-decoration: underline; }
+                        .link-desc { color: #666; font-size: 12px; margin-top: 5px; }
+                        .attachment-list { background-color: #f9f9f9; padding: 15px; border-radius: 4px; }
+                        .attachment-item { padding: 8px 0; border-bottom: 1px solid #e0e0e0; font-size: 13px; }
+                        .attachment-item:last-child { border-bottom: none; }
+                        .attachment-name { font-weight: bold; color: #0066cc; }
+                        .attachment-desc { color: #666; font-size: 12px; margin-left: 20px; }
+                        .footer { color: #999; font-size: 12px; padding: 20px; background-color: #f5f5f5; text-align: center; border-top: 1px solid #ddd; }
+                        .footer p { margin: 5px 0; }
+                        .tips { background-color: #fff3cd; padding: 12px; border-radius: 4px; margin: 10px 0; border-left: 4px solid #ffc107; }
+                        .tips strong { color: #856404; }
+                        ul { margin-left: 20px; }
+                        li { margin: 8px 0; }
+                        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                        th { background-color: #f0f8ff; padding: 10px; text-align: left; border-bottom: 2px solid #0066cc; font-weight: bold; color: #0066cc; }
+                        td { padding: 10px; border-bottom: 1px solid #e0e0e0; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h1>${project.name} 自动化测试报告</h1>
+                            <p>${project.name} 自动化测试结果通知</p>
+                        </div>
+                        
+                        <div class="content">
+                            <!-- 一、测试概况 -->
+                            <div class="section">
+                                <div class="section-title">一、测试概况</div>
+                                <div class="info-box">
+                                    <div class="info-row">
+                                        <span class="info-label">项目名称:</span>
+                                        <span class="info-value">${project.name}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">测试类型:</span>
+                                        <span class="info-value">${test.type}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">测试环境:</span>
+                                        <span class="info-value">${test.environment}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">测试时间:</span>
+                                        <span class="info-value">${timestamp.date} ${timestamp.time}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">报告名称:</span>
+                                        <span class="info-value">${report.prefix}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 二、测试结果 -->
+                            <div class="section">
+                                <div class="section-title">二、测试结果概览</div>
+                                <div class="stats-grid">
+                                    <div class="stat-card">
+                                        <div class="stat-label">接口总数</div>
+                                        <div class="stat-value">${stats.total}</div>
+                                        <div class="stat-unit">个</div>
+                                    </div>
+                                    <div class="stat-card success">
+                                        <div class="stat-label">成功数</div>
+                                        <div class="stat-value">${stats.success}</div>
+                                        <div class="stat-unit">个</div>
+                                    </div>
+                                    <div class="stat-card error">
+                                        <div class="stat-label">失败数</div>
+                                        <div class="stat-value">${stats.failure}</div>
+                                        <div class="stat-unit">个</div>
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <div class="info-row">
+                                        <span class="info-label">接口成功率:</span>
+                                        <span class="info-value" style="color: #28a745; font-weight: bold;">${stats.success_rate}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 五、邮件附件说明 -->
+                            <div class="section">
+                                <div class="section-title">三、邮件附件说明</div>
+                                <div class="attachment-list">
+                                    <div class="attachment-item">
+                                        <span class="attachment-name">📊 ${report.prefix}_Summary.html</span>
+                                        <div class="attachment-desc">汇总报告（HTML 格式）- 包含关键指标和统计数据</div>
+                                    </div>
+                                    <div class="attachment-item">
+                                        <span class="attachment-name">📄 ${report.prefix}_Detail.html</span>
+                                        <div class="attachment-desc">详细报告（HTML 格式）- 包含所有测试用例详情</div>
+                                    </div>
+                                    <div class="attachment-item">
+                                        <span class="attachment-name">📦 ${report.prefix}_JTL.zip</span>
+                                        <div class="attachment-desc">JTL 原始数据压缩包（包含 .jtl 和 .log 文件）</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 六、使用提示 -->
+                            <div class="section">
+                                <div class="section-title">四、使用提示</div>
+                                <div class="tips">
+                                    <strong>重要提示:</strong>
+                                    <ul>
+                                        <li>如果上述链接无法打开，请手动访问报告文件位置</li>
+                                        <li>报告文件为 HTML 格式，建议使用 Chrome、Firefox 或 Edge 浏览器打开</li>
+                                        <li>详细报告包含完整的测试数据，文件较大，首次加载可能需要几秒钟</li>
+                                        <li>建议在电脑上打开报告，移动设备可能显示不完整</li>
+                                        <li>报告中的图表需要 JavaScript 支持，请确保浏览器已启用 JavaScript</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="footer">
+                            <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+                            <p>此邮件由 JMeter 自动化测试框架自动生成，请勿直接回复</p>
+                            <p>如有问题或建议，请联系测试团队或系统管理员</p>
+                            <p>${project.name} © 2026 - 自动化测试解决方案</p>
+                        </div>
+                    </div>
+    <!-- ========================================================================
+                </body>
+                 
+                    <div class="info">
+                        <p><strong>测试时间:</strong> ${timestamp.date} ${timestamp.time}</p>
+                        <p><strong>报告名称:</strong> ${report.prefix}</p>
+                    </div>
+                    
+                    <h3>� 报告链接</h3>
+                    <ul>
+                        <li><a class="link" href="file:///${html.dir}/${report.prefix}_Detail.html">📄 详细报告</a> - 包含所有测试用例的详细信息</li>
+                        <li><a class="link" href="file:///${html.dir}/${report.prefix}_Summary.html">📈 汇总报告</a> - 包含关键指标和统计数据</li>
+                    </ul>
+                    
+                    <h3>📁 报告文件位置</h3>
+                    <div class="info">
+                        <p>${html.dir}</p>
+                    </div>
+                    
+                    <h3>⚠️ 注意事项</h3>
+                    <ul>
+                        <li>如果上述链接无法打开，请手动访问报告文件位置</li>
+                        <li>报告文件为 HTML 格式，可用任何浏览器打开</li>
+                        <li>详细报告包含完整的测试数据，文件较大</li>
+                    </ul>
+                    
+                    <h3>📎 邮件附件说明</h3>
+                    <div class="info">
+                        <p><strong>本邮件包含以下附件:</strong></p>
+                        <ul>
+                            <li><strong>${report.prefix}_Summary.html</strong> - 汇总报告（HTML 格式）</li>
+                            <li><strong>${report.prefix}_Detail.html</strong> - 详细报告（HTML 格式）</li>
+                            <li><strong>${report.prefix}_JTL.zip</strong> - JTL 原始数据压缩包（包含 .jtl 和 .log 文件）</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666; font-size: 12px;">
+                            💾 JTL 压缩包包含原始测试数据，可用于进一步分析或导入其他工具进行处理
+                        </p>
+                    </div>
+                    
+                    <div class="footer">
+                        <p>此邮件由 JMeter 自动化测试框架自动生成，请勿直接回复。</p>
+                        <p>如有问题，请联系测试团队。</p>
+                    </div>
+                </body>
+         ======================================================================== -->   
+                </html>
+                ]]>
+            </message>
+            
+            <!-- 附件：测试报告 -->
+            <attachments>
+                <fileset dir="${html.dir}">
+                    <include name="${report.prefix}_Detail.html" />
+                    <include name="${report.prefix}_Summary.html" />
+                </fileset>
+                <fileset dir="${jtl.dir}">
+                    <include name="${report.prefix}_JTL.zip" />
+                </fileset>
+            </attachments>
+        </mail>
+        
+        <echo message="✓ 邮件发送完成！" />
+        <echo message="========================================" />
+        <echo message="测试流程全部完成！" />
+        <echo message="========================================" />
+    </target>
+    
+    <!-- ========================================================================
+         第十部分：清理任务
+         说明: 清理旧的测试结果和报告
+         ======================================================================== -->
+    <target name="clean" description="清理旧的测试结果">
+        <echo message="清理旧的测试结果..." />
+        <delete dir="${result.dir}" />
+        <echo message="✓ 清理完成！" />
+    </target>
+    
+    <!-- ========================================================================
+         第十一部分：仅执行测试（不发送邮件）
+         说明: 快速执行测试，用于调试
+         ======================================================================== -->
+    <target name="testOnly" depends="runJMeter" 
+            description="仅执行测试，不生成报告和发送邮件">
+        <echo message="测试执行完成！结果文件: ${jtl.dir}\${report.prefix}.jtl" />
+    </target>
+    
+    <!-- ========================================================================
+         第十二部分：生成报告（不发送邮件）
+         说明: 执行测试并生成报告，但不发送邮件
+         ======================================================================== -->
+    <target name="reportOnly" depends="generateSummaryReport" 
+            description="执行测试并生成报告，不发送邮件">
+        <echo message="测试和报告生成完成！" />
+        <echo message="详细报告: ${html.dir}\${report.prefix}_Detail.html" />
+        <echo message="汇总报告: ${html.dir}\${report.prefix}_Summary.html" />
+    </target>
+    
+    <!-- ========================================================================
+         第十三部分：完整流程（all 目标）
+         说明: 别名目标，用于 Jenkins 兼容性
+         ======================================================================== -->
+    <target name="all" depends="sendEmail" 
+            description="完整流程（测试 → 报告 → 邮件）">
+        <echo message="完整流程执行完成！" />
+    </target>
+    
+    <!-- ========================================================================
+         第十四部分：帮助信息
+         说明: 显示可用的任务列表
+         ======================================================================== -->
+    <target name="help" description="显示帮助信息">
+        <echo message="========================================" />
+        <echo message="JMeter 自动化测试框架 - 可用任务" />
+        <echo message="========================================" />
+        <echo message="" />
+        <echo message="主要任务:" />
+        <echo message="  ant sendEmail      - 完整流程（测试 → 报告 → 邮件）" />
+        <echo message="  ant reportOnly     - 执行测试并生成报告（不发送邮件）" />
+        <echo message="  ant testOnly       - 仅执行测试（不生成报告）" />
+        <echo message="" />
+        <echo message="辅助任务:" />
+        <echo message="  ant init           - 初始化目录结构" />
+        <echo message="  ant clean          - 清理旧的测试结果" />
+        <echo message="  ant help           - 显示此帮助信息" />
+        <echo message="" />
+        <echo message="========================================" />
+    </target>
+</project>
