@@ -1,0 +1,5 @@
+instanceid,account,accountId,amount,channelId,paymentMethod,currencyId,sourceType,initial_status,recheck_status,refund_amount,备注
+MT5_1,4050,41077,100,116,4,1,1,1,2,2,MT5美元4050 41077 CNY 电子钱包（支付宝3)
+MT5_1,3077,41200,7500,116,4,1,1,1,3,0,MT5美分 3077 41200 CNY 电子钱包（支付宝3)
+MT4_1,1012,40857,30000,127,5,32,1,1,2,0,MT4美分 1012 40857 MXN 二维码（QR Payment2）
+MT4_1,12110,40835,50,127,5,32,1,1,2,0,MT4美元12110 40835 USD 电汇（Bank Wire Global 6）
