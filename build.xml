@@ -56,7 +56,7 @@
 	
 	
 	<!-- 如需修改已定义的属性，需加override="true" -->
-     <property name="project.name" value="水星2.0"/>
+     <property name="project.name" value="CRM2ATTT.0"/>
 	
     <!-- XSL 报告模板目录（用于转换 JTL 为 HTML） -->
     
@@ -108,7 +108,7 @@
     <property name="mail.to" value="1047720097@qq.com" />
     <!-- 主收件人邮箱 -->
     
-    <property name="mail.cc" value="lance.yang@mhmarkets.com" />
+    <property name="mail.cc" value="lance.yang@mhmarkets.com,jamie@mhmarkets.com" />
     <!-- 抄送收件人（多个用逗号分隔） -->
     
     <property name="mail.subject" value="${project.name} 自动化测试报告 - ${timestamp.date}" />
@@ -127,7 +127,7 @@
     <property name="test.environment" value="测试环境" />
     <!-- 测试环境（如：测试环境、预发布环境等） -->
     
-    <property name="test.description" value="自动化接口测试" />
+    <property name="test.description" value="接口自动化测试" />
     <!-- 测试描述 -->
     
     <!-- ========================================================================
@@ -355,7 +355,8 @@
             <to address="${mail.to}" />
             
             <!-- 抄送收件人 -->
-            <cc address="${mail.cc}" />
+            <cc address="lance.yang@mhmarkets.com" />
+            <cc address="jamie@mhmarkets.com" />
             
             <!-- 邮件正文（HTML 格式） -->
             <message mimeType="text/html">
