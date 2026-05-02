@@ -124,7 +124,7 @@
     <property name="test.type" value="接口测试" />
     <!-- 测试类型（如：接口测试、功能测试、性能测试等） -->
     
-    <property name="test.environment" value="测试环境" />
+    <property name="test.environment" value="测试环境、空闲生产环境、生产环境" />
     <!-- 测试环境（如：测试环境、预发布环境等） -->
     
     <property name="test.description" value="接口自动化测试" />
@@ -432,7 +432,7 @@
                                         <span class="info-value">${test.type}</span>
                                     </div>
                                     <div class="info-row">
-                                        <span class="info-label">测试环境:</span>
+                                        <span class="info-label">测试环境、空闲生产环境、生产环境:</span>
                                         <span class="info-value">${test.environment}</span>
                                     </div>
                                     <div class="info-row">
