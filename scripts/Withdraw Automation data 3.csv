@@ -1,7 +1,0 @@
-withdraw_type#currency#accountId#sourceType#amount#channelId#paymentMethod#currencyId#initial_status#risk_status#deduction_status#cardInfo#cryptoInfo#eWalletInfo#wireTransferInfo#bankInfo
-card#USD#40835#1#1#6#6#45#1#1#1#"{""bankCode"":15384}"####
-crypto#USD#41077#1#300#3#3#242#1#1#1##"{""walletAddress"": ""154AAA""}"###
-card#USD#57#4#50#6#6#45#1#1#1#"{""bankCode"":15384}"####
-crypto#USC#40857#1#300#3#3#242#1#1#1##"{""walletAddress"": ""154AAA""}"###
-card#USD#57#4#50#6#6#45#2#1#1#"{""bankCode"":15384}"####
-crypto#USC#40857#1#300#3#3#242#1#1#2##"{""walletAddress"": ""154AAA""}"###

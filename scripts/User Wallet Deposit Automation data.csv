@@ -1,3 +1,0 @@
-accountId,amount,channelId,paymentMethod,currencyId,sourceType,initial_status,recheck_status,备注
-57,50,13,2,32,4,1,2,用户钱包  MXN 银行转账（Test MXN）
-57,10,18,3,242,4,3,2,用户钱包 USDT-TRC20 加密货币（test offine usdt TRC20）
