@@ -1,0 +1,56 @@
+{
+  "_配置说明": {
+    "_怎么改": [
+      "这个文件必须保持合法 JSON，不能写 // 或 # 注释。",
+      "只替换冒号右边的值，例如 \"teams_webhook_url\": \"这里填新的 Webhook URL\"。",
+      "字符串必须保留英文双引号，true/false 这种布尔值不要加双引号。",
+      "每一行配置后面的逗号不要随便删除，最后一个配置项后面不要加逗号。",
+      "以 _ 开头的说明字段只用于阅读，jtl_fail_report.py 不会把它当作发送配置使用。"
+    ],
+    "_常用替换场景": {
+      "只发送 Teams 摘要卡片": [
+        "填写 teams_webhook_url。",
+        "teams_send_file 保持 false。",
+        "这种方式不需要 teams_graph_token、teams_tenant_id、teams_client_id。"
+      ],
+      "发送 HTML 文件或可打开的 HTML 链接": [
+        "teams_send_file 改成 true。",
+        "方式一：直接填写 teams_graph_token，适合临时使用，token 通常会过期。",
+        "方式二：teams_auto_login 改成 true，并填写 teams_tenant_id、teams_client_id，适合自动登录和跨机器重新登录。",
+        "teams_upload_folder 是上传到 OneDrive 的目录名，例如 JMeterReports。"
+      ],
+      "只想在 Teams 卡片里展示一个报告链接": [
+        "填写 teams_report_url，例如公司内网、OneDrive、SharePoint 或其他可访问的 HTML 地址。",
+        "teams_send_file 可以保持 false。"
+      ]
+    },
+    "teams_chat_url": "Teams 聊天页面入口链接，主要用于记录和自动提取 chat_id。可以从 Teams 浏览器地址栏复制。",
+    "teams_chat_id": "Teams chat id。通常可以从 teams_chat_url 中提取；如果脚本已能识别，可以保持当前值。",
+    "teams_webhook_url": "Power Automate / Teams Webhook URL。用于发送摘要卡片。替换时粘贴完整 URL，包含 api-version、sp、sv、sig 等参数。",
+    "teams_report_url": "HTML 报告的可访问链接。为空时脚本会使用本地文件路径或上传后的链接。",
+    "teams_send_file": "是否发送 HTML 文件。false=只发摘要卡片；true=上传并发送 HTML 文件，需要 Graph token 或自动登录配置。",
+    "teams_graph_token": "Microsoft Graph access token。可临时填写，但一般会过期；长期使用建议配置 teams_auto_login。",
+    "teams_auto_login": "是否启用 Graph 自动登录。true=脚本会使用 tenant_id/client_id 走设备码登录并缓存 token。",
+    "teams_tenant_id": "Azure/Entra tenant id。启用 teams_auto_login 时填写。",
+    "teams_client_id": "Azure/Entra 应用 client id。启用 teams_auto_login 时填写。",
+    "teams_graph_scopes": "Graph 权限范围。默认包含 Files.ReadWrite 和 ChatMessage.Send，一般不用改。",
+    "teams_token_cache": "自动登录 token 缓存文件名。迁移机器时可以复制该文件，但 token 仍可能因策略或过期需要重新登录。",
+    "teams_upload_folder": "HTML 报告上传到 OneDrive 的目录名。",
+    "teams_timeout": "Teams/Webhook/Graph 请求超时时间，单位秒。",
+    "teams_strict": "true=Teams 推送失败时脚本退出码为失败；false=报告仍生成，只打印推送失败提示。"
+  },
+  "teams_chat_url": "https://teams.microsoft.com/l/chat/19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D",
+  "teams_chat_id": "19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2",
+  "teams_webhook_url": "https://defaultb3689b3b0e78404e8cfeab9075a215.46.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/0875959c8bae4ec9a97d29264e10583c/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hFmktvxTkFtsls4RJUJfWF2oonrVnqmRoBuCqraihiI",
+  "teams_report_url": "",
+  "teams_send_file": false,
+  "teams_graph_token": "",
+  "teams_auto_login": false,
+  "teams_tenant_id": "",
+  "teams_client_id": "",
+  "teams_graph_scopes": "offline_access https://graph.microsoft.com/Files.ReadWrite https://graph.microsoft.com/ChatMessage.Send",
+  "teams_token_cache": "jtl_fail_report_token_cache.json",
+  "teams_upload_folder": "JMeterReports",
+  "teams_timeout": 20,
+  "teams_strict": false
+}
