@@ -33,7 +33,7 @@
          第一部分：JMeter 基础配置
          说明: 根据实际环境修改以下路径
          ======================================================================== -->
-    <property name="jmeter.home" value="C:\softer\jmeter\apache-jmeter-5.6\apache-jmeter-5.6" />
+    <property name="jmeter.home" value="C:\software\jmeter\apache-jmeter-5.6\apache-jmeter-5.6" />
     <!-- JMeter 安装目录，需要包含 lib、bin 等子目录 -->
     
     <!-- ========================================================================
