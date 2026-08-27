@@ -1,0 +1,5 @@
+currency_instanceid_val,currency_Status,currency_Group,currency_ServerType,currency_Description,currency_Symbol,currency_ContractSize,currency_TradeMode
+MT5_1,Enabled,,live,Euro vs US Dollar,EURUSD,100000.0,4
+MT5_1,Enabled,,live,US Dollar vs Japanese Yen,USDJPY,100000.0,4
+MT5_1,Enabled,,live,Australian Dollar vs US Dollar,AUDUSD,100000.0,4
+MT4_1,Enabled,,live,Australian Dollar vs US Dollar,AUDUSD,100000.0,4

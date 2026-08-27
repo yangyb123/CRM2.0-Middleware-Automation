@@ -1,0 +1,17 @@
+shujuku,order_instanceid_val,order_login,Login,Group,GroupCurrency,MarginStopOut,MarginCall,Address,ZIPCode,enable_expert_advisor,Equity,enable_api_trading,confirmed,Name,Rights,Credit,MarginFree,Phone,Registration,enable,Leverage,Profit,enable_change_password,ID,MQID,disable_trading,exclude_from_reports,can_trade,LastIP,Status,Agent,Comment,technical_account,MarginLevel,Color,City,EMail,enable_trailing_stops,force_reset_password,readonly_account,enable_otp,enable_statement_reports,investor,State,LastAccess,Country,_data_source,enable_push_notification,Balance,Margin,sponsored_hosting,BrokerAcquireTimeoutMs,BrokerAttempted,BrokerErrorCode,BrokerErrorMessage,BrokerErrorPlatform,BrokerFailedOther,BrokerRecomputeFailed,BrokerRecomputeProbeSymbol,BrokerRecomputeRetcode,BrokerRecomputeUnsupportedPlatform,BrokerTimedOut,BrokerTimeoutMs,CommissionTotal,EquityRecompute,Floating,FloatingRecompute,MarginFreeRecompute,MarginLevelRecompute,MarginRecompute,ProfitRecompute,Storage,StorageRecompute,SwapTotal,_meta,last_access,country,margin_stopout,prevmonthbalance,margin_free,taxes,send_reports,id,state,credit,margin_call,prevbalance,group,margin,phone,name,registration,margin_level,agent_account,status,leverage,city,login,interestrate,rights,currency,profit,email,timestamp,prevequity,address,enable_read_only,comment,prevmonthequity,equity,balance
+1,MT4_1,1116,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,880000,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,4060,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,1119,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,197184,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,9820676,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,5283,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,4133,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,5218,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,5000001,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,880043,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,5285,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,1131,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,5218,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,3028,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0,MT4_1,5233,,,,,,,,TRUE,,FALSE,FALSE,,,,,,,TRUE,,,TRUE,,,FALSE,FALSE,TRUE,,,,,FALSE,,,,,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,,,,broker_live,FALSE,,,FALSE,,,,,,,,,,,,,,,,,,,,,,,,,1781001780,,30,0,61.56,0,0,,,0,50,61.56,F_STD_P00S,0,,½Ó¿Ú²âÊÔÎð¶¯test,1781001780,0,0,,2000,,5233,0,355,USD,0,zjjapiwt5vuu@test.com,1782110384,61.56,,0,,0,61.56,61.56

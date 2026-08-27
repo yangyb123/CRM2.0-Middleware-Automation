@@ -1,0 +1,5 @@
+shujuku,order_instanceid_val,instanceid_val,symbol_val,name,order_login,orderId,order_symbol,updated_utc_ms,quote_updated_utc_ms,currency_base,currency_margin,profit_mode,tick_size,currency_profit,trade_mode,ask,digits,contract_size,bid,tick_value
+1,MT5_1,MT5_1,EURUSD,EURUSD,,,,,,,,,,,,,,,,
+1,MT4_1,MT4_1,GBPUSD,GBPUSD,,,,,,,,,,,,,,,,
+0,MT4_1,MT4_1,GBPUSD,GBPUSD,,,,1780574114816,1781059727412,GBP,GBP,0,0.0,USD,full,1.3382800000000001,5,100000.0,1.33802,0.0
+0,MT5_1,MT5_1,EURUSD,EURUSD,,,,1780574868926,1781059893891,EUR,EUR,0,0.0,USD,full,1.15445,5,100000.0,1.15429,0.0

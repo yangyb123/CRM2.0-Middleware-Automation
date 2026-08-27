@@ -1,0 +1,5 @@
+Action,ActivationTime,Symbol,Digits,ActivationPrice,RateMargin,Reason,TimeUpdate,PriceTP,ActivationFlags,ActivationMode,Profit,Comment,TimeCreate,ExpertID,ModificationFlags,Position,ContractSize,PriceOpen,Login,ExpertPositionID,DigitsCurrency,PriceSL,Storage,Volume,PriceCurrent,Dealer
+0,0,UKOUSDcent,3,0,0,2,1781002653,0,0,0,0,,1781002642,0,0,1794561,100000,92.016,880023,0,2,0,0,10000,91.974,0
+1,0,BCHUSTcent,2,0,0,2,1781002649,0,0,0,-95,,1781002599,0,0,1794517,100000,209.91,880023,0,2,0,0,10000,210.86,0
+0,0,AUDCHF,5,0,0,2,1781002684,0,0,0,-22.59,,1781002680,0,0,1794604,100000,0.56211,4088,0,2,0,0,10000,0.56193,0
+1,0,EURUSD,5,0,0,2,1781002673,0,0,0,-14,,1781002663,0,0,1794585,100000,1.1539,4088,0,2,0,0,10000,1.15404,0

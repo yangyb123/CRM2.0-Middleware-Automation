@@ -1,0 +1,5 @@
+magic,reason,symbol,gw_volume,margin_rate,open_time,taxes,storage,login,commission_agent,gw_close_price,close_price,sl,commission,state,open_price,profit,order,timestamp,close_time,volume,gw_open_price,gw_order,comment,digits,expiration,cmd,current_price,activation,tp
+0,2,EURUSD,0,0,1781002512,0,0,5233,0,0,1.15408,0,0,3,1.15432,-1.44,71661,0,1781002517,6,0,0,,5,0,0,1.15408,0,0
+0,2,GBPUSD,0,0,1781002493,0,0,5233,0,0,1.33732,0,0,3,1.33705,-27,71660,0,1781002501,100,0,0,,5,0,1,1.33732,0,0
+0,2,EURUSD,0,0,1781002542,0,0,1104,0,0,1.154,0,0,3,1.15426,-178.36,71663,0,1781002549,7,0,0,,5,0,0,1.154,0,0
+0,2,GBPUSD,0,0,1781002532,0,0,1104,0,0,1.33723,0,0,3,1.337,-2369,71662,0,1781002546,100,0,0,,5,0,1,1.33723,0,0

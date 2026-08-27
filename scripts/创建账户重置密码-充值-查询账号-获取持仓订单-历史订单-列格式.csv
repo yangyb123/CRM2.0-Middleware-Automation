@@ -1,0 +1,6 @@
+备注,user_name,group,login,instanceid,deal_type,email,leverage
+用户参数-MT4_1 账号-美元-中文验证,MT4_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)},T_STD_P00S,3106,MT4_1,7,autotestteam@test.com,1000
+用户参数-MT4_1 账号美分账户,MT4_1 账号-美分-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)},F_STD_Cent30S,1098,MT4_1,6,autotestteam@test.com,1000
+用户参数-MT5_1 账号-美分账号,MT5_1 账号-美分-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)},real\\B_STD_Cent10S,200024,MT5_1,2,autotestteam@test.com,1000
+用户参数-MT5_1 账号-美元,MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)},real\\A_ECN_P00S,4108,MT5_1,2,autotestteam@test.com,1000
+用户参数-MT5_1_TS1 账号,MT5_1_TS1-账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)},real\real,7800112,MT5_1_TS1,3,autotestteam@test.com,1000

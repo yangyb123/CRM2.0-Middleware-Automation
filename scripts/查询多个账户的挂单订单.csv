@@ -1,0 +1,7 @@
+shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows
+1,MT5_1,4042,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,50000
+1,MT4_1,300610,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,50000
+1,MT5_1,880000,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,50000
+1,MT5_1,4042,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT5_1,197184,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,
+1,MT4_1,5218,1,50,,,,"2,3,4,5",,,gte,0.01,time_setup_utc_ms,desc,,,,,,,,,,,,,,,,,,,,,,,,
