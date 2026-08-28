@@ -71,10 +71,6 @@
     </tstamp>
     
     <property name="report.prefix" value="TestReport_${timestamp.full}" />
-    <!-- 原始 JTL：成功和失败响应正文都保留 -->
-    <property name="jtl.original.file" value="${jtl.dir}/${report.prefix}.jtl" />
-    <!-- 报告专用 JTL：只把 XML 1.0 不允许的 NUL 引用转换为可见标记 -->
-    <property name="jtl.report.file" value="${jtl.dir}/${report.prefix}_ReportSafe.jtl" />
     <!-- 报告文件前缀（包含日期和时间，确保唯一性） -->
     
 	<target name="generate-allure-report">
@@ -178,7 +174,7 @@
               dir="${basedir}">
             <env key="HEAP" value="-Xmx256m -Xms128m" />
             <arg value="/c" />
-            <arg value="${jmeter.home}\bin\jmeter.bat -n -t scripts\*.jmx -l result\jtl\${report.prefix}.jtl -j result\jtl\${report.prefix}.log -Jjmeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.response_data.on_error=true -Jjmeter.save.saveservice.samplerData=false -Jjmeter.save.saveservice.responseHeaders=false -Jjmeter.save.saveservice.requestHeaders=false -Jjmeter.save.saveservice.encoding=false -Jjmeter.save.saveservice.latency=true -Jjmeter.save.saveservice.connect_time=true -Jhttpclient.socket.timeout=10000 -Jhttpclient.connection.timeout=10000 -Jlog_level.jmeter=WARN" />
+            <arg value="${jmeter.home}\bin\jmeter.bat -n -t scripts\*.jmx -l result\jtl\${report.prefix}.jtl -j result\jtl\${report.prefix}.log -Djmeter.save.saveservice.output_format=xml -Djmeter.save.saveservice.response_data.on_error=false -Djmeter.save.saveservice.samplerData=false -Djmeter.save.saveservice.responseHeaders=false -Djmeter.save.saveservice.requestHeaders=false -Djmeter.save.saveservice.encoding=false -Djmeter.save.saveservice.latency=true -Djmeter.save.saveservice.connect_time=true -Dhttpclient.socket.timeout=10000 -Dhttpclient.connection.timeout=10000 -Djmeter.gui.action.action.listener.classname=org.apache.jmeter.visualizers.SimpleResultCollector -Dlog_level.jmeter=WARN" />
         </exec>
         
         <!-- 验证 JTL 文件是否生成 -->
@@ -207,30 +203,9 @@
               message="错误: JTL 结果文件不存在 - ${jtl.dir}/${report.prefix}.jtl" />
         
         <echo message="✓ 找到 JTL 文件: ${jtl.dir}/${report.prefix}.jtl" />
-
-        <!-- 保留原始 JTL，复制报告专用副本 -->
-        <copy file="${jtl.original.file}"
-              tofile="${jtl.report.file}"
-              overwrite="true" />
-
-        <!-- 十六进制 NUL：&#x0;、&#x00;、&#x0000; -->
-        <replaceregexp file="${jtl.report.file}"
-                       match="&amp;#x0+;"
-                       replace="[NUL]"
-                       flags="gi"
-                       encoding="UTF-8" />
-
-        <!-- 十进制 NUL：&#0;、&#00; -->
-        <replaceregexp file="${jtl.report.file}"
-                       match="&amp;#0+;"
-                       replace="[NUL]"
-                       flags="g"
-                       encoding="UTF-8" />
-
-        <echo message="报告专用 JTL: ${jtl.report.file}" />
         
         <!-- 使用 XSL 样式表转换 JTL 为 HTML -->
-        <xslt in="${jtl.report.file}" 
+        <xslt in="${jtl.dir}/${report.prefix}.jtl" 
               out="${html.dir}/${report.prefix}_Detail.html" 
               style="${xsl.dir}/jmeter-results-detail-report_21.xsl"
               force="true">
@@ -252,13 +227,13 @@
         <echo message="========================================" />
         
         <!-- 检查 JTL 文件是否存在 -->
-        <available file="${jtl.report.file}" property="jtl.file.for.summary.exists" />
+        <available file="${jtl.dir}/${report.prefix}.jtl" property="jtl.file.for.summary.exists" />
         
         <fail unless="jtl.file.for.summary.exists" 
-              message="错误: 报告专用 JTL 不存在，无法生成汇总报告 - ${jtl.report.file}" />
+              message="错误: JTL 结果文件不存在，无法生成汇总报告 - ${jtl.dir}/${report.prefix}.jtl" />
         
         <!-- 使用增强的 XSL 样式表转换 JTL 为 HTML（包含图表） -->
-        <xslt in="${jtl.report.file}" 
+        <xslt in="${jtl.dir}/${report.prefix}.jtl" 
               out="${html.dir}/${report.prefix}_Summary.html" 
               style="${xsl.dir}/jmeter-results-report-enhanced.xsl"
               force="true">
@@ -335,7 +310,6 @@
         <!-- 压缩 JTL 文件和日志文件 -->
         <zip destfile="${jtl.zip.file}" basedir="${jtl.dir}">
             <include name="${report.prefix}.jtl" />
-            <include name="${report.prefix}_ReportSafe.jtl" />
             <include name="${report.prefix}.log" />
         </zip>
         
