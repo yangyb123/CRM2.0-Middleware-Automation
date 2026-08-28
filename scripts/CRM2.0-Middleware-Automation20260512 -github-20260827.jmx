@@ -6,6 +6,7 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
@@ -425,7 +426,7 @@ production environment		13.214.249.50   真实生产ip</stringProp>
 635924--》639653</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -2988,7 +2989,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -4209,7 +4210,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-修改杠杆--修改">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-修改杠杆--修改" enabled="true">
           <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -4320,7 +4321,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-设置品种交易模式">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-设置品种交易模式" enabled="true">
           <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -12267,7 +12268,7 @@ ${production account51}
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告08.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
         <stringProp name="TestPlan.comments">python .\jtl_fail_report.py &quot;中间件1.56接口结果_失败报告001.jtl&quot; --no-open
 python .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告002.jtl&quot; --no-open
 python .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告003.jtl&quot; --no-open
@@ -17576,7 +17577,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅" enabled="true">
         <stringProp name="TestPlan.comments">！！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)--222 ✅-验证通过 -20260612-验证成功-最新-001
 新增跨所有实例账户级财务指标数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
@@ -19453,7 +19454,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -19666,7 +19667,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -22055,7 +22056,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -22066,7 +22067,7 @@ if (bad) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-1获取历史订单事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-1获取历史订单事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -23235,7 +23236,7 @@ if (failures.isEmpty()) {
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-2获取服务器信息事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-2获取服务器信息事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -23334,7 +23335,7 @@ instanceid=[MT5_1] address不一致：预期=[18.171.245.143:443]，实际=[43.1
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-3修改杠杆事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-3修改杠杆事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -23676,12 +23677,12 @@ vars.put(&quot;loop_count_修改杠杆&quot;, String.valueOf(count + 1));
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-4充值提现事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-4充值提现事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="充值提现">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="充值提现" enabled="true">
             <boolProp name="TransactionController.parent">true</boolProp>
             <boolProp name="TransactionController.includeTimers">true</boolProp>
           </TransactionController>
@@ -23760,7 +23761,7 @@ vars.put(&quot;csv_total_rows&quot;, String.valueOf(lineCount))
 log.info(&quot;&gt;&gt;&gt; 充值提现CSV数据行数: &quot; + lineCount + &quot; 行&quot;)</stringProp>
             </JSR223Sampler>
             <hashTree/>
-            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="充值提现-循环控制器">
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="充值提现-循环控制器" enabled="true">
               <stringProp name="WhileController.condition">${__groovy(def idx = vars.get(&quot;csv_loop_idx&quot;)?.toInteger() ?: 0; def total = vars.get(&quot;csv_total_rows&quot;)?.toInteger() ?: 0; idx &lt; total)}</stringProp>
             </WhileController>
             <hashTree>
@@ -23829,7 +23830,7 @@ vars.put(&quot;assert_field&quot;, assert_field);
 log.info(&quot;&gt;&gt;&gt; CSV充值提现预处理器：instanceid=&quot; + instanceid + &quot; deal_type=&quot; + deal_type + &quot; money=&quot; + money + &quot; login=&quot; + login + &quot; assert_field=&quot; + assert_field);</stringProp>
               </BeanShellPreProcessor>
               <hashTree/>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="充值/提现 ${instanceid} ${login}">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="充值/提现 ${instanceid} ${login}" enabled="true">
                 <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
                 <stringProp name="HTTPSampler.port">${port}</stringProp>
                 <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -24389,7 +24390,7 @@ try {
                 <stringProp name="ConstantTimer.delay">1000</stringProp>
               </ConstantTimer>
               <hashTree/>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息 ${instanceid} ${login} ">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息 ${instanceid} ${login} " enabled="true">
                 <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
                 <stringProp name="HTTPSampler.port">${port}</stringProp>
                 <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -24576,7 +24577,7 @@ vars.put(&quot;loop_count_充值提现_verify&quot;, String.valueOf(count + 1));
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-5重置密码事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-5重置密码事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -24654,7 +24655,7 @@ vars.put(&quot;loop_count_重置密码&quot;, String.valueOf(count + 1));
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-6设置组权限事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-6设置组权限事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -25320,7 +25321,7 @@ vars.put(&quot;loop_count_恢复权限&quot;, String.valueOf(count + 1));
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="13激活归档用户✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="13激活归档用户✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -26245,7 +26246,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：可迁移自包含版。默认从JMX所在目录读取 获取用户信息-数据校验.csv，也可通过 -Juser_info_csv_path=&lt;CSV绝对路径&gt; 指定；CSV到EOF时自动停止线程。初始化、对比和打印Groovy逻辑均已内嵌到本线程组，换机器/换目录时不依赖外部jmeter_scripts。shujuku=1时按MT4/MT5查询对应数据库并按接口返回字段逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -27585,7 +27586,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1计算get_user_info-profit数值✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1计算get_user_info-profit数值✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -32449,7 +32450,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -33870,7 +33871,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -33941,7 +33942,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本014.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="false">
