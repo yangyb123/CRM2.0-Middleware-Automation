@@ -37,7 +37,7 @@ from urllib.parse import parse_qs, parse_qsl, quote, unquote, urlencode, urlpars
 from urllib import request as urlrequest
 
 
-SCRIPT_VERSION = "4.20"
+SCRIPT_VERSION = "4.19"
 DEFAULT_CONFIG_FILE = "jtl_fail_report_config.json"
 DEFAULT_TOKEN_CACHE_FILE = "jtl_fail_report_token_cache.json"
 DEFAULT_TEAMS_CHAT_URL = "https://teams.microsoft.com/l/chat/19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D"
@@ -2620,6 +2620,7 @@ def render_sample(detail, index):
 def generate_html(details, all_rows, jtl_name):
     summary = summarize(details, all_rows)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    passed_rows = summary["total_rows"] - summary["raw_failed"]
     transaction_rate = rate_text(summary["transaction_success"], summary["transaction_total"])
 
     parts = [
@@ -2641,6 +2642,11 @@ def generate_html(details, all_rows, jtl_name):
         f'<div class="stat"><div class="num red">{summary["transaction_failed"]}</div><div class="name">失败事务</div></div>',
         f'<div class="stat"><div class="num blue">{transaction_rate}</div><div class="name">事务成功率 = {summary["transaction_success"]}/{summary["transaction_total"]}</div></div>',
         f'<div class="stat"><div class="num red">{summary["fail_field_unique_count"]}</div><div class="name">对比失败字段总数(去重)</div></div>',
+        "</div>",
+        '<div class="stats secondary">',
+        f'<div class="stat"><div class="num">{summary["total_rows"]}</div><div class="name">JTL 总样本</div></div>',
+        f'<div class="stat"><div class="num green">{passed_rows}</div><div class="name">JTL 通过样本</div></div>',
+        f'<div class="stat"><div class="num red">{summary["raw_failed"]}</div><div class="name">JTL 失败样本</div></div>',
         "</div>",
     ]
 
@@ -2684,8 +2690,15 @@ def is_http_url(value):
 
 
 def is_report_open_url(value):
-    """Teams buttons must use a remotely reachable HTTP(S) URL, never Jenkins-local file://."""
-    return is_http_url(value)
+    try:
+        parsed = urlparse(value or "")
+        if parsed.scheme in ("http", "https") and parsed.netloc:
+            return True
+        if parsed.scheme == "file" and parsed.path:
+            return True
+    except Exception:
+        pass
+    return False
 
 
 def local_file_url(path):
@@ -2694,21 +2707,6 @@ def local_file_url(path):
     except Exception:
         normalized = os.path.abspath(path).replace("\\", "/")
         return "file:///" + quote(normalized, safe="/:")
-
-
-def jenkins_artifact_url(path):
-    """Build a browser URL for a file under WORKSPACE; Jenkins must archive that path."""
-    build_url = first_config_value(os.environ.get("BUILD_URL"), os.environ.get("RUN_DISPLAY_URL"))
-    workspace = first_config_value(os.environ.get("WORKSPACE"))
-    if not build_url or not workspace:
-        return ""
-    try:
-        absolute_path = Path(path).resolve()
-        workspace_path = Path(workspace).resolve()
-        relative_path = absolute_path.relative_to(workspace_path).as_posix()
-    except Exception:
-        return ""
-    return build_url.rstrip("/") + "/artifact/" + quote(relative_path, safe="/")
 
 
 def is_teams_chat_page_link(value):
@@ -2876,51 +2874,28 @@ def resolve_teams_options(args, config):
 
 def build_teams_payload(details, all_rows, jtl_name, output_path, report_url=None, chat_url=None):
     summary = summarize(details, all_rows)
+    passed_rows = summary["total_rows"] - summary["raw_failed"]
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     transaction_rate = rate_text(summary["transaction_success"], summary["transaction_total"])
     status_text = "发现失败，请查看报告" if details else "未发现失败样本"
     status_color = "Attention" if details else "Good"
-    report_open_url = report_url.strip() if is_http_url(report_url) else jenkins_artifact_url(output_path)
-    if report_open_url:
-        report_link_text = "HTML报告: [点击打开报告]({})".format(report_open_url)
-    else:
-        report_link_text = (
-            "HTML报告已生成，但尚未配置 Teams 可访问的 HTTP(S) 地址。\n"
-            f"Jenkins服务器文件：{os.path.basename(output_path)}"
-        )
+    report_open_url = report_url or local_file_url(output_path)
+    report_link_text = "HTML报告: [点击打开报告]({})".format(report_open_url)
 
-    # Teams 卡片优先展示失败最集中的接口，而不是按它们在 JTL 中首次出现的顺序。
     top_apis = []
-    sorted_api_items = sorted(
-        iter_api_groups(summary),
-        key=lambda pair: (
-            -len(pair[1]),
-            -sum(len(detail["failed_fields"]) for detail in pair[1]),
-            pair[0],
-        ),
-    )
-    max_teams_apis = 12
-    max_fields_per_api = 8
-    for api, items in sorted_api_items[:max_teams_apis]:
+    sorted_api_items = list(iter_api_groups(summary))
+    for api, items in sorted_api_items[:5]:
         api_fail_count = sum(len(d["failed_fields"]) for d in items)
         field_counts = {}
         for item in summary["fail_fields"]:
             if item["api_name"] == api:
                 field_counts[item["field"]] = field_counts.get(item["field"], 0) + 1
-        top_fields = sorted(field_counts.items(), key=lambda x: (-x[1], x[0]))[:max_fields_per_api]
-        if top_fields:
-            top_field_text = "、".join(f"{field}({count})" for field, count in top_fields)
-        else:
-            reason = summarize_no_field_reasons(items, max_reasons=2, limit=120)
-            top_field_text = f"无字段明细；主要原因：{reason}" if reason else "无字段失败明细"
-        top_apis.append(
-            f"**{api}**\n"
-            f"失败样本：{len(items)} 条　｜　失败字段明细：{api_fail_count} 个\n"
-            f"高频字段/主要原因：{top_field_text}"
-        )
+        top_fields = sorted(field_counts.items(), key=lambda x: (-x[1], x[0]))[:3]
+        top_field_text = "、".join(f"{field}({count})" for field, count in top_fields) if top_fields else "无字段失败明细"
+        top_apis.append(f"- {api}: {len(items)}条失败 / 失败字段明细{api_fail_count}个 / {top_field_text}")
     remaining_api_count = max(len(sorted_api_items) - len(top_apis), 0)
     if remaining_api_count:
-        top_apis.append(f"*另有 {remaining_api_count} 个失败接口，请打开 HTML 报告查看完整明细。*")
+        top_apis.append(f"- 其余 {remaining_api_count} 个接口请打开 HTML 报告查看")
 
     facts = [
         {"title": "JTL文件", "value": shorten_text(jtl_name, 180)},
@@ -2928,6 +2903,9 @@ def build_teams_payload(details, all_rows, jtl_name, output_path, report_url=Non
         {"title": "失败事务", "value": str(summary["transaction_failed"])},
         {"title": "事务成功率", "value": f"{transaction_rate} ({summary['transaction_success']}/{summary['transaction_total']})"},
         {"title": "对比失败字段(去重)", "value": str(summary["fail_field_unique_count"])},
+        {"title": "JTL总样本", "value": str(summary["total_rows"])},
+        {"title": "JTL通过样本", "value": str(passed_rows)},
+        {"title": "JTL失败样本", "value": str(summary["raw_failed"])},
     ]
 
     body = [
@@ -2965,45 +2943,18 @@ def build_teams_payload(details, all_rows, jtl_name, output_path, report_url=Non
     if top_apis:
         body.append({
             "type": "TextBlock",
-            "text": "接口失败统计 / 高频字段",
-            "weight": "Bolder",
-            "size": "Medium",
+            "text": "**接口失败统计 / 高频字段**\n" + shorten_text("\n".join(top_apis), 1200),
             "wrap": True,
             "spacing": "Medium",
-            "separator": True,
-        })
-        for index, api_summary in enumerate(top_apis, 1):
-            body.append({
-                "type": "TextBlock",
-                "text": shorten_text(api_summary, 900),
-                "wrap": True,
-                "spacing": "Small",
-                "separator": index > 1,
-                "width": "stretch",
-            })
-
-    global_top_fields = summary["field_freq"][:15]
-    if global_top_fields:
-        body.append({
-            "type": "TextBlock",
-            "text": "**全局高频失败字段（Top 15）**\n\n" + "　｜　".join(
-                f"{field}({count})" for field, count in global_top_fields
-            ),
-            "wrap": True,
-            "spacing": "Medium",
-            "separator": True,
-            "width": "stretch",
         })
 
     card = {
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
         "type": "AdaptiveCard",
         "version": "1.2",
-        "msteams": {"width": "Full"},
-        "minHeight": "0px",
         "body": body,
     }
-    if report_open_url:
+    if is_report_open_url(report_open_url):
         card.setdefault("actions", []).append({
             "type": "Action.OpenUrl",
             "title": "打开HTML报告",
@@ -3399,10 +3350,7 @@ def push_teams_report(teams_options, details, rows, jtl_name, output_path):
 
     report_url = teams_options["report_url"]
     if report_url and not is_report_open_url(report_url):
-        raise ValueError(
-            "--teams-report-url / TEAMS_REPORT_URL 必须是 Teams 客户端能够访问的 http/https 地址；"
-            "不能使用 Jenkins 服务器本地的 file:/// 路径。"
-        )
+        raise ValueError("--teams-report-url / TEAMS_REPORT_URL 必须是 http/https 或 file:/// 可打开链接。")
 
     payload = build_teams_payload(
         details,
@@ -3499,7 +3447,7 @@ def parse_args():
     )
     parser.add_argument(
         "--teams-report-url",
-        help="Teams客户端可访问的HTML报告http/https链接；不能使用Jenkins服务器本地file:///路径。也可使用配置项teams_report_url或环境变量TEAMS_REPORT_URL/TM_REPORT_URL。",
+        help="HTML报告链接，支持 http/https 或 file:/// 本地文件链接；也可用配置项 teams_report_url 或环境变量 TEAMS_REPORT_URL/TM_REPORT_URL。",
     )
     parser.add_argument(
         "--teams-send-file",
@@ -3573,6 +3521,7 @@ def main():
     rows = parse_jtl(jtl_path)
     details = extract_failures(rows)
     summary = summarize(details, rows)
+    passed_rows = summary["total_rows"] - summary["raw_failed"]
     transaction_rate = rate_text(summary["transaction_success"], summary["transaction_total"])
 
     print("\n解析结果:")
@@ -3580,23 +3529,9 @@ def main():
     print(f"  失败事务: {summary['transaction_failed']}")
     print(f"  事务成功率: {transaction_rate} ({summary['transaction_success']}/{summary['transaction_total']})")
     print(f"  对比失败字段总数(去重): {summary['fail_field_unique_count']}")
-    print("  接口失败统计（按失败样本数降序）:")
-    console_api_items = sorted(
-        iter_api_groups(summary),
-        key=lambda pair: (
-            -len(pair[1]),
-            -sum(len(detail["failed_fields"]) for detail in pair[1]),
-            pair[0],
-        ),
-    )
-    for api, items in console_api_items[:20]:
-        api_field_count = sum(len(detail["failed_fields"]) for detail in items)
-        print(f"    - {api}: {len(items)} 条失败，失败字段明细 {api_field_count} 个")
-    if summary["field_freq"]:
-        print("  全局高频失败字段（Top 20）:")
-        print("    " + "、".join(
-            f"{field}({count})" for field, count in summary["field_freq"][:20]
-        ))
+    print(f"  JTL 总样本: {summary['total_rows']}")
+    print(f"  JTL 通过样本: {passed_rows}")
+    print(f"  JTL 失败样本: {summary['raw_failed']}")
 
     html = generate_html(details, rows, jtl_name)
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
@@ -3608,9 +3543,20 @@ def main():
     print(f"  大小: {os.path.getsize(output_path) / 1024:.1f} KB")
 
     teams_failed = False
-    file_result = None
+    try:
+        teams_result = push_teams_report(teams_options, details, rows, jtl_name, output_path)
+        if teams_result:
+            status, body = teams_result
+            print("\nTeams 推送:")
+            print(f"  已发送到 Teams Webhook，HTTP状态: {status}")
+            if body and body.strip() not in ("1", "ok", "OK"):
+                print(f"  Teams返回: {shorten_text(body.strip(), 300)}")
+    except Exception as exc:
+        teams_failed = True
+        print("\nTeams 推送失败:")
+        print(f"  {exc}")
+        print(f"  {teams_webhook_failure_hint(exc)}")
 
-    # 文件发送启用时必须先上传，摘要卡片才能使用 OneDrive/SharePoint 的 HTTPS 分享链接。
     try:
         file_result = push_teams_file_report(teams_options, output_path)
         if file_result:
@@ -3628,26 +3574,6 @@ def main():
         print("\nTeams 文件发送失败:")
         print(f"  {exc}")
         print("  提示: 发送本地 HTML 文件需要 Microsoft Graph token，权限通常需要 Files.ReadWrite 和 ChatMessage.Send。")
-
-    card_teams_options = dict(teams_options)
-    if file_result:
-        remote_report_url = file_result.get("share_url") or file_result.get("content_url") or ""
-        if is_http_url(remote_report_url):
-            card_teams_options["report_url"] = remote_report_url
-
-    try:
-        teams_result = push_teams_report(card_teams_options, details, rows, jtl_name, output_path)
-        if teams_result:
-            status, body = teams_result
-            print("\nTeams 推送:")
-            print(f"  已发送到 Teams Webhook，HTTP状态: {status}")
-            if body and body.strip() not in ("1", "ok", "OK"):
-                print(f"  Teams返回: {shorten_text(body.strip(), 300)}")
-    except Exception as exc:
-        teams_failed = True
-        print("\nTeams 推送失败:")
-        print(f"  {exc}")
-        print(f"  {teams_webhook_failure_hint(exc)}")
 
     if not args.no_open:
         try:
