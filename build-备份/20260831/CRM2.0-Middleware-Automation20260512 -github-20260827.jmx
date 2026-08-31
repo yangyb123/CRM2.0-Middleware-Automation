@@ -85,7 +85,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip" elementType="Argument">
             <stringProp name="Argument.name">ip</stringProp>
@@ -2989,7 +2989,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -12268,7 +12268,7 @@ ${production account51}
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告08.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
         <stringProp name="TestPlan.comments">python .\jtl_fail_report.py &quot;中间件1.56接口结果_失败报告001.jtl&quot; --no-open
 python .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告002.jtl&quot; --no-open
 python .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告003.jtl&quot; --no-open
@@ -13363,7 +13363,7 @@ publish(finalReport,failLines.isEmpty())</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务-测试环境01" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务-测试环境01" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -14369,10 +14369,10 @@ MT4_3 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
               <stringProp name="-2131445451">leverage</stringProp>
             </collectionProp>
             <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="1773332965">
+              <collectionProp name="1996941571">
                 <stringProp name="60584747">MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
                 <stringProp name="-816521778">real\\A_ECN_P00S</stringProp>
-                <stringProp name="1598718">4200</stringProp>
+                <stringProp name="1598045">4199</stringProp>
                 <stringProp name="73667488">MT5_1</stringProp>
                 <stringProp name="50">2</stringProp>
                 <stringProp name="-1475839097">autotestteam@test.com</stringProp>
@@ -16257,7 +16257,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">新增持仓订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。SQL保留 SELECT mt.* 查询所有字段，并额外提供接口字段别名用于对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -16290,7 +16290,7 @@ if (!failures.isEmpty()) {
             <collectionProp name="Arguments.arguments">
               <elementProp name="position_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">position_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">close_time_utc_ms,open_time_utc_ms,price_current,profit,swap,margin_rate,updated_utc_ms,pos_uid,account_mode,digits,reason,time_update_utc_ms</stringProp>
+                <stringProp name="Argument.value">open_time_utc_ms,price_current,profit,swap,margin_rate,updated_utc_ms,pos_uid,account_mode,digits,reason,time_update_utc_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.desc">只控制DB/API对比的跳过字段，多个字段用逗号分隔；填 * 表示只校验订单号匹配。</stringProp>
               </elementProp>
@@ -17304,15 +17304,6 @@ String normalizeCsvTime(v) {
 }
 
 String normalizeDbTime(v) {
-    // JDBC DB datetime values already contain the wall-clock value used by the
-    // report. Preserve yyyy-MM-dd HH:mm:ss from their rendered text; formatting
-    // the underlying Date/Timestamp instant in Asia/Shanghai adds an incorrect
-    // UTC+8 offset (for example 08:11:08 becomes 16:11:08).
-    if (!numeric(v)) {
-        String raw = String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim()
-        def matched = (raw =~ /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})/)
-        if (matched.find()) return matched.group(1)
-    }
     def d = parseDateLike(v)
     if (d == null) return String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim()
     return numeric(v) ? fmt(d, &apos;UTC&apos;) : fmt(d, &apos;Asia/Shanghai&apos;)
@@ -32459,7 +32450,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -33952,7 +33943,6 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </value>
         </objProp>
         <stringProp name="filename"></stringProp>
-        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本018.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="false">
@@ -33992,7 +33982,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\Users\10477\Downloads\TestReport_2026-08-31_03-23-33_JTL\TestReport_2026-08-31_03-23-33.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告07.jtlpython .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告11.jtl&quot; --no-openD:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告12.jtl D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告01.jtl
 python .\jtl_fail_report.py &quot;中间件接口1.56.2结果_失败详细报告01.jtl&quot; --no-open D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告03.jtl--发群的
 /crm20/list_history_positions
@@ -34003,8 +33993,7 @@ python .\jtl_fail_report.py &quot;中间件接口1.57.7版本006.jtl&quot; --no-
 python .\jtl_fail_report.py &quot;中间件接口1.57.7版本006.jtl&quot; --no-open
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.57.7版本007.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.2版本014.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.3版本008.jtl
-C:\Users\10477\Downloads\TestReport_2026-08-31_01-23-32_JTL\TestReport_2026-08-31_01-23-32.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.3版本008.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="查询多个账户的挂单订单-性能测试大数据量测试" enabled="false">
@@ -37688,7 +37677,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单" enabled="true">
           <intProp name="HTTPSampler.connect_timeout">3000</intProp>
           <intProp name="HTTPSampler.response_timeout">10000</intProp>
           <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -37847,7 +37836,7 @@ AssertionResult.setFailure(!same);AssertionResult.setFailureMessage(finalReport)
           </JSR223Assertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单-${history_positions_mode}-${history_positions_case_index_display}1-手工验证事务" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单-${history_positions_mode}-${history_positions_case_index_display}1-手工验证事务" enabled="true">
           <intProp name="HTTPSampler.connect_timeout">3000</intProp>
           <intProp name="HTTPSampler.response_timeout">10000</intProp>
           <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -39231,7 +39220,7 @@ if (!failLines.isEmpty()) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="6待处理/历史订单事务✅ -验证半成品  -20260612-验证成功-最新-backe 20260627" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="6待处理/历史订单事务✅ -验证半成品  -20260612-验证成功-最新-backe 20260627" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -39927,7 +39916,7 @@ if (failCount &gt; 0) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务001-4-back-002--品种进行区分美分账号" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务001-4-back-002--品种进行区分美分账号" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -40963,7 +40952,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="线程组生产环境-有充值接口，注意-生产环境" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="线程组生产环境-有充值接口，注意-生产环境" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -41311,7 +41300,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.5版本001.
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="11-1（先禁用）自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="11-1（先禁用）自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -41668,7 +41657,7 @@ log.info(&quot;✅ 分组统计接口断言全部通过！matched_count=${json.d
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)事务--222 ✅-验证通过 -20260612-验证成功-最新-001-back002-新" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)事务--222 ✅-验证通过 -20260612-验证成功-最新-001-back002-新" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -42412,7 +42401,7 @@ if (bad) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -43169,7 +43158,7 @@ vars.put(&quot;loop_count_Loop3&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -44289,7 +44278,7 @@ modify_user_info接口</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的当前持仓订单事务-手工验证" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的当前持仓订单事务-手工验证" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -44465,7 +44454,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的挂单订单事务-手工验证" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的挂单订单事务-手工验证" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -44580,7 +44569,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -45990,7 +45979,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务001-4-备份back002" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询多个账户的历史平仓仓位/已平仓订单事务001-4-备份back002" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -47041,7 +47030,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="app登录鉴权事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="app登录鉴权事务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -47326,7 +47315,7 @@ auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="交易大赛-批量查询已经完全关闭的持仓生命周期事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="交易大赛-批量查询已经完全关闭的持仓生命周期事务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -47700,7 +47689,7 @@ access_token</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="重置密码事务-测试环境最新版本" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="重置密码事务-测试环境最新版本" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -47779,7 +47768,7 @@ access_token</stringProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1" enabled="false">
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1" enabled="true">
             <collectionProp name="UserParameters.names">
               <stringProp name="364056274">instanceid_val</stringProp>
               <stringProp name="-1718941365">login_val</stringProp>
@@ -47795,69 +47784,7 @@ access_token</stringProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1" enabled="false">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="364056274">instanceid_val</stringProp>
-              <stringProp name="-1718941365">login_val</stringProp>
-              <stringProp name="-1349832915">deal_type</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="2102964760">
-                <stringProp name="73667488">MT5_1</stringProp>
-                <stringProp name="1457156294">197126</stringProp>
-                <stringProp name="50">2</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1" enabled="false">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="364056274">instanceid_val</stringProp>
-              <stringProp name="-1718941365">login_val</stringProp>
-              <stringProp name="-1349832915">deal_type</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="-1145287687">
-                <stringProp name="73667488">MT5_1</stringProp>
-                <stringProp name="1656427333">880027</stringProp>
-                <stringProp name="50">2</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1" enabled="false">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="364056274">instanceid_val</stringProp>
-              <stringProp name="-1718941365">login_val</stringProp>
-              <stringProp name="-1349832915">deal_type</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="738317963">
-                <stringProp name="73667488">MT5_1</stringProp>
-                <stringProp name="46821710">13286</stringProp>
-                <stringProp name="50">2</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT4_1" enabled="true">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="364056274">instanceid_val</stringProp>
-              <stringProp name="-1718941365">login_val</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="-1794905321">
-                <stringProp name="73666527">MT4_1</stringProp>
-                <stringProp name="1513258">1627</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="重置密码 ${instanceid_val} ${login_val}-${middlewareip}" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="重置密码 ${instanceid_val} ${login_val}-${middlewareip}" enabled="false">
             <stringProp name="TestPlan.comments">780018</stringProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -47894,7 +47821,7 @@ access_token</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4充值/提现-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4充值/提现-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -47930,22 +47857,8 @@ access_token</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT4_1" enabled="false">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="364056274">instanceid_val</stringProp>
-              <stringProp name="-1718941365">login_val</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="-695650984">
-                <stringProp name="73666527">MT4_1</stringProp>
-                <stringProp name="1628760">5283</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="下单和平仓接口✅✅事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="下单和平仓接口✅✅事务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -48380,7 +48293,7 @@ SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)</stringProp>
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="13历史订单-（已成交、已取消、已过期、部分成交)-据库校验新事务✅✅✅" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="13历史订单-（已成交、已取消、已过期、部分成交)-据库校验新事务✅✅✅" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -48643,7 +48556,7 @@ if (!failLines.isEmpty()) { AssertionResult.setFailure(true); AssertionResult.se
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="生产环境-查询多个账户当前持仓订单事务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="生产环境-查询多个账户当前持仓订单事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -49872,7 +49785,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
         </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅---接口超时" enabled="false">
-        <stringProp name="TestPlan.comments">服务器异常返回专项测试（仅本线程组）：不再使用不访问MT Server的/version，默认调用依赖MT Server的/crm20/get_user_info。请在“超时测试参数（可手动设置）”中填写真实实例、账号和接口路径。要观察MT Server异常后中间件最终返回什么，必须在测试环境制造中间件到MT Server的真实异常，并让JMeter响应等待时间大于中间件自身下游超时；默认JMeter等待60000ms。若JMeter先超时，只能得到Read timed out，无法取得中间件稍后生成的错误正文。</stringProp>
+        <stringProp name="TestPlan.comments">慢响应容错测试：先用 clumsy 在“中间件 ↔ MT Server”链路注入延迟，再由本线程组使用标准 HTTP Request 请求中间件。HTTP Request 的高级页可手动修改连接超时和响应超时；60000ms=60s。接口在阈值内返回时保留真实响应体；超过阈值时 JMeter 客户端只能得到 Read timed out，无法取得服务端之后才生成的响应体。/version 通常不访问 MT Server；验证 clumsy 链路延迟时，请把同一个 HTTP Request 改为实际调用 MT Server 的接口、方法、参数或请求体。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -49883,55 +49796,14 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="超时测试参数（可手动设置）" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="timeout_connect_ms" elementType="Argument">
-              <stringProp name="Argument.name">timeout_connect_ms</stringProp>
-              <stringProp name="Argument.value">10000</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">建立TCP连接的最长等待时间；10000ms=10s</stringProp>
-            </elementProp>
-            <elementProp name="timeout_response_ms" elementType="Argument">
-              <stringProp name="Argument.name">timeout_response_ms</stringProp>
-              <stringProp name="Argument.value">10000</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">第1次请求的客户端响应超时；默认10000ms=10s，可手动修改</stringProp>
-            </elementProp>
-            <elementProp name="timeout_observe_response_ms" elementType="Argument">
-              <stringProp name="Argument.name">timeout_observe_response_ms</stringProp>
-              <stringProp name="Argument.value">60000</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">第2次请求等待中间件最终错误响应；默认60000ms=60s，应大于中间件下游超时</stringProp>
-            </elementProp>
-            <elementProp name="timeout_instanceid" elementType="Argument">
-              <stringProp name="Argument.name">timeout_instanceid</stringProp>
-              <stringProp name="Argument.value">MT4_1</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">测试环境真实存在且依赖目标MT Server的实例ID</stringProp>
-            </elementProp>
-            <elementProp name="timeout_login" elementType="Argument">
-              <stringProp name="Argument.name">timeout_login</stringProp>
-              <stringProp name="Argument.value">1116</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">上述实例中真实存在的测试账号</stringProp>
-            </elementProp>
-            <elementProp name="timeout_test_path" elementType="Argument">
-              <stringProp name="Argument.name">timeout_test_path</stringProp>
-              <stringProp name="Argument.value">/crm20/get_user_info?instanceid=${timeout_instanceid}&amp;login=${timeout_login}&amp;live_equity=0</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">必须使用实际访问MT Server的接口，不要使用/version</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="第1次-客户端10秒响应超时模拟-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-          <stringProp name="TestPlan.comments">第1次请求使用timeout_response_ms（默认10秒），用于模拟并区分JMeter客户端响应超时。若触发Read timed out，此请求不会收到中间件稍后返回的正文；请查看紧随其后的第2次观察请求。</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout">${timeout_connect_ms}</stringProp>
-          <stringProp name="HTTPSampler.response_timeout">${timeout_response_ms}</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="中间件版本-最新版本-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
+          <stringProp name="TestPlan.comments">标准 JMeter HTTP 请求，可直接在基本页切换 GET/POST/PUT/PATCH/DELETE，并编辑协议、IP、端口、路径、参数、消息体数据、文件上传；在高级页修改连接超时和响应超时。当前：连接10s，响应60s。</stringProp>
+          <intProp name="HTTPSampler.connect_timeout">10000</intProp>
+          <intProp name="HTTPSampler.response_timeout">60000</intProp>
           <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">${timeout_test_path}</stringProp>
+          <stringProp name="HTTPSampler.path">/version</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -49941,7 +49813,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="版本接口断言（异常返回专项中停用）" enabled="false">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1377139989">file_version</stringProp>
             </collectionProp>
@@ -49951,7 +49823,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
             <intProp name="Assertion.test_type">48</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="超时分类与响应正文记录（保留服务端原始响应）" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="请求结果分类（响应返回/响应超时/连接超时/其他失败）" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -49961,11 +49833,8 @@ def message = originalMessage.toLowerCase()
 def responseCode = prev.getResponseCode() ?: &apos;&apos;
 def elapsedMs = prev.getTime()
 def currentSampler = ctx.getCurrentSampler()
-def configuredConnectTimeoutMs = vars.get(&apos;timeout_connect_ms&apos;) ?: currentSampler?.getPropertyAsString(&apos;HTTPSampler.connect_timeout&apos;) ?: &apos;未设置&apos;
-def configuredResponseTimeoutMs = vars.get(&apos;timeout_response_ms&apos;) ?: currentSampler?.getPropertyAsString(&apos;HTTPSampler.response_timeout&apos;) ?: &apos;未设置&apos;
-def originalResponseBytes = prev.getResponseData() ?: new byte[0]
-def originalResponseBody = prev.getResponseDataAsString() ?: &apos;&apos;
-def exceptionText = prev.getResponseMessage() ?: &apos;&apos;
+def configuredConnectTimeoutMs = currentSampler?.getPropertyAsString(&apos;HTTPSampler.connect_timeout&apos;) ?: &apos;未设置&apos;
+def configuredResponseTimeoutMs = currentSampler?.getPropertyAsString(&apos;HTTPSampler.response_timeout&apos;) ?: &apos;未设置&apos;
 
 def resultType
 def explanation
@@ -49976,8 +49845,8 @@ if (message.contains(&apos;read timed out&apos;) || message.contains(&apos;socke
     resultType = &apos;CONNECT_TIMEOUT&apos;
     explanation = &apos;在连接超时阈值内未能与目标服务器建立连接；这不是响应慢。&apos;
 } else if (!prev.isSuccessful()) {
-    resultType = &apos;HTTP_OR_REQUEST_FAILED&apos;
-    explanation = &apos;请求失败但不是已识别的连接/响应超时。若服务端返回了HTTP错误正文，下方保留完整原始响应。&apos;
+    resultType = &apos;REQUEST_FAILED&apos;
+    explanation = &apos;请求失败，但不是已识别的连接超时或响应超时；请查看响应码和原始消息。&apos;
 } else {
     resultType = &apos;RESPONSE_RETURNED&apos;
     explanation = &apos;接口在响应超时阈值内返回；响应数据页保留服务端真实响应体。&apos;
@@ -49987,10 +49856,8 @@ vars.put(&apos;request_result_type&apos;, resultType)
 vars.put(&apos;actual_response_time_ms&apos;, String.valueOf(elapsedMs))
 vars.put(&apos;request_response_code&apos;, responseCode)
 vars.put(&apos;request_response_message&apos;, originalMessage)
-vars.put(&apos;request_original_response_body&apos;, originalResponseBody)
-vars.put(&apos;request_original_response_bytes&apos;, String.valueOf(originalResponseBytes.length))
 
-if (resultType == &apos;RESPONSE_TIMEOUT&apos; || resultType == &apos;CONNECT_TIMEOUT&apos;) {
+if (resultType != &apos;RESPONSE_RETURNED&apos;) {
     def diagnostic = &quot;&quot;&quot;JMeter 接口慢响应/超时诊断
 result_type=${resultType}
 elapsed_ms=${elapsedMs}
@@ -49998,94 +49865,15 @@ connect_timeout_ms=${configuredConnectTimeoutMs}
 response_timeout_ms=${configuredResponseTimeoutMs}
 response_code=${responseCode}
 response_message=${originalMessage}
-original_response_bytes=${originalResponseBytes.length}
-original_response_body=${originalResponseBody ?: &apos;&lt;EMPTY：客户端超时前未收到服务端响应正文&gt;&apos;}
 说明=${explanation}
 clumsy提示=请确认延迟规则命中了中间件与MT Server的实际通信端口；/version若不访问MT Server，则不会受到该链路延迟影响。
 &quot;&quot;&quot;
     prev.setResponseData(diagnostic, &apos;UTF-8&apos;)
     prev.setContentType(&apos;text/plain; charset=UTF-8&apos;)
-} else if (resultType == &apos;HTTP_OR_REQUEST_FAILED&apos;) {
-    // 服务端确实返回的HTTP错误正文不得被诊断信息覆盖；仅在正文为空时补充诊断。
-    if (originalResponseBytes.length == 0) {
-        def diagnostic = &quot;&quot;&quot;JMeter 请求失败诊断
-result_type=${resultType}
-elapsed_ms=${elapsedMs}
-connect_timeout_ms=${configuredConnectTimeoutMs}
-response_timeout_ms=${configuredResponseTimeoutMs}
-response_code=${responseCode}
-response_message=${originalMessage}
-original_response_body=&lt;EMPTY&gt;
-说明=${explanation}
-&quot;&quot;&quot;
-        prev.setResponseData(diagnostic, &apos;UTF-8&apos;)
-        prev.setContentType(&apos;text/plain; charset=UTF-8&apos;)
-    }
 }
 
 log.info(&apos;接口请求结果: type={}, elapsed={}ms, connectTimeout={}ms, responseTimeout={}ms, code={}, message={}&apos;,
     resultType, elapsedMs, configuredConnectTimeoutMs, configuredResponseTimeoutMs, responseCode, originalMessage)</stringProp>
-          </JSR223PostProcessor>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="第2次-等待并记录中间件最终响应-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-          <stringProp name="TestPlan.comments">第2次请求调用相同接口，使用更长的timeout_observe_response_ms（默认60秒），用于记录MT4 Server异常后中间件最终返回的HTTP状态码、消息和完整响应正文。</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout">${timeout_connect_ms}</stringProp>
-          <stringProp name="HTTPSampler.response_timeout">${timeout_observe_response_ms}</stringProp>
-          <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">${timeout_test_path}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录中间件最终HTTP状态与原始响应正文" enabled="true">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">def responseCode = prev.getResponseCode() ?: &apos;&apos;
-def responseMessage = prev.getResponseMessage() ?: &apos;&apos;
-def responseBody = prev.getResponseDataAsString() ?: &apos;&apos;
-def elapsedMs = prev.getTime()
-def observeTimeoutMs = vars.get(&apos;timeout_observe_response_ms&apos;) ?: &apos;未设置&apos;
-def lowerMessage = responseMessage.toLowerCase()
-def resultType = lowerMessage.contains(&apos;read timed out&apos;) || lowerMessage.contains(&apos;sockettimeoutexception&apos;)
-    ? &apos;OBSERVE_RESPONSE_TIMEOUT&apos;
-    : (lowerMessage.contains(&apos;connect timed out&apos;) || lowerMessage.contains(&apos;connectexception&apos;)
-        ? &apos;CONNECT_TIMEOUT&apos;
-        : (!prev.isSuccessful() ? &apos;MIDDLEWARE_HTTP_ERROR_RETURNED&apos; : &apos;MIDDLEWARE_RESPONSE_RETURNED&apos;))
-
-vars.put(&apos;middleware_final_result_type&apos;, resultType)
-vars.put(&apos;middleware_final_response_code&apos;, responseCode)
-vars.put(&apos;middleware_final_response_message&apos;, responseMessage)
-vars.put(&apos;middleware_final_response_body&apos;, responseBody)
-vars.put(&apos;middleware_final_elapsed_ms&apos;, String.valueOf(elapsedMs))
-
-// 中间件有真实正文时保持原文；只有正文为空才写入诊断。
-if (!responseBody) {
-    def diagnostic = &quot;&quot;&quot;中间件最终响应观察结果
-result_type=${resultType}
-elapsed_ms=${elapsedMs}
-observe_response_timeout_ms=${observeTimeoutMs}
-response_code=${responseCode}
-response_message=${responseMessage}
-response_body=&lt;EMPTY：观察等待时间内未收到中间件响应正文&gt;
-测试接口=${vars.get(&apos;timeout_test_path&apos;)}
-说明=若为OBSERVE_RESPONSE_TIMEOUT，请增大timeout_observe_response_ms，或检查中间件是否缺少下游超时/异常返回处理。
-&quot;&quot;&quot;
-    prev.setResponseData(diagnostic, &apos;UTF-8&apos;)
-    prev.setContentType(&apos;text/plain; charset=UTF-8&apos;)
-}
-
-log.info(&apos;中间件最终响应: type={}, elapsed={}ms, observeTimeout={}ms, code={}, message={}, bodyBytes={}&apos;,
-    resultType, elapsedMs, observeTimeoutMs, responseCode, responseMessage, responseBody.getBytes(&apos;UTF-8&apos;).length)</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
