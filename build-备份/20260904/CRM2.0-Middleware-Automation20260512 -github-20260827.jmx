@@ -85,83 +85,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts1_report" enabled="true">
-        <stringProp name="dataSource">mt51ts1_report</stringProp>
-        <stringProp name="poolMax">10</stringProp>
-        <stringProp name="timeout">10000</stringProp>
-        <stringProp name="trimInterval">60000</stringProp>
-        <boolProp name="autocommit">true</boolProp>
-        <stringProp name="transactionIsolation">DEFAULT</stringProp>
-        <boolProp name="preinit">false</boolProp>
-        <stringProp name="initQuery"></stringProp>
-        <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="connectionAge">5000</stringProp>
-        <stringProp name="checkQuery"></stringProp>
-        <stringProp name="dbUrl">jdbc:mysql://54.179.237.180:3306/mt51ts1_report?allowPublicKeyRetrieval=true&amp;useSSL=false </stringProp>
-        <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
-        <stringProp name="username">dun</stringProp>
-        <stringProp name="password">AAbb1122!</stringProp>
-        <stringProp name="connectionProperties"></stringProp>
-      </JDBCDataSource>
-      <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts2_report" enabled="true">
-        <stringProp name="dataSource">mt51ts2_report</stringProp>
-        <stringProp name="poolMax">10</stringProp>
-        <stringProp name="timeout">10000</stringProp>
-        <stringProp name="trimInterval">60000</stringProp>
-        <boolProp name="autocommit">true</boolProp>
-        <stringProp name="transactionIsolation">DEFAULT</stringProp>
-        <boolProp name="preinit">false</boolProp>
-        <stringProp name="initQuery"></stringProp>
-        <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="connectionAge">5000</stringProp>
-        <stringProp name="checkQuery"></stringProp>
-        <stringProp name="dbUrl">jdbc:mysql://54.179.237.180:3306/mt51ts2_report?allowPublicKeyRetrieval=true&amp;useSSL=false </stringProp>
-        <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
-        <stringProp name="username">dun</stringProp>
-        <stringProp name="password">AAbb1122!</stringProp>
-        <stringProp name="connectionProperties"></stringProp>
-      </JDBCDataSource>
-      <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_2" enabled="true">
-        <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
-        <stringProp name="poolMax">10</stringProp>
-        <stringProp name="timeout">10000</stringProp>
-        <stringProp name="trimInterval">60000</stringProp>
-        <boolProp name="autocommit">true</boolProp>
-        <stringProp name="transactionIsolation">DEFAULT</stringProp>
-        <boolProp name="preinit">false</boolProp>
-        <stringProp name="initQuery"></stringProp>
-        <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="connectionAge">5000</stringProp>
-        <stringProp name="checkQuery"></stringProp>
-        <stringProp name="dbUrl">jdbc:mysql://20.108.67.161:3306/mt4demo_report?allowPublicKeyRetrieval=true&amp;useSSL=false </stringProp>
-        <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
-        <stringProp name="username">mohi2</stringProp>
-        <stringProp name="password">YangonMohi999</stringProp>
-        <stringProp name="connectionProperties"></stringProp>
-      </JDBCDataSource>
-      <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_3" enabled="true">
-        <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
-        <stringProp name="poolMax">10</stringProp>
-        <stringProp name="timeout">10000</stringProp>
-        <stringProp name="trimInterval">60000</stringProp>
-        <boolProp name="autocommit">true</boolProp>
-        <stringProp name="transactionIsolation">DEFAULT</stringProp>
-        <boolProp name="preinit">false</boolProp>
-        <stringProp name="initQuery"></stringProp>
-        <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="connectionAge">5000</stringProp>
-        <stringProp name="checkQuery"></stringProp>
-        <stringProp name="dbUrl">jdbc:mysql://20.108.67.161:3306/mt4demo_report?allowPublicKeyRetrieval=true&amp;useSSL=false </stringProp>
-        <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
-        <stringProp name="username">mohi2</stringProp>
-        <stringProp name="password">YangonMohi999</stringProp>
-        <stringProp name="connectionProperties"></stringProp>
-      </JDBCDataSource>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip" elementType="Argument">
             <stringProp name="Argument.name">ip</stringProp>
@@ -3065,7 +2989,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -4444,960 +4368,6 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github---这是需优化✅✅" enabled="false">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
-          <stringProp name="LoopController.loops">1</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="真实生产环境-持仓订单" enabled="true">
-          <stringProp name="TestPlan.comments">真实生产环境-持仓订单${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
-          <boolProp name="TransactionController.includeTimers">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-持仓订单${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-            <stringProp name="LoopController.loops">2</stringProp>
-          </LoopController>
-          <hashTree>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">// 专属计数器：loop_count_Loop1
-int count = vars.get(&quot;loop_count_Loop1&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop1&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop1&quot;, String.valueOf(count + 1));</stringProp>
-            </BeanShellPreProcessor>
-            <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-持仓订单  ${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-              <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-              <stringProp name="HTTPSampler.port">${port}</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.path">/crm20/get_position_ex?login=${login_val}&amp;instanceid=${instanceid_val}</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="103149417">login</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.custom_message"></stringProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-待处理/历史订单" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">// 专属计数器：loop_count_Loop2
-int count = vars.get(&quot;loop_count_Loop2&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop2&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-}
-
-vars.put(&quot;loop_count_Loop2&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-待处理/历史订单" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_order_ex?login=${login_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-汇总的已平仓仓位(进出交易)" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">// 每个循环自己独立的计数器，不会互相干扰
-int count = vars.get(&quot;loop_count_Loop3&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop3&quot;));
-
-if (count == 0) {
-    // 第一次循环
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    // 第二次循环
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-// 计数器+1
-vars.put(&quot;loop_count_Loop3&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-汇总的已平仓仓位(进出交易)" enabled="true">
-            <stringProp name="TestPlan.comments">/crm20/get_history_position_ex?instanceid=${instanceid_val}&amp;login=${login_val}&amp;close_time_utc_ms__gte=1776030673000&amp;_sort_by=close_time_utc_ms&amp;_sort_order=desc
-
-
-
-
-
-
-</stringProp>
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_history_position_ex?instanceid=${instanceid_val}&amp;login=${login_val}&amp;close_time_utc_ms__gte=1776030673000&amp;_sort_by=close_time_utc_ms&amp;_sort_order=desc</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-符号规格和实时报价" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">// 专属计数器：loop_count_Loop4
-int count = vars.get(&quot;loop_count_Loop4&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop4&quot;));
-
-if (count == 0) {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-    vars.put(&quot;symbol_val&quot;, vars.get(&quot;symbol1&quot;));
-} else {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-    vars.put(&quot;symbol_val&quot;, vars.get(&quot;symbol2&quot;));
-}
-
-vars.put(&quot;loop_count_Loop4&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-符号规格和实时报价" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="3373707">name</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-跨所有实例的账户级财务指标(权益:利润、利润率)11111111111" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/get_account_metrics_ex?login__in=${production account51},${production account41}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="103149417">login</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-多维度聚合摘要(按实例、货币、组、风险、绩效)" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/get_account_metrics_summary_ex?_dimensions=overall,by_instance</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-758568266">server_type</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/get_account_metrics_stat_ex?</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-&quot;login__in&quot;: &quot;${production account51},${production account41}&quot;,&#xd;
-&quot;_stat&quot;: {&#xd;
-&quot;equity&quot;: [&quot;sum&quot;, &quot;avg&quot;],&#xd;
-&quot;profit&quot;: [&quot;sum&quot;, &quot;avg&quot;],&#xd;
-&quot;balance&quot;: [&quot;sum&quot;]&#xd;
-},&#xd;
-&quot;_group_by&quot;: &quot;currency&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-339185956">balance</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取挂单订单" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop5&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop5&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop5&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取挂单信息" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_order_info?instanceid=${instanceid_val}&amp;login=${login_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取持仓订单" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop6&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop6&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop6&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取持仓订单" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_position_info?instanceid=${instanceid_val}&amp;login=${login_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-                <stringProp name="73596745">Login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">48</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取历史订单" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop7&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop7&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop7&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取历史" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">crm20/get_history_position?instanceid=${instanceid_val}&amp;login=${login_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-                <stringProp name="73596745">Login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">48</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取用户信息" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop8&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop8&quot;));
-
-if (count == 0) {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account51&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;login_val&quot;, vars.get(&quot;production account41&quot;));
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop8&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取用户信息" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">crm20/get_user_info?instanceid=${instanceid_val}&amp;login=${login_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="103149417">login</stringProp>
-                <stringProp name="73596745">Login</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">48</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取群组信息" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop9&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop9&quot;));
-
-if (count == 0) {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop9&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取群组信息" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_groups_info?instanceid=${instanceid_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="69076575">Group</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-获取货币信息" enabled="false">
-          <stringProp name="LoopController.loops">2</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">int count = vars.get(&quot;loop_count_Loop10&quot;) == null ? 0 : Integer.parseInt(vars.get(&quot;loop_count_Loop10&quot;));
-
-if (count == 0) {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt5instanceid&quot;));
-} else {
-    vars.put(&quot;instanceid_val&quot;, vars.get(&quot;mt4instanceid&quot;));
-}
-
-vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取货币信息" enabled="true">
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_symbols_info?instanceid=${instanceid_val}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="69076575">Group</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取服务器信息" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/get_mt_server_info</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="902025328">instanceid</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-获取归档账户" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/get_archive_user</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT5_1&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="73596745">Login</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-充值/提现" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/modify_balance</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;login&quot;: &quot;${production account51}&quot;,&#xd;
-    &quot;amount&quot;: 100,&#xd;
-    &quot;instanceid&quot;: &quot;${mt5instanceid}&quot;,&#xd;
-    &quot;deal_type&quot;: 2&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-339185956">balance</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-修改杠杆--修改" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/modify_user_info</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT4_1&quot;,&#xd;
-	&quot;login&quot;: &quot;${production account41}&quot;,&#xd;
-	&quot;leverage&quot;: 1000,&#xd;
-	&quot;rights&quot;: 355,&#xd;
-	&quot;group&quot;: &quot;F_STD_P10S&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="103149417">login</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-重置密码" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/change_password</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
-	&quot;login&quot;: &quot;${production account51}&quot;,&#xd;
-	&quot;password&quot;: &quot;123456Aa.&quot;,&#xd;
-	&quot;pwd_type&quot;: 0&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-修改账户权限" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/change_user_rights</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
-	&quot;login&quot;: &quot;${production account51}&quot;,&#xd;
-	&quot;rights&quot;: 355&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-设置组权限" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/set_group_permission</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
-	&quot;group_name&quot;: &quot;real\\F_ECN_P00S&quot;,&#xd;
-	&quot;enable&quot;: 1&#xd;
-}&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境-设置品种交易模式" enabled="false">
-          <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-          <stringProp name="HTTPSampler.port">${port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.path">/crm20/set_symbol_trade_mode</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
-	&quot;symbol&quot;: &quot;GBPCAD&quot;,&#xd;
-	&quot;mode&quot;: 1&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-持仓订单查询多个账户挂单订单- 备注意：有真实账号" enabled="false">
-          <stringProp name="LoopController.loops">1</stringProp>
-        </LoopController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单" enabled="true">
-            <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/list_pending_orders</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-    &quot;accounts&quot;: [&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT5_2&quot;,&#xd;
-            &quot;login&quot;: 109950000&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;${mt5instanceid}&quot;,&#xd;
-            &quot;login&quot;: ${production account51}&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;${mt4instanceid}&quot;,&#xd;
-            &quot;login&quot;: ${production account41}&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;page&quot;: 1,&#xd;
-    &quot;page_size&quot;: 50,&#xd;
-    &quot;filters&quot;: {&#xd;
-        &quot;order_types&quot;: [&#xd;
-            2,&#xd;
-            3,&#xd;
-            4,&#xd;
-            5&#xd;
-        ],&#xd;
-        &quot;volume_lots&quot;: {&#xd;
-            &quot;condition&quot;: &quot;gte&quot;,&#xd;
-            &quot;value&quot;: 0.01&#xd;
-        }&#xd;
-    },&#xd;
-    &quot;sort_by&quot;: &quot;time_setup_utc_ms&quot;,&#xd;
-    &quot;sort_order&quot;: &quot;desc&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="619047839">total_profit</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="真实生产环境-查询多个账户的当前持仓订单 备注意：有真实账号" enabled="false">
-          <stringProp name="LoopController.loops">1</stringProp>
-        </LoopController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单" enabled="true">
-            <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
-            <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/list_open_positions</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-  &quot;accounts&quot;: [&#xd;
-     {&#xd;
-      &quot;instanceid&quot;: &quot;MT5_2&quot;,&#xd;
-      &quot;login&quot;: 109950000&#xd;
-    },&#xd;
-    {&#xd;
-      &quot;instanceid&quot;: &quot;MT5_3&quot;,&#xd;
-      &quot;login&quot;: 201151665&#xd;
-    },&#xd;
-    {&#xd;
-      &quot;instanceid&quot;: &quot;${mt5instanceid}&quot;,&#xd;
-      &quot;login&quot;: ${production account51}&#xd;
-    },&#xd;
-	{&#xd;
-      &quot;instanceid&quot;: &quot;${mt4instanceid}&quot;,&#xd;
-      &quot;login&quot;: ${production account41}&#xd;
-    }&#xd;
-  ],&#xd;
-  &quot;page&quot;: 1,&#xd;
-  &quot;page_size&quot;: 50,&#xd;
-  &quot;filters&quot;: {&#xd;
-    &quot;order_types&quot;: [0, 1],&#xd;
-    &quot;volume_lots&quot;: {&#xd;
-      &quot;condition&quot;: &quot;gte&quot;,&#xd;
-      &quot;value&quot;: 0.0001&#xd;
-    }&#xd;
-  },&#xd;
-  &quot;sort_by&quot;: &quot;open_time_utc_ms&quot;,&#xd;
-  &quot;sort_order&quot;: &quot;desc&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="619047839">total_profit</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
@@ -13310,7 +12280,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="21交易大赛-批量查询指定账户的当前未平仓持仓✅" enabled="false">
-        <stringProp name="TestPlan.comments">仅本线程组：按“交易大赛-批量查询指定账户的当前未平仓持仓.csv”执行。shujuku=1 聚合全部数据库模式账号做 DB/API 校验；shujuku=0 按当前 CSV 行做 CSV/API 校验；按 mt-hub-openapi 7.html（MT-Hub API 1.0.1-beta1.60.3）校验 /v1/positions/query 响应信封及 data[] 全部18个必返字段。competition_positions_db_missing_field_skip_fields 在DB模式下可手动跳过指定字段的DB/API值比较，不受SQL是否已生成该列影响；接口必返、类型和语义校验仍执行。open_notional_value_usd 复算与线程组23的NOTIONAL_CALC_PRINT_V4口径一致，按品种类型、合约大小、剩余手数、开仓价及USD换算率计算并与API对比。</stringProp>
+        <stringProp name="TestPlan.comments">仅本线程组：按“交易大赛-批量查询指定账户的当前未平仓持仓.csv”执行。shujuku=1 聚合全部数据库模式账号做 DB/API 校验；shujuku=0 按当前 CSV 行做 CSV/API 校验；按 mt-hub-openapi 7.html（MT-Hub API 1.0.1-beta1.60.3）校验 /v1/positions/query 响应信封及 data[] 全部18个必返字段。DB模式结合 mt4_report.sql/mt5_report.sql：由原始持仓列推导 position_lifecycle_id，并在报表库无成交时点USD报价投影时生成 open_notional_value_usd=NULL、notional_status=unresolved、notional_method=event_time_usd_mid_price、notional_calculation_version=1，五个字段均参与DB/API逐字段比较，不再跳过；同时通过辅助接口复算 calc_profit，并按 volume_lots*contract_size*open_price*USD换算率复算 calc_open_notional_value_usd，与 API_open_notional_value_usd 对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -13361,15 +12331,15 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果
             <collectionProp name="Arguments.arguments">
               <elementProp name="competition_positions_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">competition_positions_db_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">notional_calculation_version</stringProp>
+                <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">配置后无条件跳过对应字段，不进入API类型/语义失败和DB/API值比较，只列入跳过字段；逗号分隔，*表示全部。</stringProp>
+                <stringProp name="Argument.desc">配置后无条件跳过对应 DB/API 字段；逗号分隔，* 表示全部。</stringProp>
               </elementProp>
               <elementProp name="competition_positions_db_missing_field_skip_fields" elementType="Argument">
                 <stringProp name="Argument.name">competition_positions_db_missing_field_skip_fields</stringProp>
                 <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">DB模式下手工配置后跳过对应字段的DB/API值比较，无论SQL结果是缺少该列，还是已通过别名/常量生成该列；接口必返、类型和语义校验仍执行。逗号分隔，*表示全部。</stringProp>
+                <stringProp name="Argument.desc">默认不跳过任何字段。当前MT4/MT5明细SQL已生成V1全部18个字段；若数据库结果缺列将直接失败。仅在明确接受缺列风险时手工配置字段名。</stringProp>
               </elementProp>
               <elementProp name="competition_positions_db_api_field_tolerance_percent" elementType="Argument">
                 <stringProp name="Argument.name">competition_positions_db_api_field_tolerance_percent</stringProp>
@@ -13530,12 +12500,10 @@ def intValue = { Object raw, int defaultValue, int minValue, int maxValue, Strin
     n
 }
 def inferPlatform = { Map row -&gt;
-    String instance = textOf(row.instance_id).toUpperCase()
-    // instance_id决定实际报表库。CSV的platform可能误填，不能把MT4_*账户送去查mt5_positions，反之亦然。
-    if (instance ==~ /(^|.*[^A-Z0-9])MT4([^A-Z0-9].*|$)/ || instance.startsWith(&apos;MT4_&apos;)) return &apos;mt4&apos;
-    if (instance ==~ /(^|.*[^A-Z0-9])MT5([^A-Z0-9].*|$)/ || instance.startsWith(&apos;MT5_&apos;)) return &apos;mt5&apos;
     String p = textOf(row.platform).toLowerCase()
-    p in [&apos;mt4&apos;, &apos;mt5&apos;] ? p : &apos;&apos;
+    if (p in [&apos;mt4&apos;, &apos;mt5&apos;]) return p
+    String instance = textOf(row.instance_id).toUpperCase()
+    instance.contains(&apos;MT4&apos;) ? &apos;mt4&apos; : (instance.contains(&apos;MT5&apos;) ? &apos;mt5&apos; : &apos;&apos;)
 }
 
 List&lt;Map&gt; accounts = []
@@ -13548,14 +12516,9 @@ Set&lt;String&gt; seenAccounts = new LinkedHashSet&lt;String&gt;()
     BigInteger loginBig = new BigInteger(loginText)
     if (loginBig &lt; BigInteger.ONE || loginBig &gt; new BigInteger(&apos;9223372036854775807&apos;)) throw new AssertionError(&apos;CSV第&apos; + row.__line_no + &apos;行 login 必须在正int64范围[1,9223372036854775807]: &apos; + loginText)
     String key = instanceId + &apos;|&apos; + loginText
-    String configuredPlatform = textOf(row.platform).toLowerCase()
-    String resolvedPlatform = inferPlatform(row)
-    if (seenAccounts.add(key)) accounts &lt;&lt; [instance_id: instanceId, login: loginBig.longValue(), platform: resolvedPlatform, configured_platform: configuredPlatform, platform_corrected: (configuredPlatform in [&apos;mt4&apos;, &apos;mt5&apos;] &amp;&amp; configuredPlatform != resolvedPlatform), __line_no: row.__line_no]
+    if (seenAccounts.add(key)) accounts &lt;&lt; [instance_id: instanceId, login: loginBig.longValue(), platform: inferPlatform(row), __line_no: row.__line_no]
 }
 if (!accounts) throw new AssertionError(&apos;没有可用 accounts&apos;)
-
-List&lt;String&gt; platformMappings = accounts.collect { Map a -&gt; a.instance_id + &apos;:&apos; + a.login + &apos;-&gt;&apos; + a.platform }
-List&lt;String&gt; platformCorrections = accounts.findAll { it.platform_corrected }.collect { Map a -&gt; &apos;CSV第&apos; + a.__line_no + &apos;行 &apos; + a.instance_id + &apos;:&apos; + a.login + &apos; platform=&apos; + a.configured_platform + &apos; 已按instance_id纠正为&apos; + a.platform }
 
 int limit = intValue(currentRow.limit, 500, 1, 10000, &apos;limit&apos;)
 String cursorText = textOf(currentRow.cursor)
@@ -13590,7 +12553,7 @@ if (runCase.mode == &apos;DB&apos;) {
 SELECT
   ${instanceExpr} AS instance_id,
   &apos;mt5&apos; AS platform,
-  CONCAT(CAST(mt.Login AS CHAR), &apos;:&apos;, TRIM(mt.Symbol), &apos;:&apos;, CAST(mt.Position AS CHAR)) AS position_id,
+  CONCAT(CAST(mt.Login AS CHAR), &apos;:&apos;, mt.Symbol, &apos;:&apos;, CAST(mt.Position AS CHAR)) AS position_id,
   CONCAT(${instanceExpr}, &apos;:mt5:&apos;, CAST(mt.Login AS CHAR), &apos;:&apos;, mt.Symbol, &apos;:&apos;, CAST(mt.Position AS CHAR), &apos;:0&apos;) AS position_lifecycle_id,
   mt.Position AS order_id,
   mt.Login AS login,
@@ -13601,16 +12564,23 @@ SELECT
   mt.PriceOpen AS open_price,
   ${openMsExpr} AS open_time_ms,
   mt.Profit AS profit,
-  UPPER(TRIM(NULLIF(grp.Currency, &apos;&apos;))) AS account_currency,
+  UPPER(TRIM(NULLIF(acct.Currency, &apos;&apos;))) AS account_currency,
   CAST(NULL AS DECIMAL(65,5)) AS open_notional_value_usd,
   &apos;unresolved&apos; AS notional_status,
   &apos;event_time_usd_mid_price&apos; AS notional_method,
-  1 AS notional_calculation_version,
-  1 AS _db_current_filter_match,
-  &apos;mt5_positions_current_table&apos; AS _db_filter_reason
+  1 AS notional_calculation_version
 FROM mt5_report.mt5_positions mt
-LEFT JOIN mt5_report.mt5_users usr ON usr.Login = mt.Login
-LEFT JOIN mt5_report.mt5_groups grp ON grp.`Group` = usr.`Group`
+LEFT JOIN (
+  SELECT d1.Login, MAX(COALESCE(d1.Currency, &apos;&apos;)) AS Currency
+  FROM mt5_report.mt5_daily d1
+  INNER JOIN (
+    SELECT Login, MAX(`Datetime`) AS max_datetime
+    FROM mt5_report.mt5_daily
+    WHERE Login IN (${loginSql})
+    GROUP BY Login
+  ) latest_d ON latest_d.Login = d1.Login AND latest_d.max_datetime = d1.`Datetime`
+  GROUP BY d1.Login
+) acct ON acct.Login = mt.Login
 WHERE mt.Login IN (${loginSql})
   AND mt.Position &gt; 0
   AND mt.Action IN (0, 1)
@@ -13627,7 +12597,7 @@ WHERE mt.Login IN (${loginSql})
 SELECT
   ${instanceExpr} AS instance_id,
   &apos;mt4&apos; AS platform,
-  CONCAT(CAST(mt.LOGIN AS CHAR), &apos;:&apos;, TRIM(mt.SYMBOL), &apos;:&apos;, CAST(mt.TICKET AS CHAR)) AS position_id,
+  CONCAT(CAST(mt.LOGIN AS CHAR), &apos;:&apos;, mt.SYMBOL, &apos;:&apos;, CAST(mt.TICKET AS CHAR)) AS position_id,
   CONCAT(${instanceExpr}, &apos;:mt4:&apos;, CAST(mt.LOGIN AS CHAR), &apos;:&apos;, mt.SYMBOL, &apos;:&apos;, CAST(mt.TICKET AS CHAR), &apos;:0&apos;) AS position_lifecycle_id,
   mt.TICKET AS order_id,
   mt.LOGIN AS login,
@@ -13642,9 +12612,7 @@ SELECT
   CAST(NULL AS DECIMAL(65,5)) AS open_notional_value_usd,
   &apos;unresolved&apos; AS notional_status,
   &apos;event_time_usd_mid_price&apos; AS notional_method,
-  1 AS notional_calculation_version,
-  1 AS _db_current_filter_match,
-  &apos;mt4_trades_current_position&apos; AS _db_filter_reason
+  1 AS notional_calculation_version
 FROM mt4_report.MT4_TRADES mt
 LEFT JOIN mt4_report.MT4_USERS u ON u.LOGIN = mt.LOGIN
 WHERE mt.LOGIN IN (${loginSql})
@@ -13653,15 +12621,14 @@ WHERE mt.LOGIN IN (${loginSql})
   AND mt.SYMBOL IS NOT NULL
   AND TRIM(mt.SYMBOL) &lt;&gt; &apos;&apos;
   AND mt.VOLUME &gt; 0
-  AND (
-    mt.CLOSE_TIME IS NULL
-    OR CAST(mt.CLOSE_TIME AS CHAR) IN (&apos;0000-00-00 00:00:00&apos;, &apos;1970-01-01 00:00:00&apos;)
-    OR mt.CLOSE_TIME &lt;= &apos;1970-01-02 00:00:00&apos;
-  )
+  /* 兼容 MT4 未平仓 CLOSE_TIME 的两种存储形式：NULL 或 1970 年纪元占位值；
+     避免漏查 CLOSE_TIME=NULL 的当前持仓（例如 MT4_1/1131）。 */
+  AND (mt.CLOSE_TIME IS NULL
+       OR mt.CLOSE_TIME &lt;= &apos;1970-01-02 00:00:00&apos;)
 &quot;&quot;&quot;.trim()
     }
 }
-String detailSql = sqlParts ? (&apos;SELECT * FROM (&apos; + sqlParts.join(&apos; UNION ALL &apos;) + &apos;) competition_positions ORDER BY _db_current_filter_match DESC, instance_id, login, symbol, position_id, order_id LIMIT &apos; + dbMaxRows) : &quot;SELECT &apos;&apos; AS instance_id, &apos;&apos; AS platform, CAST(NULL AS CHAR) AS position_id, CAST(NULL AS CHAR) AS position_lifecycle_id, NULL AS order_id, NULL AS login, &apos;&apos; AS side, &apos;&apos; AS symbol, CAST(NULL AS CHAR) AS symbol_id, NULL AS volume_lots, NULL AS open_price, NULL AS open_time_ms, NULL AS profit, CAST(NULL AS CHAR) AS account_currency, CAST(NULL AS DECIMAL(65,5)) AS open_notional_value_usd, &apos;unresolved&apos; AS notional_status, &apos;event_time_usd_mid_price&apos; AS notional_method, 1 AS notional_calculation_version, 0 AS _db_current_filter_match, &apos;empty_query&apos; AS _db_filter_reason WHERE 1=0&quot;
+String detailSql = sqlParts ? (&apos;SELECT * FROM (&apos; + sqlParts.join(&apos; UNION ALL &apos;) + &apos;) competition_positions ORDER BY instance_id, login, symbol, position_id, order_id LIMIT &apos; + dbMaxRows) : &quot;SELECT &apos;&apos; AS instance_id, &apos;&apos; AS platform, CAST(NULL AS CHAR) AS position_id, CAST(NULL AS CHAR) AS position_lifecycle_id, NULL AS order_id, NULL AS login, &apos;&apos; AS side, &apos;&apos; AS symbol, CAST(NULL AS CHAR) AS symbol_id, NULL AS volume_lots, NULL AS open_price, NULL AS open_time_ms, NULL AS profit, CAST(NULL AS CHAR) AS account_currency, CAST(NULL AS DECIMAL(65,5)) AS open_notional_value_usd, &apos;unresolved&apos; AS notional_status, &apos;event_time_usd_mid_price&apos; AS notional_method, 1 AS notional_calculation_version WHERE 1=0&quot;
 // JDBC 请求使用单行 SQL；先移除潜在的 SQL 行注释，避免“--”吞掉右括号、ORDER BY 和 LIMIT。
 String jdbcSql = detailSql.replaceAll(/(?m)^\s*--.*$/, &apos; &apos;).replace(&apos;\r&apos;, &apos; &apos;).replace(&apos;\n&apos;, &apos; &apos;).replaceAll(/\s+/, &apos; &apos;).trim()
 if (!jdbcSql || !(jdbcSql ==~ /(?is)^SELECT\s+.+/)) throw new AssertionError(&apos;数据库明细 SQL 生成失败或不是 SELECT 语句&apos;)
@@ -13677,13 +12644,11 @@ vars.put(&apos;competition_positions_detail_sql&apos;, jdbcSql)
 vars.put(&apos;competition_positions_limit&apos;, String.valueOf(limit))
 vars.put(&apos;competition_positions_cursor&apos;, cursor == null ? &apos;&apos; : String.valueOf(cursor))
 vars.put(&apos;competition_positions_db_result_max_rows&apos;, String.valueOf(dbMaxRows))
-vars.put(&apos;competition_positions_db_platform_mappings&apos;, platformMappings.join(&apos;, &apos;))
-vars.put(&apos;competition_positions_db_platform_corrections&apos;, platformCorrections ? platformCorrections.join(&apos;；&apos;) : &apos;&lt;none&gt;&apos;)
 vars.putObject(&apos;competition_positions_current_csv_row&apos;, currentRow)
 vars.putObject(&apos;competition_positions_request_accounts&apos;, requestAccounts)
 vars.putObject(&apos;db_competition_positions_rows&apos;, [])
 
-String initReport = &apos;交易大赛V1持仓初始化成功 | mode=&apos; + runCase.mode + &apos; | case=&apos; + (caseIndex + 1) + &apos;/&apos; + runCases.size() + &apos; | CSV行=&apos; + currentRow.__line_no + &apos; | accounts=&apos; + requestAccounts.collect { it.instance_id + &apos;:&apos; + it.login }.join(&apos;,&apos;) + &apos; | DB查询平台映射=&apos; + platformMappings.join(&apos;,&apos;) + &apos; | platform纠正=&apos; + (platformCorrections ? platformCorrections.join(&apos;；&apos;) : &apos;&lt;none&gt;&apos;) + &apos; | limit=&apos; + limit + &apos; | cursor=&apos; + (cursor == null ? &apos;&lt;empty&gt;&apos; : cursor)
+String initReport = &apos;交易大赛V1持仓初始化成功 | mode=&apos; + runCase.mode + &apos; | case=&apos; + (caseIndex + 1) + &apos;/&apos; + runCases.size() + &apos; | CSV行=&apos; + currentRow.__line_no + &apos; | accounts=&apos; + requestAccounts.collect { it.instance_id + &apos;:&apos; + it.login }.join(&apos;,&apos;) + &apos; | limit=&apos; + limit + &apos; | cursor=&apos; + (cursor == null ? &apos;&lt;empty&gt;&apos; : cursor)
 log.info(initReport + &apos;\nrequestBody=&apos; + requestBody + (runCase.mode == &apos;DB&apos; ? &apos;\nDB SQL=&apos; + detailSql : &apos;&apos;))
 SampleResult.setSuccessful(true)
 SampleResult.setResponseCode(&apos;200&apos;)
@@ -13705,7 +12670,7 @@ SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + r
               <stringProp name="query">${competition_positions_detail_sql}</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
-              <stringProp name="queryTimeout">60</stringProp>
+              <stringProp name="queryTimeout">20</stringProp>
               <stringProp name="queryType">Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
               <stringProp name="resultSetMaxRows">50000</stringProp>
@@ -13947,11 +12912,6 @@ List&lt;Map&gt; definitions = [
     [n:&apos;profit&apos;,t:&apos;number&apos;,z:false], [n:&apos;account_currency&apos;,t:&apos;string&apos;,z:true], [n:&apos;open_notional_value_usd&apos;,t:&apos;number&apos;,z:true],
     [n:&apos;notional_status&apos;,t:&apos;string&apos;,z:false], [n:&apos;notional_method&apos;,t:&apos;string&apos;,z:false], [n:&apos;notional_calculation_version&apos;,t:&apos;integer&apos;,z:false]
 ]
-// 跳过配置必须在接口字段类型/语义校验之前生效，防止字段虽在DB/API阶段跳过，却已被前置语义检查列入失败。
-String preValidationMode = vars.get(&apos;competition_positions_mode&apos;) ?: &apos;DB&apos;
-boolean preValidationDbMode = preValidationMode == &apos;DB&apos;
-Set&lt;String&gt; preValidationDisabled = setOf(vars.get(preValidationDbMode ? &apos;competition_positions_db_api_disabled_compare_fields&apos; : &apos;competition_positions_csv_api_disabled_compare_fields&apos;) ?: &apos;&apos;)
-def preValidationFieldDisabled = { String field -&gt; preValidationDisabled.contains(&apos;*&apos;) || preValidationDisabled.contains(norm(field)) }
 List&lt;Map&gt; apiRows = []
 List requestAccounts = vars.getObject(&apos;competition_positions_request_accounts&apos;) instanceof List ? (List)vars.getObject(&apos;competition_positions_request_accounts&apos;) : []
 Set&lt;String&gt; requestedKeys = requestAccounts.collect { Map a -&gt; String.valueOf(a.instance_id) + &apos;|&apos; + idText(a.login) } as Set
@@ -13963,7 +12923,6 @@ rawItems.eachWithIndex { Object item, int i -&gt;
     apiRows &lt;&lt; row
     definitions.each { Map d -&gt;
         String f = d.n
-        if (preValidationFieldDisabled(f)) return
         if (!row.containsKey(f)) { failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=&apos; + f + &apos; | 原因=缺少文档必返字段&apos;; return }
         Object v = row[f]
         if (v == null) {
@@ -13981,13 +12940,13 @@ rawItems.eachWithIndex { Object item, int i -&gt;
     String platform = String.valueOf(row.platform ?: &apos;&apos;)
     String side = String.valueOf(row.side ?: &apos;&apos;)
     String ns = String.valueOf(row.notional_status ?: &apos;&apos;)
-    if (!preValidationFieldDisabled(&apos;platform&apos;) &amp;&amp; !(platform in [&apos;mt4&apos;,&apos;mt5&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=platform | API=&apos; + row.platform + &apos; | 原因=只允许mt4/mt5&apos;
-    if (!preValidationFieldDisabled(&apos;side&apos;) &amp;&amp; !(side in [&apos;buy&apos;,&apos;sell&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=side | API=&apos; + row.side + &apos; | 原因=只允许buy/sell&apos;
-    if (!preValidationFieldDisabled(&apos;notional_status&apos;) &amp;&amp; !(ns in [&apos;resolved&apos;,&apos;unresolved&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_status | API=&apos; + row.notional_status + &apos; | 原因=只允许resolved/unresolved&apos;
-    if (!preValidationFieldDisabled(&apos;notional_method&apos;) &amp;&amp; String.valueOf(row.notional_method ?: &apos;&apos;) != &apos;event_time_usd_mid_price&apos;) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_method | API=&apos; + row.notional_method + &apos; | 原因=当前固定为event_time_usd_mid_price&apos;
-    if (!preValidationFieldDisabled(&apos;notional_calculation_version&apos;) &amp;&amp; number(row.notional_calculation_version) != BigDecimal.ONE) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_calculation_version | API=&apos; + row.notional_calculation_version + &apos; | 原因=当前版本必须为1&apos;
-    if (!preValidationFieldDisabled(&apos;open_notional_value_usd&apos;) &amp;&amp; ns == &apos;resolved&apos; &amp;&amp; blank(row.open_notional_value_usd)) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=open_notional_value_usd | 原因=resolved时必须非空&apos;
-    if (!preValidationFieldDisabled(&apos;open_notional_value_usd&apos;) &amp;&amp; ns == &apos;unresolved&apos; &amp;&amp; !blank(row.open_notional_value_usd)) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=open_notional_value_usd | 原因=unresolved时不得用当前汇率回填&apos;
+    if (!(platform in [&apos;mt4&apos;,&apos;mt5&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=platform | API=&apos; + row.platform + &apos; | 原因=只允许mt4/mt5&apos;
+    if (!(side in [&apos;buy&apos;,&apos;sell&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=side | API=&apos; + row.side + &apos; | 原因=只允许buy/sell&apos;
+    if (!(ns in [&apos;resolved&apos;,&apos;unresolved&apos;])) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_status | API=&apos; + row.notional_status + &apos; | 原因=只允许resolved/unresolved&apos;
+    if (String.valueOf(row.notional_method ?: &apos;&apos;) != &apos;event_time_usd_mid_price&apos;) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_method | API=&apos; + row.notional_method + &apos; | 原因=当前固定为event_time_usd_mid_price&apos;
+    if (number(row.notional_calculation_version) != BigDecimal.ONE) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=notional_calculation_version | API=&apos; + row.notional_calculation_version + &apos; | 原因=当前版本必须为1&apos;
+    if (ns == &apos;resolved&apos; &amp;&amp; blank(row.open_notional_value_usd)) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=open_notional_value_usd | 原因=resolved时必须非空&apos;
+    if (ns == &apos;unresolved&apos; &amp;&amp; !blank(row.open_notional_value_usd)) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=open_notional_value_usd | 原因=unresolved时不得用当前汇率回填&apos;
     if (number(row.volume_lots) != null &amp;&amp; number(row.volume_lots) &lt;= BigDecimal.ZERO) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=volume_lots | 原因=必须大于0&apos;
     if (number(row.open_price) != null &amp;&amp; number(row.open_price) &lt;= BigDecimal.ZERO) failLines &lt;&lt; &apos; - [失败] | row=&apos; + rowNo + &apos; | field=open_price | 原因=必须大于0&apos;
     BigDecimal loginNumber = number(row.login), orderNumber = number(row.order_id), openTimeNumber = number(row.open_time_ms), openNotional = number(row.open_notional_value_usd)
@@ -14011,14 +12970,11 @@ Set&lt;String&gt; missingSkip = setOf(missingSkipRaw)
 Map&lt;String,BigDecimal&gt; tolerances = toleranceOf(vars.get(dbMode ? &apos;competition_positions_db_api_field_tolerance_percent&apos; : &apos;competition_positions_csv_api_field_tolerance_percent&apos;) ?: &apos;&apos;)
 BigDecimal defaultTolerance = number(vars.get(dbMode ? &apos;competition_positions_db_api_default_tolerance_percent&apos; : &apos;competition_positions_csv_api_default_tolerance_percent&apos;)) ?: BigDecimal.ZERO
 def keyParts = { Map row -&gt; [instance:String.valueOf(value(row,&apos;instance_id&apos;) ?: &apos;&apos;).trim(), login:idText(value(row,&apos;login&apos;)), symbol:String.valueOf(value(row,&apos;symbol&apos;) ?: &apos;&apos;).trim(), position:String.valueOf(value(row,&apos;position_id&apos;) ?: &apos;&apos;).trim(), order:idText(value(row,&apos;order_id&apos;))] }
-// 与线程组23一致：优先用position_id定位，未匹配时回退order_id/唯一账户品种候选；定位后position_id仍作为独立字段做完整文本精确比较。
-Map&lt;Integer,Map&gt; matchedDbRowByApiIndex = [:]
+// POSITION_ID_ORDER_FIRST_V2：优先用order_id定位；未匹配时回退position_id/唯一账户品种候选；定位后position_id作为独立业务字段做完整文本精确比较。
 
 if (dbMode) {
     Object dbObject = vars.getObject(&apos;db_competition_positions_rows&apos;)
-    List&lt;Map&gt; allDbRows = dbObject instanceof List ? ((List)dbObject).findAll { it instanceof Map }.collect { new LinkedHashMap((Map)it) } : []
-    List&lt;Map&gt; dbRows = allDbRows.findAll { Map row -&gt; number(lookup(row,&apos;_db_current_filter_match&apos;).value) == BigDecimal.ONE }
-    List&lt;Map&gt; filteredDbRows = allDbRows.findAll { Map row -&gt; number(lookup(row,&apos;_db_current_filter_match&apos;).value) != BigDecimal.ONE }
+    List&lt;Map&gt; dbRows = dbObject instanceof List ? ((List)dbObject).findAll { it instanceof Map }.collect { new LinkedHashMap((Map)it) } : []
     // JDBC Store as Object 的列名可能由驱动返回为大写；lookup/value 已统一按归一化列名读取。
     // 这里额外保留数据库实际值快照，匹配失败时也能区分“字段为空”和“没有对应账户记录”。
     def dbPositionText = { Map row -&gt; String s = String.valueOf(value(row, &apos;position_id&apos;) ?: &apos;&apos;).trim(); s ?: &apos;&lt;empty&gt;&apos; }
@@ -14037,24 +12993,12 @@ if (dbMode) {
         }
         List&lt;Integer&gt; exactOrder = broad.findAll { int j -&gt; ak.order &amp;&amp; keyParts(dbRows[j]).order == ak.order }
         List&lt;Integer&gt; exactPosition = broad.findAll { int j -&gt; ak.position &amp;&amp; keyParts(dbRows[j]).position == ak.position }
-        String expectedDbPosition = ak.position ?: ((ak.login &amp;&amp; ak.symbol &amp;&amp; ak.order) ? ak.login + &apos;:&apos; + ak.symbol + &apos;:&apos; + ak.order : &apos;&apos;)
-        List&lt;Integer&gt; globalExactPosition = []
-        List&lt;Integer&gt; globalExactOrder = []
-        dbRows.eachWithIndex { Map dbRow, int idx -&gt;
-            Map dk = keyParts(dbRow)
-            if (expectedDbPosition &amp;&amp; dk.position == expectedDbPosition) globalExactPosition &lt;&lt; idx
-            if (ak.order &amp;&amp; dk.order == ak.order) globalExactOrder &lt;&lt; idx
-        }
-        List&lt;Map&gt; filteredExactRows = filteredDbRows.findAll { Map filteredRow -&gt;
-            Map fk = keyParts(filteredRow)
-            (expectedDbPosition &amp;&amp; fk.position == expectedDbPosition) || (ak.order &amp;&amp; fk.order == ak.order &amp;&amp; fk.login == ak.login)
-        }
         List&lt;Integer&gt; candidates = []
         String matchBasis
-        if (ak.position &amp;&amp; exactPosition) { candidates = exactPosition; matchBasis = &apos;position_id&apos; }
-        else if (ak.order &amp;&amp; exactOrder) { candidates = exactOrder; matchBasis = ak.position ? &apos;order_id_fallback(position_id未匹配)&apos; : &apos;order_id_fallback(position_id为空)&apos; }
+        if (ak.order &amp;&amp; exactOrder) { candidates = exactOrder; matchBasis = &apos;order_id&apos; }
+        else if (ak.position &amp;&amp; exactPosition) { candidates = exactPosition; matchBasis = ak.order ? &apos;position_id_fallback(order_id未匹配)&apos; : &apos;position_id_fallback(order_id为空)&apos; }
         else if (broad.size() == 1) { candidates = broad; matchBasis = &apos;unique_instance_login_symbol_fallback&apos; }
-        else { candidates = []; matchBasis = &apos;position_id-&gt;order_id-&gt;unique_instance_login_symbol均未取得唯一记录&apos; }
+        else { candidates = []; matchBasis = &apos;order_id-&gt;position_id-&gt;unique_instance_login_symbol均未取得唯一记录&apos; }
         if (candidates.size() != 1) {
             List&lt;Integer&gt; sameInstanceSymbol = []
             dbRows.eachWithIndex { Map dbRow, int idx -&gt;
@@ -14066,63 +13010,42 @@ if (dbMode) {
             List&lt;String&gt; dbOrderCandidates = diagnosticIndexes.collect { int idx -&gt; dbOrderText(dbRows[idx]) }.unique()
             List&lt;String&gt; dbLoginCandidates = diagnosticIndexes.collect { int idx -&gt; keyParts(dbRows[idx]).login ?: &apos;&lt;empty&gt;&apos; }.unique()
             List&lt;String&gt; diagnosticRows = diagnosticIndexes.take(20).collect { int idx -&gt; dbCandidateText(dbRows[idx]) }
-            List&lt;String&gt; globalPositionRows = globalExactPosition.take(20).collect { int idx -&gt; dbCandidateText(dbRows[idx]) }
-            List&lt;String&gt; globalOrderRows = globalExactOrder.take(20).collect { int idx -&gt; dbCandidateText(dbRows[idx]) }
-            List&lt;String&gt; filteredExactDiagnostics = filteredExactRows.take(20).collect { Map filteredRow -&gt;
-                dbCandidateText(filteredRow) + &apos;, filter_match=&apos; + numText(lookup(filteredRow,&apos;_db_current_filter_match&apos;).value) + &apos;, filter_reason=&apos; + String.valueOf(lookup(filteredRow,&apos;_db_filter_reason&apos;).value ?: &apos;&lt;empty&gt;&apos;)
-            }
             List&lt;String&gt; dbSample = dbRows.take(10).collect { Map row -&gt; dbCandidateText(row) }
             String candidateScope = broad ? &apos;same_instance_login_symbol&apos; : (sameInstanceSymbol ? &apos;same_instance_symbol_different_login&apos; : &apos;none&apos;)
-            String dbDiagnosis = filteredExactRows ? &apos;DB原表存在该订单，但未通过当前未平仓过滤条件；具体原因见DB原表过滤诊断&apos; : &apos;本次JDBC原始候选结果中不存在该账户订单；API已返回该持仓，因此不是API无返回，也不是position_id展示格式问题。需继续确认报表库是否缺少/延迟同步该订单，或db_result_max_rows是否截断诊断记录&apos;
-            String reason = !allDbRows ? &apos;JDBC结果集为空，数据库未返回任何请求账户记录&apos; : (!broad ? &apos;当前持仓DB结果中没有与接口相同的instance_id+login+symbol记录&apos; : &apos;数据库当前持仓候选记录无法唯一定位&apos;)
-            failLines &lt;&lt; &apos; - [失败] | row=&apos; + (i+1) + &apos; | field=position_id | API数据状态=接口data已返回此持仓 | API.position_id=&apos; + (ak.position ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.position_id查询目标=&apos; + (expectedDbPosition ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB当前持仓查询结果=&apos; + (globalPositionRows ?: [&apos;&lt;not-found-in-current-position-result&gt;&apos;]) + &apos; | DB原表过滤诊断=&apos; + (filteredExactDiagnostics ?: [&apos;&lt;no-raw-order-in-jdbc-result&gt;&apos;]) + &apos; | DB.position_id同账户品种候选=&apos; + (dbPositionCandidates ?: [&apos;&lt;no-corresponding-row&gt;&apos;]) + &apos; | API.order_id=&apos; + (ak.order ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.order_id当前持仓查询结果=&apos; + (globalOrderRows ?: [&apos;&lt;not-found-in-current-position-result&gt;&apos;]) + &apos; | API.login=&apos; + (ak.login ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.login候选=&apos; + (dbLoginCandidates ?: [&apos;&lt;no-corresponding-row&gt;&apos;]) + &apos; | SQL查询平台映射=[&apos; + (vars.get(&apos;competition_positions_db_platform_mappings&apos;) ?: &apos;&lt;empty&gt;&apos;) + &apos;] | CSV平台纠正=[&apos; + (vars.get(&apos;competition_positions_db_platform_corrections&apos;) ?: &apos;&lt;none&gt;&apos;) + &apos;] | candidate_scope=&apos; + candidateScope + &apos; | DB当前持仓相关记录=&apos; + (diagnosticRows ?: [&apos;&lt;none&gt;&apos;]) + &apos; | DB当前持仓样本=&apos; + (dbSample ?: [&apos;&lt;empty-result-set&gt;&apos;]) + &apos; | match_basis=&apos; + matchBasis + &apos; | 失败归属=数据库侧未取得可比较的当前持仓记录 | 原因=&apos; + reason + &apos; | 诊断结论=&apos; + dbDiagnosis + &apos; | JDBC原始候选总数=&apos; + allDbRows.size() + &apos; | DB当前持仓记录数=&apos; + dbRows.size() + &apos; | DB被过滤诊断记录数=&apos; + filteredDbRows.size()
+            String reason = !dbRows ? &apos;JDBC结果集为空，无法取得DB.position_id&apos; : (!broad ? &apos;数据库没有与接口相同的instance_id+login+symbol记录；不是position_id字段为空&apos; : &apos;数据库候选记录无法唯一定位&apos;)
+            failLines &lt;&lt; &apos; - [失败] | row=&apos; + (i+1) + &apos; | field=position_id | API.position_id=&apos; + (ak.position ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.position_id候选=&apos; + (dbPositionCandidates ?: [&apos;&lt;no-corresponding-row&gt;&apos;]) + &apos; | API.order_id=&apos; + (ak.order ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.order_id候选=&apos; + (dbOrderCandidates ?: [&apos;&lt;no-corresponding-row&gt;&apos;]) + &apos; | API.login=&apos; + (ak.login ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB.login候选=&apos; + (dbLoginCandidates ?: [&apos;&lt;no-corresponding-row&gt;&apos;]) + &apos; | candidate_scope=&apos; + candidateScope + &apos; | DB相关记录=&apos; + (diagnosticRows ?: [&apos;&lt;none&gt;&apos;]) + &apos; | DB结果集样本=&apos; + (dbSample ?: [&apos;&lt;empty-result-set&gt;&apos;]) + &apos; | match_basis=&apos; + matchBasis + &apos; | 原因=&apos; + reason + &apos;；只有定位到同一数据库订单后才执行API.position_id与DB.position_id完整文本精确比较，禁止跨账户误比 | DB总记录数=&apos; + dbRows.size()
             return
         }
         int j = candidates[0]
         usedDb &lt;&lt; j
         Map dbRow = dbRows[j]
-        matchedDbRowByApiIndex[i] = dbRow
         fields.each { String f -&gt;
             def a = lookup(apiRow, f), d = lookup(dbRow, f)
             if (disabled.contains(&apos;*&apos;) || disabled.contains(norm(f))) { skipLines &lt;&lt; &apos; - [跳过] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + (a.exists ? numText(a.value) : &apos;&lt;field-missing&gt;&apos;) + &apos; | DB=&apos; + (d.exists ? numText(d.value) : &apos;&lt;field-missing&gt;&apos;) + &apos; | 备注=DB/API无条件跳过配置&apos;; return }
             if (!a.exists) { failLines &lt;&lt; &apos; - [失败] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&lt;field-missing&gt; | 原因=接口缺少必返字段&apos;; return }
-            if (missingSkip.contains(&apos;*&apos;) || missingSkip.contains(norm(f))) { skipLines &lt;&lt; &apos; - [跳过] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + numText(a.value) + &apos; | DB=&apos; + (d.exists ? numText(d.value) : &apos;&lt;field-missing&gt;&apos;) + &apos; | 备注=已按competition_positions_db_missing_field_skip_fields配置跳过DB/API值比较；接口字段必返、类型和语义校验仍执行&apos;; return }
             if (!d.exists) {
-                failLines &lt;&lt; &apos; - [失败] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + numText(a.value) + &apos; | DB=&lt;field-missing&gt; | 原因=数据库无此字段；字段不存在不等于字段值为空，可设置跳过&apos;
+                if (missingSkip.contains(&apos;*&apos;) || missingSkip.contains(norm(f))) skipLines &lt;&lt; &apos; - [跳过] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + numText(a.value) + &apos; | DB=&lt;field-missing&gt; | 备注=数据库无此字段，已按配置跳过&apos;
+                else failLines &lt;&lt; &apos; - [失败] | row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + numText(a.value) + &apos; | DB=&lt;field-missing&gt; | 原因=数据库无此字段；字段不存在不等于字段值为空，可设置跳过&apos;
                 return
             }
-            if (f == &apos;open_notional_value_usd&apos; &amp;&amp; blank(d.value) &amp;&amp; !blank(a.value)) {
-                skipLines &lt;&lt; &apos; - [跳过] | row=&apos; + (i+1) + &apos; | field=open_notional_value_usd | API=&apos; + numText(a.value) + &apos; | DB=&lt;empty&gt; | APIField=&apos; + a.key + &apos; | DBField=&apos; + d.key + &apos; | 备注=DB列存在但原始报表无名义价值投影，普通DB/API值比较跳过；该字段由NOTIONAL_CALC_PRINT_V4的calc_open_notional_value_usd与API_open_notional_value_usd独立计算和比对，不计入普通字段失败&apos;
-                return
-            }
-            if (f == &apos;notional_status&apos;) {
-                skipLines &lt;&lt; &apos; - [跳过] | data.row=&apos; + (i+1) + &apos; | field=notional_status | API=&apos; + numText(a.value) + &apos; | DB=&apos; + numText(d.value) + &apos; | 备注=普通DB/API固定投影比较跳过；该字段按线程组23口径由名义价值计算证据推导calc_cnotional_status后与API.notional_status独立比较&apos;
-                return
-            }
-            def cr = compare(f, a.value, d.value, &apos;DB&apos;, tolerances, defaultTolerance)
-            String line
+            def cr
             if (f == &apos;position_id&apos;) {
-                String lifecycleText=String.valueOf(value(apiRow,&apos;position_lifecycle_id&apos;) ?: value(dbRow,&apos;position_lifecycle_id&apos;) ?: &apos;&lt;empty&gt;&apos;).trim()
-                line=&apos;field=position_id | API=&apos;+cr.api+&apos; | DB=&apos;+cr.expected+&apos; | instanceid=&apos;+(ak.instance?:&apos;&lt;empty&gt;&apos;)+&apos; | login=&apos;+(ak.login?:&apos;&lt;empty&gt;&apos;)+&apos; | order_id=&apos;+(ak.order?:&apos;&lt;empty&gt;&apos;)+&apos; | position_id=&apos;+(ak.position?:&apos;&lt;empty&gt;&apos;)+&apos; | position_lifecycle_id=&apos;+lifecycleText+&apos; | symbol=&apos;+(ak.symbol?:&apos;&lt;empty&gt;&apos;)+&apos; | data.row=&apos;+(i+1)+&apos; | APIField=&apos;+a.key+&apos; | DBField=&apos;+d.key+&apos; | 差值=&apos;+cr.diff+&apos; | 相差百分比=&apos;+cr.percent+&apos; | 计算过程=&apos;+cr.formula+&apos; | 备注=&apos;+cr.note
-            } else line = &apos;data.row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + cr.api + &apos; | DB=&apos; + cr.expected + &apos; | APIField=&apos; + a.key + &apos; | DBField=&apos; + d.key + &apos; | 差值=&apos; + cr.diff + &apos; | 相差百分比=&apos; + cr.percent + &apos; | 计算过程=&apos; + cr.formula + &apos; | 备注=&apos; + cr.note
+                String apiPosition = a.value == null ? &apos;&apos; : String.valueOf(a.value).trim()
+                String dbPosition = d.value == null ? &apos;&apos; : String.valueOf(d.value).trim()
+                boolean samePosition = apiPosition &amp;&amp; dbPosition &amp;&amp; apiPosition == dbPosition
+                String positionNote = samePosition ? &apos;API.position_id=&apos; + apiPosition + &apos; 与 DB.position_id=&apos; + dbPosition + &apos; 完整文本精确相等，列入成功字段&apos; : (!apiPosition || !dbPosition ? &apos;API.position_id=&apos; + (apiPosition ?: &apos;&lt;empty&gt;&apos;) + &apos;，DB.position_id=&apos; + (dbPosition ?: &apos;&lt;empty&gt;&apos;) + &apos;，存在空值，列入失败字段&apos; : &apos;API.position_id=&apos; + apiPosition + &apos; 与 DB.position_id=&apos; + dbPosition + &apos; 不相等，列入失败字段&apos;)
+                cr = [same:samePosition, api:(apiPosition ?: &apos;&lt;empty&gt;&apos;), expected:(dbPosition ?: &apos;&lt;empty&gt;&apos;), diff:&apos;N/A&apos;, percent:&apos;N/A(text)&apos;, formula:&apos;trim(String(API.position_id)) == trim(String(DB.position_id))；完整文本精确比较&apos;, note:positionNote]
+            } else cr = compare(f, a.value, d.value, &apos;DB&apos;, tolerances, defaultTolerance)
+            String line = &apos;row=&apos; + (i+1) + &apos; | field=&apos; + f + &apos; | API=&apos; + cr.api + &apos; | DB=&apos; + cr.expected + &apos; | APIField=&apos; + a.key + &apos; | DBField=&apos; + d.key + &apos; | 差值=&apos; + cr.diff + &apos; | 相差百分比=&apos; + cr.percent + &apos; | 计算过程=&apos; + cr.formula + &apos; | 备注=&apos; + cr.note
             if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
         }
     }
     boolean paged = !blank(root.next_cursor) || !blank(vars.get(&apos;competition_positions_cursor&apos;))
-    Map&lt;String,List&lt;Map&gt;&gt; errorsByAccount = [:].withDefault { [] }
-    errors.each { Map err -&gt;
-        String errorAccountKey = String.valueOf(err.instance_id ?: &apos;&apos;).trim() + &apos;|&apos; + idText(err.login)
-        errorsByAccount[errorAccountKey] &lt;&lt; err
-    }
     dbRows.eachWithIndex { Map row, int j -&gt;
         if (!usedDb.contains(j)) {
-            Map dbKeyInfo = keyParts(row)
-            String dbAccountKey = dbKeyInfo.instance + &apos;|&apos; + dbKeyInfo.login
-            List&lt;Map&gt; accountErrors = errorsByAccount[dbAccountKey] ?: []
-            String line = &apos; | DB键=&apos; + dbKeyInfo + &apos; | DB.position_id=&apos; + (dbKeyInfo.position ?: &apos;&lt;empty&gt;&apos;) + &apos; | DB记录=&apos; + row
+            String line = &apos; | DB键=&apos; + keyParts(row) + &apos; | DB记录=&apos; + row
             if (paged) skipLines &lt;&lt; &apos; - [跳过] | DB未匹配记录&apos; + line + &apos; | 备注=当前请求或响应存在cursor，仅校验本页&apos;
-            else if (accountErrors) skipLines &lt;&lt; &apos; - [跳过] | 数据库记录未在API data中匹配&apos; + line + &apos; | API账户级errors=&apos; + JsonOutput.toJson(accountErrors) + &apos; | 备注=该实例账户在接口errors中返回错误，API data可能不完整；本条DB记录不再重复列为“接口缺少持仓”，但errors本身仍按competition_positions_allow_partial_errors决定整体通过或失败&apos;
-            else failLines &lt;&lt; &apos; - [失败] | 数据库有当前未平仓持仓但API data未返回对应记录&apos; + line + &apos; | 备注=当前不是分页，且该实例账户不在接口errors中；可判定本次API data相对DB缺少该条持仓&apos;
+            else failLines &lt;&lt; &apos; - [失败] | 数据库多出未匹配当前持仓&apos; + line
         }
     }
     if (!apiRows &amp;&amp; !dbRows) okLines &lt;&lt; &apos; - [通过] | DB/API记录数均为0 | 备注=账户当前无未平仓持仓&apos;
@@ -14281,26 +13204,13 @@ else {
     }
 }
 
-// 与线程组23的NOTIONAL_CALC_PRINT_V4保持同一口径：按品种类型、基础/计价币、合约大小、剩余手数、开仓价和USD换算率复算。
-def mid5 = { BigDecimal bid, BigDecimal ask -&gt; bid != null &amp;&amp; ask != null &amp;&amp; bid &gt; BigDecimal.ZERO &amp;&amp; ask &gt; BigDecimal.ZERO ? bid.add(ask).divide(new BigDecimal(&apos;2&apos;),10,RoundingMode.HALF_UP).setScale(5,RoundingMode.HALF_UP) : null }
-def notionalUsdConversion = { String instance, String sourceSymbol, String quoteCurrency, boolean formula3Precision -&gt;
-    String ccy = String.valueOf(quoteCurrency ?: &apos;&apos;).trim().toUpperCase()
-    String upper = sourceSymbol.toUpperCase(), suffix = sourceSymbol.size() &gt; 6 ? sourceSymbol.substring(6) : &apos;&apos;
-    List&lt;String&gt; directCandidates = [ccy+&apos;USD&apos;+suffix, ccy+&apos;USD&apos;].unique(), reverseCandidates = [&apos;USD&apos;+ccy+suffix, &apos;USD&apos;+ccy].unique()
-    List&lt;String&gt; attempts = []
-    for (String candidate : directCandidates) {
-        Map q = symbolInfo(instance,candidate); BigDecimal b=number(value(q,&apos;bid&apos;)), a=number(value(q,&apos;ask&apos;))
-        BigDecimal m = formula3Precision &amp;&amp; b!=null &amp;&amp; a!=null &amp;&amp; b&gt;BigDecimal.ZERO &amp;&amp; a&gt;BigDecimal.ZERO ? b.add(a).divide(new BigDecimal(&apos;2&apos;),12,RoundingMode.HALF_UP) : mid5(b,a)
-        attempts &lt;&lt; candidate+&apos;=&apos;+(value(q,&apos;__error&apos;) ?: (m==null?&apos;invalid_bid_ask&apos;:&apos;found&apos;))
-        if (m != null) return [rate:m,querySymbol:candidate,direction:&apos;direct &apos;+ccy+&apos;USD: (Bid+Ask)/2&apos;,bid:b,ask:a,attempts:attempts.join(&apos; -&gt; &apos;)]
-    }
-    for (String candidate : reverseCandidates) {
-        Map q = symbolInfo(instance,candidate); BigDecimal b=number(value(q,&apos;bid&apos;)), a=number(value(q,&apos;ask&apos;))
-        BigDecimal m = formula3Precision &amp;&amp; b!=null &amp;&amp; a!=null &amp;&amp; b&gt;BigDecimal.ZERO &amp;&amp; a&gt;BigDecimal.ZERO ? b.add(a).divide(new BigDecimal(&apos;2&apos;),12,RoundingMode.HALF_UP) : mid5(b,a)
-        attempts &lt;&lt; candidate+&apos;=&apos;+(value(q,&apos;__error&apos;) ?: (m==null?&apos;invalid_bid_ask&apos;:&apos;found&apos;))
-        if (m != null) { BigDecimal inv=formula3Precision?new BigDecimal(&apos;2&apos;).divide(b.add(a),8,RoundingMode.HALF_UP):BigDecimal.ONE.divide(m,10,RoundingMode.HALF_UP).setScale(5,RoundingMode.HALF_UP); return [rate:inv,querySymbol:candidate,direction:(formula3Precision?&apos;inverse USD&apos;+ccy+&apos;: 2/(Bid+Ask)&apos;:&apos;inverse 1/MidPrice&apos;),bid:b,ask:a,attempts:attempts.join(&apos; -&gt; &apos;)] }
-    }
-    [rate:null,querySymbol:&apos;&lt;not-found&gt;&apos;,direction:&apos;&lt;unresolved&gt;&apos;,bid:null,ask:null,attempts:attempts.join(&apos; -&gt; &apos;)]
+// 按V1文档复算open_notional_value_usd：剩余手数*合约大小*开仓价*开仓事件时点USD中间价，换算率和结果均五位小数HALF_UP。
+// 当前辅助接口只有查询时点行情，文档明确禁止用当前行情回填历史证据；因此仅对无需浮动历史汇率的USD/固定USC执行数值对比。
+def documentedNotionalUsdRate = { String currency0 -&gt;
+    String currency = String.valueOf(currency0 ?: &apos;&apos;).trim().toUpperCase()
+    if (currency == &apos;USD&apos;) return [rate:new BigDecimal(&apos;1.00000&apos;), path:&apos;USD-&gt;USD=1.00000&apos;, evidence:&apos;document_exact_no_fx_conversion&apos;, timeBasis:&apos;not_required&apos;]
+    if (currency == &apos;USC&apos;) return [rate:new BigDecimal(&apos;0.01000&apos;), path:&apos;USC-&gt;USD=0.01000&apos;, evidence:&apos;fixed_cent_conversion&apos;, timeBasis:&apos;fixed_rate&apos;]
+    [rate:null, path:currency+&apos;-&gt;USD requires event-time Bid/Ask mid price&apos;, evidence:&apos;event_time_quote_unavailable&apos;, timeBasis:&apos;open_time_ms&apos;]
 }
 
 if (!auxEnabled) skipLines &lt;&lt; &apos; - [跳过] | 辅助公式open_notional_value_usd计算 | 原因=competition_positions_aux_profit_calc_enabled=0&apos;
@@ -14309,52 +13219,35 @@ else {
     List&lt;Map&gt; notionalRows = apiRows.take(auxMax)
     if (apiRows.size() &gt; notionalRows.size()) skipLines &lt;&lt; &apos; - [跳过] | 辅助公式open_notional_value_usd计算 | 原因=只复算前&apos; + notionalRows.size() + &apos;条，接口返回&apos; + apiRows.size() + &apos;条&apos;
     notionalRows.eachWithIndex { Map row, int i -&gt;
-        Map calcSourceRow = dbMode ? (matchedDbRowByApiIndex[i] ?: [:]) : row
-        if (dbMode &amp;&amp; !matchedDbRowByApiIndex.containsKey(i)) {
-            skipLines &lt;&lt; &apos; - [跳过] | data.row=&apos;+(i+1)+&apos; | field=notional_status/open_notional_value_usd | API.notional_status=&apos;+String.valueOf(row.notional_status ?: &apos;&lt;empty&gt;&apos;)+&apos; | API_open_notional_value_usd=&apos;+numText(row.open_notional_value_usd)+&apos; | 备注=本API记录未定位到唯一JDBC行，已在position_id匹配中报告失败；无法按线程组23口径从匹配DB行计算notional_status和open_notional_value_usd，避免使用API自身数据反推&apos;
+        String instance = String.valueOf(row.instance_id ?: &apos;&apos;).trim()
+        String symbol = String.valueOf(row.symbol ?: &apos;&apos;).trim()
+        Object login = row.login
+        BigDecimal open = number(row.open_price), lots = number(row.volume_lots), apiNotional = number(row.open_notional_value_usd)
+        String notionalStatus = String.valueOf(row.notional_status ?: &apos;&apos;).trim()
+        String prefix = &apos;row=&apos;+(i+1)+&apos; | instance_id=&apos;+(instance?:&apos;&lt;empty&gt;&apos;)+&apos; | login=&apos;+(blank(login)?&apos;&lt;empty&gt;&apos;:idText(login))+&apos; | symbol=&apos;+(symbol?:&apos;&lt;empty&gt;&apos;)+&apos; | position_id=&apos;+String.valueOf(row.position_id ?: &apos;&lt;empty&gt;&apos;)
+        if (apiNotional == null) {
+            skipLines &lt;&lt; &apos; - [跳过] | 辅助公式open_notional_value_usd计算 | API_open_notional_value_usd=&lt;empty&gt; | calc_open_notional_value_usd=&lt;empty&gt; | &apos;+prefix+&apos; | notional_status=&apos;+(notionalStatus?:&apos;&lt;empty&gt;&apos;)+&apos; | 原因=API名义价值为null，无数值可作辅助公式对比；null不得当作0&apos;
             return
         }
-        String instance = String.valueOf(value(calcSourceRow,&apos;instance_id&apos;) ?: &apos;&apos;).trim()
-        String symbol = String.valueOf(value(calcSourceRow,&apos;symbol&apos;) ?: &apos;&apos;).trim()
-        Object login = value(calcSourceRow,&apos;login&apos;)
-        BigDecimal open = number(value(calcSourceRow,&apos;open_price&apos;)), lots = number(value(calcSourceRow,&apos;volume_lots&apos;)), apiNotional = number(row.open_notional_value_usd)
-        String notionalStatus = String.valueOf(row.notional_status ?: &apos;&apos;).trim()
-        String prefix = &apos;data.row=&apos;+(i+1)+&apos; | instance_id=&apos;+(instance?:&apos;&lt;empty&gt;&apos;)+&apos; | login=&apos;+(blank(login)?&apos;&lt;empty&gt;&apos;:idText(login))+&apos; | order_id=&apos;+idText(row.order_id)+&apos; | position_id=&apos;+String.valueOf(row.position_id ?: &apos;&lt;empty&gt;&apos;)+&apos; | position_lifecycle_id=&apos;+String.valueOf(row.position_lifecycle_id ?: &apos;&lt;empty&gt;&apos;)+&apos; | symbol=&apos;+(symbol?:&apos;&lt;empty&gt;&apos;)
         try {
-            Map info = instance &amp;&amp; symbol ? symbolInfo(instance, symbol) : [__error:&apos;instance_id或symbol为空，未调用get_symbol_ex&apos;]
+            if (!instance || blank(login) || !symbol || open == null || open &lt;= BigDecimal.ZERO || lots == null || lots &lt;= BigDecimal.ZERO) throw new IllegalStateException(&apos;主接口缺少名义价值复算必需字段，或open_price/volume_lots不是正数&apos;)
+            Map info = symbolInfo(instance, symbol)
             String currencyBase = String.valueOf(value(info,&apos;currency_base&apos;) ?: &apos;&apos;).trim().toUpperCase()
             String profitCurrency = String.valueOf(value(info,&apos;currency_profit&apos;) ?: &apos;&apos;).trim().toUpperCase()
-            BigDecimal contract = number(value(info,&apos;contract_size&apos;)), primaryBid=number(value(info,&apos;bid&apos;)), primaryAsk=number(value(info,&apos;ask&apos;)), pm=number(value(info,&apos;profit_mode&apos;))
-            boolean inferredFx = currencyBase ==~ /^[A-Z]{3}$/ &amp;&amp; profitCurrency ==~ /^[A-Z]{3}$/ &amp;&amp; symbol.toUpperCase().startsWith(currencyBase+profitCurrency)
-            boolean fx = (pm != null &amp;&amp; pm.intValue()==0) || inferredFx
-            if (contract == null &amp;&amp; inferredFx) contract=new BigDecimal(&apos;100000&apos;)
-            Map conversion=[:]; BigDecimal usdRate; String formulaCase,formulaTemplate; boolean requiresOpenPrice
-            if (fx &amp;&amp; currencyBase==&apos;USD&apos;) { formulaCase=&apos;1-外汇基准货币USD&apos;; formulaTemplate=&apos;ContractSize*Lots&apos;; usdRate=BigDecimal.ONE; requiresOpenPrice=false }
-            else if (fx &amp;&amp; profitCurrency==&apos;USD&apos;) { formulaCase=&apos;2-外汇计价货币USD&apos;; formulaTemplate=&apos;ContractSize*Lots*MidPrice&apos;; usdRate=mid5(primaryBid,primaryAsk); conversion=[querySymbol:symbol,direction:&apos;primary symbol (Bid+Ask)/2&apos;,bid:primaryBid,ask:primaryAsk,attempts:&apos;primary&apos;]; requiresOpenPrice=false }
-            else if (fx) { formulaCase=&apos;3-外汇两边均非USD&apos;; formulaTemplate=&apos;ContractSize*Lots*OpenPrice*QuoteUSD_ExchangeRate&apos;; conversion=notionalUsdConversion(instance,symbol,profitCurrency,true); usdRate=number(conversion.rate); requiresOpenPrice=true }
-            else if (profitCurrency==&apos;USD&apos;) { formulaCase=&apos;4-非外汇计价货币USD&apos;; formulaTemplate=&apos;ContractSize*Lots*OpenPrice&apos;; usdRate=BigDecimal.ONE; requiresOpenPrice=true }
-            else if (profitCurrency==&apos;USC&apos;) { formulaCase=&apos;5-非外汇计价货币USC(固定美分换算)&apos;; formulaTemplate=&apos;ContractSize*Lots*OpenPrice*0.01&apos;; usdRate=new BigDecimal(&apos;0.01000&apos;); conversion=[querySymbol:&apos;USC-&gt;USD&apos;,direction:&apos;fixed cent rule&apos;,bid:primaryBid,ask:primaryAsk,attempts:&apos;no quote required&apos;]; requiresOpenPrice=true }
-            else if (profitCurrency) { formulaCase=&apos;5-非外汇计价货币非USD&apos;; formulaTemplate=&apos;ContractSize*Lots*OpenPrice*QuoteUSD_MidPrice&apos;; conversion=notionalUsdConversion(instance,symbol,profitCurrency,false); usdRate=number(conversion.rate); requiresOpenPrice=true }
-            else { formulaCase=&apos;5-非外汇计价货币未知&apos;; formulaTemplate=&apos;ContractSize*Lots*OpenPrice*QuoteUSD_MidPrice&apos;; conversion=[rate:null,querySymbol:&apos;&lt;unknown&gt;&apos;,direction:&apos;&lt;unresolved&gt;&apos;,attempts:&apos;currency_profit为空，未查询转换品种&apos;]; usdRate=null; requiresOpenPrice=true }
-            boolean evidenceComplete = !blank(instance) &amp;&amp; !blank(login) &amp;&amp; !blank(symbol) &amp;&amp; contract!=null &amp;&amp; contract&gt;BigDecimal.ZERO &amp;&amp; lots!=null &amp;&amp; lots&gt;BigDecimal.ZERO &amp;&amp; usdRate!=null &amp;&amp; usdRate&gt;BigDecimal.ZERO &amp;&amp; (!requiresOpenPrice || (open!=null &amp;&amp; open&gt;BigDecimal.ZERO))
-            String calcStatus=evidenceComplete?&apos;resolved&apos;:&apos;unresolved&apos;
-            BigDecimal rawNotional=evidenceComplete?contract.multiply(lots).multiply(requiresOpenPrice?open:BigDecimal.ONE).multiply(usdRate):null
-            BigDecimal calcNotional=rawNotional==null?null:rawNotional.setScale(5,RoundingMode.HALF_UP)
-            BigDecimal diff=apiNotional!=null &amp;&amp; calcNotional!=null ? apiNotional.subtract(calcNotional).abs() : null
-            BigDecimal allowedPercent=auxTolerances.containsKey(norm(&apos;calc_open_notional_value_usd&apos;))?auxTolerances[norm(&apos;calc_open_notional_value_usd&apos;)]:((auxTolerances.containsKey(norm(&apos;open_notional_value_usd&apos;))?auxTolerances[norm(&apos;open_notional_value_usd&apos;)]:new BigDecimal(&apos;5&apos;)))
-            BigDecimal allowedAbsolute=new BigDecimal(&apos;0.00001&apos;), relativeAllowed=calcNotional==null?BigDecimal.ZERO:calcNotional.abs().multiply(allowedPercent).divide(new BigDecimal(&apos;100&apos;),12,RoundingMode.HALF_UP), finalAllowed=allowedAbsolute.max(relativeAllowed)
-            boolean statusSame=notionalStatus==calcStatus
-            String statusEvidence=&apos;calc_source=&apos;+(dbMode?&apos;matched_JDBC_row&apos;:&apos;CSV/API_row&apos;)+&apos;,instance_id=&apos;+(instance?:&apos;&lt;empty&gt;&apos;)+&apos;,login=&apos;+(blank(login)?&apos;&lt;empty&gt;&apos;:idText(login))+&apos;,symbol=&apos;+(symbol?:&apos;&lt;empty&gt;&apos;)+&apos;,volume_lots=&apos;+numText(lots)+&apos;,contract_size=&apos;+numText(contract)+&apos;,open_price=&apos;+numText(open)+&apos;,currency_base=&apos;+(currencyBase?:&apos;&lt;empty&gt;&apos;)+&apos;,currency_profit=&apos;+(profitCurrency?:&apos;&lt;empty&gt;&apos;)+&apos;,usd_rate=&apos;+numText(usdRate)+&apos;,requires_open_price=&apos;+requiresOpenPrice+&apos;,symbol_error=&apos;+String.valueOf(value(info,&apos;__error&apos;) ?: &apos;&lt;none&gt;&apos;)+&apos;,conversion_attempts=&apos;+(conversion.attempts?:&apos;&lt;not-required&gt;&apos;)
-            String statusLine=&apos;field=notional_status | API.notional_status=&apos;+(notionalStatus?:&apos;&lt;empty&gt;&apos;)+&apos; | calc_cnotional_status=&apos;+calcStatus+&apos; | &apos;+prefix+&apos; | 判断条件=实例、账户、品种、剩余手数、合约规格、计价币种、USD换算率及公式所需开仓价证据完整才resolved，否则unresolved | 证据=&apos;+statusEvidence
-            boolean statusSkip=disabled.contains(&apos;*&apos;)||disabled.contains(norm(&apos;notional_status&apos;))||auxDisabled.contains(&apos;*&apos;)||auxDisabled.contains(norm(&apos;notional_status&apos;))
-            if(statusSkip) skipLines &lt;&lt; &apos; - [跳过] | &apos;+statusLine+&apos; | 备注=notional_status已配置跳过&apos;
-            else if(statusSame) okLines &lt;&lt; &apos; - [通过] | &apos;+statusLine+&apos; | 备注=API.notional_status与计算状态相等，通过&apos;
-            else failLines &lt;&lt; &apos; - [失败] | &apos;+statusLine+&apos; | 备注=API.notional_status与计算状态不相等，失败&apos;
-            boolean same=calcStatus==&apos;unresolved&apos;?(apiNotional==null):(apiNotional!=null &amp;&amp; calcNotional!=null &amp;&amp; diff&lt;=finalAllowed)
-            String expression=numText(contract)+&apos;*&apos;+numText(lots)+(requiresOpenPrice?&apos;*&apos;+numText(open):&apos;&apos;)+(usdRate==BigDecimal.ONE?&apos;&apos;:&apos;*&apos;+numText(usdRate))+&apos;=&apos;+numText(rawNotional)+&apos;；ROUND_HALF_UP(raw,5)=&apos;+numText(calcNotional)
-            String actualPercent=diff!=null &amp;&amp; calcNotional!=null &amp;&amp; calcNotional!=BigDecimal.ZERO?diff.multiply(new BigDecimal(&apos;100&apos;)).divide(calcNotional.abs(),10,RoundingMode.HALF_UP).stripTrailingZeros().toPlainString()+&apos;%&apos;:(diff==BigDecimal.ZERO?&apos;0%&apos;:&apos;N/A&apos;)
-            String line=&apos;NOTIONAL_CALC_PRINT_V4 | field=open_notional_value_usd | calc_open_notional_value_usd=&apos;+numText(calcNotional)+&apos; | API_open_notional_value_usd=&apos;+numText(apiNotional)+&apos; | API.notional_status=&apos;+(notionalStatus?:&apos;&lt;empty&gt;&apos;)+&apos; | calc_cnotional_status=&apos;+calcStatus+&apos; | formula_case=&apos;+formulaCase+&apos; | formula=&apos;+formulaTemplate+&apos; | Symbol=&apos;+symbol+&apos; | Base_Currency=&apos;+(currencyBase?:&apos;&lt;empty&gt;&apos;)+&apos; | Quote_Currency=&apos;+profitCurrency+&apos; | Contract_Size=&apos;+numText(contract)+&apos; | Trading_Volume_Lots=&apos;+numText(lots)+&apos; | Open_Price=&apos;+numText(open)+&apos; | Conversion_Symbol=&apos;+(conversion.querySymbol?:&apos;&lt;not-required&gt;&apos;)+&apos; | Conversion_Direction=&apos;+(conversion.direction?:&apos;&lt;not-required&gt;&apos;)+&apos; | Conversion_Attempts=&apos;+(conversion.attempts?:&apos;&lt;not-required&gt;&apos;)+&apos; | Bid=&apos;+numText(conversion.bid)+&apos; | Ask=&apos;+numText(conversion.ask)+&apos; | Exchange_USD=&apos;+numText(usdRate)+&apos; | 计算过程=&apos;+expression+&apos; | 差值=&apos;+(diff==null?&apos;N/A&apos;:numText(diff))+&apos; | 配置百分比误差=&apos;+numText(allowedPercent)+&apos;% | 配置绝对误差=&apos;+numText(allowedAbsolute)+&apos; | 最终允许差值=&apos;+numText(finalAllowed)+&apos; | 实际相差百分比=&apos;+actualPercent+&apos; | &apos;+prefix
-            if (same) okLines &lt;&lt; &apos; - [通过] | &apos;+line else failLines &lt;&lt; &apos; - [失败] | &apos;+line
+            BigDecimal contract = number(value(info,&apos;contract_size&apos;))
+            if (!profitCurrency || contract == null || contract &lt;= BigDecimal.ZERO) throw new IllegalStateException(&apos;辅助品种规格缺失 | currency_base=&apos;+currencyBase+&apos; | currency_profit=&apos;+profitCurrency+&apos; | contract_size=&apos;+numText(contract)+&apos; | symbol_error=&apos;+String.valueOf(value(info,&apos;__error&apos;) ?: &apos;&apos;))
+            def usdRateInfo = documentedNotionalUsdRate(profitCurrency)
+            if (usdRateInfo.rate == null) {
+                skipLines &lt;&lt; &apos; - [跳过] | 辅助公式open_notional_value_usd计算 | API_open_notional_value_usd=&apos;+numText(apiNotional)+&apos; | calc_open_notional_value_usd=&lt;empty&gt; | &apos;+prefix+&apos; | open_time_ms=&apos;+numText(row.open_time_ms)+&apos; | currency_base=&apos;+(currencyBase?:&apos;&lt;empty&gt;&apos;)+&apos; | currency_profit=&apos;+profitCurrency+&apos; | contract_size=&apos;+numText(contract)+&apos; | volume_lots=&apos;+numText(lots)+&apos; | open_price=&apos;+numText(open)+&apos; | rate_path=&apos;+usdRateInfo.path+&apos; | evidence=&apos;+usdRateInfo.evidence+&apos; | 原因=接口文档要求开仓事件时点USD Bid/Ask中间价，当前辅助接口仅有查询时点报价，禁止用当前行情回填&apos;
+                return
+            }
+            BigDecimal rateUsd = ((BigDecimal)usdRateInfo.rate).setScale(5, RoundingMode.HALF_UP)
+            BigDecimal rawQuoteNotional = lots.multiply(contract).multiply(open)
+            BigDecimal calcNotional = rawQuoteNotional.multiply(rateUsd).setScale(5, RoundingMode.HALF_UP)
+            def cr = compare(&apos;open_notional_value_usd&apos;, apiNotional, calcNotional, &apos;calc_open_notional_value_usd&apos;, auxTolerances, new BigDecimal(&apos;5&apos;))
+            String formula = &apos;ROUND_HALF_UP(volume_lots*contract_size*open_price*rate_to_USD,5) = ROUND_HALF_UP(&apos;+numText(lots)+&apos;*&apos;+numText(contract)+&apos;*&apos;+numText(open)+&apos;*&apos;+numText(rateUsd)+&apos;,5) = &apos;+numText(calcNotional)
+            String line = &apos;辅助公式open_notional_value_usd计算 | API_open_notional_value_usd=&apos;+numText(apiNotional)+&apos; | calc_open_notional_value_usd=&apos;+numText(calcNotional)+&apos; | &apos;+prefix+&apos; | notional_status=&apos;+(notionalStatus?:&apos;&lt;empty&gt;&apos;)+&apos; | notional_method=&apos;+String.valueOf(row.notional_method ?: &apos;&lt;empty&gt;&apos;)+&apos; | notional_calculation_version=&apos;+numText(row.notional_calculation_version)+&apos; | open_time_ms=&apos;+numText(row.open_time_ms)+&apos; | raw_quote_notional=&apos;+numText(rawQuoteNotional)+&apos; | rate_to_USD=&apos;+numText(rateUsd)+&apos; | rate_path=&apos;+usdRateInfo.path+&apos; | rate_time_basis=&apos;+usdRateInfo.timeBasis+&apos; | evidence=&apos;+usdRateInfo.evidence+&apos; | currency_base=&apos;+(currencyBase?:&apos;&lt;empty&gt;&apos;)+&apos; | currency_profit=&apos;+profitCurrency+&apos; | contract_size=&apos;+numText(contract)+&apos; | volume_lots=&apos;+numText(lots)+&apos; | open_price=&apos;+numText(open)+&apos; | 差值=&apos;+cr.diff+&apos; | 相差百分比=&apos;+cr.percent+&apos; | 计算过程=&apos;+formula+&apos; | 备注=&apos;+cr.note+&apos;；当前剩余持仓量口径，未使用查询时点当前行情回填&apos;
+            if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos;+line else failLines &lt;&lt; &apos; - [失败] | &apos;+line
         } catch (Throwable e) {
             failLines &lt;&lt; &apos; - [失败] | 辅助公式open_notional_value_usd计算 | API_open_notional_value_usd=&apos;+numText(apiNotional)+&apos; | calc_open_notional_value_usd=&lt;empty&gt; | &apos;+prefix+&apos; | exception=&apos;+e.class.simpleName+&apos;: &apos;+e.message
         }
@@ -14367,12 +13260,8 @@ report &lt;&lt; &apos;Assertion message: 交易大赛-批量查询指定账户�
 report &lt;&lt; &apos;接口: POST /v1/positions/query | 文档: mt-hub-openapi 7.html | 版本: MT-Hub API 1.0.1-beta1.60.3&apos;
 report &lt;&lt; &apos;已校验data字段(18个): [&apos;+fields.join(&apos;,&apos;)+&apos;]；响应信封字段(4个): [data,errors,next_cursor,as_of_time_ms]&apos;
 report &lt;&lt; &apos;响应信封: data=&apos;+apiRows.size()+&apos; | errors=&apos;+errors.size()+&apos; | next_cursor=&apos;+(blank(root.next_cursor)?&apos;&lt;empty&gt;&apos;:root.next_cursor)+&apos; | as_of_time_ms=&apos;+(blank(root.as_of_time_ms)?&apos;&lt;empty&gt;&apos;:root.as_of_time_ms)
-if (dbMode) {
-    report &lt;&lt; &apos;DB查询平台映射（以instance_id为准）: [&apos;+(vars.get(&apos;competition_positions_db_platform_mappings&apos;) ?: &apos;&lt;empty&gt;&apos;)+&apos;]&apos;
-    report &lt;&lt; &apos;CSV platform配置纠正: &apos;+(vars.get(&apos;competition_positions_db_platform_corrections&apos;) ?: &apos;&lt;none&gt;&apos;)+&apos;；instance_id=MT4_*查询mt4_report.MT4_TRADES，instance_id=MT5_*查询mt5_report.mt5_positions。&apos;
-}
-report &lt;&lt; &apos;DB新增字段校验(5个): [position_lifecycle_id,open_notional_value_usd,notional_status,notional_method,notional_calculation_version]；未配置跳过的字段参与DB/API逐字段比较。&apos;
-report &lt;&lt; &apos;DB指定字段跳过配置 competition_positions_db_missing_field_skip_fields=[&apos;+missingSkipRaw+&apos;]；命中后无论DB列缺失或SQL已生成该列，均跳过DB/API值比较；接口必返、类型和语义校验仍执行。&apos;
+report &lt;&lt; &apos;DB新增字段校验(5个): [position_lifecycle_id,open_notional_value_usd,notional_status,notional_method,notional_calculation_version]；MT4/MT5 SQL均已提供这些列并参与逐字段比较。&apos;
+report &lt;&lt; &apos;数据库缺失字段跳过配置=[&apos;+missingSkipRaw+&apos;]；字段不存在与字段存在但值为空严格区分&apos;
 // 仅增强最终打印：根据row/data.row定位同一条API记录，补充实例、账户、订单、持仓和品种；不改变底层校验结果。
 def withAccountContext = { String line -&gt;
     if (!line) return line
@@ -14408,14 +13297,12 @@ def withAccountContext = { String line -&gt;
     String orderText = idText(apiRow.order_id)
     if (!orderText) orderText = &apos;&lt;empty&gt;&apos;
     String positionText = String.valueOf(apiRow.position_id ?: &apos;&lt;empty&gt;&apos;).trim()
-    String lifecycleText = String.valueOf(apiRow.position_lifecycle_id ?: &apos;&lt;empty&gt;&apos;).trim()
     String symbolText = String.valueOf(apiRow.symbol ?: &apos;&lt;empty&gt;&apos;).trim()
     List&lt;String&gt; contextParts = []
     if (!(outputLine.contains(&apos;instanceid=&apos;) || outputLine.contains(&apos;instance_id=&apos;))) contextParts &lt;&lt; &apos;instanceid=&apos; + instanceText
     if (!outputLine.contains(&apos;login=&apos;)) contextParts &lt;&lt; &apos;login=&apos; + loginText
     if (!outputLine.contains(&apos;order_id=&apos;)) contextParts &lt;&lt; &apos;order_id=&apos; + orderText
     if (!outputLine.contains(&apos;position_id=&apos;)) contextParts &lt;&lt; &apos;position_id=&apos; + positionText
-    if (!outputLine.contains(&apos;position_lifecycle_id=&apos;)) contextParts &lt;&lt; &apos;position_lifecycle_id=&apos; + lifecycleText
     if (!outputLine.contains(&apos;symbol=&apos;)) contextParts &lt;&lt; &apos;symbol=&apos; + symbolText
     // OPEN_POSITION_FIELD_FIRST_V1: 将当前对比field移到通过/失败/跳过标记之后，账户、订单、持仓和品种上下文之前。
     String workingLine = outputLine, fieldToken = null
@@ -14447,10 +13334,7 @@ List&lt;String&gt; displayOkLines = okLines.findAll { String line -&gt;
 List&lt;String&gt; displaySkipLines = skipLines.collect { String line -&gt; withAccountContext(line) }
 int hiddenBasicPassCount = okLines.size() - displayOkLines.size()
 report &lt;&lt; &apos;基础字段成功明细已省略=&apos;+hiddenBasicPassCount+&apos;条；这些字段仍已执行必返、类型、null、枚举及DB/CSV实际值校验，失败始终打印。&apos;
-report &lt;&lt; &apos;匹配键说明: SQL按login:symbol:order_id生成DB.position_id（例如5285:GBPUSD:302422）；先按instance_id+login+symbol找候选，再优先按position_id定位，未匹配时回退order_id，再回退唯一账户品种候选。失败诊断打印DB.position_id查询目标、同账户品种候选及全局精确查询结果；取得唯一DB订单后，position_id按trim后的完整文本精确比较。&apos;
-report &lt;&lt; &apos;position_id失败归属规则: API.position_id来自接口data，出现position_id匹配失败时不表示API无返回。SQL同时返回DB当前持仓记录和DB原表过滤诊断记录：原表存在目标订单但filter_match=0时，打印CMD/SYMBOL/VOLUME/CLOSE_TIME等过滤原因；原始候选中也不存在时，明确为本次JDBC未查询到该订单，需要检查报表库数据/同步延迟或db_result_max_rows截断。只有DB有当前持仓而API data没有时，才属于API data缺少记录。&apos;
-report &lt;&lt; &apos;集合差异规则: DB记录未在API data中匹配时，若存在cursor则按分页跳过；若同一instance_id+login出现在接口errors中，则按账户级错误导致data可能不完整进行跳过，但errors仍独立决定整体状态；只有非分页且账户不在errors中时，才判定API data缺少对应当前持仓并列入失败。&apos;
-report &lt;&lt; &apos;notional_status计算规则: 与线程组23一致，DB模式使用已匹配JDBC行的instance_id/login/symbol/volume_lots/open_price，通过get_symbol_ex取得contract_size、profit_mode、currency_base、currency_profit及USD换算证据；证据完整为resolved，否则unresolved，再将calc_cnotional_status与API.notional_status精确比较。普通DB固定投影比较跳过，避免重复或错误判定。&apos;
+report &lt;&lt; &apos;匹配键说明: API匹配键不是/v1/positions/query的单个响应字段，而是脚本组合的数据库定位条件；instance_id=接口instance_id，login=接口login，symbol=接口symbol，position_id=接口position_id，order_id=接口order_id。先按instance_id+login+symbol找候选，再优先按order_id定位；order_id未匹配时回退position_id，再回退唯一账户品种候选。取得唯一DB订单后，position_id仍作为独立字段按trim后的完整文本精确比较：相等列入成功，不等或任一为空列入失败。&apos;
 report &lt;&lt; &apos;辅助计算: enabled=&apos;+auxEnabled+&apos; | fields=[profit,open_notional_value_usd] | max_rows=&apos;+auxMax+&apos; | disabled=[&apos;+auxDisabledRaw+&apos;] | tolerance=[&apos;+auxToleranceRaw+&apos;] | open_notional_value_usd未单独配置时默认5% | 4002重试=&apos;+retryCount+&apos;次/&apos;+retryDelay+&apos;ms&apos;
 report &lt;&lt; &apos;名义价值公式: ROUND_HALF_UP(volume_lots*contract_size*open_price*rate_to_USD,5)；按当前剩余持仓量；USD率和结果五位小数HALF_UP；非USD/USC缺少开仓事件时点中间价时只打印跳过诊断，禁止用查询时点当前行情回填。&apos;
 report &lt;&lt; &apos;空值规则: API/DB均空通过；API=0且DB空通过；storage均空通过；数据库无字段默认失败，配置后才跳过。&apos;
@@ -14462,7 +13346,7 @@ report &lt;&lt; &apos;&apos; &lt;&lt; &apos;【接口请求Body】&apos; &lt;&lt
 String finalReport=report.join(&apos;\n&apos;)
 publish(finalReport,failLines.isEmpty())</stringProp>
               <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="TestPlan.comments">按mt-hub-openapi 7.html校验信封及data[]全部18个字段。SQL按login:symbol:order_id生成position_id，同时返回DB当前持仓标记和原表过滤原因；正式比较只使用filter_match=1的当前持仓，filter_match=0只用于诊断原表记录因CMD/SYMBOL/VOLUME/CLOSE_TIME等条件被过滤。API已返回position_id但DB未匹配时，明确归属数据库侧未取得可比较当前持仓，并区分原表无记录和有记录但被过滤；DB有当前持仓但API data无对应记录时，才归属API数据缺失。position_id使用文本精确比较；notional_status从已匹配JDBC行和get_symbol_ex证据推导后与API比较。</stringProp>
+              <stringProp name="TestPlan.comments">按mt-hub-openapi 7.html校验信封及data[]全部18个字段；字段存在性/类型/null等基础成功项仍校验但不重复打印，失败始终打印；DB/API先按instance_id+login+symbol取候选，再按order_id、position_id、唯一账户品种候选依次定位，取得唯一订单后position_id作为独立字段按trim后的完整文本精确比较，相等列入成功，不等或为空列入失败；未取得唯一DB订单时打印API position_id及DB候选position_id诊断；DB/CSV逐字段对比的成功、失败及带row的跳过明细均打印instanceid、login、order_id、position_id、symbol；API键在最终报告中明确显示为脚本组合的API匹配键而非接口单字段；calc_profit继续完整打印；新增API_open_notional_value_usd与calc_open_notional_value_usd辅助公式对比，使用剩余volume_lots、contract_size、open_price和文档允许的USD换算证据，五位小数HALF_UP，不以查询时点当前行情回填缺失的开仓事件时点汇率。</stringProp>
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
@@ -15474,7 +14358,7 @@ vars.put(&quot;loop_count_Loop3&quot;, String.valueOf(count + 1));</stringProp>
 MT4_3 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
           </UserParameters>
           <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1 账号-美元-创建用户" enabled="false">
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1 账号-美元-创建用户" enabled="true">
             <collectionProp name="UserParameters.names">
               <stringProp name="339340927">user_name</stringProp>
               <stringProp name="98629247">group</stringProp>
@@ -15574,33 +14458,7 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
 3096</stringProp>
           </UserParameters>
           <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT4_3账号美分账户---创建用户" enabled="true">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="339340927">user_name</stringProp>
-              <stringProp name="98629247">group</stringProp>
-              <stringProp name="103149417">login</stringProp>
-              <stringProp name="902025328">instanceid</stringProp>
-              <stringProp name="-1349832915">deal_type</stringProp>
-              <stringProp name="96619420">email</stringProp>
-              <stringProp name="-2131445451">leverage</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="1185423228">
-                <stringProp name="129985833">MT4_1 账号-美分-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
-                <stringProp name="1263774120">D_ECN_P05S</stringProp>
-                <stringProp name="-690130777">89100106</stringProp>
-                <stringProp name="73666529">MT4_3</stringProp>
-                <stringProp name="54">6</stringProp>
-                <stringProp name="-1475839097">autotestteam@test.com</stringProp>
-                <stringProp name="1507423">1000</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-            <stringProp name="TestPlan.comments">esttimi04@test.com
-MT4_3 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
-          </UserParameters>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1创建账户-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1创建账户-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -16059,43 +14917,6 @@ modify_user_info接口</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>true</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>true</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
@@ -16408,619 +15229,6 @@ if (!login) throw new AssertionError(&apos;挂单订单 order_login/login不能�
 String platform = instanceId.toUpperCase().contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (instanceId.toUpperCase().contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
 if (!platform) throw new AssertionError(&apos;挂单订单 order_instanceid_val只支持MT4_*/MT5_*，当前=&apos; + instanceId)
 
-String normalizedInstanceId = instanceId.toUpperCase()
-Map supportedDbInstances = [
-    &apos;MT4_1&apos;    : [platform: &apos;MT4&apos;, pool: &apos;mysqlMT4&apos;, schema: &apos;mt4_report&apos;],
-    &apos;MT5_1&apos;    : [platform: &apos;MT5&apos;, pool: &apos;mysqlMT5&apos;, schema: &apos;mt5_report&apos;],
-    &apos;MT4_2&apos;    : [platform: &apos;MT4&apos;, pool: &apos;mt4demo_report_MT4_2&apos;, schema: &apos;mt4demo_report&apos;],
-    &apos;MT4_3&apos;    : [platform: &apos;MT4&apos;, pool: &apos;mt4demo_report_MT4_3&apos;, schema: &apos;mt4demo_report&apos;],
-    &apos;MT5_1_TS1&apos;: [platform: &apos;MT5&apos;, pool: &apos;mt51ts1_report&apos;, schema: &apos;mt51ts1_report&apos;],
-    &apos;MT5_1_TS2&apos;: [platform: &apos;MT5&apos;, pool: &apos;mt51ts2_report&apos;, schema: &apos;mt51ts2_report&apos;]
-]
-Map dbRoute = supportedDbInstances[normalizedInstanceId]
-if (shujuku == &apos;1&apos; &amp;&amp; dbRoute == null) {
-    throw new AssertionError(&apos;挂单订单数据库校验不支持实例=&apos; + instanceId + &apos;，支持实例=&apos; + supportedDbInstances.keySet().join(&apos;,&apos;))
-}
-if (dbRoute != null) platform = dbRoute.platform
-
-vars.put(&apos;pending_check_shujuku&apos;, shujuku)
-vars.put(&apos;pending_check_login&apos;, login)
-vars.put(&apos;pending_check_instanceid&apos;, instanceId)
-vars.put(&apos;pending_check_db_platform&apos;, platform)
-vars.put(&apos;pending_check_db_pool&apos;, dbRoute?.pool ?: &apos;&apos;)
-vars.put(&apos;pending_check_db_schema&apos;, dbRoute?.schema ?: &apos;&apos;)
-vars.put(&apos;order_login&apos;, login)
-vars.put(&apos;order_instanceid_val&apos;, instanceId)
-vars.putObject(&apos;db_pending_check_rows&apos;, [])
-log.info(&apos;pending order init | shujuku=&apos; + shujuku + &apos; | platform=&apos; + platform + &apos; | instanceid=&apos; + instanceId + &apos; | dbPool=&apos; + (dbRoute?.pool ?: &apos;CSV&apos;) + &apos; | dbSchema=&apos; + (dbRoute?.schema ?: &apos;CSV&apos;) + &apos; | login=&apos; + login)</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询挂单数据库" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT4_1&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT4挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mysqlMT4</stringProp>
-              <stringProp name="query">select *
-from MT4_TRADES mt
-where mt.LOGIN = ?
-  and mt.SYMBOL is not null
-  and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-order by mt.MODIFY_TIME desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5-查询挂单数据库" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT5_1&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT5挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mysqlMT5</stringProp>
-              <stringProp name="query">select *
-from mt5_orders mt
-where mt.Login = ?
-  and mt.Symbol is not null
-  and trim(mt.Symbol) &lt;&gt; &apos;&apos;
-  and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
-  and State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取挂单订单-数据库校验-${pending_check_login}-${order_instanceid_val}" enabled="true">
-            <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-            <intProp name="HTTPSampler.response_timeout">5000</intProp>
-            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_order_info?instanceid=${order_instanceid_val}&amp;login=${pending_check_login}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="数据库或CSV字段对比断言-挂单订单" enabled="true">
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="script">import groovy.json.JsonSlurper
-import org.apache.jmeter.samplers.SampleResult
-import java.math.BigDecimal
-import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.util.TimeZone
-
-String shujuku = (vars.get(&apos;pending_check_shujuku&apos;) ?: vars.get(&apos;shujuku&apos;) ?: &apos;&apos;).trim()
-String platform = (vars.get(&apos;pending_check_db_platform&apos;) ?: &apos;&apos;).trim().toUpperCase()
-boolean isMt4 = platform == &apos;MT4&apos;
-String instanceId = vars.get(&apos;pending_check_instanceid&apos;) ?: vars.get(&apos;order_instanceid_val&apos;) ?: &apos;&apos;
-String login = vars.get(&apos;pending_check_login&apos;) ?: vars.get(&apos;order_login&apos;) ?: vars.get(&apos;login&apos;) ?: &apos;&apos;
-String sourceName = shujuku == &apos;1&apos; ? &apos;DB&apos; : &apos;CSV&apos;
-String compareSource = sourceName + &apos;/API&apos;
-String tableName = shujuku == &apos;1&apos; ? (isMt4 ? &apos;MT4_TRADES&apos; : &apos;mt5_orders&apos;) : &apos;CSV&apos;
-String apiOrderField = &apos;orderId&apos;
-String dbOrderField = isMt4 ? &apos;TICKET&apos; : &apos;Order&apos;
-
-String dbApiDisabledRaw = vars.get(&apos;pending_order_db_api_disabled_compare_fields&apos;) ?: vars.get(&apos;pending_order_disabled_compare_fields&apos;) ?: &apos;&apos;
-String csvApiDisabledRaw = vars.get(&apos;pending_order_csv_api_disabled_compare_fields&apos;) ?: vars.get(&apos;pending_order_disabled_compare_fields&apos;) ?: &apos;&apos;
-String disabledRaw = shujuku == &apos;1&apos; ? dbApiDisabledRaw : csvApiDisabledRaw
-String disabledConfigName = shujuku == &apos;1&apos; ? &apos;pending_order_db_api_disabled_compare_fields&apos; : &apos;pending_order_csv_api_disabled_compare_fields&apos;
-Set disabled = [] as Set
-disabledRaw.split(/[，,；;\s]+/).each { v -&gt;
-    String t = (v ?: &apos;&apos;).trim()
-    if (t) {
-        disabled &lt;&lt; t
-        disabled &lt;&lt; t.replaceAll(/_/, &apos;&apos;).toLowerCase()
-    }
-}
-String keyNorm(String s) { (s ?: &apos;&apos;).replaceAll(/_/, &apos;&apos;).toLowerCase() }
-Map disabledFieldAliasMap = [
-    volume: [&apos;volume_current&apos;, &apos;VolumeCurrent&apos;, &apos;VolumeInitial&apos;, &apos;volumeInitial&apos;]
-]
-def isDisabledField = { String f -&gt;
-    if (disabled.contains(&apos;*&apos;) || disabled.contains(f) || disabled.contains(keyNorm(f))) return true
-    List aliases = (disabledFieldAliasMap[f] ?: []) as List
-    return aliases.any { a -&gt; disabled.contains(a) || disabled.contains(keyNorm(a)) }
-}
-Map mt4DbMap = [
-    orderType:[&apos;CMD&apos;], symbol:[&apos;SYMBOL&apos;], orderId:[&apos;TICKET&apos;], swap:[&apos;SWAPS&apos;], currentPrice:[&apos;CURRENT_PRICE&apos;,&apos;CLOSE_PRICE&apos;], openPrice:[&apos;OPEN_PRICE&apos;],
-    login:[&apos;LOGIN&apos;], volume:[&apos;VOLUME&apos;], closeTime:[&apos;CLOSE_TIME&apos;], sl:[&apos;SL&apos;], closePrice:[&apos;CLOSE_PRICE&apos;], position:[&apos;TICKET&apos;],
-    openTime:[&apos;OPEN_TIME&apos;], tp:[&apos;TP&apos;], profit:[&apos;PROFIT&apos;]
-]
-Map mt5DbMap = [
-    orderType:[&apos;Type&apos;], symbol:[&apos;Symbol&apos;], orderId:[&apos;Order&apos;], swap:[&apos;Storage&apos;,&apos;Swap&apos;], currentPrice:[&apos;PriceCurrent&apos;], openPrice:[&apos;PriceOrder&apos;],
-    login:[&apos;Login&apos;], volume:[&apos;VolumeInitial&apos;], closeTime:[&apos;TimeDone&apos;,&apos;TimeDoneMsc&apos;,&apos;TimeExpiration&apos;], sl:[&apos;PriceSL&apos;], closePrice:[&apos;PriceCurrent&apos;],
-    position:[&apos;PositionID&apos;], openTime:[&apos;TimeSetup&apos;,&apos;TimeSetupMsc&apos;], tp:[&apos;PriceTP&apos;], profit:[&apos;Profit&apos;]
-]
-Map dbMap = isMt4 ? mt4DbMap : mt5DbMap
-
-SimpleDateFormat utcFmt = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
-utcFmt.setTimeZone(TimeZone.getTimeZone(&apos;UTC&apos;))
-SimpleDateFormat localFmt = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
-localFmt.setTimeZone(TimeZone.getTimeZone(&apos;Asia/Shanghai&apos;))
-DateTimeFormatter dbTimestampFmt = DateTimeFormatter.ofPattern(&apos;yyyy-MM-dd HH:mm:ss&apos;)
-
-def rawText = { Object v -&gt;
-    if (v == null) return &apos;null&apos;
-    String s = String.valueOf(v)
-    return s.length() == 0 ? &apos;&lt;empty&gt;&apos; : s
-}
-def isNumericText = { String s -&gt; s != null &amp;&amp; s.trim() ==~ /^[+-]?\d+(\.\d+)?$/ }
-def epochMillis = { Object v -&gt;
-    if (v == null) return null
-    String s = String.valueOf(v).trim()
-    if (!isNumericText(s)) return null
-    try {
-        long raw = new BigDecimal(s).longValue()
-        return Math.abs(raw) &gt;= 100000000000L ? raw : raw * 1000L
-    } catch (Throwable ignored) {
-        return null
-    }
-}
-def extractDateTimeText = { Object v -&gt;
-    if (v == null) return null
-    String s = String.valueOf(v).trim()
-    def m = (s =~ /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})/)
-    if (m.find()) return m.group(1) + &apos; &apos; + m.group(2)
-    return null
-}
-def timeInfo = { Object v, String side -&gt;
-    String raw = rawText(v)
-    if (v == null || raw == &apos;&lt;empty&gt;&apos;) return [print: raw, compare: null]
-    if (side in [&apos;API&apos;, &apos;CSV&apos;]) {
-        Long ms = epochMillis(v)
-        if (ms != null) {
-            String displayLocal = localFmt.format(new Date(ms))
-            String compareUtc = utcFmt.format(new Date(ms))
-            return [print: raw + &apos; -&gt; &apos; + displayLocal + &apos; -&gt; 对比值=&apos; + compareUtc + &apos;（减8小时）&apos;, compare: compareUtc]
-        }
-        String textTime = extractDateTimeText(v)
-        if (textTime != null) {
-            try {
-                Date parsed = localFmt.parse(textTime)
-                String compareUtc = utcFmt.format(parsed)
-                return [print: raw + &apos; -&gt; &apos; + textTime + &apos; -&gt; 对比值=&apos; + compareUtc + &apos;（减8小时）&apos;, compare: compareUtc]
-            } catch (Throwable ignored) {
-                return [print: raw + &apos; -&gt; &apos; + textTime, compare: textTime]
-            }
-        }
-        return [print: raw, compare: null]
-    }
-    if (v instanceof java.sql.Timestamp) {
-        String dbText = v.toLocalDateTime().format(dbTimestampFmt)
-        return [print: raw + &apos; -&gt; &apos; + dbText, compare: dbText]
-    }
-    String textTime = extractDateTimeText(v)
-    if (textTime != null) return [print: raw == textTime ? textTime : raw + &apos; -&gt; &apos; + textTime, compare: textTime]
-    Long ms = epochMillis(v)
-    if (ms != null) {
-        String dbText = utcFmt.format(new Date(ms))
-        return [print: raw + &apos; -&gt; &apos; + dbText, compare: dbText]
-    }
-    if (v instanceof Date) {
-        String dbText = localFmt.format(v)
-        return [print: raw + &apos; -&gt; &apos; + dbText, compare: dbText]
-    }
-    return [print: raw, compare: null]
-}
-def isTimeField = { String field, List aliases, Object a, Object b -&gt;
-    String all = ([field] + (aliases ?: [])).join(&apos;|&apos;).toLowerCase()
-    if (all.contains(&apos;time&apos;) || all.contains(&apos;timestamp&apos;) || all.contains(&apos;expiration&apos;)) return true
-    return (a instanceof Date) || (b instanceof Date)
-}
-BigDecimal toNum(Object v) {
-    if (v == null) return null
-    String s = String.valueOf(v).trim()
-    if (!s) return null
-    try { return new BigDecimal(s) } catch (Throwable ignored) { return null }
-}
-def hasMeaningfulClose = { Object v -&gt;
-    if (v == null) return false
-    String s = rawText(v).trim()
-    if (!s || s == &apos;&lt;empty&gt;&apos; || s.equalsIgnoreCase(&apos;null&apos;)) return false
-    BigDecimal n = toNum(v)
-    if (n != null) return n.compareTo(BigDecimal.ZERO) != 0
-    String textTime = extractDateTimeText(v)
-    if (textTime != null) return !(textTime.startsWith(&apos;1970-01-01&apos;) || textTime.startsWith(&apos;0000-00-00&apos;))
-    return false
-}
-def orderTypeName = { Object typeVal, Object closeVal = null, Object apiTypeVal = null, Object apiCloseVal = null -&gt;
-    BigDecimal n = toNum(typeVal)
-    if (n == null) n = toNum(apiTypeVal)
-    if (n != null &amp;&amp; [2, 3, 4, 5, 6, 7].contains(n.intValue())) return &apos;挂单&apos;
-    if (hasMeaningfulClose(closeVal) || hasMeaningfulClose(apiCloseVal)) return &apos;平仓订单或历史平仓&apos;
-    if (n != null &amp;&amp; [0, 1].contains(n.intValue())) return &apos;持仓订单&apos;
-    return &apos;其他订单&apos;
-}
-def sameText = { Object a, Object b -&gt; rawText(a).trim() == rawText(b).trim() }
-def findVal = { Map row, List names -&gt;
-    if (row == null) return null
-    for (String n in names) if (row.containsKey(n)) return row[n]
-    Map lower = [:]
-    row.each { k, v -&gt; lower[(k ?: &apos;&apos;).toString().toLowerCase()] = v }
-    for (String n in names) if (lower.containsKey(n.toLowerCase())) return lower[n.toLowerCase()]
-    Map norm = [:]
-    row.each { k, v -&gt; norm[keyNorm(k?.toString())] = v }
-    for (String n in names) if (norm.containsKey(keyNorm(n))) return norm[keyNorm(n)]
-    return null
-}
-def hasAnyKey = { Map row, List names -&gt;
-    if (row == null) return false
-    Set keys = row.keySet().collect { it?.toString() } as Set
-    Set lower = keys.collect { it?.toLowerCase() } as Set
-    Set norm = keys.collect { keyNorm(it) } as Set
-    return names.any { n -&gt; keys.contains(n) || lower.contains(n.toLowerCase()) || norm.contains(keyNorm(n)) }
-}
-def orderId = { Map row -&gt; rawText(findVal(row, [apiOrderField, &apos;Order&apos;, &apos;order&apos;, &apos;TICKET&apos;, &apos;Ticket&apos;])).trim() }
-Closure extractRecords
-extractRecords = { Object obj -&gt;
-    if (obj == null) return []
-    if (obj instanceof List) return obj.findAll { it instanceof Map }
-    if (obj instanceof Map) {
-        for (String k in [&apos;data&apos;,&apos;rows&apos;,&apos;list&apos;,&apos;result&apos;,&apos;records&apos;,&apos;orders&apos;]) {
-            if (obj.containsKey(k)) {
-                def got = extractRecords(obj[k])
-                if (got) return got
-            }
-        }
-        if (obj.values().any { it instanceof Map || it instanceof List }) {
-            for (def v in obj.values()) {
-                def got = extractRecords(v)
-                if (got) return got
-            }
-        }
-        return [obj]
-    }
-    return []
-}
-
-List ok = []
-List bad = []
-List skipped = []
-List errors = []
-List apiRows = []
-try {
-    Object json = new JsonSlurper().parseText(prev.getResponseDataAsString())
-    apiRows = extractRecords(json)
-} catch (Throwable e) {
-    errors &lt;&lt; &apos;接口响应JSON解析失败 | error=&apos; + e.message
-}
-
-String apiFirstOrderId = apiRows ? orderId(apiRows[0] as Map) : &apos;&apos;
-int apiCompareFieldTotal = 0
-String dbFirstOrderId = &apos;&apos;
-String matchedOrder = &apos;&apos;
-String matchedOrderType = &apos;&apos;
-String currentPriceToleranceRemark = &apos;误差相差5%之内可以通过&apos;
-String pendingZeroRemark = &apos;因为此订单是挂单 API 字段数值是0，还未平仓！！！&apos;
-
-def addCompare = { String order, String field, Object srcVal, Object apiVal, String srcLabel, List aliases -&gt;
-    boolean timeField = isTimeField(field, aliases, srcVal, apiVal)
-    String fieldRef = srcLabel == &apos;DB&apos; ? &apos; | DB字段=&apos; + aliases.join(&apos;/&apos;) : &apos; | CSV字段=&apos; + aliases.join(&apos;/&apos;)
-
-    if (isDisabledField(field)) {
-        String srcPrint = timeField ? timeInfo(srcVal, srcLabel).print : rawText(srcVal)
-        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-        skipped &lt;&lt; &quot; - [跳过] orderId=${order} | orderType=${matchedOrderType} | field=${field} | ${srcLabel}=${srcPrint} | API=${apiPrint}${fieldRef} | reason=${disabledConfigName}&quot;
-        return
-    }
-
-    if (srcLabel == &apos;DB&apos; &amp;&amp; srcVal == null) {
-        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-        skipped &lt;&lt; &quot; - [跳过] orderId=${order} | orderType=${matchedOrderType} | field=${field} | DB=&lt;empty&gt; 数据库查询无此字段数据 | API=${apiPrint}${fieldRef} | reason=数据库查询无此字段数据&quot;
-        return
-    }
-
-    if (srcLabel == &apos;DB&apos; &amp;&amp; matchedOrderType == &apos;挂单&apos; &amp;&amp; [&apos;closeprice&apos;, &apos;closetime&apos;, &apos;profit&apos;, &apos;swap&apos;].contains(keyNorm(field)) &amp;&amp; toNum(apiVal)?.compareTo(BigDecimal.ZERO) == 0) {
-        String srcPrint = timeField ? timeInfo(srcVal, &apos;DB&apos;).print : rawText(srcVal)
-        String apiPrint = rawText(apiVal)
-        ok &lt;&lt; &quot; - [一致] | orderId=${order} | orderType=${matchedOrderType} | field=${field} | DB=${srcPrint} | API=${apiPrint}${fieldRef} | reason=${pendingZeroRemark}&quot;
-        return
-    }
-
-    if (timeField) {
-        Map srcTime = timeInfo(srcVal, srcLabel)
-        Map apiTime = timeInfo(apiVal, &apos;API&apos;)
-        boolean same = srcTime.compare != null &amp;&amp; apiTime.compare != null &amp;&amp; srcTime.compare == apiTime.compare
-        String line = &quot; | orderId=${order} | orderType=${matchedOrderType} | field=${field} | ${srcLabel}=${srcTime.print} | API=${apiTime.print}${fieldRef} | compare=time API/CSV先按UTC+8显示再减8小时，DB直接格式化&quot;
-        if (same) ok &lt;&lt; &apos; - [一致]&apos; + line
-        else bad &lt;&lt; &apos; - [不同]&apos; + line
-        return
-    }
-
-    String srcPrint = rawText(srcVal)
-    String apiPrint = rawText(apiVal)
-
-    BigDecimal srcNum = toNum(srcVal)
-    BigDecimal apiNum = toNum(apiVal)
-    if (srcLabel == &apos;DB&apos; &amp;&amp; keyNorm(field) == &apos;currentprice&apos; &amp;&amp; srcNum != null &amp;&amp; apiNum != null) {
-        BigDecimal diff = srcNum.subtract(apiNum).abs()
-        BigDecimal base = srcNum.abs()
-        BigDecimal percent = base.compareTo(BigDecimal.ZERO) == 0 ? (apiNum.abs().compareTo(BigDecimal.ZERO) == 0 ? BigDecimal.ZERO : null) : diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 4, BigDecimal.ROUND_HALF_UP)
-        String percentText = percent == null ? &apos;无法计算(DB为0且API不为0)&apos; : percent.stripTrailingZeros().toPlainString() + &apos;%&apos;
-        String line = &quot; | orderId=${order} | orderType=${matchedOrderType} | field=${field} | ${srcLabel}=${srcPrint} | API=${apiPrint}${fieldRef} | 误差百分比=${percentText}&quot;
-        if (percent != null &amp;&amp; percent.compareTo(new BigDecimal(&apos;5&apos;)) &lt;= 0) {
-            ok &lt;&lt; &apos; - [一致]&apos; + line + &apos; | reason=&apos; + currentPriceToleranceRemark
-        } else {
-            bad &lt;&lt; &apos; - [不同]&apos; + line + &apos; | reason=误差大于5%&apos;
-        }
-        return
-    }
-    boolean same
-    String compareType
-    if (srcNum != null &amp;&amp; apiNum != null) {
-        BigDecimal tolerance = new BigDecimal(&apos;0.00000001&apos;)
-        same = srcNum.subtract(apiNum).abs().compareTo(tolerance) &lt;= 0
-        compareType = &apos;number tolerance=0.00000001&apos;
-    } else {
-        same = sameText(srcVal, apiVal)
-        compareType = &apos;text exact&apos;
-    }
-    String line = &quot; | orderId=${order} | orderType=${matchedOrderType} | field=${field} | ${srcLabel}=${srcPrint} | API=${apiPrint}${fieldRef} | compare=${compareType}&quot;
-    if (same) ok &lt;&lt; &apos; - [一致]&apos; + line
-    else bad &lt;&lt; &apos; - [不同]&apos; + line
-}
-
-if (!apiRows) {
-    errors &lt;&lt; &quot;接口响应没有找到挂单订单记录 | instanceid=${instanceId} | login=${login}&quot;
-} else if (shujuku == &apos;1&apos;) {
-    def dbObj = vars.getObject(&apos;db_pending_check_rows&apos;)
-    List dbRows = []
-    if (dbObj instanceof List) dbRows = dbObj.findAll { it instanceof Map }
-    else if (dbObj instanceof Object[]) dbRows = dbObj.findAll { it instanceof Map }
-
-    if (!dbRows) {
-        errors &lt;&lt; &quot;数据库未返回挂单订单记录 | table=${tableName} | login=${login}&quot;
-    } else {
-        dbFirstOrderId = rawText(findVal(dbRows[0] as Map, [dbOrderField, dbOrderField.toUpperCase(), dbOrderField.toLowerCase()])).trim()
-        Map dbByOrder = [:]
-        dbRows.each { r -&gt;
-            String id = rawText(findVal(r as Map, [dbOrderField, dbOrderField.toUpperCase(), dbOrderField.toLowerCase()])).trim()
-            if (id &amp;&amp; id != &apos;null&apos; &amp;&amp; !dbByOrder.containsKey(id)) dbByOrder[id] = r
-        }
-        List apiOrderIds = apiRows.collect { orderId(it as Map) }.findAll { it &amp;&amp; it != &apos;null&apos; }
-        for (Map api in apiRows) {
-            String id = orderId(api)
-            if (dbByOrder.containsKey(id)) {
-                matchedOrder = id
-                Map dbRow = dbByOrder[id] as Map
-                matchedOrderType = orderTypeName(
-                    findVal(dbRow, (dbMap[&apos;orderType&apos;] ?: [&apos;orderType&apos;]) as List),
-                    findVal(dbRow, (dbMap[&apos;closeTime&apos;] ?: [&apos;closeTime&apos;]) as List),
-                    findVal(api, [&apos;orderType&apos;, &apos;Type&apos;, &apos;type&apos;]),
-                    findVal(api, [&apos;closeTime&apos;, &apos;CloseTime&apos;, &apos;close_time&apos;])
-                )
-                apiCompareFieldTotal = api.keySet().size()
-                api.each { field, apiVal -&gt;
-                    String f = field.toString()
-                    List aliases = (dbMap[f] ?: [f]) as List
-                    if (isDisabledField(f)) {
-                        boolean timeField = isTimeField(f, aliases, null, apiVal)
-                        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-                        skipped &lt;&lt; &quot; - [跳过] orderId=${matchedOrder} | orderType=${matchedOrderType} | field=${f} | DB=&lt;skip&gt; | API=${apiPrint} | DB字段=${aliases.join(&apos;/&apos;)} | reason=${disabledConfigName}&quot;
-                        return
-                    }
-                    if (!hasAnyKey(dbRow, aliases)) {
-                        boolean timeField = isTimeField(f, aliases, null, apiVal)
-                        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-                        skipped &lt;&lt; &quot; - [跳过] orderId=${matchedOrder} | orderType=${matchedOrderType} | field=${f} | DB=&lt;empty&gt; 数据库查询无此字段数据 | API=${apiPrint} | DB字段=${aliases.join(&apos;/&apos;)} | reason=数据库查询无此字段数据&quot;
-                        return
-                    }
-                    Object dbVal = findVal(dbRow, aliases)
-                    addCompare(matchedOrder, f, dbVal, apiVal, &apos;DB&apos;, aliases)
-                }
-                break
-            }
-        }
-        if (!matchedOrder) {
-            errors &lt;&lt; &apos;接口和数据库数据记录没有匹配上订单号 | DB订单号=&apos; + dbByOrder.keySet().take(20).join(&apos;,&apos;) + &apos; | API订单号=&apos; + apiOrderIds.take(20).join(&apos;,&apos;)
-        }
-    }
-} else if (shujuku == &apos;0&apos;) {
-    String expectedOrder = (vars.get(&apos;orderId&apos;) ?: vars.get(&apos;order_orderId&apos;) ?: vars.get(&apos;Order&apos;) ?: vars.get(&apos;order&apos;) ?: &apos;&apos;).trim()
-    if (!expectedOrder || expectedOrder == &apos;&lt;EOF&gt;&apos;) {
-        errors &lt;&lt; &apos;CSV当前行缺少 orderId，无法匹配接口返回订单号&apos;
-    } else {
-        Map apiOrder = apiRows.find { orderId(it as Map) == expectedOrder } as Map
-        if (apiOrder == null) {
-            errors &lt;&lt; &apos;CSV订单号和接口响应返回订单号没有匹配上 | CSV订单号=&apos; + expectedOrder + &apos; | API订单号=&apos; + apiRows.collect { orderId(it as Map) }.findAll { it &amp;&amp; it != &apos;null&apos; }.take(20).join(&apos;,&apos;)
-        } else {
-            matchedOrder = orderId(apiOrder)
-            matchedOrderType = orderTypeName(
-                findVal(apiOrder, [&apos;orderType&apos;, &apos;Type&apos;, &apos;type&apos;]) ?: vars.get(&apos;orderType&apos;),
-                findVal(apiOrder, [&apos;closeTime&apos;, &apos;CloseTime&apos;, &apos;close_time&apos;]) ?: vars.get(&apos;closeTime&apos;)
-            )
-            apiCompareFieldTotal = apiOrder.keySet().size()
-            def csvValue = { String name -&gt;
-                String direct = vars.get(name)
-                if (direct != null &amp;&amp; direct.trim().length() &gt; 0 &amp;&amp; direct.trim() != &apos;&lt;EOF&gt;&apos;) return direct
-                String prefixed = vars.get(&apos;order_&apos; + name)
-                if (prefixed != null &amp;&amp; prefixed.trim().length() &gt; 0 &amp;&amp; prefixed.trim() != &apos;&lt;EOF&gt;&apos;) return prefixed
-                return null
-            }
-            apiOrder.each { field, apiVal -&gt;
-                String f = field.toString()
-                Object csvVal = csvValue(f)
-                boolean timeField = isTimeField(f, [f], csvVal, apiVal)
-                if (csvVal == null) {
-                    String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-                    skipped &lt;&lt; &quot; - [跳过] orderId=${matchedOrder} | orderType=${matchedOrderType} | field=${f} | CSV=&lt;empty&gt; 当前CSV行未提供此字段数据 | API=${apiPrint} | CSV字段=${f}/order_${f} | reason=当前CSV行未提供此字段数据&quot;
-                    return
-                }
-                addCompare(matchedOrder, f, csvVal, apiVal, &apos;CSV&apos;, [f])
-            }
-        }
-    }
-} else {
-    errors &lt;&lt; &apos;shujuku只能是0或1，当前=&apos; + shujuku
-}
-
-errors.each { bad &lt;&lt; &apos; - [错误] &apos; + it }
-
-String status = bad.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
-List reportLines = []
-reportLines &lt;&lt; &quot;挂单订单 ${compareSource} 字段对比结果 | status=${status} | orderType=${matchedOrderType ?: &apos;其他订单&apos;} | instanceid=${instanceId} | login=${login} | table=${tableName} | dbFirstOrderId=${dbFirstOrderId} | apiFirstOrderId=${apiFirstOrderId} | matchedOrderId=${matchedOrder} | dbApiDisabledFields=[${dbApiDisabledRaw}] | csvApiDisabledFields=[${csvApiDisabledRaw}] | activeDisabledFields=[${disabledRaw}]&quot;
-reportLines &lt;&lt; &quot;统计：接口对比字段总数量=${apiCompareFieldTotal} | 相同字段数量=${ok.size()} | 不同字段数量=${bad.size()} | 跳过字段数量=${skipped.size()}&quot;
-reportLines &lt;&lt; &quot;时间规则：API/CSV时间戳先按UTC+8打印，再减8小时生成对比值；DB时间直接格式化为 yyyy-MM-dd HH:mm:ss 后参与比较。&quot;
-reportLines &lt;&lt; &quot;currentPrice规则：DB/API对比时打印误差百分比；误差相差5%之内计入成功字段，并备注：${currentPriceToleranceRemark}。&quot;
-reportLines &lt;&lt; &quot;挂单0值规则：DB/API对比时，挂单 closePrice/closeTime/profit/swap 的 API 值为0时计入成功字段，并备注：${pendingZeroRemark}。&quot;
-reportLines &lt;&lt; &apos;&apos;
-reportLines &lt;&lt; &quot;成功字段（${ok.size()}）：&quot;
-reportLines.addAll(ok ? ok : [&apos; - 无&apos;])
-reportLines &lt;&lt; &apos;&apos;
-reportLines &lt;&lt; &quot;失败字段（${bad.size()}）：&quot;
-reportLines.addAll(bad ? bad : [&apos; - 无&apos;])
-reportLines &lt;&lt; &apos;&apos;
-reportLines &lt;&lt; &quot;跳过字段（未校验）（${skipped.size()}）：&quot;
-reportLines.addAll(skipped ? skipped : [&apos; - 无&apos;])
-
-String report = reportLines.join(&apos;\n&apos;)
-vars.put(&apos;pending_order_compare_report&apos;, report)
-
-try {
-    SampleResult detail = new SampleResult()
-    detail.setSampleLabel(&quot;挂单订单 ${compareSource} 字段对比结果&quot;)
-    detail.setDataType(SampleResult.TEXT)
-    detail.sampleStart()
-    detail.setResponseCode(bad.isEmpty() ? &apos;200&apos; : &apos;500&apos;)
-    detail.setResponseMessage(bad.isEmpty() ? &quot;${compareSource} compare passed&quot; : &quot;${compareSource} compare failed&quot;)
-    detail.setSuccessful(bad.isEmpty())
-    detail.setResponseHeaders(&apos;Content-Type: text/plain; charset=UTF-8&apos;)
-    detail.setResponseData(report, &apos;UTF-8&apos;)
-    detail.sampleEnd()
-    prev.addSubResult(detail)
-} catch (Throwable e) {
-    log.warn(&apos;Add pending order compare detail failed: &apos; + e.message, e)
-}
-
-if (bad) {
-    log.warn(report)
-    AssertionResult.setFailure(true)
-    AssertionResult.setFailureMessage(report)
-} else {
-    log.info(report)
-    AssertionResult.setFailure(false)
-}</stringProp>
-              <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="TestPlan.comments">shujuku=1: DB订单号与API订单号匹配后逐字段对比；shujuku=0: CSV订单号与API订单号匹配后逐字段对比。DB/API与CSV/API跳过字段分别使用 pending_order_db_api_disabled_compare_fields、pending_order_csv_api_disabled_compare_fields。currentPrice DB/API误差5%内通过；挂单 closePrice/closeTime/profit/swap 的API值为0时通过并打印DB值，并在结果中打印订单类型。</stringProp>
-            </JSR223Assertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="false">
-        <stringProp name="TestPlan.comments">新增挂单订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
-
--备注重要：20260618
-1. DB/API跳过字段使用 pending_order_db_api_disabled_compare_fields；CSV/API跳过字段使用 pending_order_csv_api_disabled_compare_fields。
-2. DB/API对比 currentPrice 时打印误差百分比，误差5%以内计入成功字段。
-3. 挂单 closePrice、closeTime、profit、swap 的API值为0时计入成功字段，并打印DB值和原因。
-4. 报告最上面和每条明细都会打印订单类型。</stringProp>
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="挂单订单数据库校验循环">
-          <stringProp name="LoopController.loops">${__groovy(def f = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + File.separator + &apos;获取挂单订单-数据库校验.csv&apos;); if (!f.exists()) { return 0 }; def rows = f.readLines(&apos;UTF-8&apos;).findAll { it?.trim() }; rows.size() &lt;= 1 ? 0 : rows.size() - 1)}</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="1获取挂单订单-数据库校验事务-${__P(CRM2.0middlewareip_file_version,)}" enabled="true">
-          <boolProp name="TransactionController.parent">true</boolProp>
-          <boolProp name="TransactionController.includeTimers">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取挂单订单数据库校验" enabled="true">
-            <stringProp name="delimiter">,</stringProp>
-            <stringProp name="fileEncoding">UTF-8</stringProp>
-            <stringProp name="filename">./获取挂单订单-数据库校验.csv</stringProp>
-            <boolProp name="ignoreFirstLine">true</boolProp>
-            <boolProp name="quotedData">true</boolProp>
-            <boolProp name="recycle">false</boolProp>
-            <stringProp name="shareMode">shareMode.all</stringProp>
-            <boolProp name="stopThread">true</boolProp>
-            <stringProp name="variableNames">shujuku,order_instanceid_val,order_login,orderId,orderType,symbol,swap,currentPrice,openPrice,login,volume,closeTime,sl,closePrice,position,openTime,tp,profit</stringProp>
-          </CSVDataSet>
-          <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单DB/API字段对比配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="pending_order_db_api_disabled_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">pending_order_db_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">只控制DB/API对比的跳过字段，多个字段用逗号分隔；例如填写 volume_current,currentPrice 后DB/API不校验这些字段；填 * 表示只校验订单号匹配。</stringProp>
-              </elementProp>
-            </collectionProp>
-          </Arguments>
-          <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单CSV/API字段对比配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="pending_order_csv_api_disabled_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">pending_order_csv_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">currentPrice</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">只控制CSV/API对比的跳过字段，多个字段用逗号分隔；例如填写 volume_current,currentPrice 后CSV/API不校验这些字段；填 * 表示只校验订单号匹配。</stringProp>
-              </elementProp>
-            </collectionProp>
-          </Arguments>
-          <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化挂单订单数据库校验变量" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String csvName = &apos;获取挂单订单-数据库校验.csv&apos;
-File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
-if (!csvFile.exists()) {
-    throw new AssertionError(&apos;挂单订单CSV文件不存在: &apos; + csvFile.getPath())
-}
-def dataLines = csvFile.readLines(&apos;UTF-8&apos;).findAll { it?.trim() }
-if (dataLines.size() &lt;= 1) {
-    throw new AssertionError(&apos;挂单订单CSV没有数据行: &apos; + csvFile.getPath())
-}
-
-String shujuku = (vars.get(&apos;shujuku&apos;) ?: &apos;&apos;).trim()
-String instanceId = (vars.get(&apos;order_instanceid_val&apos;) ?: vars.get(&apos;instanceid_val&apos;) ?: &apos;&apos;).trim()
-String login = (vars.get(&apos;order_login&apos;) ?: vars.get(&apos;login&apos;) ?: &apos;&apos;).trim()
-
-if (!(shujuku in [&apos;0&apos;, &apos;1&apos;])) throw new AssertionError(&apos;挂单订单 shujuku只能是0或1，当前=&apos; + shujuku)
-if (!instanceId) throw new AssertionError(&apos;挂单订单 order_instanceid_val不能为空&apos;)
-if (!login) throw new AssertionError(&apos;挂单订单 order_login/login不能为空&apos;)
-
-String platform = instanceId.toUpperCase().contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (instanceId.toUpperCase().contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
-if (!platform) throw new AssertionError(&apos;挂单订单 order_instanceid_val只支持MT4_*/MT5_*，当前=&apos; + instanceId)
-
 vars.put(&apos;pending_check_shujuku&apos;, shujuku)
 vars.put(&apos;pending_check_login&apos;, login)
 vars.put(&apos;pending_check_instanceid&apos;, instanceId)
@@ -17035,7 +15243,7 @@ log.info(&apos;pending order init | shujuku=&apos; + shujuku + &apos; | platform
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询挂单数据库" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT4_1&apos;))}</stringProp>
+            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_db_platform&apos;) == &apos;MT4&apos;)}</stringProp>
           </IfController>
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT4挂单-${pending_check_login}" enabled="true">
@@ -17063,7 +15271,7 @@ order by mt.MODIFY_TIME desc</stringProp>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5-查询挂单数据库" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT5_1&apos;))}</stringProp>
+            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_db_platform&apos;) == &apos;MT5&apos;)}</stringProp>
           </IfController>
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT5挂单-${pending_check_login}" enabled="true">
@@ -17076,118 +15284,6 @@ where mt.Login = ?
   and mt.Symbol regexp &apos;[A-Za-z]&apos;
   and mt.Type in (2, 3, 4, 5)
   and State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT4_2-查询mt4demo_report挂单" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT4_2&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT4_2挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
-              <stringProp name="query">select *
-from mt4_trades mt
-where mt.LOGIN = ?
-  and mt.SYMBOL is not null
-  and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-order by mt.MODIFY_TIME desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT4_3-查询mt4demo_report挂单" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT4_3&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT4_3挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
-              <stringProp name="query">select *
-from mt4_trades mt
-where mt.LOGIN = ?
-  and mt.SYMBOL is not null
-  and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-order by mt.MODIFY_TIME desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT5_1_TS1-查询mt51ts1_report挂单" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT5_1_TS1&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT5_1_TS1挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mt51ts1_report</stringProp>
-              <stringProp name="query">select *
-from mt5_orders mt
-where mt.Login = ?
-  and mt.Symbol is not null
-  and trim(mt.Symbol) &lt;&gt; &apos;&apos;
-  and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
-  and mt.State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
-              <stringProp name="queryArguments">${pending_check_login}</stringProp>
-              <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
-              <stringProp name="queryType">Prepared Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
-              <stringProp name="resultVariable">db_pending_check_rows</stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree/>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT5_1_TS2-查询mt51ts2_report挂单" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT5_1_TS2&apos;))}</stringProp>
-          </IfController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询MT5_1_TS2挂单-${pending_check_login}" enabled="true">
-              <stringProp name="dataSource">mt51ts2_report</stringProp>
-              <stringProp name="query">select *
-from mt5_orders mt
-where mt.Login = ?
-  and mt.Symbol is not null
-  and trim(mt.Symbol) &lt;&gt; &apos;&apos;
-  and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
-  and mt.State &lt;&gt; 7
 order by mt.TimeSetupMsc desc</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
@@ -19490,7 +17586,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅" enabled="true">
         <stringProp name="TestPlan.comments">！！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)--222 ✅-验证通过 -20260612-验证成功-最新-001
 新增跨所有实例账户级财务指标数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
@@ -21367,7 +19463,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -21438,8 +19534,7 @@ if (failCount &gt; 0) {
                   <stringProp name="Argument.value">{&#xd;
     &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
 	&quot;login&quot;: ${login},&#xd;
-	&quot;rights&quot;: ${rights},&#xd;
-	&quot;shm_rights&quot;: ${rights}&#xd;
+	&quot;rights&quot;: ${rights}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -21581,7 +19676,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -27246,7 +25341,7 @@ vars.put(&quot;loop_count_恢复权限&quot;, String.valueOf(count + 1));
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="13激活归档用户事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="激活归档用户事务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree/>
@@ -28160,7 +26255,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：可迁移自包含版。默认从JMX所在目录读取 获取用户信息-数据校验.csv，也可通过 -Juser_info_csv_path=&lt;CSV绝对路径&gt; 指定；CSV到EOF时自动停止线程。初始化、对比和打印Groovy逻辑均已内嵌到本线程组，换机器/换目录时不依赖外部jmeter_scripts。shujuku=1时按MT4/MT5查询对应数据库并按接口返回字段逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -29500,7 +27595,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1计算get_user_info-profit数值✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1计算get_user_info-profit数值✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -29912,7 +28007,7 @@ SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -30121,7 +28216,7 @@ if (failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -31264,7 +29359,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_open_positions：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
@@ -33618,7 +31713,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/accounts/query 并逐字段进行 DB/API 校验；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应字段、类型、币种与 money_scale 语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。LoopController使用字符码44解析CSV首列，避免JMeter把Groovy代码中的逗号误判为__groovy函数参数分隔符。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -35857,8 +33952,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </value>
         </objProp>
         <stringProp name="filename"></stringProp>
-        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本018.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本022.jtl</stringProp>
+        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本018.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="false">
@@ -35898,7 +33992,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本022.
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">C:\Users\10477\Downloads\TestReport_2026-08-31_03-23-33_JTL\TestReport_2026-08-31_03-23-33.jtl</stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告07.jtlpython .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告11.jtl&quot; --no-openD:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告12.jtl D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告01.jtl
 python .\jtl_fail_report.py &quot;中间件接口1.56.2结果_失败详细报告01.jtl&quot; --no-open D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告03.jtl--发群的
 /crm20/list_history_positions
@@ -35910,8 +34004,7 @@ python .\jtl_fail_report.py &quot;中间件接口1.57.7版本006.jtl&quot; --no-
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.57.7版本007.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.2版本014.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.3版本008.jtl
-C:\Users\10477\Downloads\TestReport_2026-08-31_01-23-32_JTL\TestReport_2026-08-31_01-23-32.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本021.jtl</stringProp>
+C:\Users\10477\Downloads\TestReport_2026-08-31_01-23-32_JTL\TestReport_2026-08-31_01-23-32.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="查询多个账户的挂单订单-性能测试大数据量测试" enabled="false">
