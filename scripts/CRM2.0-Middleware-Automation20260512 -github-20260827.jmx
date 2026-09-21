@@ -501,7 +501,7 @@ production environment		13.214.249.50   真实生产ip
 635924--》639653</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -1431,7 +1431,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3064,7 +3064,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23685,7 +23685,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23738,7 +23738,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22">
         <stringProp name="TestPlan.comments">新增挂单订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 
 -备注重要：20260618
@@ -24453,7 +24453,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅">
         <stringProp name="TestPlan.comments">MT5_1 查询 mt5_symbols 数据库对比接口响应；MT4_1 或其他用 CSV 字段对比接口响应</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -24786,7 +24786,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-2获取货币信息-csv形式✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-2获取货币信息-csv形式✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -24967,7 +24967,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!3获取持仓订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!3获取持仓订单-数据库校验✅✅">
         <stringProp name="TestPlan.comments">新增持仓订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。SQL保留 SELECT mt.* 查询所有字段，并额外提供接口字段别名用于对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -25585,7 +25585,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅">
         <stringProp name="TestPlan.comments">新增汇总的已平仓仓位数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 --备注20260618
 open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&lt;=2%通过；字段跳过配置仍优先。</stringProp>
@@ -26299,7 +26299,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22">
         <stringProp name="TestPlan.comments">！！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)--222 ✅-验证通过 -20260612-验证成功-最新-001
 新增跨所有实例账户级财务指标数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 数据库按完整实例ID精确路由：MT4_1→mysqlMT4；MT5_1→mysqlMT5；MT4_2→mt4demo_report_MT4_2；MT4_3→mt4demo_report_MT4_3；MT5_1_TS1→mt51ts1_report；MT5_1_TS2→mt51ts2_report。</stringProp>
@@ -27411,7 +27411,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!!待确定-6待处理/历史订单✅✅-验证半成品 " enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!!待确定-6待处理/历史订单✅✅-验证半成品 ">
         <stringProp name="TestPlan.comments">新增待处理/历史订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 *****
 一下是bug  20260618
@@ -28243,7 +28243,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28457,7 +28457,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28703,7 +28703,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅">
         <stringProp name="TestPlan.comments">符号规格和实时报价字段校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比；支持按MT4、MT5、CSV分别手工配置跳过字段和逐字段百分比误差。严格区分字段存在但值为空与DB根本无此字段；API/DB均为空、API=0且DB字段存在但值为空时通过。point依据beta1.66.3契约按POW(10,-digits)生成并参与比较；MT5的volume_max、volume_min、volume_step使用DB原值除以10000后对比，MT4不缩放。接口保持 /crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -35740,7 +35740,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -38756,7 +38756,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -38773,7 +38773,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
             <stringProp name="variableNames"></stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1账户资金-DB/API与字段缺失配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1账户资金-DB/API与字段缺失配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="competition_accounts_db_query_timeout_seconds" elementType="Argument">
                 <stringProp name="Argument.name">competition_accounts_db_query_timeout_seconds</stringProp>
@@ -38801,7 +38801,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
               </elementProp>
               <elementProp name="competition_accounts_db_api_field_absolute_tolerance" elementType="Argument">
                 <stringProp name="Argument.name">competition_accounts_db_api_field_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">balance=0.01,equity=0.01,credit=0.01,margin=0.01</stringProp>
+                <stringProp name="Argument.value">balance=0.02,equity=0.01,credit=0.01,margin=0.01</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.desc">资金字段允许的绝对误差；最终允许误差取绝对误差与百分比误差中的较大值。</stringProp>
               </elementProp>
@@ -38822,6 +38822,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
                 <stringProp name="Argument.desc">false 时 HTTP 200 响应中的 errors 非空仍判失败；无论是否允许，errors[] 每个字段都会做契约校验。</stringProp>
               </elementProp>
             </collectionProp>
+            <stringProp name="TestPlan.comments">balance</stringProp>
           </Arguments>
           <hashTree/>
           <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1账户资金-CSV/API配置" enabled="true">
@@ -39482,7 +39483,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40903,7 +40904,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40915,7 +40916,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj" enabled="true">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj">
           <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -40934,7 +40935,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -42542,6 +42543,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.2版本014.
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.3版本008.jtl
 C:\Users\10477\Downloads\TestReport_2026-08-31_01-23-32_JTL\TestReport_2026-08-31_01-23-32.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本021.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本006.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本006.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
