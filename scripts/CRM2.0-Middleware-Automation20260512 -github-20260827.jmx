@@ -502,7 +502,7 @@ production environment		13.214.249.50   真实生产ip
 635924--》639653</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -1432,7 +1432,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3065,7 +3065,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23510,7 +23510,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28261,7 +28261,7 @@ if (failCount &gt; 0) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="7-1修改账户权限-change_user_rights事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="7-1修改账户权限-change_user_rights事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -28353,7 +28353,7 @@ if (failCount &gt; 0) {
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-断言中--${duanyan}---修改之后的断言-${rightsAAA}" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-断言中--${duanyan}---修改之后的断言-${rightsAAA}">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -28367,7 +28367,11 @@ if (failCount &gt; 0) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则提取rightsAABB" enabled="true">
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则提取rightsAABB">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">rightsAABB</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;(?i)rights&quot;\s*:\s*(\d+)</stringProp>
@@ -28377,7 +28381,7 @@ if (failCount &gt; 0) {
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 断言-rights校验" enabled="true">
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 断言-rights校验">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -28450,16 +28454,6 @@ if (pass) {
     AssertionResult.setFailureMessage(report)
 }</stringProp>
             </JSR223Assertion>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="false">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="70287916">${duanyan}</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -35093,7 +35087,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             <stringProp name="filename"></stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT4-DB/API字段对比配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT4-DB/API字段对比配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="user_info_mt4_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">user_info_mt4_db_api_disabled_compare_fields</stringProp>
@@ -35110,7 +35104,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT5-DB/API字段对比配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT5-DB/API字段对比配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="user_info_mt5_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">user_info_mt5_db_api_disabled_compare_fields</stringProp>
@@ -35127,7 +35121,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息CSV/API字段对比配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息CSV/API字段对比配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="user_info_csv_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">user_info_csv_api_disabled_compare_fields</stringProp>
@@ -35144,7 +35138,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化获取用户信息数据校验参数" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化获取用户信息数据校验参数">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -36569,7 +36563,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅">
         <stringProp name="TestPlan.comments">可移植盈亏校验：保留原流程（初始Equity→开平仓→最终Equity→历史profit求和→对比）；环境地址、账号、品种和时间窗口可通过-Jprofit_check_* 覆盖；启动时执行前置配置校验。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -36581,12 +36575,12 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-2计算get_user_info接口profit数值事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-2计算get_user_info接口profit数值事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数" enabled="true">
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数">
             <collectionProp name="UserParameters.names">
               <stringProp name="103149417">login</stringProp>
               <stringProp name="902025328">instanceid</stringProp>
@@ -36602,13 +36596,13 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="17-2跨机器可移植配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="17-2跨机器可移植配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="profit_trade_api_host" elementType="Argument">
                 <stringProp name="Argument.name">profit_trade_api_host</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_host,18.139.108.85)}</stringProp>
+                <stringProp name="Argument.value">${__P(profit_check_trade_host,127.0.0.1)}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">开平仓辅助服务地址</stringProp>
+                <stringProp name="Argument.desc">开平仓辅助服务地址：18.139.108.85    127.0.0.1</stringProp>
               </elementProp>
               <elementProp name="profit_trade_api_port" elementType="Argument">
                 <stringProp name="Argument.name">profit_trade_api_port</stringProp>
@@ -36654,7 +36648,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="17-2执行前置配置检查-跨机器诊断" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="17-2执行前置配置检查-跨机器诊断">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="script">def required = [&apos;middlewareip&apos;,&apos;port&apos;,&apos;login&apos;,&apos;instanceid&apos;,&apos;profit_trade_api_host&apos;,&apos;profit_trade_api_port&apos;,&apos;profit_trade_account&apos;,&apos;profit_trade_password&apos;,&apos;profit_trade_broker_ip&apos;,&apos;profit_trade_symbol&apos;,&apos;profit_trade_volume&apos;]
@@ -36691,7 +36685,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             <stringProp name="filename"></stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息01" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息01">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD</stringProp>
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">8000</intProp>
@@ -36716,11 +36710,11 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
             <stringProp name="LoopController.loops">${__P(profit_check_trade_loops,3)}</stringProp>
           </LoopController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="下单" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="下单">
               <stringProp name="TestPlan.comments">[Mohi@2023](mailto:Mohi@2023) </stringProp>
               <stringProp name="HTTPSampler.domain">${profit_trade_api_host}</stringProp>
               <stringProp name="HTTPSampler.port">${profit_trade_api_port}</stringProp>
@@ -36760,7 +36754,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="平仓" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="平仓">
               <stringProp name="HTTPSampler.domain">${profit_trade_api_host}</stringProp>
               <stringProp name="HTTPSampler.port">${profit_trade_api_port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -36819,7 +36813,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">10000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -37033,7 +37027,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -37044,7 +37038,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -44426,7 +44420,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -44509,7 +44503,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.14版本013
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
