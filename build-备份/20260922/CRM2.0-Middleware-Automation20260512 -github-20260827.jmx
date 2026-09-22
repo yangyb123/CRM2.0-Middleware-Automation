@@ -6,7 +6,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
@@ -502,7 +501,7 @@ production environment		13.214.249.50   真实生产ip
 635924--》639653</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -1432,7 +1431,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3065,7 +3064,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -24454,7 +24453,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅">
         <stringProp name="TestPlan.comments">MT5_1 查询 mt5_symbols 数据库对比接口响应；MT4_1 或其他用 CSV 字段对比接口响应</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -24787,7 +24786,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-2获取货币信息-csv形式✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-2获取货币信息-csv形式✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -24968,7 +24967,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!3获取持仓订单-数据库校验✅✅">
         <stringProp name="TestPlan.comments">新增持仓订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。SQL保留 SELECT mt.* 查询所有字段，并额外提供接口字段别名用于对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -25586,7 +25585,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅">
         <stringProp name="TestPlan.comments">新增汇总的已平仓仓位数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 --备注20260618
 open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&lt;=2%通过；字段跳过配置仍优先。</stringProp>
@@ -26300,7 +26299,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22">
         <stringProp name="TestPlan.comments">！！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)--222 ✅-验证通过 -20260612-验证成功-最新-001
 新增跨所有实例账户级财务指标数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 数据库按完整实例ID精确路由：MT4_1→mysqlMT4；MT5_1→mysqlMT5；MT4_2→mt4demo_report_MT4_2；MT4_3→mt4demo_report_MT4_3；MT5_1_TS1→mt51ts1_report；MT5_1_TS2→mt51ts2_report。</stringProp>
@@ -27171,11 +27170,6 @@ Map auxMap = buildAuxMap()
 
 def compareWithCandidates = { String loginNo, String field, Object apiVal, List candidates, List aliases -&gt;
     String compareLoginText = loginNo ? &quot;登录号=${loginNo} | &quot; : &apos;&apos;
-    boolean skipMt43ServerType = (instanceId ?: &apos;&apos;).trim().equalsIgnoreCase(&apos;MT4_3&apos;) &amp;&amp; keyNorm(field) == &apos;servertype&apos;
-    if (skipMt43ServerType) {
-        skipped &lt;&lt; &quot; - [跳过] ${compareLoginText}field=${field} | ${candidatePrint(field, candidates, apiVal, aliases)} | reason=MT4_3的server_type不校验，其他实例保持正常校验&quot;
-        return
-    }
     if (isDisabledField(field)) {
         skipped &lt;&lt; &quot; - [跳过] ${compareLoginText}field=${field} | ${candidatePrint(field, candidates, apiVal, aliases)} | reason=${disabledConfigName}&quot;
         return
@@ -27369,7 +27363,6 @@ String status = bad.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
 List reportLines = []
 reportLines &lt;&lt; &quot;账户级财务指标 ${compareSource} 字段对比结果 | status=${status} | instanceid=${instanceId} | login=${login} | table=${tableName} | DB首条登录号=${dbFirstLogin} | 接口首条登录号=${apiFirstLogin} | 本次对比登录号=${matchedLogin} | disabledFields=${disabledConfigName}=[${disabledRaw}]&quot;
 reportLines &lt;&lt; &quot;统计：接口对比字段总数量=${apiCompareFieldTotal} | 相同字段数量=${ok.size()} | 不同字段数量=${bad.size()} | 跳过字段数量=${skipped.size()}&quot;
-reportLines &lt;&lt; &quot;跳过的字段规则：MT4_1、MT4_2、MT5_1、MT5_1_TS1、MT5_1_TS2 等其他实例仍正常校验 server_type；MT4_3 的 server_type 不进行校验，因为该字段值属于可配置项。&quot;
 reportLines &lt;&lt; &quot;字段误差配置：${toleranceConfigName}=[${toleranceRaw}]；未配置字段默认0%，必须完全一致；只有在配置中手工设置过误差的字段才按对应百分比判断；DB模式的误差公式为(DB-API)/DB*100，容差判断使用该比例的绝对值。commission_total/commission_total_reporting固定以DB为基准；swap_total/swap_total_reporting默认以DB为基准，MT5_1_TS1/MT5_1_TS2允许完整get_position_ex持仓页汇总作为实时复核基准；其他字段保留DB优先、DB不匹配时继续检查辅助接口候选的原逻辑。&quot;
 reportLines &lt;&lt; &quot;空值规则：API与${shujuku == &apos;1&apos; ? &apos;DB&apos; : &apos;CSV&apos;}字段值均为空则通过；API=0且${shujuku == &apos;1&apos; ? &apos;DB&apos; : &apos;CSV&apos;}字段存在但值为空则通过；数据库根本无此字段仍失败并可配置跳过；margin_level在API为空、DB=0、get_user_info.MarginLevel字段存在且为空或0时通过。&quot;
 reportLines &lt;&lt; &quot;辅助来源：position_count/swap_total/commission_total=get_position_ex；TS1/TS2的swap在DB快照滞后时优先使用完整持仓页逐笔汇总；账户金额及reporting字段=get_user_info；money_scale/is_cent及8个reporting金额按最新money contract由账户币种独立派生。degrade_reason必须由JDBC查询显式返回，不自动补字段；metrics_age_ms/metrics_stale使用DB字段或DB派生值。shujuku=1时 DB 和允许使用的辅助接口任意一个与主接口在允许误差内一致即通过。&quot;
@@ -27418,7 +27411,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="待确定-6待处理/历史订单✅✅-验证半成品 " enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="!!!!!待确定-6待处理/历史订单✅✅-验证半成品 ">
         <stringProp name="TestPlan.comments">新增待处理/历史订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 *****
 一下是bug  20260618
@@ -28250,7 +28243,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28464,7 +28457,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28710,7 +28703,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅">
         <stringProp name="TestPlan.comments">符号规格和实时报价字段校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比；支持按MT4、MT5、CSV分别手工配置跳过字段和逐字段百分比误差。严格区分字段存在但值为空与DB根本无此字段；API/DB均为空、API=0且DB字段存在但值为空时通过。point依据beta1.66.3契约按POW(10,-digits)生成并参与比较；MT5的volume_max、volume_min、volume_step使用DB原值除以10000后对比，MT4不缩放。接口保持 /crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -29539,7 +29532,7 @@ log.info(&quot;✅ 统计接口断言全部通过！instance 数量=${instances.
             </JSR223Assertion>
             <hashTree/>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-              <stringProp name="filename">./跨所有实例的账户级财务指标(权益-利润、利润率).csv</stringProp>
+              <stringProp name="filename">./csvMT/跨所有实例的账户级财务指标(权益-利润、利润率).csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
               <stringProp name="variableNames"></stringProp>
               <boolProp name="ignoreFirstLine">false</boolProp>
@@ -29548,7 +29541,6 @@ log.info(&quot;✅ 统计接口断言全部通过！instance 数量=${instances.
               <boolProp name="recycle">true</boolProp>
               <boolProp name="stopThread">false</boolProp>
               <stringProp name="shareMode">shareMode.all</stringProp>
-              <stringProp name="TestPlan.comments">./csvMT/跨所有实例的账户级财务指标(权益-利润、利润率).csv</stringProp>
             </CSVDataSet>
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言dimensions" enabled="true">
@@ -29636,7 +29628,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="true">
         <stringProp name="TestPlan.comments">按CSV数据行数循环；shujuku=1时读取整份CSV聚合所有MT4/MT5登录号后DB/API对比，shujuku=0时按当前CSV行做CSV/API对比。CSV变量名从表头读取，支持手动增删校验字段。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -30165,7 +30157,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！12获取持仓订单get_position_info -20260612-验证成功✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="12获取持仓订单get_position_info -20260612-验证成功✅✅">
         <stringProp name="TestPlan.comments">get_position_info：按CSV数据行数循环；shujuku=1时DB/API按订单号匹配后逐字段对比，shujuku=0时CSV/API按订单号匹配后逐字段对比。只改本线程组。
 
 *** 备注：
@@ -30857,7 +30849,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -34133,7 +34125,7 @@ vars.put(&quot;loop_count_恢复权限&quot;, String.valueOf(count + 1));
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="13激活归档用户事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="13激活归档用户事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -35049,7 +35041,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；API与DB字段均为空判定通过，DB结果无字段判定失败；所有字段均支持跳过配置。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -35297,8 +35289,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅" enabled="true">
-        <stringProp name="TestPlan.comments">可移植盈亏校验：保留原流程（初始Equity→开平仓→最终Equity→历史profit求和→对比）；环境地址、账号、品种和时间窗口可通过-Jprofit_check_* 覆盖；启动时执行前置配置校验。</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！17-2计算get_user_info-profit数值✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -35309,117 +35300,44 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-2计算get_user_info接口profit数值事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-2计算get_user_info接口profit数值事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数" enabled="true">
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数">
             <collectionProp name="UserParameters.names">
               <stringProp name="103149417">login</stringProp>
               <stringProp name="902025328">instanceid</stringProp>
               <stringProp name="-1349832915">deal_type</stringProp>
             </collectionProp>
             <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="-1782780628">
-                <stringProp name="1656427391">${__P(profit_check_login,880043)}</stringProp>
-                <stringProp name="73667488">${__P(profit_check_instanceid,MT5_1)}</stringProp>
-                <stringProp name="50">${__P(profit_check_deal_type,2)}</stringProp>
+              <collectionProp name="462275483">
+                <stringProp name="1656427391">880043</stringProp>
+                <stringProp name="73667488">MT5_1</stringProp>
+                <stringProp name="50">2</stringProp>
               </collectionProp>
             </collectionProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="17-2跨机器可移植配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="profit_trade_api_host" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_api_host</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_host,18.139.108.85)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">开平仓辅助服务地址</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_api_port" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_api_port</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_port,10051)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_account" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_account</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_account,561711)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_password" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_password</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_password,Mohi@2023)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">建议服务器通过-J参数注入，不要在日志中打印</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_broker_ip" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_broker_ip</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_trade_broker_ip,43.198.103.117:1950)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_symbol" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_symbol</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_symbol,BTCUSTcent)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_trade_volume" elementType="Argument">
-                <stringProp name="Argument.name">profit_trade_volume</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_volume,0.01)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_time_offset_minutes" elementType="Argument">
-                <stringProp name="Argument.name">profit_time_offset_minutes</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_time_offset_minutes,177)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="profit_history_window_minutes" elementType="Argument">
-                <stringProp name="Argument.name">profit_history_window_minutes</stringProp>
-                <stringProp name="Argument.value">${__P(profit_check_history_window_minutes,60)}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </Arguments>
-          <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="17-2执行前置配置检查-跨机器诊断" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化本次盈亏校验时间窗口-北京时间偏移177分钟">
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="script">def required = [&apos;middlewareip&apos;,&apos;port&apos;,&apos;login&apos;,&apos;instanceid&apos;,&apos;profit_trade_api_host&apos;,&apos;profit_trade_api_port&apos;,&apos;profit_trade_account&apos;,&apos;profit_trade_password&apos;,&apos;profit_trade_broker_ip&apos;,&apos;profit_trade_symbol&apos;,&apos;profit_trade_volume&apos;]
-def invalid = required.findAll { String name -&gt;
-    String value = (vars.get(name) ?: &apos;&apos;).trim()
-    !value || value ==~ /\$\{.+\}/
-}
-if (invalid) throw new AssertionError(&apos;17-2前置配置缺失或未解析: &apos; + invalid.join(&apos;, &apos;) + &apos;；服务器运行请通过 -Jprofit_check_* 参数覆盖环境值&apos;)
-if (!((vars.get(&apos;login&apos;) ?: &apos;&apos;) ==~ /\d+/)) throw new AssertionError(&apos;profit_check_login必须是整数，当前=&apos; + vars.get(&apos;login&apos;))
-if (!((vars.get(&apos;profit_trade_volume&apos;) ?: &apos;&apos;) ==~ /\d+(?:\.\d+)?/)) throw new AssertionError(&apos;profit_check_volume必须是正数，当前=&apos; + vars.get(&apos;profit_trade_volume&apos;))
-String diagnostic = &apos;17-2前置配置检查通过 | JMeterBaseDir=&apos; + org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + &apos; | user.dir=&apos; + System.getProperty(&apos;user.dir&apos;) + &apos; | middleware=&apos; + vars.get(&apos;middlewareip&apos;) + &apos;:&apos; + vars.get(&apos;port&apos;) + &apos; | tradeApi=&apos; + vars.get(&apos;profit_trade_api_host&apos;) + &apos;:&apos; + vars.get(&apos;profit_trade_api_port&apos;) + &apos; | instanceid=&apos; + vars.get(&apos;instanceid&apos;) + &apos; | login=&apos; + vars.get(&apos;login&apos;) + &apos; | symbol=&apos; + vars.get(&apos;profit_trade_symbol&apos;) + &apos; | password=已配置(不打印)&apos;
-SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;); SampleResult.setResponseMessage(&apos;READY&apos;); SampleResult.setResponseData(diagnostic, &apos;UTF-8&apos;); log.info(diagnostic)</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化本次盈亏校验时间窗口-北京时间偏移177分钟" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">long offsetMinutes = Long.parseLong((vars.get(&apos;profit_time_offset_minutes&apos;) ?: &apos;177&apos;).trim())
-long windowMinutes = Long.parseLong((vars.get(&apos;profit_history_window_minutes&apos;) ?: &apos;60&apos;).trim())
-if (windowMinutes &lt;= 0L) throw new AssertionError(&apos;profit_check_history_window_minutes必须大于0&apos;)
+            <stringProp name="script">long offsetMs = 177L * 60L * 1000L
 long startMs = System.currentTimeMillis()
-long closeFromMs = startMs + offsetMinutes * 60L * 1000L
-long closeToMs = closeFromMs + windowMinutes * 60L * 1000L
+long closeFromMs = startMs + offsetMs
 vars.put(&apos;profit_check_start_utc_ms&apos;, String.valueOf(startMs))
 vars.put(&apos;close_time_from_utc_ms&apos;, String.valueOf(closeFromMs))
-vars.put(&apos;close_time_to_utc_ms&apos;, String.valueOf(closeToMs))
 SampleResult.setSuccessful(true)
 SampleResult.setResponseCode(&apos;200&apos;)
 SampleResult.setResponseMessage(&apos;OK&apos;)
-SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs + &apos;, close_time_to_utc_ms=&apos; + closeToMs + &apos;, offsetMinutes=&apos; + offsetMinutes + &apos;, windowMinutes=&apos; + windowMinutes, &apos;UTF-8&apos;)</stringProp>
+SampleResult.setResponseData(&apos;close_time_from_utc_ms=System.currentTimeMillis()+177*60*1000=&apos; + closeFromMs, &apos;UTF-8&apos;)</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息01" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息01">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD</stringProp>
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">8000</intProp>
@@ -35445,13 +35363,13 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             <hashTree/>
           </hashTree>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
-            <stringProp name="LoopController.loops">${__P(profit_check_trade_loops,3)}</stringProp>
+            <stringProp name="LoopController.loops">3</stringProp>
           </LoopController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="下单" enabled="true">
               <stringProp name="TestPlan.comments">[Mohi@2023](mailto:Mohi@2023) </stringProp>
-              <stringProp name="HTTPSampler.domain">${profit_trade_api_host}</stringProp>
-              <stringProp name="HTTPSampler.port">${profit_trade_api_port}</stringProp>
+              <stringProp name="HTTPSampler.domain">18.139.108.85</stringProp>
+              <stringProp name="HTTPSampler.port">10051</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/openorder</stringProp>
@@ -35464,13 +35382,13 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;account&quot;: ${profit_trade_account},&#xd;
-  &quot;password&quot;: &quot;${profit_trade_password}&quot;,&#xd;
-  &quot;ip&quot;: &quot;${profit_trade_broker_ip}&quot;,&#xd;
+  &quot;account&quot;: 561711,&#xd;
+  &quot;password&quot;: &quot;Mohi@2023&quot;,&#xd;
+  &quot;ip&quot;: &quot;43.198.103.117:1950&quot;,&#xd;
   &quot;login&quot;: ${login},&#xd;
-  &quot;symbol&quot;: &quot;${profit_trade_symbol}&quot;,&#xd;
+  &quot;symbol&quot;: &quot;BTCUSTcent&quot;,&#xd;
   &quot;cmd&quot;: 0,&#xd;
-  &quot;vol&quot;: ${profit_trade_volume},&#xd;
+  &quot;vol&quot;: 0.01,&#xd;
   &quot;sl&quot;: 0,&#xd;
   &quot;tp&quot;: 0,&#xd;
   &quot;comment&quot;: &quot;open position 1&quot;&#xd;
@@ -35489,8 +35407,8 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="平仓" enabled="true">
-              <stringProp name="HTTPSampler.domain">${profit_trade_api_host}</stringProp>
-              <stringProp name="HTTPSampler.port">${profit_trade_api_port}</stringProp>
+              <stringProp name="HTTPSampler.domain">18.139.108.85</stringProp>
+              <stringProp name="HTTPSampler.port">10051</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/closeorder</stringProp>
@@ -35503,13 +35421,13 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;account&quot;: ${profit_trade_account},&#xd;
-  &quot;password&quot;: &quot;${profit_trade_password}&quot;,&#xd;
-  &quot;ip&quot;: &quot;${profit_trade_broker_ip}&quot;,&#xd;
+  &quot;account&quot;: 561711,&#xd;
+  &quot;password&quot;: &quot;Mohi@2023&quot;,&#xd;
+  &quot;ip&quot;: &quot;43.198.103.117:1950&quot;,&#xd;
   &quot;login&quot;: ${login},&#xd;
-  &quot;symbol&quot;: &quot;${profit_trade_symbol}&quot;,&#xd;
+  &quot;symbol&quot;: &quot;BTCUSTcent&quot;,&#xd;
   &quot;order&quot;: ${extractedData51},&#xd;
-  &quot;vol&quot;: ${profit_trade_volume},&#xd;
+  &quot;vol&quot;: 0.01,&#xd;
   &quot;comment&quot;: &quot;close position 1&quot;&#xd;
 }</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -35519,7 +35437,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             </HTTPSamplerProxy>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息02" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息02">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">8000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -35547,7 +35465,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户历史平仓仓位/已平仓订单">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">10000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -35566,15 +35484,15 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
                   <stringProp name="Argument.value">{&#xd;
     &quot;accounts&quot;: [&#xd;
        {&#xd;
-      &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
+      &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
       &quot;login&quot;: ${login}&#xd;
     }&#xd;
     ],&#xd;
     &quot;page&quot;: 1,&#xd;
     &quot;page_size&quot;: 50,&#xd;
     &quot;filters&quot;: {&#xd;
-        &quot;close_time_from_utc_ms&quot;: ${close_time_from_utc_ms},&#xd;
-        &quot;close_time_to_utc_ms&quot;: ${close_time_to_utc_ms},&#xd;
+        &quot;close_time_from_utc_ms&quot;: ${__groovy(System.currentTimeMillis() + 177L * 60L * 1000L,close_time_from_utc_ms)},&#xd;
+        &quot;close_time_to_utc_ms&quot;: 1796088341000,&#xd;
         &quot;volume_lots&quot;: {&#xd;
             &quot;condition&quot;: &quot;gte&quot;,&#xd;
             &quot;value&quot;: 0.001&#xd;
@@ -35772,16 +35690,16 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
             <stringProp name="LoopController.loops">238</stringProp>
           </LoopController>
           <hashTree>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置">
               <stringProp name="filename">./美分账号的currency-USC验证MT4账号.csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
               <stringProp name="variableNames">instanceid,login</stringProp>
@@ -35793,7 +35711,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
               <stringProp name="shareMode">shareMode.all</stringProp>
             </CSVDataSet>
             <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="17获取用户信息-美分账号的currency-USC验证" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="17获取用户信息-美分账号的currency-USC验证">
               <stringProp name="HTTPSampler.domain">18.136.25.23</stringProp>
               <stringProp name="HTTPSampler.port">8080</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -35822,7 +35740,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -35862,11 +35780,11 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取群组信息" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取群组信息">
             <stringProp name="LoopController.loops">1</stringProp>
           </LoopController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取群组信息 ${instanceid_val}" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取群组信息 ${instanceid_val}">
               <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
               <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
               <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -37228,7 +37146,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
               </elementProp>
               <elementProp name="open_positions_aux_profit_calc_field_tolerance_percent" elementType="Argument">
                 <stringProp name="Argument.name">open_positions_aux_profit_calc_field_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">profit=20,net_profit_reporting=20,calc_net_profit_reporting=20,calc_profit_reporting,profit_reporting=20</stringProp>
+                <stringProp name="Argument.value">profit=20,net_profit_reporting=15,calc_net_profit_reporting=17,calc_profit_reporting,profit_reporting=20</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.desc">辅助接口profit计算/API字段百分比误差配置；支持 profit=20、profit_reporting=10、calc_profit_reporting=10、field:20、field 20、field=20%；profit_reporting/calc_profit_reporting/API_profit_reporting视为同一字段；profit_reporting未配置时默认0%，其他字段未配置时默认10%；误差以calc计算值为分母；不读取DB/API或CSV/API字段误差配置；0表示必须完全相等。</stringProp>
               </elementProp>
@@ -38838,7 +38756,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -38855,7 +38773,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
             <stringProp name="variableNames"></stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1账户资金-DB/API与字段缺失配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1账户资金-DB/API与字段缺失配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="competition_accounts_db_query_timeout_seconds" elementType="Argument">
                 <stringProp name="Argument.name">competition_accounts_db_query_timeout_seconds</stringProp>
@@ -39565,7 +39483,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40986,7 +40904,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40998,7 +40916,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj" enabled="true">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj">
           <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -41017,7 +40935,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -42626,8 +42544,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.60.3版本008.
 C:\Users\10477\Downloads\TestReport_2026-08-31_01-23-32_JTL\TestReport_2026-08-31_01-23-32.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本021.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本006.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本006.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本007.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本006.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="查询多个账户的挂单订单-性能测试大数据量测试" enabled="false">
