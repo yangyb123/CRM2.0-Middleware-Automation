@@ -6,6 +6,7 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
@@ -23509,7 +23510,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23685,7 +23686,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23738,7 +23739,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22">
         <stringProp name="TestPlan.comments">新增挂单订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 
 -备注重要：20260618
@@ -29635,7 +29636,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅">
         <stringProp name="TestPlan.comments">按CSV数据行数循环；shujuku=1时读取整份CSV聚合所有MT4/MT5登录号后DB/API对比，shujuku=0时按当前CSV行做CSV/API对比。CSV变量名从表头读取，支持手动增删校验字段。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -35048,7 +35049,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅-22">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；API与DB字段均为空判定通过，DB结果无字段判定失败；所有字段均支持跳过配置。三个Groovy业务脚本已内嵌到JMX，不再依赖jmeter_scripts目录；CSV可与JMX同目录或通过-Juser_info_csv_path指定。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -35057,7 +35058,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="获取用户信息CSV循环">
-          <stringProp name="LoopController.loops">${__groovy(def explicit = props.getProperty(&apos;user_info_csv_path&apos;); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty(&apos;user_info_data_root&apos;); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty(&apos;user.dir&apos;)].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = [&apos;获取用户信息-数据校验.csv&apos;, &apos;data&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;, &apos;csv&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;]; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: &apos; + roots); props.put(&apos;user_info_resolved_csv_path&apos;, found.absolutePath); found; def rows = found.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim() }; rows.size() &lt;= 1 ? 0 : rows.size() - 1)}</stringProp>
+          <stringProp name="LoopController.loops">${__groovy(def explicit = props.getProperty('user_info_csv_path'); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty('user_info_data_root'); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty('user.dir')].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = ['获取用户信息-数据校验.csv', 'data' + File.separator + '获取用户信息-数据校验.csv', 'csv' + File.separator + '获取用户信息-数据校验.csv']; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException('找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: ' + roots); props.put('user_info_resolved_csv_path', found.absolutePath); found; def rows = found.readLines('UTF-8').findAll { it != null &amp;&amp; it.trim() }; rows.size() &lt;= 1 ? 0 : rows.size() - 1)}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -35070,7 +35071,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
-            <stringProp name="filename">${__groovy(def explicit = props.getProperty(&apos;user_info_csv_path&apos;); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty(&apos;user_info_data_root&apos;); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty(&apos;user.dir&apos;)].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = [&apos;获取用户信息-数据校验.csv&apos;, &apos;data&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;, &apos;csv&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;]; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: &apos; + roots); props.put(&apos;user_info_resolved_csv_path&apos;, found.absolutePath); found; found.absolutePath)}</stringProp>
+            <stringProp name="filename">${__groovy(def explicit = props.getProperty('user_info_csv_path'); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty('user_info_data_root'); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty('user.dir')].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = ['获取用户信息-数据校验.csv', 'data' + File.separator + '获取用户信息-数据校验.csv', 'csv' + File.separator + '获取用户信息-数据校验.csv']; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException('找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: ' + roots); props.put('user_info_resolved_csv_path', found.absolutePath); found; found.absolutePath)}</stringProp>
             <boolProp name="ignoreFirstLine">false</boolProp>
             <boolProp name="quotedData">true</boolProp>
             <boolProp name="recycle">false</boolProp>
@@ -35088,8 +35089,6 @@ if (csvFile == null || !csvFile.isFile()) throw new AssertionError(&apos;17-1 CS
 int dataRows = Math.max(0, csvFile.readLines(&apos;UTF-8&apos;).findAll { it?.trim() }.size() - 1)
 String message = &apos;17-1路径诊断通过 | CSV=&apos; + csvFile.canonicalPath + &apos; | dataRows=&apos; + dataRows + &apos; | JMeterBaseDir=&apos; + org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + &apos; | user.dir=&apos; + System.getProperty(&apos;user.dir&apos;) + &apos; | GroovyScripts=embedded-in-JMX&apos;
 SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;); SampleResult.setResponseMessage(&apos;READY&apos;); SampleResult.setResponseData(message, &apos;UTF-8&apos;); log.info(message)</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
           </JSR223Sampler>
           <hashTree/>
           <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT4-DB/API字段对比配置" enabled="true">
@@ -35147,15 +35146,15 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String csvName = &apos;获取用户信息-数据校验.csv&apos;
+            <stringProp name="script">String csvName = '获取用户信息-数据校验.csv'
 File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
 if (!csvFile.exists()) {
-    throw new AssertionError(&apos;获取用户信息CSV文件不存在: &apos; + csvFile.getPath())
+    throw new AssertionError('获取用户信息CSV文件不存在: ' + csvFile.getPath())
 }
 
-List rawLines = csvFile.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim().length() &gt; 0 }
+List rawLines = csvFile.readLines('UTF-8').findAll { it != null &amp;&amp; it.trim().length() &gt; 0 }
 if (rawLines.size() &lt;= 1) {
-    throw new AssertionError(&apos;获取用户信息CSV没有数据行: &apos; + csvFile.getPath())
+    throw new AssertionError('获取用户信息CSV没有数据行: ' + csvFile.getPath())
 }
 
 def parseCsvLine = { String line -&gt;
@@ -35164,14 +35163,14 @@ def parseCsvLine = { String line -&gt;
     boolean inQuotes = false
     for (int i = 0; i &lt; line.length(); i++) {
         char c = line.charAt(i)
-        if (c == (&apos;&quot;&apos; as char)) {
-            if (inQuotes &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == (&apos;&quot;&apos; as char)) {
+        if (c == ('"' as char)) {
+            if (inQuotes &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == ('"' as char)) {
                 cur.append(c)
                 i++
             } else {
                 inQuotes = !inQuotes
             }
-        } else if (c == (&apos;,&apos; as char) &amp;&amp; !inQuotes) {
+        } else if (c == (',' as char) &amp;&amp; !inQuotes) {
             values &lt;&lt; cur.toString().trim()
             cur.setLength(0)
         } else {
@@ -35182,69 +35181,69 @@ def parseCsvLine = { String line -&gt;
     values
 }
 
-List headers = parseCsvLine(rawLines[0]).collect { (it ?: &apos;&apos;).replaceAll(/^\uFEFF/, &apos;&apos;).trim() }
-int caseIndex = ((vars.get(&apos;user_info_case_index&apos;) ?: &apos;0&apos;) as int)
+List headers = parseCsvLine(rawLines[0]).collect { (it ?: '').replaceAll(/^\uFEFF/, '').trim() }
+int caseIndex = ((vars.get('user_info_case_index') ?: '0') as int)
 int dataCount = rawLines.size() - 1
 if (caseIndex &gt;= dataCount) {
-    throw new AssertionError(&apos;获取用户信息CSV循环次数超出数据行数 | caseIndex=&apos; + caseIndex + &apos; | dataCount=&apos; + dataCount)
+    throw new AssertionError('获取用户信息CSV循环次数超出数据行数 | caseIndex=' + caseIndex + ' | dataCount=' + dataCount)
 }
-vars.put(&apos;user_info_case_index&apos;, String.valueOf(caseIndex + 1))
+vars.put('user_info_case_index', String.valueOf(caseIndex + 1))
 
 List values = parseCsvLine(rawLines[caseIndex + 1])
 Map currentRow = new LinkedHashMap()
 headers.eachWithIndex { h, idx -&gt;
     if (h) {
-        String v = idx &lt; values.size() ? (values[idx] ?: &apos;&apos;) : &apos;&apos;
+        String v = idx &lt; values.size() ? (values[idx] ?: '') : ''
         currentRow[h] = v
         vars.put(h, v)
     }
 }
-currentRow[&apos;__line_no&apos;] = caseIndex + 2
+currentRow['__line_no'] = caseIndex + 2
 
 def firstValue = { Map row, List names -&gt;
     for (String n : names) {
         if (row.containsKey(n)) {
-            String v = row[n] == null ? &apos;&apos; : row[n].toString().trim()
-            if (v &amp;&amp; !v.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return v
+            String v = row[n] == null ? '' : row[n].toString().trim()
+            if (v &amp;&amp; !v.equalsIgnoreCase('&lt;EOF&gt;')) return v
         }
     }
-    &apos;&apos;
+    ''
 }
 
-String shujuku = firstValue(currentRow, [&apos;shujuku&apos;])
-if (!(shujuku in [&apos;0&apos;, &apos;1&apos;])) {
-    throw new AssertionError(&apos;获取用户信息 shujuku 只能是0或1，当前=&apos; + shujuku + &apos; | CSV行=&apos; + currentRow[&apos;__line_no&apos;])
+String shujuku = firstValue(currentRow, ['shujuku'])
+if (!(shujuku in ['0', '1'])) {
+    throw new AssertionError('获取用户信息 shujuku 只能是0或1，当前=' + shujuku + ' | CSV行=' + currentRow['__line_no'])
 }
 
-String instanceId = firstValue(currentRow, [&apos;order_instanceid_val&apos;, &apos;instanceid_val&apos;, &apos;instanceid&apos;])
-String login = firstValue(currentRow, [&apos;order_login&apos;, &apos;login_val&apos;, &apos;Login&apos;, &apos;login&apos;])
-if (!instanceId) throw new AssertionError(&apos;获取用户信息 order_instanceid_val/instanceid 不能为空 | CSV行=&apos; + currentRow[&apos;__line_no&apos;])
-if (!login) throw new AssertionError(&apos;获取用户信息 order_login/login 不能为空 | CSV行=&apos; + currentRow[&apos;__line_no&apos;])
+String instanceId = firstValue(currentRow, ['order_instanceid_val', 'instanceid_val', 'instanceid'])
+String login = firstValue(currentRow, ['order_login', 'login_val', 'Login', 'login'])
+if (!instanceId) throw new AssertionError('获取用户信息 order_instanceid_val/instanceid 不能为空 | CSV行=' + currentRow['__line_no'])
+if (!login) throw new AssertionError('获取用户信息 order_login/login 不能为空 | CSV行=' + currentRow['__line_no'])
 
 String upperInstance = instanceId.toUpperCase()
-String platform = upperInstance.contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (upperInstance.contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
-if (!platform) throw new AssertionError(&apos;获取用户信息只支持 MT4_*/MT5_* instanceid，当前=&apos; + instanceId + &apos; | CSV行=&apos; + currentRow[&apos;__line_no&apos;])
-if (!(login ==~ /^\d+$/)) throw new AssertionError(&apos;获取用户信息 login 必须是数字，当前=&apos; + login + &apos; | CSV行=&apos; + currentRow[&apos;__line_no&apos;])
+String platform = upperInstance.contains('MT5') ? 'MT5' : (upperInstance.contains('MT4') ? 'MT4' : '')
+if (!platform) throw new AssertionError('获取用户信息只支持 MT4_*/MT5_* instanceid，当前=' + instanceId + ' | CSV行=' + currentRow['__line_no'])
+if (!(login ==~ /^\d+$/)) throw new AssertionError('获取用户信息 login 必须是数字，当前=' + login + ' | CSV行=' + currentRow['__line_no'])
 
-vars.put(&apos;user_info_shujuku&apos;, shujuku)
-vars.put(&apos;user_info_instanceid&apos;, instanceId)
-vars.put(&apos;user_info_login&apos;, login)
-vars.put(&apos;user_info_platform&apos;, platform)
-vars.put(&apos;user_info_csv_line_no&apos;, String.valueOf(currentRow[&apos;__line_no&apos;]))
-vars.put(&apos;user_info_case_index_display&apos;, String.valueOf(caseIndex + 1))
-vars.put(&apos;user_info_case_total&apos;, String.valueOf(dataCount))
-vars.put(&apos;order_instanceid_val&apos;, instanceId)
-vars.put(&apos;order_login&apos;, login)
-vars.put(&apos;instanceid_val&apos;, instanceId)
-vars.put(&apos;login_val&apos;, login)
-vars.put(&apos;instanceid&apos;, instanceId)
-vars.put(&apos;login&apos;, login)
-vars.putObject(&apos;user_info_current_csv_row&apos;, currentRow)
-vars.putObject(&apos;db_user_info_rows&apos;, [])
-vars.put(&apos;user_info_compare_report&apos;, &apos;&apos;)
-vars.put(&apos;user_info_compare_status&apos;, &apos;INIT&apos;)
+vars.put('user_info_shujuku', shujuku)
+vars.put('user_info_instanceid', instanceId)
+vars.put('user_info_login', login)
+vars.put('user_info_platform', platform)
+vars.put('user_info_csv_line_no', String.valueOf(currentRow['__line_no']))
+vars.put('user_info_case_index_display', String.valueOf(caseIndex + 1))
+vars.put('user_info_case_total', String.valueOf(dataCount))
+vars.put('order_instanceid_val', instanceId)
+vars.put('order_login', login)
+vars.put('instanceid_val', instanceId)
+vars.put('login_val', login)
+vars.put('instanceid', instanceId)
+vars.put('login', login)
+vars.putObject('user_info_current_csv_row', currentRow)
+vars.putObject('db_user_info_rows', [])
+vars.put('user_info_compare_report', '')
+vars.put('user_info_compare_status', 'INIT')
 
-vars.put(&apos;user_info_mt4_sql&apos;, &apos;&apos;&apos;
+vars.put('user_info_mt4_sql', '''
 WITH mt AS (
   SELECT
     u.*,
@@ -35260,19 +35259,19 @@ WITH mt AS (
   WHERE u.LOGIN = ?
 )
 SELECT
-  CASE WHEN mt.LASTDATE IS NULL OR CAST(mt.LASTDATE AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(mt.LASTDATE) END AS last_access,
+  CASE WHEN mt.LASTDATE IS NULL OR CAST(mt.LASTDATE AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(mt.LASTDATE) END AS last_access,
   mt.COUNTRY AS country,
   30.0 AS margin_stopout,
   CAST(ROUND(mt.PREVMONTHBALANCE, 2) AS DECIMAL(30,2)) AS prevmonthbalance,
   CAST(ROUND(mt.MARGIN_FREE, 2) AS DECIMAL(30,2)) AS margin_free,
   CAST(ROUND(mt.TAXES, 2) AS DECIMAL(30,2)) AS taxes,
-  &apos;false&apos; AS enable_api_trading,
+  'false' AS enable_api_trading,
   CAST(ROUND(mt.EQUITY, 2) AS DECIMAL(30,2)) AS equity,
   CAST(ROUND(mt.BALANCE, 2) AS DECIMAL(30,2)) AS balance,
-  IF((mt.rights_calc &amp; 1) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable,
+  IF((mt.rights_calc &amp; 1) &lt;&gt; 0, 'true', 'false') AS enable,
   mt.SEND_REPORTS AS send_reports,
-  IF((mt.rights_calc &amp; 2) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_change_password,
-  IF((mt.rights_calc &amp; 524) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS disable_trading,
+  IF((mt.rights_calc &amp; 2) &lt;&gt; 0, 'true', 'false') AS enable_change_password,
+  IF((mt.rights_calc &amp; 524) &lt;&gt; 0, 'true', 'false') AS disable_trading,
   mt.ID AS id,
   mt.STATE AS state,
   CAST(ROUND(mt.CREDIT, 2) AS DECIMAL(30,2)) AS credit,
@@ -35280,140 +35279,140 @@ SELECT
   CAST(ROUND(mt.PREVBALANCE, 2) AS DECIMAL(30,2)) AS prevbalance,
   mt.`GROUP` AS `group`,
   CAST(ROUND(mt.MARGIN, 2) AS DECIMAL(30,2)) AS margin,
-  IF((mt.rights_calc &amp; 2048) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_otp,
+  IF((mt.rights_calc &amp; 2048) &lt;&gt; 0, 'true', 'false') AS enable_otp,
   mt.PHONE AS phone,
   mt.NAME AS name,
-  CASE WHEN mt.REGDATE IS NULL OR CAST(mt.REGDATE AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(mt.REGDATE) END AS registration,
-  &apos;false&apos; AS enable_push_notification,
+  CASE WHEN mt.REGDATE IS NULL OR CAST(mt.REGDATE AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(mt.REGDATE) END AS registration,
+  'false' AS enable_push_notification,
   CAST(ROUND(mt.MARGIN_LEVEL, 2) AS DECIMAL(30,2)) AS margin_level,
   mt.AGENT_ACCOUNT AS agent_account,
-  &apos;false&apos; AS sponsored_hosting,
+  'false' AS sponsored_hosting,
   mt.STATUS AS status,
   mt.LEVERAGE AS leverage,
-  IF((mt.rights_calc &amp; 64) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_expert_advisor,
+  IF((mt.rights_calc &amp; 64) &lt;&gt; 0, 'true', 'false') AS enable_expert_advisor,
   mt.CITY AS city,
   mt.LOGIN AS login,
-  IF((mt.rights_calc &amp; 16) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS confirmed,
+  IF((mt.rights_calc &amp; 16) &lt;&gt; 0, 'true', 'false') AS confirmed,
   mt.INTERESTRATE AS interestrate,
   mt.rights_calc AS rights,
   mt.CURRENCY AS currency,
-  &apos;false&apos; AS exclude_from_reports,
+  'false' AS exclude_from_reports,
   CAST(ROUND(mt.EQUITY - mt.BALANCE - mt.CREDIT, 2) AS DECIMAL(30,2)) AS profit,
   mt.EMAIL AS email,
-  IF((mt.rights_calc &amp; 1) &lt;&gt; 0 AND (mt.rights_calc &amp; 524) = 0, &apos;true&apos;, &apos;false&apos;) AS can_trade,
+  IF((mt.rights_calc &amp; 1) &lt;&gt; 0 AND (mt.rights_calc &amp; 524) = 0, 'true', 'false') AS can_trade,
   mt.TIMESTAMP AS `timestamp`,
   CAST(ROUND(mt.PREVBALANCE, 2) AS DECIMAL(30,2)) AS prevequity,
-  &apos;false&apos; AS technical_account,
+  'false' AS technical_account,
   mt.ADDRESS AS address,
   mt.ENABLE_READONLY AS enable_read_only,
-  IF((mt.rights_calc &amp; 32) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_trailing_stops,
-  IF((mt.rights_calc &amp; 1024) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS force_reset_password,
-  IF((mt.rights_calc &amp; 512) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS readonly_account,
-  IF((mt.rights_calc &amp; 256) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_statement_reports,
-  IF((mt.rights_calc &amp; 8) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS investor,
+  IF((mt.rights_calc &amp; 32) &lt;&gt; 0, 'true', 'false') AS enable_trailing_stops,
+  IF((mt.rights_calc &amp; 1024) &lt;&gt; 0, 'true', 'false') AS force_reset_password,
+  IF((mt.rights_calc &amp; 512) &lt;&gt; 0, 'true', 'false') AS readonly_account,
+  IF((mt.rights_calc &amp; 256) &lt;&gt; 0, 'true', 'false') AS enable_statement_reports,
+  IF((mt.rights_calc &amp; 8) &lt;&gt; 0, 'true', 'false') AS investor,
   mt.COMMENT AS comment,
-  &apos;broker_live&apos; AS _data_source,
-  JSON_OBJECT(&apos;shm_invariant_ok&apos;, true) AS _meta,
+  'broker_live' AS _data_source,
+  JSON_OBJECT('shm_invariant_ok', true) AS _meta,
   NULL AS storage_recompute,
   NULL AS swap_total,
   0 AS broker_error_code,
   NULL AS margin_level_recompute,
-  &apos;&apos; AS broker_recompute_probe_symbol,
-  &apos;&apos; AS broker_error_platform,
-  &apos;true&apos; AS broker_recompute_failed,
+  '' AS broker_recompute_probe_symbol,
+  '' AS broker_error_platform,
+  'true' AS broker_recompute_failed,
   5000 AS broker_acquire_timeout_ms,
-  &apos;true&apos; AS broker_recompute_unsupported_platform,
+  'true' AS broker_recompute_unsupported_platform,
   NULL AS commission_total,
-  &apos;true&apos; AS broker_attempted,
+  'true' AS broker_attempted,
   NULL AS margin_recompute,
   NULL AS margin_free_recompute,
   NULL AS storage,
-  &apos;false&apos; AS broker_failed_other,
+  'false' AS broker_failed_other,
   NULL AS floating_recompute,
   NULL AS floating,
   NULL AS profit_recompute,
-  &apos;false&apos; AS broker_timed_out,
+  'false' AS broker_timed_out,
   0 AS broker_recompute_retcode,
   2000 AS broker_timeout_ms,
   NULL AS equity_recompute,
-  &apos;&apos; AS broker_error_message
+  '' AS broker_error_message
 FROM mt
-&apos;&apos;&apos;.trim())
+'''.trim())
 
-vars.put(&apos;user_info_mt5_sql&apos;, &apos;&apos;&apos;
+vars.put('user_info_mt5_sql', '''
 SELECT
   NULL AS FloatingRecompute,
-  &apos;&apos; AS BrokerRecomputeProbeSymbol,
+  '' AS BrokerRecomputeProbeSymbol,
   mt.Address AS Address,
   mt.ZipCode AS ZIPCode,
-  JSON_OBJECT(&apos;shm_invariant_ok&apos;, true) AS _meta,
-  IF((mt.Rights &amp; 16384) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_api_trading,
+  JSON_OBJECT('shm_invariant_ok', true) AS _meta,
+  IF((mt.Rights &amp; 16384) &lt;&gt; 0, 'true', 'false') AS enable_api_trading,
   CAST(ROUND(COALESCE(acc.Floating, 0.0), 2) AS DECIMAL(30,2)) AS Floating,
   mt.Name AS Name,
   mt.Rights AS Rights,
   CAST(ROUND(COALESCE(acc.MarginFree, 0.0), 2) AS DECIMAL(30,2)) AS MarginFree,
-  &apos;false&apos; AS BrokerTimedOut,
-  CASE WHEN mt.Registration IS NULL OR CAST(mt.Registration AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(mt.Registration) END AS Registration,
-  IF((mt.Rights &amp; 1) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable,
+  'false' AS BrokerTimedOut,
+  CASE WHEN mt.Registration IS NULL OR CAST(mt.Registration AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(mt.Registration) END AS Registration,
+  IF((mt.Rights &amp; 1) &lt;&gt; 0, 'true', 'false') AS enable,
   mt.Leverage AS Leverage,
   CAST(ROUND(COALESCE(acc.Profit, COALESCE(acc.Equity, mt.Balance + mt.Credit) - COALESCE(acc.Balance, mt.Balance) - COALESCE(acc.Credit, mt.Credit)), 2) AS DECIMAL(30,2)) AS Profit,
-  IF((mt.Rights &amp; 2) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_change_password,
+  IF((mt.Rights &amp; 2) &lt;&gt; 0, 'true', 'false') AS enable_change_password,
   mt.ID AS ID,
   mt.MQID AS MQID,
-  IF((mt.Rights &amp; 524) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS disable_trading,
+  IF((mt.Rights &amp; 524) &lt;&gt; 0, 'true', 'false') AS disable_trading,
   mt.Status AS Status,
   mt.Agent AS Agent,
-  &apos;&apos; AS BrokerErrorPlatform,
+  '' AS BrokerErrorPlatform,
   mt.Color AS Color,
   mt.City AS City,
   mt.Login AS Login,
-  &apos;true&apos; AS BrokerAttempted,
+  'true' AS BrokerAttempted,
   13 AS BrokerRecomputeRetcode,
-  IF((mt.Rights &amp; 2048) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_otp,
+  IF((mt.Rights &amp; 2048) &lt;&gt; 0, 'true', 'false') AS enable_otp,
   CAST(ROUND(COALESCE(acc.Storage, 0.0), 2) AS DECIMAL(30,2)) AS Storage,
   NULL AS EquityRecompute,
   mt.State AS State,
-  &apos;true&apos; AS BrokerRecomputeFailed,
+  'true' AS BrokerRecomputeFailed,
   2000 AS BrokerTimeoutMs,
   mt.Country AS Country,
   NULL AS CommissionTotal,
-  IF((mt.Rights &amp; 32768) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_push_notification,
+  IF((mt.Rights &amp; 32768) &lt;&gt; 0, 'true', 'false') AS enable_push_notification,
   CAST(ROUND(COALESCE(acc.Balance, mt.Balance), 2) AS DECIMAL(30,2)) AS Balance,
   CAST(ROUND(COALESCE(acc.Margin, 0.0), 2) AS DECIMAL(30,2)) AS Margin,
-  IF((mt.Rights &amp; 8192) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS sponsored_hosting,
+  IF((mt.Rights &amp; 8192) &lt;&gt; 0, 'true', 'false') AS sponsored_hosting,
   5000 AS BrokerAcquireTimeoutMs,
-  &apos;false&apos; AS BrokerFailedOther,
+  'false' AS BrokerFailedOther,
   mt.`Group` AS `Group`,
   g.Currency AS GroupCurrency,
   g.MarginStopOut AS MarginStopOut,
   g.MarginCall AS MarginCall,
-  IF((mt.Rights &amp; 64) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_expert_advisor,
-  &apos;false&apos; AS BrokerRecomputeUnsupportedPlatform,
+  IF((mt.Rights &amp; 64) &lt;&gt; 0, 'true', 'false') AS enable_expert_advisor,
+  'false' AS BrokerRecomputeUnsupportedPlatform,
   CAST(ROUND(COALESCE(acc.Equity, mt.Balance + mt.Credit), 2) AS DECIMAL(30,2)) AS Equity,
   NULL AS ProfitRecompute,
-  IF((mt.Rights &amp; 16) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS confirmed,
+  IF((mt.Rights &amp; 16) &lt;&gt; 0, 'true', 'false') AS confirmed,
   CAST(ROUND(COALESCE(acc.Credit, mt.Credit), 2) AS DECIMAL(30,2)) AS Credit,
   NULL AS MarginRecompute,
   mt.Phone AS Phone,
   NULL AS MarginFreeRecompute,
   CAST(ROUND(COALESCE(acc.Storage, 0.0), 2) AS DECIMAL(30,2)) AS SwapTotal,
-  &apos;false&apos; AS exclude_from_reports,
+  'false' AS exclude_from_reports,
   NULL AS MarginLevelRecompute,
-  IF((mt.Rights &amp; 1) &lt;&gt; 0 AND (mt.Rights &amp; 524) = 0, &apos;true&apos;, &apos;false&apos;) AS can_trade,
+  IF((mt.Rights &amp; 1) &lt;&gt; 0 AND (mt.Rights &amp; 524) = 0, 'true', 'false') AS can_trade,
   mt.LastIP AS LastIP,
   mt.Comment AS Comment,
-  &apos;false&apos; AS technical_account,
+  'false' AS technical_account,
   CAST(ROUND(COALESCE(acc.MarginLevel, CASE WHEN COALESCE(acc.Margin, 0) &gt; 0 THEN acc.Equity / acc.Margin * 100 ELSE 0 END), 2) AS DECIMAL(30,2)) AS MarginLevel,
-  &apos;&apos; AS BrokerErrorMessage,
+  '' AS BrokerErrorMessage,
   mt.Email AS EMail,
-  IF((mt.Rights &amp; 32) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_trailing_stops,
-  IF((mt.Rights &amp; 1024) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS force_reset_password,
-  IF((mt.Rights &amp; 512) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS readonly_account,
-  IF((mt.Rights &amp; 256) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_statement_reports,
-  IF((mt.Rights &amp; 8) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS investor,
-  CASE WHEN mt.LastAccess IS NULL OR CAST(mt.LastAccess AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(mt.LastAccess) END AS LastAccess,
+  IF((mt.Rights &amp; 32) &lt;&gt; 0, 'true', 'false') AS enable_trailing_stops,
+  IF((mt.Rights &amp; 1024) &lt;&gt; 0, 'true', 'false') AS force_reset_password,
+  IF((mt.Rights &amp; 512) &lt;&gt; 0, 'true', 'false') AS readonly_account,
+  IF((mt.Rights &amp; 256) &lt;&gt; 0, 'true', 'false') AS enable_statement_reports,
+  IF((mt.Rights &amp; 8) &lt;&gt; 0, 'true', 'false') AS investor,
+  CASE WHEN mt.LastAccess IS NULL OR CAST(mt.LastAccess AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(mt.LastAccess) END AS LastAccess,
   NULL AS StorageRecompute,
-  &apos;broker_live&apos; AS _data_source,
+  'broker_live' AS _data_source,
   0 AS BrokerErrorCode,
   CAST(ROUND(mt.BalancePrevMonth, 2) AS DECIMAL(30,2)) AS prevmonthbalance,
   CAST(ROUND(mt.BalancePrevDay, 2) AS DECIMAL(30,2)) AS prevbalance,
@@ -35421,48 +35420,48 @@ SELECT
   mt.Timestamp AS `timestamp`,
   CAST(ROUND(mt.EquityPrevDay, 2) AS DECIMAL(30,2)) AS prevequity,
   CAST(ROUND(mt.EquityPrevMonth, 2) AS DECIMAL(30,2)) AS prevmonthequity,
-  CASE UPPER(TRIM(COALESCE(g.Currency, &apos;&apos;)))
-    WHEN &apos;USD&apos; THEN CAST(ROUND(mt.EquityPrevMonth, 2) AS DECIMAL(30,2))
-    WHEN &apos;USC&apos; THEN CAST(ROUND(mt.EquityPrevMonth, 2) / 100.0 AS DECIMAL(30,4))
+  CASE UPPER(TRIM(COALESCE(g.Currency, '')))
+    WHEN 'USD' THEN CAST(ROUND(mt.EquityPrevMonth, 2) AS DECIMAL(30,2))
+    WHEN 'USC' THEN CAST(ROUND(mt.EquityPrevMonth, 2) / 100.0 AS DECIMAL(30,4))
     ELSE NULL
   END AS prevmonthequity_reporting
 FROM mt5_report.mt5_users mt
 LEFT JOIN mt5_report.mt5_accounts acc ON acc.Login = mt.Login
 LEFT JOIN mt5_report.mt5_groups g ON g.`Group` = mt.`Group`
 WHERE mt.Login = ?
-&apos;&apos;&apos;.trim())
+'''.trim())
 
-log.info(&apos;get_user_info init | case=&apos; + (caseIndex + 1) + &apos;/&apos; + dataCount + &apos; | CSV行=&apos; + currentRow[&apos;__line_no&apos;] + &apos; | shujuku=&apos; + shujuku + &apos; | platform=&apos; + platform + &apos; | instanceid=&apos; + instanceId + &apos; | login=&apos; + login)
+log.info('get_user_info init | case=' + (caseIndex + 1) + '/' + dataCount + ' | CSV行=' + currentRow['__line_no'] + ' | shujuku=' + shujuku + ' | platform=' + platform + ' | instanceid=' + instanceId + ' | login=' + login)
 
 // 本线程组固定调用 get_user_info?live_equity=0。保存该语义，供比较脚本区分
 // Broker 运行状态字段、SHM-only 空字段以及真正能够从数据库对账的字段。
-vars.put(&apos;user_info_live_equity&apos;, &apos;0&apos;)
+vars.put('user_info_live_equity', '0')
 
 // 目标线程组按完整实例ID选择连接池和物理库，禁止再用 MT4_*/MT5_* 宽泛路由。
 // MT5_TS2 作为历史CSV别名兼容，实际查询 mt51ts2_report。
-String normalizedInstance = (vars.get(&apos;user_info_instanceid&apos;) ?: &apos;&apos;).trim().toUpperCase()
+String normalizedInstance = (vars.get('user_info_instanceid') ?: '').trim().toUpperCase()
 Map instanceRoutes = [
-    &apos;MT4_1&apos;    : [route: &apos;MT4_1&apos;,     dataSource: &apos;mysqlMT4&apos;,              schema: &apos;mt4_report&apos;],
-    &apos;MT4_2&apos;    : [route: &apos;MT4_2&apos;,     dataSource: &apos;mt4demo_report_MT4_2&apos;, schema: &apos;mt4demo_report&apos;],
-    &apos;MT4_3&apos;    : [route: &apos;MT4_3&apos;,     dataSource: &apos;mt4demo_report_MT4_3&apos;, schema: &apos;mt4demo_report&apos;],
-    &apos;MT5_1&apos;    : [route: &apos;MT5_1&apos;,     dataSource: &apos;mysqlMT5&apos;,              schema: &apos;mt5_report&apos;],
-    &apos;MT5_1_TS1&apos;: [route: &apos;MT5_1_TS1&apos;, dataSource: &apos;mt51ts1_report&apos;,        schema: &apos;mt51ts1_report&apos;],
-    &apos;MT5_1_TS2&apos;: [route: &apos;MT5_1_TS2&apos;, dataSource: &apos;mt51ts2_report&apos;,        schema: &apos;mt51ts2_report&apos;],
-    &apos;MT5_TS2&apos;  : [route: &apos;MT5_1_TS2&apos;, dataSource: &apos;mt51ts2_report&apos;,        schema: &apos;mt51ts2_report&apos;]
+    'MT4_1'    : [route: 'MT4_1',     dataSource: 'mysqlMT4',              schema: 'mt4_report'],
+    'MT4_2'    : [route: 'MT4_2',     dataSource: 'mt4demo_report_MT4_2', schema: 'mt4demo_report'],
+    'MT4_3'    : [route: 'MT4_3',     dataSource: 'mt4demo_report_MT4_3', schema: 'mt4demo_report'],
+    'MT5_1'    : [route: 'MT5_1',     dataSource: 'mysqlMT5',              schema: 'mt5_report'],
+    'MT5_1_TS1': [route: 'MT5_1_TS1', dataSource: 'mt51ts1_report',        schema: 'mt51ts1_report'],
+    'MT5_1_TS2': [route: 'MT5_1_TS2', dataSource: 'mt51ts2_report',        schema: 'mt51ts2_report'],
+    'MT5_TS2'  : [route: 'MT5_1_TS2', dataSource: 'mt51ts2_report',        schema: 'mt51ts2_report']
 ]
 Map selectedRoute = instanceRoutes[normalizedInstance]
 if (selectedRoute == null) {
-    throw new AssertionError(&apos;获取用户信息不支持该实例路由: &apos; + normalizedInstance +
-        &apos;；支持 MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2/MT5_TS2&apos;)
+    throw new AssertionError('获取用户信息不支持该实例路由: ' + normalizedInstance +
+        '；支持 MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2/MT5_TS2')
 }
-vars.put(&apos;user_info_instance_route&apos;, selectedRoute.route as String)
-vars.put(&apos;user_info_db_data_source&apos;, selectedRoute.dataSource as String)
-vars.put(&apos;user_info_db_schema&apos;, selectedRoute.schema as String)
+vars.put('user_info_instance_route', selectedRoute.route as String)
+vars.put('user_info_db_data_source', selectedRoute.dataSource as String)
+vars.put('user_info_db_schema', selectedRoute.schema as String)
 
 // MT4：仅扫描当前登录号；当前持仓的价格盈亏、swap、commission 一次聚合。
 // SHM profit 的 OpenAPI 定义为 consolidated floating + swap + commission，
 // 因而不再用可能滞后的 MT4_USERS.EQUITY-BALANCE-CREDIT 作为 profit。
-vars.put(&apos;user_info_mt4_sql&apos;, &apos;&apos;&apos;
+vars.put('user_info_mt4_sql', '''
 WITH mt AS (
   SELECT
     u.*,
@@ -35490,9 +35489,9 @@ pos AS (
   WHERE t.TICKET &gt; 0
     AND t.CMD IN (0, 1)
     AND t.SYMBOL IS NOT NULL
-    AND TRIM(t.SYMBOL) &lt;&gt; &apos;&apos;
-    AND t.SYMBOL REGEXP &apos;[A-Za-z]&apos;
-    AND CAST(t.CLOSE_TIME AS CHAR) IN (&apos;1970-01-01 00:00:00&apos;, &apos;0000-00-00 00:00:00&apos;)
+    AND TRIM(t.SYMBOL) &lt;&gt; ''
+    AND t.SYMBOL REGEXP '[A-Za-z]'
+    AND CAST(t.CLOSE_TIME AS CHAR) IN ('1970-01-01 00:00:00', '0000-00-00 00:00:00')
   GROUP BY t.LOGIN
 ),
 calc AS (
@@ -35521,10 +35520,10 @@ SELECT
   calc.COMMENT AS comment,
   calc.ID AS id,
   calc.STATUS AS status,
-  CASE WHEN calc.REGDATE IS NULL OR CAST(calc.REGDATE AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(calc.REGDATE) END AS registration,
-  CASE WHEN calc.LASTDATE IS NULL OR CAST(calc.LASTDATE AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(calc.LASTDATE) END AS last_access,
+  CASE WHEN calc.REGDATE IS NULL OR CAST(calc.REGDATE AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(calc.REGDATE) END AS registration,
+  CASE WHEN calc.LASTDATE IS NULL OR CAST(calc.LASTDATE AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(calc.LASTDATE) END AS last_access,
   calc.`TIMESTAMP` AS `timestamp`,
-  UPPER(TRIM(NULLIF(calc.CURRENCY, &apos;&apos;))) AS currency,
+  UPPER(TRIM(NULLIF(calc.CURRENCY, ''))) AS currency,
   CAST(ROUND(calc.BALANCE, 2) AS DECIMAL(30,2)) AS balance,
   CAST(ROUND(calc.CREDIT, 2) AS DECIMAL(30,2)) AS credit,
   CAST(ROUND(calc.calculated_equity, 2) AS DECIMAL(30,2)) AS equity,
@@ -35542,33 +35541,33 @@ SELECT
   calc.AGENT_ACCOUNT AS agent_account,
   calc.SEND_REPORTS AS send_reports,
   calc.rights_calc AS rights,
-  IF((calc.rights_calc &amp; 1) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable,
-  IF((calc.rights_calc &amp; 2) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_change_password,
-  IF((calc.rights_calc &amp; 524) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS disable_trading,
-  IF((calc.rights_calc &amp; 8) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS investor,
-  IF((calc.rights_calc &amp; 16) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS confirmed,
-  IF((calc.rights_calc &amp; 32) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_trailing_stops,
-  IF((calc.rights_calc &amp; 64) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_expert_advisor,
-  IF((calc.rights_calc &amp; 256) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_statement_reports,
-  IF((calc.rights_calc &amp; 512) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS readonly_account,
-  IF((calc.rights_calc &amp; 1024) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS force_reset_password,
-  IF((calc.rights_calc &amp; 2048) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_otp,
-  &apos;false&apos; AS sponsored_hosting,
-  &apos;false&apos; AS enable_api_trading,
-  &apos;false&apos; AS enable_push_notification,
-  &apos;false&apos; AS technical_account,
-  &apos;false&apos; AS exclude_from_reports,
-  IF((calc.rights_calc &amp; 1) &lt;&gt; 0 AND (calc.rights_calc &amp; 524) = 0, &apos;true&apos;, &apos;false&apos;) AS can_trade,
+  IF((calc.rights_calc &amp; 1) &lt;&gt; 0, 'true', 'false') AS enable,
+  IF((calc.rights_calc &amp; 2) &lt;&gt; 0, 'true', 'false') AS enable_change_password,
+  IF((calc.rights_calc &amp; 524) &lt;&gt; 0, 'true', 'false') AS disable_trading,
+  IF((calc.rights_calc &amp; 8) &lt;&gt; 0, 'true', 'false') AS investor,
+  IF((calc.rights_calc &amp; 16) &lt;&gt; 0, 'true', 'false') AS confirmed,
+  IF((calc.rights_calc &amp; 32) &lt;&gt; 0, 'true', 'false') AS enable_trailing_stops,
+  IF((calc.rights_calc &amp; 64) &lt;&gt; 0, 'true', 'false') AS enable_expert_advisor,
+  IF((calc.rights_calc &amp; 256) &lt;&gt; 0, 'true', 'false') AS enable_statement_reports,
+  IF((calc.rights_calc &amp; 512) &lt;&gt; 0, 'true', 'false') AS readonly_account,
+  IF((calc.rights_calc &amp; 1024) &lt;&gt; 0, 'true', 'false') AS force_reset_password,
+  IF((calc.rights_calc &amp; 2048) &lt;&gt; 0, 'true', 'false') AS enable_otp,
+  'false' AS sponsored_hosting,
+  'false' AS enable_api_trading,
+  'false' AS enable_push_notification,
+  'false' AS technical_account,
+  'false' AS exclude_from_reports,
+  IF((calc.rights_calc &amp; 1) &lt;&gt; 0 AND (calc.rights_calc &amp; 524) = 0, 'true', 'false') AS can_trade,
   calc.ENABLE_READONLY AS enable_read_only,
   50.0 AS margin_call,
   30.0 AS margin_stopout,
   NULL AS BrokerRecomputeUnavailableReason
 FROM calc
-&apos;&apos;&apos;.trim())
+'''.trim())
 
 // MT5：位置表提供价格浮盈和 Storage，成交表对仍处于活动状态的位置聚合 Commission。
 // Profit/Equity/MarginFree/MarginLevel 使用同一份聚合结果，避免混用不同更新时间的账户快照。
-vars.put(&apos;user_info_mt5_sql&apos;, &apos;&apos;&apos;
+vars.put('user_info_mt5_sql', '''
 WITH usr AS (
   SELECT
     u.*,
@@ -35592,8 +35591,8 @@ pos AS (
     AND p.Volume &gt; 0
     AND p.PriceOpen &gt; 0
     AND p.Symbol IS NOT NULL
-    AND TRIM(p.Symbol) &lt;&gt; &apos;&apos;
-    AND p.Symbol REGEXP &apos;[A-Za-z]&apos;
+    AND TRIM(p.Symbol) &lt;&gt; ''
+    AND p.Symbol REGEXP '[A-Za-z]'
   GROUP BY p.Login
 ),
 fees AS (
@@ -35644,7 +35643,7 @@ SELECT
   calc.GroupCurrency AS GroupCurrency,
   calc.GroupMarginStopOut AS MarginStopOut,
   calc.GroupMarginCall AS MarginCall,
-  UPPER(TRIM(NULLIF(calc.GroupCurrency, &apos;&apos;))) AS currency,
+  UPPER(TRIM(NULLIF(calc.GroupCurrency, ''))) AS currency,
   CAST(ROUND(calc.calculated_balance, 2) AS DECIMAL(30,2)) AS Balance,
   CAST(ROUND(calc.calculated_credit, 2) AS DECIMAL(30,2)) AS Credit,
   CAST(ROUND(calc.calculated_equity, 2) AS DECIMAL(30,2)) AS Equity,
@@ -35659,25 +35658,25 @@ SELECT
   calc.position_count AS position_count,
   calc.Leverage AS Leverage,
   calc.Rights AS Rights,
-  IF((calc.Rights &amp; 1) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable,
-  IF((calc.Rights &amp; 2) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_change_password,
-  IF((calc.Rights &amp; 524) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS disable_trading,
-  IF((calc.Rights &amp; 8) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS investor,
-  IF((calc.Rights &amp; 16) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS confirmed,
-  IF((calc.Rights &amp; 32) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_trailing_stops,
-  IF((calc.Rights &amp; 64) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_expert_advisor,
-  IF((calc.Rights &amp; 256) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_statement_reports,
-  IF((calc.Rights &amp; 512) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS readonly_account,
-  IF((calc.Rights &amp; 1024) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS force_reset_password,
-  IF((calc.Rights &amp; 2048) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_otp,
-  IF((calc.Rights &amp; 8192) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS sponsored_hosting,
-  IF((calc.Rights &amp; 16384) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_api_trading,
-  IF((calc.Rights &amp; 32768) &lt;&gt; 0, &apos;true&apos;, &apos;false&apos;) AS enable_push_notification,
-  &apos;false&apos; AS technical_account,
-  &apos;false&apos; AS exclude_from_reports,
-  IF((calc.Rights &amp; 1) &lt;&gt; 0 AND (calc.Rights &amp; 524) = 0, &apos;true&apos;, &apos;false&apos;) AS can_trade,
-  CASE WHEN calc.Registration IS NULL OR CAST(calc.Registration AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(calc.Registration) END AS Registration,
-  CASE WHEN calc.LastAccess IS NULL OR CAST(calc.LastAccess AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE UNIX_TIMESTAMP(calc.LastAccess) END AS LastAccess,
+  IF((calc.Rights &amp; 1) &lt;&gt; 0, 'true', 'false') AS enable,
+  IF((calc.Rights &amp; 2) &lt;&gt; 0, 'true', 'false') AS enable_change_password,
+  IF((calc.Rights &amp; 524) &lt;&gt; 0, 'true', 'false') AS disable_trading,
+  IF((calc.Rights &amp; 8) &lt;&gt; 0, 'true', 'false') AS investor,
+  IF((calc.Rights &amp; 16) &lt;&gt; 0, 'true', 'false') AS confirmed,
+  IF((calc.Rights &amp; 32) &lt;&gt; 0, 'true', 'false') AS enable_trailing_stops,
+  IF((calc.Rights &amp; 64) &lt;&gt; 0, 'true', 'false') AS enable_expert_advisor,
+  IF((calc.Rights &amp; 256) &lt;&gt; 0, 'true', 'false') AS enable_statement_reports,
+  IF((calc.Rights &amp; 512) &lt;&gt; 0, 'true', 'false') AS readonly_account,
+  IF((calc.Rights &amp; 1024) &lt;&gt; 0, 'true', 'false') AS force_reset_password,
+  IF((calc.Rights &amp; 2048) &lt;&gt; 0, 'true', 'false') AS enable_otp,
+  IF((calc.Rights &amp; 8192) &lt;&gt; 0, 'true', 'false') AS sponsored_hosting,
+  IF((calc.Rights &amp; 16384) &lt;&gt; 0, 'true', 'false') AS enable_api_trading,
+  IF((calc.Rights &amp; 32768) &lt;&gt; 0, 'true', 'false') AS enable_push_notification,
+  'false' AS technical_account,
+  'false' AS exclude_from_reports,
+  IF((calc.Rights &amp; 1) &lt;&gt; 0 AND (calc.Rights &amp; 524) = 0, 'true', 'false') AS can_trade,
+  CASE WHEN calc.Registration IS NULL OR CAST(calc.Registration AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(calc.Registration) END AS Registration,
+  CASE WHEN calc.LastAccess IS NULL OR CAST(calc.LastAccess AS CHAR) = '0000-00-00 00:00:00' THEN 0 ELSE UNIX_TIMESTAMP(calc.LastAccess) END AS LastAccess,
   calc.Country AS Country,
   calc.City AS City,
   calc.State AS State,
@@ -35700,20 +35699,20 @@ SELECT
   CAST(ROUND(calc.EquityPrevMonth, 2) AS DECIMAL(30,2)) AS prevmonthequity,
   NULL AS BrokerRecomputeUnavailableReason
 FROM calc
-&apos;&apos;&apos;.trim())
+'''.trim())
 
-String selectedSchema = vars.get(&apos;user_info_db_schema&apos;)
-if (vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos;) {
-    String mt4Sql = vars.get(&apos;user_info_mt4_sql&apos;).replace(&apos;mt4_report.&apos;, selectedSchema + &apos;.&apos;)
-    if (selectedSchema == &apos;mt4demo_report&apos;) {
+String selectedSchema = vars.get('user_info_db_schema')
+if (vars.get('user_info_platform') == 'MT4') {
+    String mt4Sql = vars.get('user_info_mt4_sql').replace('mt4_report.', selectedSchema + '.')
+    if (selectedSchema == 'mt4demo_report') {
         // MT4_2/MT4_3使用的旧版MySQL不支持WITH CTE；保留同一字段投影，改用5.7兼容派生表。
         // 同时按mt4demo_report.sql使用小写物理表名，兼容Linux MySQL表名大小写敏感。
-        int projectionStart = mt4Sql.indexOf(&apos;SELECT\n  calc.LOGIN AS login&apos;)
+        int projectionStart = mt4Sql.indexOf('SELECT\n  calc.LOGIN AS login')
         if (projectionStart &lt; 0) {
-            throw new AssertionError(&apos;无法生成MT4 demo兼容SQL：未找到最终字段投影&apos;)
+            throw new AssertionError('无法生成MT4 demo兼容SQL：未找到最终字段投影')
         }
         String projection = mt4Sql.substring(projectionStart)
-        String legacyCalc = &apos;&apos;&apos;FROM (
+        String legacyCalc = '''FROM (
   SELECT
     base.*,
     (base.BALANCE + base.CREDIT + base.consolidated_profit) AS calculated_equity
@@ -35739,29 +35738,29 @@ if (vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos;) {
      AND t.TICKET &gt; 0
      AND t.CMD IN (0, 1)
      AND t.SYMBOL IS NOT NULL
-     AND TRIM(t.SYMBOL) &lt;&gt; &apos;&apos;
-     AND t.SYMBOL REGEXP &apos;[A-Za-z]&apos;
-     AND CAST(t.CLOSE_TIME AS CHAR) IN (&apos;1970-01-01 00:00:00&apos;, &apos;0000-00-00 00:00:00&apos;)
+     AND TRIM(t.SYMBOL) &lt;&gt; ''
+     AND t.SYMBOL REGEXP '[A-Za-z]'
+     AND CAST(t.CLOSE_TIME AS CHAR) IN ('1970-01-01 00:00:00', '0000-00-00 00:00:00')
     WHERE u.LOGIN = ?
     GROUP BY u.LOGIN
   ) base
-) calc&apos;&apos;&apos;.trim()
+) calc'''.trim()
         mt4Sql = projection.replaceFirst(/FROM\s+calc\s*$/, java.util.regex.Matcher.quoteReplacement(legacyCalc))
     }
-    vars.put(&apos;user_info_mt4_sql&apos;, mt4Sql)
+    vars.put('user_info_mt4_sql', mt4Sql)
 } else {
-    String mt5Sql = vars.get(&apos;user_info_mt5_sql&apos;).replace(&apos;mt5_report.&apos;, selectedSchema + &apos;.&apos;)
-    if (selectedSchema in [&apos;mt51ts1_report&apos;, &apos;mt51ts2_report&apos;]) {
+    String mt5Sql = vars.get('user_info_mt5_sql').replace('mt5_report.', selectedSchema + '.')
+    if (selectedSchema in ['mt51ts1_report', 'mt51ts2_report']) {
         // TS库按年度保存成交；当前结构文件对应 mt5_deals_2026。
-        mt5Sql = mt5Sql.replace(selectedSchema + &apos;.mt5_deals &apos;, selectedSchema + &apos;.mt5_deals_2026 &apos;)
+        mt5Sql = mt5Sql.replace(selectedSchema + '.mt5_deals ', selectedSchema + '.mt5_deals_2026 ')
     }
-    vars.put(&apos;user_info_mt5_sql&apos;, mt5Sql)
+    vars.put('user_info_mt5_sql', mt5Sql)
 }
 
-log.info(&apos;get_user_info target init override | live_equity=0 | instance=&apos; + normalizedInstance +
-    &apos; | route=&apos; + vars.get(&apos;user_info_instance_route&apos;) + &apos; | dataSource=&apos; +
-    vars.get(&apos;user_info_db_data_source&apos;) + &apos; | schema=&apos; + selectedSchema +
-    &apos; | optimized MT4/MT5 position aggregates enabled&apos;)
+log.info('get_user_info target init override | live_equity=0 | instance=' + normalizedInstance +
+    ' | route=' + vars.get('user_info_instance_route') + ' | dataSource=' +
+    vars.get('user_info_db_data_source') + ' | schema=' + selectedSchema +
+    ' | optimized MT4/MT5 position aggregates enabled')
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223Sampler>
@@ -35919,7 +35918,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 String cleanText(Object value) {
-    if (value == null) return &apos;&apos;
+    if (value == null) return ''
     if (value instanceof Map || value instanceof List) return JsonOutput.toJson(value)
     if (value instanceof BigDecimal) return value.stripTrailingZeros().toPlainString()
     if (value instanceof BigInteger) return value.toString()
@@ -35935,13 +35934,13 @@ String cleanText(Object value) {
 
 boolean blank(Object value) {
     String s = cleanText(value)
-    s.length() == 0 || s.equalsIgnoreCase(&apos;&lt;empty&gt;&apos;) || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) || s.equalsIgnoreCase(&apos;null&apos;)
+    s.length() == 0 || s.equalsIgnoreCase('&lt;empty&gt;') || s.equalsIgnoreCase('&lt;EOF&gt;') || s.equalsIgnoreCase('null')
 }
 
 String normKey(Object value) {
-    (value == null ? &apos;&apos; : String.valueOf(value))
-        .replaceAll(/^\uFEFF/, &apos;&apos;)
-        .replaceAll(/[\s_\-\.]/, &apos;&apos;)
+    (value == null ? '' : String.valueOf(value))
+        .replaceAll(/^\uFEFF/, '')
+        .replaceAll(/[\s_\-\.]/, '')
         .toLowerCase()
 }
 
@@ -35964,14 +35963,14 @@ Object valueOf(Map row, String field) {
 Map normalizeMap(Map raw) {
     Map out = new LinkedHashMap()
     if (raw == null) return out
-    raw.each { key, value -&gt; out[String.valueOf(key).replaceAll(/^\uFEFF/, &apos;&apos;).trim()] = value }
+    raw.each { key, value -&gt; out[String.valueOf(key).replaceAll(/^\uFEFF/, '').trim()] = value }
     out
 }
 
 Set parseDisabled(String raw) {
     Set out = [] as Set
-    (raw ?: &apos;&apos;).split(/[,，;|\s]+/).each { token -&gt;
-        String value = (token ?: &apos;&apos;).trim()
+    (raw ?: '').split(/[,，;|\s]+/).each { token -&gt;
+        String value = (token ?: '').trim()
         if (value) {
             out &lt;&lt; value
             out &lt;&lt; value.toLowerCase()
@@ -35982,13 +35981,13 @@ Set parseDisabled(String raw) {
 }
 
 boolean isDisabled(String field, Set disabled) {
-    disabled.contains(&apos;*&apos;) || disabled.contains(field) || disabled.contains((field ?: &apos;&apos;).toLowerCase()) || disabled.contains(normKey(field))
+    disabled.contains('*') || disabled.contains(field) || disabled.contains((field ?: '').toLowerCase()) || disabled.contains(normKey(field))
 }
 
 Map parseTolerance(String raw) {
     Map out = [:]
-    (raw ?: &apos;&apos;).split(/[,，;\n\r]+/).each { token -&gt;
-        String text = (token ?: &apos;&apos;).trim()
+    (raw ?: '').split(/[,，;\n\r]+/).each { token -&gt;
+        String text = (token ?: '').trim()
         if (!text) return
         def matcher = text =~ /^\s*([^:=\s]+)\s*(?:=|:|\s)\s*([0-9]+(?:\.[0-9]+)?)\s*%?\s*$/
         if (matcher.matches()) out[normKey(matcher.group(1))] = new BigDecimal(matcher.group(2))
@@ -36003,33 +36002,33 @@ BigDecimal toleranceFor(String field, Map toleranceMap) {
 
 BigDecimal asNum(Object value) {
     if (blank(value)) return null
-    String s = cleanText(value).replace(&apos;,&apos;, &apos;&apos;)
+    String s = cleanText(value).replace(',', '')
     if (!(s ==~ /^[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?$/)) return null
     try { return new BigDecimal(s) } catch (Throwable ignored) { return null }
 }
 
 String fmtNum(BigDecimal number) {
-    number == null ? &apos;&lt;empty&gt;&apos; : number.stripTrailingZeros().toPlainString()
+    number == null ? '&lt;empty&gt;' : number.stripTrailingZeros().toPlainString()
 }
 
 String pctText(BigDecimal percent) {
-    percent == null ? &apos;N/A&apos; : percent.setScale(6, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + &apos;%&apos;
+    percent == null ? 'N/A' : percent.setScale(6, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + '%'
 }
 
 boolean isTimeField(String field) {
     String normalized = normKey(field)
-    if (normalized in [&apos;lastaccess&apos;, &apos;registration&apos;, &apos;lastdate&apos;, &apos;regdate&apos;, &apos;timestamp&apos;]) return true
+    if (normalized in ['lastaccess', 'registration', 'lastdate', 'regdate', 'timestamp']) return true
     // 只把 UTC epoch 字段当作时间；timeout/age 都是时长，不能按时间戳转换。
-    (normalized.endsWith(&apos;utcms&apos;) || normalized.endsWith(&apos;utc&apos;)) &amp;&amp; !normalized.contains(&apos;timeout&apos;) &amp;&amp; !normalized.contains(&apos;age&apos;)
+    (normalized.endsWith('utcms') || normalized.endsWith('utc')) &amp;&amp; !normalized.contains('timeout') &amp;&amp; !normalized.contains('age')
 }
 
 Long epochMillis(Object value) {
     if (blank(value)) return null
-    String s = cleanText(value).replaceAll(/\.0+$/, &apos;&apos;)
+    String s = cleanText(value).replaceAll(/\.0+$/, '')
     if (!(s ==~ /^-?\d{10,17}$/)) return null
     try {
         long number = Long.parseLong(s)
-        int digits = s.startsWith(&apos;-&apos;) ? s.length() - 1 : s.length()
+        int digits = s.startsWith('-') ? s.length() - 1 : s.length()
         if (digits &lt;= 10) return number * 1000L
         if (digits == 13) return number
         if (digits == 16) return (long)(number / 1000L)
@@ -36041,24 +36040,24 @@ Long epochMillis(Object value) {
 }
 
 String formatMs(Long milliseconds) {
-    if (milliseconds == null) return &apos;&lt;empty&gt;&apos;
+    if (milliseconds == null) return '&lt;empty&gt;'
     Instant.ofEpochMilli(milliseconds)
-        .atZone(ZoneId.of(&apos;Asia/Shanghai&apos;))
-        .format(DateTimeFormatter.ofPattern(&apos;yyyy-MM-dd HH:mm:ss&apos;))
+        .atZone(ZoneId.of('Asia/Shanghai'))
+        .format(DateTimeFormatter.ofPattern('yyyy-MM-dd HH:mm:ss'))
 }
 
 String normalizeDateText(Object value) {
-    if (blank(value)) return &apos;&apos;
-    String text = cleanText(value).replace(&apos;T&apos;, &apos; &apos;).trim()
-    text = text.replaceAll(/\.\d+$/, &apos;&apos;).replaceAll(/Z$/, &apos;&apos;)
-    if (text ==~ /^\d{4}-\d{2}-\d{2}$/) return text + &apos; 00:00:00&apos;
+    if (blank(value)) return ''
+    String text = cleanText(value).replace('T', ' ').trim()
+    text = text.replaceAll(/\.\d+$/, '').replaceAll(/Z$/, '')
+    if (text ==~ /^\d{4}-\d{2}-\d{2}$/) return text + ' 00:00:00'
     text
 }
 
 Map parseJsonValue(Object value) {
     if (value instanceof Map || value instanceof List) return [ok: true, value: value]
     String text = cleanText(value)
-    if (!(text.startsWith(&apos;{&apos;) || text.startsWith(&apos;[&apos;))) return [ok: false, value: null]
+    if (!(text.startsWith('{') || text.startsWith('['))) return [ok: false, value: null]
     try {
         return [ok: true, value: new JsonSlurper().parseText(text)]
     } catch (Throwable ignored) {
@@ -36079,14 +36078,14 @@ Object canonicalJson(Object value) {
 
 Set&lt;String&gt; textCandidates(String raw) {
     Set&lt;String&gt; candidates = [] as LinkedHashSet
-    String first = (raw ?: &apos;&apos;).replaceAll(/[\r\n\t]/, &apos;&apos;)
+    String first = (raw ?: '').replaceAll(/[\r\n\t]/, '')
     candidates &lt;&lt; first
     String current = first
-    Charset gb18030 = Charset.forName(&apos;GB18030&apos;)
+    Charset gb18030 = Charset.forName('GB18030')
     for (int round = 0; round &lt; 2; round++) {
         try {
             String repaired = new String(current.getBytes(gb18030), StandardCharsets.UTF_8)
-            if (!repaired.contains(&apos;\uFFFD&apos;) &amp;&amp; !repaired.contains(&apos;?&apos;) &amp;&amp; repaired != current) {
+            if (!repaired.contains('\uFFFD') &amp;&amp; !repaired.contains('?') &amp;&amp; repaired != current) {
                 candidates &lt;&lt; repaired
                 current = repaired
             } else {
@@ -36101,24 +36100,24 @@ Set&lt;String&gt; textCandidates(String raw) {
 
 Map compareValue(String field, Object apiValue, Object expectedValue, String sourceName, BigDecimal tolerance) {
     if (blank(apiValue) &amp;&amp; blank(expectedValue)) {
-        return [same: true, apiPrint: &apos;&lt;empty&gt;&apos;, expectedPrint: &apos;&lt;empty&gt;&apos;, diff: &apos;0&apos;, percent: &apos;0%&apos;,
-                formula: &apos;API与&apos; + sourceName + &apos;均为空&apos;, note: &apos;API和&apos; + sourceName + &apos;返回都为空，通过&apos;]
+        return [same: true, apiPrint: '&lt;empty&gt;', expectedPrint: '&lt;empty&gt;', diff: '0', percent: '0%',
+                formula: 'API与' + sourceName + '均为空', note: 'API和' + sourceName + '返回都为空，通过']
     }
 
     // 按需求：字段在DB/CSV中存在但值为空时，API明确返回数值0也判定通过。
     if (blank(expectedValue)) {
         BigDecimal apiNumber = asNum(apiValue)
         if (apiNumber != null &amp;&amp; apiNumber.compareTo(BigDecimal.ZERO) == 0) {
-            return [same: true, apiPrint: &apos;0&apos;, expectedPrint: &apos;&lt;empty&gt;&apos;, diff: &apos;0&apos;, percent: &apos;0%&apos;,
-                    formula: &apos;API=0且&apos; + sourceName + &apos;字段存在但值为空&apos;, note: &apos;API=0，&apos; + sourceName + &apos;查询字段数据为空，通过&apos;]
+            return [same: true, apiPrint: '0', expectedPrint: '&lt;empty&gt;', diff: '0', percent: '0%',
+                    formula: 'API=0且' + sourceName + '字段存在但值为空', note: 'API=0，' + sourceName + '查询字段数据为空，通过']
         }
     }
 
     if (blank(apiValue) || blank(expectedValue)) {
         return [same: false,
-                apiPrint: blank(apiValue) ? &apos;&lt;empty&gt;&apos; : cleanText(apiValue),
-                expectedPrint: blank(expectedValue) ? &apos;&lt;empty&gt;&apos; : cleanText(expectedValue),
-                diff: &apos;N/A&apos;, percent: &apos;N/A&apos;, formula: &apos;API或&apos; + sourceName + &apos;单边为空&apos;, note: &apos;字段值单边为空，失败&apos;]
+                apiPrint: blank(apiValue) ? '&lt;empty&gt;' : cleanText(apiValue),
+                expectedPrint: blank(expectedValue) ? '&lt;empty&gt;' : cleanText(expectedValue),
+                diff: 'N/A', percent: 'N/A', formula: 'API或' + sourceName + '单边为空', note: '字段值单边为空，失败']
     }
 
     Map apiJson = parseJsonValue(apiValue)
@@ -36128,8 +36127,8 @@ Map compareValue(String field, Object apiValue, Object expectedValue, String sou
         String expectedCanonical = JsonOutput.toJson(canonicalJson(expectedJson.value))
         boolean same = apiCanonical == expectedCanonical
         return [same: same, apiPrint: apiCanonical, expectedPrint: expectedCanonical,
-                diff: same ? &apos;0&apos; : &apos;N/A&apos;, percent: same ? &apos;0%&apos; : &apos;N/A&apos;,
-                formula: &apos;JSON解析后按键排序并比较结构和值&apos;, note: same ? &apos;JSON语义一致，通过&apos; : &apos;JSON语义不一致，失败&apos;]
+                diff: same ? '0' : 'N/A', percent: same ? '0%' : 'N/A',
+                formula: 'JSON解析后按键排序并比较结构和值', note: same ? 'JSON语义一致，通过' : 'JSON语义不一致，失败']
     }
 
     if (isTimeField(field)) {
@@ -36139,28 +36138,28 @@ Map compareValue(String field, Object apiValue, Object expectedValue, String sou
             long difference = Math.abs(apiMs - expectedMs)
             boolean same = difference &lt;= 1000L
             return [same: same,
-                    apiPrint: cleanText(apiValue) + &apos; -&gt; &apos; + formatMs(apiMs),
-                    expectedPrint: cleanText(expectedValue) + &apos; -&gt; &apos; + formatMs(expectedMs),
-                    diff: difference + &apos;ms&apos;, percent: &apos;N/A&apos;,
-                    formula: &apos;abs(API epoch毫秒 - &apos; + sourceName + &apos; epoch毫秒) &lt;= 1000ms&apos;,
-                    note: same ? &apos;时间戳一致，通过&apos; : &apos;时间戳不一致，失败&apos;]
+                    apiPrint: cleanText(apiValue) + ' -&gt; ' + formatMs(apiMs),
+                    expectedPrint: cleanText(expectedValue) + ' -&gt; ' + formatMs(expectedMs),
+                    diff: difference + 'ms', percent: 'N/A',
+                    formula: 'abs(API epoch毫秒 - ' + sourceName + ' epoch毫秒) &lt;= 1000ms',
+                    note: same ? '时间戳一致，通过' : '时间戳不一致，失败']
         }
         String apiDate = apiMs == null ? normalizeDateText(apiValue) : formatMs(apiMs)
         String expectedDate = expectedMs == null ? normalizeDateText(expectedValue) : formatMs(expectedMs)
         boolean same = apiDate == expectedDate
-        return [same: same, apiPrint: cleanText(apiValue) + &apos; -&gt; &apos; + apiDate,
-                expectedPrint: cleanText(expectedValue) + &apos; -&gt; &apos; + expectedDate,
-                diff: same ? &apos;0&apos; : &apos;N/A&apos;, percent: &apos;N/A&apos;,
-                formula: &apos;Unix时间按Asia/Shanghai展示后与日期文本比较&apos;, note: same ? &apos;时间一致，通过&apos; : &apos;时间不一致，失败&apos;]
+        return [same: same, apiPrint: cleanText(apiValue) + ' -&gt; ' + apiDate,
+                expectedPrint: cleanText(expectedValue) + ' -&gt; ' + expectedDate,
+                diff: same ? '0' : 'N/A', percent: 'N/A',
+                formula: 'Unix时间按Asia/Shanghai展示后与日期文本比较', note: same ? '时间一致，通过' : '时间不一致，失败']
     }
 
     String apiBoolean = cleanText(apiValue).toLowerCase()
     String expectedBoolean = cleanText(expectedValue).toLowerCase()
-    if (apiBoolean in [&apos;true&apos;, &apos;false&apos;] || expectedBoolean in [&apos;true&apos;, &apos;false&apos;]) {
+    if (apiBoolean in ['true', 'false'] || expectedBoolean in ['true', 'false']) {
         boolean same = apiBoolean == expectedBoolean
         return [same: same, apiPrint: cleanText(apiValue), expectedPrint: cleanText(expectedValue),
-                diff: same ? &apos;0&apos; : &apos;N/A&apos;, percent: same ? &apos;0%&apos; : &apos;N/A&apos;,
-                formula: &apos;布尔值统一转小写后比较&apos;, note: same ? &apos;布尔值一致，通过&apos; : &apos;布尔值不一致，失败&apos;]
+                diff: same ? '0' : 'N/A', percent: same ? '0%' : 'N/A',
+                formula: '布尔值统一转小写后比较', note: same ? '布尔值一致，通过' : '布尔值不一致，失败']
     }
 
     BigDecimal apiNumber = asNum(apiValue)
@@ -36171,37 +36170,37 @@ Map compareValue(String field, Object apiValue, Object expectedValue, String sou
         if (base.compareTo(BigDecimal.ZERO) == 0) {
             boolean same = difference.compareTo(BigDecimal.ZERO) == 0
             return [same: same, apiPrint: fmtNum(apiNumber), expectedPrint: fmtNum(expectedNumber),
-                    diff: fmtNum(difference), percent: same ? &apos;0%&apos; : &apos;N/A(&apos; + sourceName + &apos;=0)&apos;,
-                    formula: &apos;abs(&apos; + sourceName + &apos;(0) - API(&apos; + fmtNum(apiNumber) + &apos;)) = &apos; + fmtNum(difference) + &apos;；基准为0时要求绝对差值为0&apos;,
-                    note: same ? &apos;基准为0且数值一致，通过&apos; : &apos;基准为0但绝对差值不为0，失败&apos;]
+                    diff: fmtNum(difference), percent: same ? '0%' : 'N/A(' + sourceName + '=0)',
+                    formula: 'abs(' + sourceName + '(0) - API(' + fmtNum(apiNumber) + ')) = ' + fmtNum(difference) + '；基准为0时要求绝对差值为0',
+                    note: same ? '基准为0且数值一致，通过' : '基准为0但绝对差值不为0，失败']
         }
-        BigDecimal percent = difference.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 12, RoundingMode.HALF_UP)
+        BigDecimal percent = difference.multiply(new BigDecimal('100')).divide(base, 12, RoundingMode.HALF_UP)
         boolean same = percent.compareTo(tolerance ?: BigDecimal.ZERO) &lt;= 0
         String percentText = pctText(percent)
-        String toleranceText = fmtNum(tolerance ?: BigDecimal.ZERO) + &apos;%&apos;
+        String toleranceText = fmtNum(tolerance ?: BigDecimal.ZERO) + '%'
         return [same: same, apiPrint: fmtNum(apiNumber), expectedPrint: fmtNum(expectedNumber),
                 diff: fmtNum(difference), percent: percentText,
-                formula: &apos;abs((&apos; + sourceName + &apos;(&apos; + fmtNum(expectedNumber) + &apos;) - API(&apos; + fmtNum(apiNumber) + &apos;)) / abs(&apos; + sourceName + &apos;(&apos; + fmtNum(expectedNumber) + &apos;))) * 100 = &apos; + percentText + &apos;；字段误差=&apos; + toleranceText,
-                note: same ? &apos;误差小于等于&apos; + toleranceText + &apos;，通过&apos; : &apos;误差大于&apos; + toleranceText + &apos;，失败&apos;]
+                formula: 'abs((' + sourceName + '(' + fmtNum(expectedNumber) + ') - API(' + fmtNum(apiNumber) + ')) / abs(' + sourceName + '(' + fmtNum(expectedNumber) + '))) * 100 = ' + percentText + '；字段误差=' + toleranceText,
+                note: same ? '误差小于等于' + toleranceText + '，通过' : '误差大于' + toleranceText + '，失败']
     }
 
-    String apiString = cleanText(apiValue).replaceAll(/[\r\n\t]/, &apos;&apos;)
-    String expectedString = cleanText(expectedValue).replaceAll(/[\r\n\t]/, &apos;&apos;)
+    String apiString = cleanText(apiValue).replaceAll(/[\r\n\t]/, '')
+    String expectedString = cleanText(expectedValue).replaceAll(/[\r\n\t]/, '')
     Set&lt;String&gt; apiCandidates = textCandidates(apiString)
     Set&lt;String&gt; expectedCandidates = textCandidates(expectedString)
     boolean same = !apiCandidates.intersect(expectedCandidates).isEmpty()
     boolean encodingRepaired = same &amp;&amp; apiString != expectedString
     return [same: same, apiPrint: apiString, expectedPrint: expectedString,
-            diff: same ? &apos;0&apos; : &apos;N/A&apos;, percent: same ? &apos;0%&apos; : &apos;N/A&apos;,
-            formula: encodingRepaired ? &apos;去除换行/制表符，并修复UTF-8被GB18030误解码后比较&apos; : &apos;字符串去除换行/制表符后精确比较&apos;,
-            note: same ? (encodingRepaired ? &apos;字符编码归一化后一致，通过&apos; : &apos;字符串一致，通过&apos;) : &apos;字符串不一致，失败&apos;]
+            diff: same ? '0' : 'N/A', percent: same ? '0%' : 'N/A',
+            formula: encodingRepaired ? '去除换行/制表符，并修复UTF-8被GB18030误解码后比较' : '字符串去除换行/制表符后精确比较',
+            note: same ? (encodingRepaired ? '字符编码归一化后一致，通过' : '字符串一致，通过') : '字符串不一致，失败']
 }
 
 String renderValue(String field, Object value) {
-    if (blank(value)) return &apos;&lt;empty&gt;&apos;
+    if (blank(value)) return '&lt;empty&gt;'
     if (isTimeField(field)) {
         Long milliseconds = epochMillis(value)
-        if (milliseconds != null) return cleanText(value) + &apos; -&gt; &apos; + formatMs(milliseconds)
+        if (milliseconds != null) return cleanText(value) + ' -&gt; ' + formatMs(milliseconds)
     }
     cleanText(value)
 }
@@ -36211,12 +36210,12 @@ Map flattenApi(Map item) {
     if (item == null) return out
     item.each { rawKey, value -&gt;
         String key = String.valueOf(rawKey)
-        if (key == &apos;Group&apos; &amp;&amp; value instanceof Map) {
+        if (key == 'Group' &amp;&amp; value instanceof Map) {
             Map group = value as Map
-            out[&apos;Group&apos;] = group[&apos;Group&apos;]
-            out[&apos;GroupCurrency&apos;] = group[&apos;Currency&apos;]
-            out[&apos;MarginStopOut&apos;] = group[&apos;MarginStopOut&apos;]
-            out[&apos;MarginCall&apos;] = group[&apos;MarginCall&apos;]
+            out['Group'] = group['Group']
+            out['GroupCurrency'] = group['Currency']
+            out['MarginStopOut'] = group['MarginStopOut']
+            out['MarginCall'] = group['MarginCall']
         } else {
             out[key] = value
         }
@@ -36224,13 +36223,13 @@ Map flattenApi(Map item) {
     out
 }
 
-String shujuku = (vars.get(&apos;user_info_shujuku&apos;) ?: &apos;&apos;).trim()
-boolean dbMode = shujuku == &apos;1&apos;
-String platform = (vars.get(&apos;user_info_platform&apos;) ?: &apos;&apos;).trim().toUpperCase()
-String sourceName = dbMode ? &apos;DB&apos; : &apos;CSV&apos;
-String login = vars.get(&apos;user_info_login&apos;) ?: &apos;&apos;
-String instanceId = vars.get(&apos;user_info_instanceid&apos;) ?: &apos;&apos;
-String liveEquity = vars.get(&apos;user_info_live_equity&apos;) ?: &apos;0&apos;
+String shujuku = (vars.get('user_info_shujuku') ?: '').trim()
+boolean dbMode = shujuku == '1'
+String platform = (vars.get('user_info_platform') ?: '').trim().toUpperCase()
+String sourceName = dbMode ? 'DB' : 'CSV'
+String login = vars.get('user_info_login') ?: ''
+String instanceId = vars.get('user_info_instanceid') ?: ''
+String liveEquity = vars.get('user_info_live_equity') ?: '0'
 String responseText = prev.getResponseDataAsString()
 
 List&lt;String&gt; failLines = []
@@ -36240,18 +36239,18 @@ int apiFieldTotal = 0
 
 Map response = null
 try {
-    response = new JsonSlurper().parseText(responseText ?: &apos;{}&apos;) as Map
+    response = new JsonSlurper().parseText(responseText ?: '{}') as Map
 } catch (Throwable error) {
-    failLines &lt;&lt; &apos; - [失败] | 接口响应不是合法JSON | error=&apos; + error.message + &apos; | response=&apos; + responseText
+    failLines &lt;&lt; ' - [失败] | 接口响应不是合法JSON | error=' + error.message + ' | response=' + responseText
 }
 
 List apiData = []
 if (response != null) {
-    if (String.valueOf(response.code) != &apos;0&apos;) {
-        failLines &lt;&lt; &apos; - [失败] | 接口返回code不是0 | code=&apos; + response.code + &apos; | msg=&apos; + response.msg
+    if (String.valueOf(response.code) != '0') {
+        failLines &lt;&lt; ' - [失败] | 接口返回code不是0 | code=' + response.code + ' | msg=' + response.msg
     }
     if (!(response.data instanceof List) || (response.data as List).isEmpty()) {
-        failLines &lt;&lt; &apos; - [失败] | 接口data为空，无法按login匹配 | login=&apos; + login
+        failLines &lt;&lt; ' - [失败] | 接口data为空，无法按login匹配 | login=' + login
     } else {
         apiData = response.data as List
     }
@@ -36261,13 +36260,13 @@ Map apiItem = [:]
 if (apiData) {
     Object matched = apiData.find { row -&gt;
         if (!(row instanceof Map)) return false
-        String loginKey = findKey(row as Map, &apos;Login&apos;) ?: findKey(row as Map, &apos;login&apos;)
+        String loginKey = findKey(row as Map, 'Login') ?: findKey(row as Map, 'login')
         loginKey != null &amp;&amp; cleanText((row as Map)[loginKey]) == login
     }
     if (matched instanceof Map) {
         apiItem = matched as Map
     } else {
-        failLines &lt;&lt; &apos; - [失败] | 接口响应没有匹配登录号 | expectedLogin=&apos; + login
+        failLines &lt;&lt; ' - [失败] | 接口响应没有匹配登录号 | expectedLogin=' + login
         if (apiData[0] instanceof Map) apiItem = apiData[0] as Map
     }
 }
@@ -36277,53 +36276,53 @@ Map expected = [:]
 String disabledConfigName
 String toleranceConfigName
 if (dbMode) {
-    disabledConfigName = platform == &apos;MT4&apos; ? &apos;user_info_mt4_db_api_disabled_compare_fields&apos; : &apos;user_info_mt5_db_api_disabled_compare_fields&apos;
-    toleranceConfigName = platform == &apos;MT4&apos; ? &apos;user_info_mt4_db_api_field_tolerance_percent&apos; : &apos;user_info_mt5_db_api_field_tolerance_percent&apos;
-    Object rowsObject = vars.getObject(&apos;db_user_info_rows&apos;)
+    disabledConfigName = platform == 'MT4' ? 'user_info_mt4_db_api_disabled_compare_fields' : 'user_info_mt5_db_api_disabled_compare_fields'
+    toleranceConfigName = platform == 'MT4' ? 'user_info_mt4_db_api_field_tolerance_percent' : 'user_info_mt5_db_api_field_tolerance_percent'
+    Object rowsObject = vars.getObject('db_user_info_rows')
     List databaseRows = rowsObject instanceof List ? rowsObject as List : []
     if (!databaseRows || !(databaseRows[0] instanceof Map)) {
-        failLines &lt;&lt; &apos; - [失败] | 数据库没有查询到用户信息记录 | platform=&apos; + platform + &apos; | instanceid=&apos; + instanceId + &apos; | login=&apos; + login
+        failLines &lt;&lt; ' - [失败] | 数据库没有查询到用户信息记录 | platform=' + platform + ' | instanceid=' + instanceId + ' | login=' + login
     } else {
         expected = normalizeMap(databaseRows[0] as Map)
     }
 } else {
-    disabledConfigName = &apos;user_info_csv_api_disabled_compare_fields&apos;
-    toleranceConfigName = &apos;user_info_csv_api_field_tolerance_percent&apos;
-    Object csvObject = vars.getObject(&apos;user_info_current_csv_row&apos;)
+    disabledConfigName = 'user_info_csv_api_disabled_compare_fields'
+    toleranceConfigName = 'user_info_csv_api_field_tolerance_percent'
+    Object csvObject = vars.getObject('user_info_current_csv_row')
     expected = csvObject instanceof Map ? normalizeMap(csvObject as Map) : [:]
 }
 
-String disabledRaw = vars.get(disabledConfigName) ?: &apos;&apos;
-String toleranceRaw = vars.get(toleranceConfigName) ?: &apos;&apos;
+String disabledRaw = vars.get(disabledConfigName) ?: ''
+String toleranceRaw = vars.get(toleranceConfigName) ?: ''
 Set disabled = parseDisabled(disabledRaw)
 Map toleranceMap = parseTolerance(toleranceRaw)
-String compareModeText = dbMode ? platform + &apos; DB/API&apos; : &apos;CSV/API&apos;
+String compareModeText = dbMode ? platform + ' DB/API' : 'CSV/API'
 
-String dataSource = cleanText(valueOf(apiFlat, &apos;_data_source&apos;)).toLowerCase()
-String currencyKey = findKey(expected, &apos;currency&apos;) ?: findKey(expected, &apos;GroupCurrency&apos;)
-String nativeCurrency = currencyKey == null ? &apos;&apos; : cleanText(expected[currencyKey]).toUpperCase()
-BigDecimal reportingScale = nativeCurrency == &apos;USD&apos; ? BigDecimal.ONE : (nativeCurrency == &apos;USC&apos; ? new BigDecimal(&apos;100&apos;) : null)
+String dataSource = cleanText(valueOf(apiFlat, '_data_source')).toLowerCase()
+String currencyKey = findKey(expected, 'currency') ?: findKey(expected, 'GroupCurrency')
+String nativeCurrency = currencyKey == null ? '' : cleanText(expected[currencyKey]).toUpperCase()
+BigDecimal reportingScale = nativeCurrency == 'USD' ? BigDecimal.ONE : (nativeCurrency == 'USC' ? new BigDecimal('100') : null)
 
 Map reportingNativeFields = [
-    balance_reporting: &apos;balance&apos;, credit_reporting: &apos;credit&apos;, equity_reporting: &apos;equity&apos;, margin_reporting: &apos;margin&apos;,
-    margin_free_reporting: &apos;margin_free&apos;, profit_reporting: &apos;profit&apos;, floating_reporting: &apos;floating&apos;, storage_reporting: &apos;storage&apos;,
-    swap_total_reporting: &apos;swap_total&apos;, commission_total_reporting: &apos;commission_total&apos;, margin_recompute_reporting: &apos;margin_recompute&apos;,
-    equity_recompute_reporting: &apos;equity_recompute&apos;, margin_free_recompute_reporting: &apos;margin_free_recompute&apos;,
-    profit_recompute_reporting: &apos;profit_recompute&apos;, floating_recompute_reporting: &apos;floating_recompute&apos;, storage_recompute_reporting: &apos;storage_recompute&apos;,
-    taxes_reporting: &apos;taxes&apos;, prevmonthbalance_reporting: &apos;prevmonthbalance&apos;, prevbalance_reporting: &apos;prevbalance&apos;,
-    prevmonthequity_reporting: &apos;prevmonthequity&apos;, prevequity_reporting: &apos;prevequity&apos;, commission_daily_reporting: &apos;commission_daily&apos;,
-    commission_monthly_reporting: &apos;commission_monthly&apos;, commission_agent_daily_reporting: &apos;commission_agent_daily&apos;,
-    commission_agent_monthly_reporting: &apos;commission_agent_monthly&apos;
+    balance_reporting: 'balance', credit_reporting: 'credit', equity_reporting: 'equity', margin_reporting: 'margin',
+    margin_free_reporting: 'margin_free', profit_reporting: 'profit', floating_reporting: 'floating', storage_reporting: 'storage',
+    swap_total_reporting: 'swap_total', commission_total_reporting: 'commission_total', margin_recompute_reporting: 'margin_recompute',
+    equity_recompute_reporting: 'equity_recompute', margin_free_recompute_reporting: 'margin_free_recompute',
+    profit_recompute_reporting: 'profit_recompute', floating_recompute_reporting: 'floating_recompute', storage_recompute_reporting: 'storage_recompute',
+    taxes_reporting: 'taxes', prevmonthbalance_reporting: 'prevmonthbalance', prevbalance_reporting: 'prevbalance',
+    prevmonthequity_reporting: 'prevmonthequity', prevequity_reporting: 'prevequity', commission_daily_reporting: 'commission_daily',
+    commission_monthly_reporting: 'commission_monthly', commission_agent_daily_reporting: 'commission_agent_daily',
+    commission_agent_monthly_reporting: 'commission_agent_monthly'
 ].collectEntries { key, value -&gt; [(normKey(key)): value] }
 
 Set durationFields = [
-    &apos;brokeracquiretimeoutms&apos;, &apos;brokermanagersessionacquiretimeoutms&apos;, &apos;brokertimeoutms&apos;
+    'brokeracquiretimeoutms', 'brokermanagersessionacquiretimeoutms', 'brokertimeoutms'
 ] as Set
 Set recomputeAmountFields = [
-    &apos;marginrecompute&apos;, &apos;equityrecompute&apos;, &apos;marginfreerecompute&apos;, &apos;marginlevelrecompute&apos;,
-    &apos;profitrecompute&apos;, &apos;floatingrecompute&apos;, &apos;storagerecompute&apos;,
-    &apos;marginrecomputereporting&apos;, &apos;equityrecomputereporting&apos;, &apos;marginfreerecomputereporting&apos;,
-    &apos;profitrecomputereporting&apos;, &apos;floatingrecomputereporting&apos;, &apos;storagerecomputereporting&apos;
+    'marginrecompute', 'equityrecompute', 'marginfreerecompute', 'marginlevelrecompute',
+    'profitrecompute', 'floatingrecompute', 'storagerecompute',
+    'marginrecomputereporting', 'equityrecomputereporting', 'marginfreerecomputereporting',
+    'profitrecomputereporting', 'floatingrecomputereporting', 'storagerecomputereporting'
 ] as Set
 Map liveEquityDisabledExpected = [
     brokerattempted: false,
@@ -36331,7 +36330,7 @@ Map liveEquityDisabledExpected = [
     brokerfailedother: false,
     brokerrecomputefailed: false,
     brokerrecomputeretcode: 0,
-    brokerfailurestage: &apos;live_equity_disabled&apos;,
+    brokerfailurestage: 'live_equity_disabled',
     brokererrorcode: 0,
     brokererrormessage: null,
     brokererrorplatform: null,
@@ -36348,90 +36347,90 @@ apiFlat.each { rawField, apiValue -&gt;
 
     // 跳过配置优先于所有派生、空值、契约和缺字段规则，确保所有API返回字段都支持人工跳过。
     if (isDisabled(field, disabled)) {
-        String sourceText = directExpectedKey == null ? &apos;&lt;empty&gt; &apos; + sourceName + &apos;无此字段&apos; : renderValue(field, directExpectedValue)
-        skipLines &lt;&lt; &apos; - [跳过] | field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) + &apos; | &apos; + sourceName + &apos;=&apos; + sourceText +
-            &apos; | APIField=&apos; + field + &apos; | &apos; + sourceName + &apos;Field=&apos; + (directExpectedKey ?: &apos;&lt;not present&gt;&apos;) +
-            &apos; | reason=字段已配置在&apos; + disabledConfigName
+        String sourceText = directExpectedKey == null ? '&lt;empty&gt; ' + sourceName + '无此字段' : renderValue(field, directExpectedValue)
+        skipLines &lt;&lt; ' - [跳过] | field=' + field + ' | API=' + renderValue(field, apiValue) + ' | ' + sourceName + '=' + sourceText +
+            ' | APIField=' + field + ' | ' + sourceName + 'Field=' + (directExpectedKey ?: '&lt;not present&gt;') +
+            ' | reason=字段已配置在' + disabledConfigName
         return
     }
 
     // live_equity=0 的服务运行状态来自请求路径/服务配置，而不是账户数据库列。
-    if (liveEquity == &apos;0&apos; &amp;&amp; normalizedField == &apos;datasource&apos;) {
-        Set allowed = [&apos;shm&apos;, &apos;fallback_balance_credit&apos;] as Set
+    if (liveEquity == '0' &amp;&amp; normalizedField == 'datasource') {
+        Set allowed = ['shm', 'fallback_balance_credit'] as Set
         boolean same = allowed.contains(cleanText(apiValue).toLowerCase())
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) +
-            &apos; | expected=&apos; + allowed.join(&apos;/&apos;) + &apos; | expectedSource=接口契约(live_equity=0) | 差值=N/A | 相差百分比=N/A&apos; +
-            &apos; | 计算过程=live_equity=0不发起Broker实时查询，允许SHM或最小余额信用回退来源&apos; +
-            &apos; | 备注=&apos; + (same ? &apos;数据来源符合接口契约，通过&apos; : &apos;数据来源不符合接口契约，失败&apos;)
-        if (same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+        String line = 'field=' + field + ' | API=' + renderValue(field, apiValue) +
+            ' | expected=' + allowed.join('/') + ' | expectedSource=接口契约(live_equity=0) | 差值=N/A | 相差百分比=N/A' +
+            ' | 计算过程=live_equity=0不发起Broker实时查询，允许SHM或最小余额信用回退来源' +
+            ' | 备注=' + (same ? '数据来源符合接口契约，通过' : '数据来源不符合接口契约，失败')
+        if (same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
-    if (normalizedField == &apos;meta&apos;) {
+    if (normalizedField == 'meta') {
         Map parsed = parseJsonValue(apiValue)
         boolean same = parsed.ok &amp;&amp; parsed.value instanceof Map
-        if (same &amp;&amp; (parsed.value as Map).containsKey(&apos;shm_invariant_ok&apos;)) {
-            String invariant = cleanText((parsed.value as Map)[&apos;shm_invariant_ok&apos;]).toLowerCase()
-            same = invariant in [&apos;true&apos;, &apos;false&apos;]
+        if (same &amp;&amp; (parsed.value as Map).containsKey('shm_invariant_ok')) {
+            String invariant = cleanText((parsed.value as Map)['shm_invariant_ok']).toLowerCase()
+            same = invariant in ['true', 'false']
         }
         String canonical = parsed.ok ? JsonOutput.toJson(canonicalJson(parsed.value)) : renderValue(field, apiValue)
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + canonical +
-            &apos; | expected=JSON对象；shm_invariant_ok存在时必须为布尔值 | expectedSource=接口契约&apos; +
-            &apos; | 差值=N/A | 相差百分比=N/A | 计算过程=JSON语义解析，不比较空格和键顺序&apos; +
-            &apos; | 备注=&apos; + (same ? &apos;JSON元数据结构合法，通过&apos; : &apos;JSON元数据结构不合法，失败&apos;)
-        if (same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+        String line = 'field=' + field + ' | API=' + canonical +
+            ' | expected=JSON对象；shm_invariant_ok存在时必须为布尔值 | expectedSource=接口契约' +
+            ' | 差值=N/A | 相差百分比=N/A | 计算过程=JSON语义解析，不比较空格和键顺序' +
+            ' | 备注=' + (same ? 'JSON元数据结构合法，通过' : 'JSON元数据结构不合法，失败')
+        if (same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
-    if (liveEquity == &apos;0&apos; &amp;&amp; durationFields.contains(normalizedField)) {
+    if (liveEquity == '0' &amp;&amp; durationFields.contains(normalizedField)) {
         BigDecimal duration = asNum(apiValue)
         boolean same = duration != null &amp;&amp; duration.compareTo(BigDecimal.ZERO) &gt;= 0
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) +
-            &apos; | expected=非负毫秒配置值 | expectedSource=服务配置，不是账户DB字段 | 差值=N/A | 相差百分比=N/A&apos; +
-            &apos; | 计算过程=按持续时间数值校验，不按Unix时间戳转换&apos; +
-            &apos; | 备注=&apos; + (same ? &apos;持续时间配置合法，通过&apos; : &apos;持续时间配置为空或小于0，失败&apos;)
-        if (same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+        String line = 'field=' + field + ' | API=' + renderValue(field, apiValue) +
+            ' | expected=非负毫秒配置值 | expectedSource=服务配置，不是账户DB字段 | 差值=N/A | 相差百分比=N/A' +
+            ' | 计算过程=按持续时间数值校验，不按Unix时间戳转换' +
+            ' | 备注=' + (same ? '持续时间配置合法，通过' : '持续时间配置为空或小于0，失败')
+        if (same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
-    if (liveEquity == &apos;0&apos; &amp;&amp; normalizedField == &apos;brokerrecomputeunsupportedplatform&apos;) {
+    if (liveEquity == '0' &amp;&amp; normalizedField == 'brokerrecomputeunsupportedplatform') {
         String booleanText = cleanText(apiValue).toLowerCase()
-        boolean same = booleanText in [&apos;true&apos;, &apos;false&apos;]
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) +
-            &apos; | expected=boolean | expectedSource=接口契约(live_equity=0未执行recompute) | 差值=N/A | 相差百分比=N/A&apos; +
-            &apos; | 计算过程=未执行重算时该标志只校验类型，不伪造DB值&apos; +
-            &apos; | 备注=&apos; + (same ? &apos;布尔类型合法，通过&apos; : &apos;不是布尔值，失败&apos;)
-        if (same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+        boolean same = booleanText in ['true', 'false']
+        String line = 'field=' + field + ' | API=' + renderValue(field, apiValue) +
+            ' | expected=boolean | expectedSource=接口契约(live_equity=0未执行recompute) | 差值=N/A | 相差百分比=N/A' +
+            ' | 计算过程=未执行重算时该标志只校验类型，不伪造DB值' +
+            ' | 备注=' + (same ? '布尔类型合法，通过' : '不是布尔值，失败')
+        if (same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
-    if (liveEquity == &apos;0&apos; &amp;&amp; liveEquityDisabledExpected.containsKey(normalizedField)) {
+    if (liveEquity == '0' &amp;&amp; liveEquityDisabledExpected.containsKey(normalizedField)) {
         Object contractValue = liveEquityDisabledExpected[normalizedField]
-        Map result = compareValue(field, apiValue, contractValue, &apos;接口契约&apos;, BigDecimal.ZERO)
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + result.apiPrint + &apos; | expected=&apos; + result.expectedPrint +
-            &apos; | expectedSource=接口契约(live_equity=0) | 差值=&apos; + result.diff + &apos; | 相差百分比=&apos; + result.percent +
-            &apos; | 计算过程=&apos; + result.formula + &apos; | 备注=&apos; + result.note
-        if (result.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+        Map result = compareValue(field, apiValue, contractValue, '接口契约', BigDecimal.ZERO)
+        String line = 'field=' + field + ' | API=' + result.apiPrint + ' | expected=' + result.expectedPrint +
+            ' | expectedSource=接口契约(live_equity=0) | 差值=' + result.diff + ' | 相差百分比=' + result.percent +
+            ' | 计算过程=' + result.formula + ' | 备注=' + result.note
+        if (result.same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
-    if (liveEquity == &apos;0&apos; &amp;&amp; recomputeAmountFields.contains(normalizedField)) {
-        Map result = compareValue(field, apiValue, null, &apos;接口契约&apos;, BigDecimal.ZERO)
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + result.apiPrint + &apos; | expected=&apos; + result.expectedPrint +
-            &apos; | expectedSource=接口契约(live_equity=0不执行Broker Recompute) | 差值=&apos; + result.diff +
-            &apos; | 相差百分比=&apos; + result.percent + &apos; | 计算过程=&apos; + result.formula + &apos; | 备注=&apos; + result.note
-        if (result.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    if (liveEquity == '0' &amp;&amp; recomputeAmountFields.contains(normalizedField)) {
+        Map result = compareValue(field, apiValue, null, '接口契约', BigDecimal.ZERO)
+        String line = 'field=' + field + ' | API=' + result.apiPrint + ' | expected=' + result.expectedPrint +
+            ' | expectedSource=接口契约(live_equity=0不执行Broker Recompute) | 差值=' + result.diff +
+            ' | 相差百分比=' + result.percent + ' | 计算过程=' + result.formula + ' | 备注=' + result.note
+        if (result.same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
     // 最新OpenAPI：Floating/Storage是MT5 broker_live原始字段；MT4或SHM路径必须允许为空。
-    if (dataSource != &apos;broker_live&apos; &amp;&amp; normalizedField in [&apos;floating&apos;, &apos;storage&apos;, &apos;floatingreporting&apos;, &apos;storagereporting&apos;]) {
-        Map result = compareValue(field, apiValue, null, &apos;接口契约&apos;, BigDecimal.ZERO)
-        String line = &apos;field=&apos; + field + &apos; | API=&apos; + result.apiPrint + &apos; | expected=&apos; + result.expectedPrint +
-            &apos; | expectedSource=接口契约(_data_source=&apos; + (dataSource ?: &apos;&lt;empty&gt;&apos;) + &apos;) | 差值=&apos; + result.diff +
-            &apos; | 相差百分比=&apos; + result.percent + &apos; | 计算过程=&apos; + result.formula +
-            &apos; | 备注=&apos; + result.note + &apos;；SHM路径不拿DB账户Floating/Storage冒充接口原始字段&apos;
-        if (result.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    if (dataSource != 'broker_live' &amp;&amp; normalizedField in ['floating', 'storage', 'floatingreporting', 'storagereporting']) {
+        Map result = compareValue(field, apiValue, null, '接口契约', BigDecimal.ZERO)
+        String line = 'field=' + field + ' | API=' + result.apiPrint + ' | expected=' + result.expectedPrint +
+            ' | expectedSource=接口契约(_data_source=' + (dataSource ?: '&lt;empty&gt;') + ') | 差值=' + result.diff +
+            ' | 相差百分比=' + result.percent + ' | 计算过程=' + result.formula +
+            ' | 备注=' + result.note + '；SHM路径不拿DB账户Floating/Storage冒充接口原始字段'
+        if (result.same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
         return
     }
 
@@ -36442,14 +36441,14 @@ apiFlat.each { rawField, apiValue -&gt;
     if (reportingNativeField != null) {
         String nativeKey = findKey(expected, reportingNativeField)
         if (nativeKey == null) {
-            String message = &apos;field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) + &apos; | &apos; + sourceName + &apos;=&lt;empty&gt;&apos; +
-                &apos; | APIField=&apos; + field + &apos; | &apos; + sourceName + &apos;Field=&lt;not present:&apos; + reportingNativeField + &apos;&gt;&apos; +
-                &apos; | 差值=N/A | 相差百分比=N/A | 计算过程=reporting字段必须先取得原生字段&apos; + reportingNativeField +
-                &apos; | 备注=&apos; + (dbMode ? &apos;数据库无此字段，失败；可配置跳过&apos; : &apos;CSV无此字段，失败；可配置跳过&apos;)
-            failLines &lt;&lt; &apos; - [失败] | &apos; + message
+            String message = 'field=' + field + ' | API=' + renderValue(field, apiValue) + ' | ' + sourceName + '=&lt;empty&gt;' +
+                ' | APIField=' + field + ' | ' + sourceName + 'Field=&lt;not present:' + reportingNativeField + '&gt;' +
+                ' | 差值=N/A | 相差百分比=N/A | 计算过程=reporting字段必须先取得原生字段' + reportingNativeField +
+                ' | 备注=' + (dbMode ? '数据库无此字段，失败；可配置跳过' : 'CSV无此字段，失败；可配置跳过')
+            failLines &lt;&lt; ' - [失败] | ' + message
             return
         }
-        expectedKey = &apos;derived_&apos; + reportingNativeField + &apos;_reporting&apos;
+        expectedKey = 'derived_' + reportingNativeField + '_reporting'
         Object nativeValue = expected[nativeKey]
         if (reportingScale == null) {
             expectedValue = null
@@ -36458,87 +36457,87 @@ apiFlat.each { rawField, apiValue -&gt;
         } else {
             BigDecimal nativeNumber = asNum(nativeValue)
             if (nativeNumber == null) {
-                failLines &lt;&lt; &apos; - [失败] | field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) +
-                    &apos; | &apos; + sourceName + &apos;=&apos; + renderValue(reportingNativeField, nativeValue) +
-                    &apos; | &apos; + sourceName + &apos;Field=&apos; + nativeKey + &apos; | 备注=原生字段不是数值，无法计算reporting字段&apos;
+                failLines &lt;&lt; ' - [失败] | field=' + field + ' | API=' + renderValue(field, apiValue) +
+                    ' | ' + sourceName + '=' + renderValue(reportingNativeField, nativeValue) +
+                    ' | ' + sourceName + 'Field=' + nativeKey + ' | 备注=原生字段不是数值，无法计算reporting字段'
                 return
             }
             expectedValue = nativeNumber.divide(reportingScale, 12, RoundingMode.HALF_UP)
         }
-    } else if (normalizedField == &apos;moneyunit&apos;) {
-        expectedKey = &apos;derived_money_unit&apos;; expectedValue = &apos;native&apos;
-    } else if (normalizedField == &apos;moneyscale&apos;) {
+    } else if (normalizedField == 'moneyunit') {
+        expectedKey = 'derived_money_unit'; expectedValue = 'native'
+    } else if (normalizedField == 'moneyscale') {
         if (currencyKey == null) expectedKey = null
-        else { expectedKey = &apos;derived_money_scale&apos;; expectedValue = reportingScale }
-    } else if (normalizedField == &apos;iscent&apos;) {
+        else { expectedKey = 'derived_money_scale'; expectedValue = reportingScale }
+    } else if (normalizedField == 'iscent') {
         if (currencyKey == null) expectedKey = null
-        else { expectedKey = &apos;derived_is_cent&apos;; expectedValue = reportingScale == null ? null : nativeCurrency == &apos;USC&apos; }
-    } else if (normalizedField == &apos;reportingcurrency&apos;) {
-        expectedKey = &apos;derived_reporting_currency&apos;; expectedValue = &apos;USD&apos;
-    } else if (normalizedField == &apos;normalizationcomplete&apos;) {
+        else { expectedKey = 'derived_is_cent'; expectedValue = reportingScale == null ? null : nativeCurrency == 'USC' }
+    } else if (normalizedField == 'reportingcurrency') {
+        expectedKey = 'derived_reporting_currency'; expectedValue = 'USD'
+    } else if (normalizedField == 'normalizationcomplete') {
         if (currencyKey == null) expectedKey = null
-        else { expectedKey = &apos;derived_normalization_complete&apos;; expectedValue = reportingScale != null }
+        else { expectedKey = 'derived_normalization_complete'; expectedValue = reportingScale != null }
     }
 
     if (expectedKey == null) {
-        String message = &apos;field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) + &apos; | &apos; + sourceName + &apos;=&lt;empty&gt;&apos; +
-            &apos; | APIField=&apos; + field + &apos; | &apos; + sourceName + &apos;Field=&lt;not present&gt;&apos; +
-            &apos; | 差值=N/A | 相差百分比=N/A | 计算过程=检查查询结果/CSV表头是否包含该字段&apos; +
-            &apos; | 备注=&apos; + (dbMode ? &apos;数据库无此字段，失败；可配置跳过&apos; : &apos;CSV无此字段，失败；可配置跳过&apos;)
-        failLines &lt;&lt; &apos; - [失败] | &apos; + message
+        String message = 'field=' + field + ' | API=' + renderValue(field, apiValue) + ' | ' + sourceName + '=&lt;empty&gt;' +
+            ' | APIField=' + field + ' | ' + sourceName + 'Field=&lt;not present&gt;' +
+            ' | 差值=N/A | 相差百分比=N/A | 计算过程=检查查询结果/CSV表头是否包含该字段' +
+            ' | 备注=' + (dbMode ? '数据库无此字段，失败；可配置跳过' : 'CSV无此字段，失败；可配置跳过')
+        failLines &lt;&lt; ' - [失败] | ' + message
         return
     }
 
     BigDecimal tolerance = toleranceFor(field, toleranceMap)
     Map result = compareValue(field, apiValue, expectedValue, sourceName, tolerance)
-    String line = &apos;field=&apos; + field + &apos; | API=&apos; + result.apiPrint + &apos; | &apos; + sourceName + &apos;=&apos; + result.expectedPrint +
-        &apos; | APIField=&apos; + field + &apos; | &apos; + sourceName + &apos;Field=&apos; + expectedKey +
-        &apos; | 字段误差=&apos; + fmtNum(tolerance) + &apos;% | 差值=&apos; + result.diff + &apos; | 相差百分比=&apos; + result.percent +
-        &apos; | 计算过程=&apos; + result.formula + &apos; | 备注=&apos; + result.note
-    if (result.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    String line = 'field=' + field + ' | API=' + result.apiPrint + ' | ' + sourceName + '=' + result.expectedPrint +
+        ' | APIField=' + field + ' | ' + sourceName + 'Field=' + expectedKey +
+        ' | 字段误差=' + fmtNum(tolerance) + '% | 差值=' + result.diff + ' | 相差百分比=' + result.percent +
+        ' | 计算过程=' + result.formula + ' | 备注=' + result.note
+    if (result.same) okLines &lt;&lt; ' - [通过] | ' + line else failLines &lt;&lt; ' - [失败] | ' + line
 }
 
-String status = failLines.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
+String status = failLines.isEmpty() ? 'PASS' : 'FAIL'
 List&lt;String&gt; report = []
-report &lt;&lt; &apos;Assertion message: 获取用户信息 &apos; + compareModeText + &apos; 字段对比结果 | status=&apos; + status +
-    &apos; | case=&apos; + vars.get(&apos;user_info_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;user_info_case_total&apos;) +
-    &apos; | CSV行=&apos; + vars.get(&apos;user_info_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku
-report &lt;&lt; &apos;接口: GET /crm20/get_user_info?instanceid=&apos; + instanceId + &apos;&amp;login=&apos; + login + &apos;&amp;live_equity=&apos; + liveEquity
-report &lt;&lt; &apos;匹配依据: login=&apos; + login + &apos; | instanceid=&apos; + instanceId +
-    &apos; | route=&apos; + (vars.get(&apos;user_info_instance_route&apos;) ?: &apos;&lt;CSV模式不查库&gt;&apos;) +
-    &apos; | JDBC=&apos; + (vars.get(&apos;user_info_db_data_source&apos;) ?: &apos;&lt;CSV模式不查库&gt;&apos;) +
-    &apos; | schema=&apos; + (vars.get(&apos;user_info_db_schema&apos;) ?: &apos;&lt;CSV模式不查库&gt;&apos;) +
-    &apos; | platform=&apos; + platform + &apos; | source=&apos; + sourceName + &apos; | _data_source=&apos; + (dataSource ?: &apos;&lt;empty&gt;&apos;)
-report &lt;&lt; &apos;跳过字段配置: &apos; + disabledConfigName + &apos;=[&apos; + disabledRaw + &apos;]&apos;
-report &lt;&lt; &apos;字段误差配置: &apos; + toleranceConfigName + &apos;=[&apos; + toleranceRaw + &apos;]；格式 field=percent，逗号分隔；未配置数值字段默认0%&apos;
-report &lt;&lt; &apos;数值规则: 以&apos; + sourceName + &apos;绝对值为基准，abs((&apos; + sourceName + &apos;-API)/abs(&apos; + sourceName + &apos;))*100；误差小于等于字段配置值通过&apos;
-report &lt;&lt; &apos;空值规则: API与&apos; + sourceName + &apos;均为空通过；字段存在且API=0、&apos; + sourceName + &apos;为空通过；&apos; + sourceName + &apos;根本无字段则失败（可人工跳过）&apos;
-report &lt;&lt; &apos;接口契约规则: live_equity=0不把Broker运行状态/超时配置伪造成DB列；SHM路径Floating/Storage及其reporting允许为空；_meta按JSON语义比较&apos;
-report &lt;&lt; &apos;DB动态财务规则: MT4/MT5均从活动持仓聚合价格浮盈和Swap；Commission从MT4活动交易或MT5活动持仓关联成交聚合；profit=价格浮盈+swap+commission&apos;
-report &lt;&lt; &apos;对比统计: API字段总数=&apos; + apiFieldTotal + &apos; | 成功字段=&apos; + okLines.size() + &apos; | 失败字段=&apos; + failLines.size() + &apos; | 跳过字段=&apos; + skipLines.size()
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【失败字段明细：&apos; + failLines.size() + &apos;条】&apos;
-report.addAll(failLines ?: [&apos; - 无&apos;])
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【成功字段明细：&apos; + okLines.size() + &apos;条】&apos;
-report.addAll(okLines ?: [&apos; - 无&apos;])
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【跳过字段明细：&apos; + skipLines.size() + &apos;条】&apos;
-report.addAll(skipLines ?: [&apos; - 无&apos;])
+report &lt;&lt; 'Assertion message: 获取用户信息 ' + compareModeText + ' 字段对比结果 | status=' + status +
+    ' | case=' + vars.get('user_info_case_index_display') + '/' + vars.get('user_info_case_total') +
+    ' | CSV行=' + vars.get('user_info_csv_line_no') + ' | shujuku=' + shujuku
+report &lt;&lt; '接口: GET /crm20/get_user_info?instanceid=' + instanceId + '&amp;login=' + login + '&amp;live_equity=' + liveEquity
+report &lt;&lt; '匹配依据: login=' + login + ' | instanceid=' + instanceId +
+    ' | route=' + (vars.get('user_info_instance_route') ?: '&lt;CSV模式不查库&gt;') +
+    ' | JDBC=' + (vars.get('user_info_db_data_source') ?: '&lt;CSV模式不查库&gt;') +
+    ' | schema=' + (vars.get('user_info_db_schema') ?: '&lt;CSV模式不查库&gt;') +
+    ' | platform=' + platform + ' | source=' + sourceName + ' | _data_source=' + (dataSource ?: '&lt;empty&gt;')
+report &lt;&lt; '跳过字段配置: ' + disabledConfigName + '=[' + disabledRaw + ']'
+report &lt;&lt; '字段误差配置: ' + toleranceConfigName + '=[' + toleranceRaw + ']；格式 field=percent，逗号分隔；未配置数值字段默认0%'
+report &lt;&lt; '数值规则: 以' + sourceName + '绝对值为基准，abs((' + sourceName + '-API)/abs(' + sourceName + '))*100；误差小于等于字段配置值通过'
+report &lt;&lt; '空值规则: API与' + sourceName + '均为空通过；字段存在且API=0、' + sourceName + '为空通过；' + sourceName + '根本无字段则失败（可人工跳过）'
+report &lt;&lt; '接口契约规则: live_equity=0不把Broker运行状态/超时配置伪造成DB列；SHM路径Floating/Storage及其reporting允许为空；_meta按JSON语义比较'
+report &lt;&lt; 'DB动态财务规则: MT4/MT5均从活动持仓聚合价格浮盈和Swap；Commission从MT4活动交易或MT5活动持仓关联成交聚合；profit=价格浮盈+swap+commission'
+report &lt;&lt; '对比统计: API字段总数=' + apiFieldTotal + ' | 成功字段=' + okLines.size() + ' | 失败字段=' + failLines.size() + ' | 跳过字段=' + skipLines.size()
+report &lt;&lt; ''
+report &lt;&lt; '【失败字段明细：' + failLines.size() + '条】'
+report.addAll(failLines ?: [' - 无'])
+report &lt;&lt; ''
+report &lt;&lt; '【成功字段明细：' + okLines.size() + '条】'
+report.addAll(okLines ?: [' - 无'])
+report &lt;&lt; ''
+report &lt;&lt; '【跳过字段明细：' + skipLines.size() + '条】'
+report.addAll(skipLines ?: [' - 无'])
 
-String finalReport = report.join(&apos;\n&apos;)
-vars.put(&apos;user_info_compare_report&apos;, finalReport)
-vars.put(&apos;user_info_compare_status&apos;, status)
+String finalReport = report.join('\n')
+vars.put('user_info_compare_report', finalReport)
+vars.put('user_info_compare_status', status)
 
-if (status == &apos;PASS&apos;) {
-    prev.setResponseMessage(&apos;获取用户信息字段对比成功 | 成功=&apos; + okLines.size() + &apos; | 跳过=&apos; + skipLines.size())
+if (status == 'PASS') {
+    prev.setResponseMessage('获取用户信息字段对比成功 | 成功=' + okLines.size() + ' | 跳过=' + skipLines.size())
 } else {
     AssertionResult.setFailure(true)
     AssertionResult.setFailureMessage(finalReport)
     prev.setSuccessful(false)
-    prev.setResponseMessage(&apos;获取用户信息字段对比失败 | 失败=&apos; + failLines.size() + &apos; | 成功=&apos; + okLines.size() + &apos; | 跳过=&apos; + skipLines.size())
+    prev.setResponseMessage('获取用户信息字段对比失败 | 失败=' + failLines.size() + ' | 成功=' + okLines.size() + ' | 跳过=' + skipLines.size())
 }
-log.info(&apos;\n&apos; + finalReport)
+log.info('\n' + finalReport)
 </stringProp>
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="TestPlan.comments">以最新OpenAPI和接口实际返回字段为基准；支持所有字段跳过、逐字段百分比误差、DB字段存在性判定、空空/接口0与DB空规则、JSON语义及live_equity=0服务状态校验。</stringProp>
@@ -36549,18 +36548,18 @@ log.info(&apos;\n&apos; + finalReport)
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String finalReport = vars.get(&apos;user_info_compare_report&apos;)
+            <stringProp name="script">String finalReport = vars.get('user_info_compare_report')
 if (finalReport == null || finalReport.trim().length() == 0) {
-    finalReport = &apos;未生成获取用户信息字段对比结果，请检查接口请求、JDBC请求或断言是否执行。&apos;
+    finalReport = '未生成获取用户信息字段对比结果，请检查接口请求、JDBC请求或断言是否执行。'
 }
-String status = vars.get(&apos;user_info_compare_status&apos;) ?: &apos;UNKNOWN&apos;
-boolean success = status == &apos;PASS&apos;
+String status = vars.get('user_info_compare_status') ?: 'UNKNOWN'
+boolean success = status == 'PASS'
 SampleResult.setSuccessful(success)
-SampleResult.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
+SampleResult.setResponseCode(success ? '200' : '500')
 SampleResult.setResponseMessage(status)
 SampleResult.setDataType(SampleResult.TEXT)
-SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
-SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
+SampleResult.setContentType('text/plain; charset=UTF-8')
+SampleResult.setResponseData(finalReport, 'UTF-8')
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="TestPlan.comments">独立打印上一节点生成的获取用户信息字段对比结果，方便在查看结果树直接点击查看。</stringProp>
@@ -36568,7 +36567,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅" enabled="true">
         <stringProp name="TestPlan.comments">可移植盈亏校验：保留原流程（初始Equity→开平仓→最终Equity→历史profit求和→对比）；环境地址、账号、品种和时间窗口可通过-Jprofit_check_* 覆盖；启动时执行前置配置校验。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -36715,7 +36714,7 @@ SampleResult.setResponseData(&apos;close_time_from_utc_ms=&apos; + closeFromMs +
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
             <stringProp name="LoopController.loops">${__P(profit_check_trade_loops,3)}</stringProp>
           </LoopController>
           <hashTree>
@@ -37032,7 +37031,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -37093,7 +37092,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -37284,7 +37283,7 @@ log.info(successMessage)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -37296,12 +37295,12 @@ log.info(successMessage)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./查询多个账户的挂单订单.csv</stringProp>
@@ -37313,7 +37312,7 @@ log.info(successMessage)
             <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_orders_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_orders_db_api_disabled_compare_fields</stringProp>
@@ -37807,7 +37806,7 @@ SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + r
             </JDBCSampler>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">10000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -38405,7 +38404,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -38427,670 +38426,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
-          <stringProp name="LoopController.loops">1</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19-2查询多个账户的挂单订单-多个实例验证事务">
-          <boolProp name="TransactionController.parent">true</boolProp>
-          <boolProp name="TransactionController.includeTimers">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单">
-            <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-            <intProp name="HTTPSampler.response_timeout">10000</intProp>
-            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/list_pending_orders</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-    &quot;accounts&quot;: [&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT4_1&quot;,&#xd;
-            &quot;login&quot;: 300610&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT4_2&quot;,&#xd;
-            &quot;login&quot;: 89100106&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT4_3&quot;,&#xd;
-            &quot;login&quot;: 2006000571&#xd;
-        },&#xd;
-         {&#xd;
-            &quot;instanceid&quot;: &quot;MT5_1_TS1&quot;,&#xd;
-            &quot;login&quot;: 3379&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT5_1_TS1&quot;,&#xd;
-            &quot;login&quot;: 7800112&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
-            &quot;login&quot;: 880000&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;instanceid&quot;: &quot;MT5_1_TS2&quot;,&#xd;
-            &quot;login&quot;: 197349&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;page&quot;: 1,&#xd;
-    &quot;page_size&quot;: 50,&#xd;
-    &quot;filters&quot;: {&#xd;
-        &quot;order_types&quot;: [&#xd;
-            2,&#xd;
-            3,&#xd;
-            4,&#xd;
-            5&#xd;
-        ],&#xd;
-        &quot;volume_lots&quot;: {&#xd;
-            &quot;condition&quot;: &quot;gte&quot;,&#xd;
-            &quot;value&quot;: 0.01&#xd;
-        }&#xd;
-    },&#xd;
-    &quot;sort_by&quot;: &quot;time_setup_utc_ms&quot;,&#xd;
-    &quot;sort_order&quot;: &quot;desc&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="false">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言msg为ok">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">2</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="DB或CSV字段对比断言-查询多个账户挂单订单" enabled="false">
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="script">import groovy.json.JsonSlurper
-import org.apache.jmeter.samplers.SampleResult
-import java.math.BigDecimal
-import java.math.RoundingMode
-import java.text.SimpleDateFormat
-
-String responseText = prev.getResponseDataAsString()
-def publishReport = { String label, String text, boolean success -&gt;
-    String out = text ?: &apos;&apos;
-    vars.put(&apos;pending_orders_compare_report&apos;, out)
-    vars.put(&apos;pending_orders_compare_status&apos;, success ? &apos;PASS&apos; : &apos;FAIL&apos;)
-    log.info(&apos;\n&apos; + out)
-    def detail = new SampleResult()
-    detail.setSampleLabel(label)
-    detail.setSuccessful(success)
-    detail.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
-    detail.setResponseMessage(success ? &apos;PASS&apos; : &apos;FAIL&apos;)
-    detail.setResponseData(out, &apos;UTF-8&apos;)
-    detail.setDataType(SampleResult.TEXT)
-    detail.setContentType(&apos;text/plain; charset=UTF-8&apos;)
-    detail.setResponseHeaders(&apos;Content-Type: text/plain; charset=UTF-8&apos;)
-    prev.addSubResult(detail)
-    AssertionResult.setFailure(!success)
-    AssertionResult.setFailureMessage(out)
-}
-def parsed
-try {
-    parsed = new JsonSlurper().parseText(responseText ?: &apos;{}&apos;)
-} catch (Throwable e) {
-    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 对比结果 | status=FAIL | reason=接口响应不是合法JSON&apos; +
-        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
-        &apos;\n【失败明细】\n - [失败] | 接口响应不是合法JSON: &apos; + e.message +
-        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
-        &apos;\n\n【接口响应原文】\n&apos; + responseText
-    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
-    return
-}
-
-def rowToMap
-rowToMap = { row -&gt;
-    Map out = new LinkedHashMap()
-    if (row instanceof Map) {
-        row.each { k, v -&gt; out[String.valueOf(k)] = v }
-    } else if (row != null) {
-        try {
-            row.metaClass.properties.each { p -&gt; if (p.name != &apos;class&apos;) out[p.name] = row.&quot;${p.name}&quot; }
-        } catch (ignored) {}
-    }
-    out
-}
-
-def rowsFromObject = { obj -&gt;
-    if (obj == null) return []
-    if (obj instanceof List) return obj.collect { rowToMap(it) }.findAll { it }
-    if (obj instanceof Object[]) return obj.collect { rowToMap(it) }.findAll { it }
-    if (obj instanceof Map) return [rowToMap(obj)]
-    []
-}
-
-def blank = { v -&gt; v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) }
-def normKey = { Object v -&gt; (v == null ? &apos;&apos; : v.toString()).replaceAll(&apos;[^A-Za-z0-9]&apos;, &apos;&apos;).toLowerCase() }
-boolean numeric(Object v) {
-    if (v == null) return false
-    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
-    return s.length() &gt; 0 &amp;&amp; !s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) &amp;&amp; (s ==~ /^-?\d+(\.\d+)?$/)
-}
-def cleanNumText = { v -&gt;
-    if (blank(v)) return &apos;&apos;
-    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
-    if (s ==~ /^-?\d+\.0+$/) return s.substring(0, s.indexOf(&apos;.&apos;))
-    if (s ==~ /^-?\d+(\.\d+)?$/) {
-        try { return new BigDecimal(s).stripTrailingZeros().toPlainString() } catch (ignored) {}
-    }
-    s
-}
-
-Map aliases = [
-    &apos;position_ticket&apos;: [&apos;position_ticket&apos;, &apos;position&apos;, &apos;PositionID&apos;, &apos;POSITIONID&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
-    &apos;order_ticket&apos;: [&apos;order_ticket&apos;, &apos;orderId&apos;, &apos;order_id&apos;, &apos;order&apos;, &apos;Order&apos;, &apos;ORDER&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
-    &apos;deal_ticket&apos;: [&apos;deal_ticket&apos;, &apos;deal&apos;, &apos;Deal&apos;, &apos;DEAL&apos;],
-    &apos;instance_id&apos;: [&apos;instance_id&apos;, &apos;instanceid&apos;, &apos;instanceId&apos;, &apos;order_instanceid_val&apos;],
-    &apos;login&apos;: [&apos;login&apos;, &apos;Login&apos;, &apos;LOGIN&apos;, &apos;order_login&apos;],
-    &apos;source&apos;: [&apos;source&apos;, &apos;platform&apos;],
-    &apos;symbol&apos;: [&apos;symbol&apos;, &apos;Symbol&apos;, &apos;SYMBOL&apos;],
-    &apos;order_type&apos;: [&apos;order_type&apos;, &apos;orderType&apos;, &apos;type&apos;, &apos;Type&apos;, &apos;action&apos;, &apos;Action&apos;, &apos;CMD&apos;, &apos;cmd&apos;],
-    &apos;side&apos;: [&apos;side&apos;],
-    &apos;reason&apos;: [&apos;reason&apos;, &apos;Reason&apos;, &apos;REASON&apos;],
-    &apos;volume_lots&apos;: [&apos;volume_lots&apos;, &apos;volume&apos;, &apos;Volume&apos;, &apos;VOLUME&apos;, &apos;volume_current&apos;, &apos;VolumeCurrent&apos;, &apos;volume_current_ext&apos;, &apos;VolumeCurrentExt&apos;],
-    &apos;price_open&apos;: [&apos;price_open&apos;, &apos;openPrice&apos;, &apos;open_price&apos;, &apos;PriceOrder&apos;, &apos;PriceOpen&apos;, &apos;OPEN_PRICE&apos;],
-    &apos;price_close&apos;: [&apos;price_close&apos;, &apos;closePrice&apos;, &apos;close_price&apos;, &apos;PriceClose&apos;, &apos;CLOSE_PRICE&apos;],
-    &apos;price_current&apos;: [&apos;price_current&apos;, &apos;currentPrice&apos;, &apos;current_price&apos;, &apos;PriceCurrent&apos;, &apos;CLOSE_PRICE&apos;],
-    &apos;price_sl&apos;: [&apos;price_sl&apos;, &apos;sl&apos;, &apos;SL&apos;, &apos;PriceSL&apos;],
-    &apos;price_tp&apos;: [&apos;price_tp&apos;, &apos;tp&apos;, &apos;TP&apos;, &apos;PriceTP&apos;],
-    &apos;profit&apos;: [&apos;profit&apos;, &apos;Profit&apos;, &apos;PROFIT&apos;],
-    &apos;swap&apos;: [&apos;swap&apos;, &apos;Storage&apos;, &apos;SWAPS&apos;],
-    &apos;commission&apos;: [&apos;commission&apos;, &apos;Commission&apos;, &apos;COMMISSION&apos;],
-    &apos;fee&apos;: [&apos;fee&apos;, &apos;Fee&apos;],
-    &apos;net_profit&apos;: [&apos;net_profit&apos;],
-    &apos;open_time_utc_ms&apos;: [&apos;open_time_utc_ms&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeCreate&apos;, &apos;TimeMsc&apos;],
-    &apos;close_time_utc_ms&apos;: [&apos;close_time_utc_ms&apos;, &apos;close_time&apos;, &apos;CLOSE_TIME&apos;, &apos;TimeMsc&apos;, &apos;Time&apos;],
-    &apos;updated_utc_ms&apos;: [&apos;updated_utc_ms&apos;, &apos;time_update_utc_ms&apos;, &apos;Timestamp&apos;, &apos;TIMESTAMP&apos;, &apos;MODIFY_TIME&apos;, &apos;TimeDoneMsc&apos;, &apos;TimeMsc&apos;],
-    &apos;time_setup_utc_ms&apos;: [&apos;time_setup_utc_ms&apos;, &apos;openTime&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeSetupMsc&apos;, &apos;TimeSetup&apos;],
-    &apos;time_expiration_utc_ms&apos;: [&apos;time_expiration_utc_ms&apos;, &apos;closeTime&apos;, &apos;expiration&apos;, &apos;EXPIRATION&apos;, &apos;TimeExpiration&apos;],
-    &apos;state&apos;: [&apos;state&apos;, &apos;State&apos;],
-    &apos;digits&apos;: [&apos;digits&apos;, &apos;Digits&apos;, &apos;DIGITS&apos;],
-    &apos;digits_currency&apos;: [&apos;digits_currency&apos;, &apos;DigitsCurrency&apos;],
-    &apos;contract_size&apos;: [&apos;contract_size&apos;, &apos;ContractSize&apos;],
-    &apos;comment&apos;: [&apos;comment&apos;, &apos;Comment&apos;, &apos;COMMENT&apos;],
-    &apos;currency&apos;: [&apos;currency&apos;, &apos;Currency&apos;],
-    &apos;money_unit&apos;: [&apos;money_unit&apos;, &apos;moneyUnit&apos;],
-    &apos;money_scale&apos;: [&apos;money_scale&apos;, &apos;moneyScale&apos;],
-    &apos;is_cent&apos;: [&apos;is_cent&apos;, &apos;isCent&apos;],
-    &apos;reporting_currency&apos;: [&apos;reporting_currency&apos;, &apos;reportingCurrency&apos;],
-    &apos;normalization_complete&apos;: [&apos;normalization_complete&apos;, &apos;normalizationComplete&apos;],
-    &apos;profit_reporting&apos;: [&apos;profit_reporting&apos;, &apos;profitReporting&apos;],
-    &apos;fee_reporting&apos;: [&apos;fee_reporting&apos;, &apos;feeReporting&apos;],
-    &apos;swap_reporting&apos;: [&apos;swap_reporting&apos;, &apos;swapReporting&apos;]
-]
-
-def findKey
-findKey = { Map m, String field -&gt;
-    if (m == null) return null
-    if (m.containsKey(field)) return field
-    for (String a : (aliases[field] ?: [])) {
-        if (m.containsKey(a)) return a
-    }
-    String want = normKey(field)
-    m.keySet().find { normKey(it) == want }
-}
-
-def valueOf
-valueOf = { Map m, String field -&gt;
-    def k = findKey(m, field)
-    k == null ? null : m[k]
-}
-
-def idOf = { Map row -&gt;
-    for (String f : [&apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;]) {
-        def v = valueOf(row, f)
-        if (!blank(v)) return cleanNumText(v)
-    }
-    &apos;&apos;
-}
-
-boolean timeField(String f) {
-    String n = (f ?: &apos;&apos;).toLowerCase()
-    return n.contains(&apos;time&apos;) || n.endsWith(&apos;utc_ms&apos;) || n.contains(&apos;updated&apos;)
-}
-
-Date parseDateLike(v) {
-    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return null
-    if (v instanceof java.util.Date) return v
-    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
-    if (s ==~ /^-?\d+(\.\d+)?$/) {
-        BigDecimal n = new BigDecimal(s)
-        long ms = n.abs().compareTo(new BigDecimal(&apos;100000000000&apos;)) &gt;= 0 ? n.longValue() : n.longValue() * 1000L
-        return new Date(ms)
-    }
-    s = s.replace(&apos;T&apos;, &apos; &apos;)
-    if (s.contains(&apos;.&apos;)) s = s.substring(0, s.indexOf(&apos;.&apos;))
-    for (String fmt : [&apos;yyyy-MM-dd HH:mm:ss&apos;, &apos;yyyy-MM-dd HH:mm&apos;, &apos;yyyy-MM-dd&apos;]) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat(fmt)
-            sdf.setLenient(false)
-            return sdf.parse(s)
-        } catch (ignored) {}
-    }
-    null
-}
-
-String fmt(Date d, String tz) {
-    if (d == null) return &apos;&apos;
-    SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
-    sdf.setTimeZone(TimeZone.getTimeZone(tz))
-    sdf.format(d)
-}
-
-String normalizeApiTime(v) {
-    Date d = parseDateLike(v)
-    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;UTC&apos;)
-}
-
-String normalizeDbTime(v) {
-    Date d = parseDateLike(v)
-    if (d == null) return String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim()
-    numeric(v) ? fmt(d, &apos;UTC&apos;) : fmt(d, &apos;Asia/Shanghai&apos;)
-}
-
-String normalizeCsvTime(v) {
-    Date d = parseDateLike(v)
-    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
-}
-
-String displayApiTime(v) {
-    Date d = parseDateLike(v)
-    d == null ? String.valueOf(v ?: &apos;&apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
-}
-
-long secondDiff(String a, String b) {
-    try {
-        SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
-        return Math.abs((sdf.parse(a).time - sdf.parse(b).time) / 1000L)
-    } catch (ignored) { return Long.MAX_VALUE }
-}
-
-String renderValue(String field, Object v, String side, boolean dbMode) {
-    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&lt;empty&gt;&apos;
-    if (!timeField(field)) return String.valueOf(v)
-    if (side == &apos;API&apos; &amp;&amp; dbMode) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值(减8小时)=&apos; + normalizeApiTime(v)
-    if (side == &apos;API&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值=&apos; + normalizeCsvTime(v)
-    if (side == &apos;DB&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + normalizeDbTime(v)
-    return String.valueOf(v) + &apos; -&gt; &apos; + normalizeCsvTime(v)
-}
-
-def asNum = { Object v -&gt;
-    if (blank(v)) return null
-    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
-    if (!(s ==~ /^-?\d+(\.\d+)?$/)) return null
-    try { return new BigDecimal(s) } catch (ignored) { return null }
-}
-
-def fmtNum = { BigDecimal n -&gt; n == null ? &apos;&lt;empty&gt;&apos; : n.stripTrailingZeros().toPlainString() }
-def pctText = { BigDecimal p -&gt; p == null ? &apos;N/A&apos; : p.setScale(6, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + &apos;%&apos; }
-Set exactNumericFields = [&apos;login&apos;, &apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;, &apos;reason&apos;, &apos;order_type&apos;, &apos;digits&apos;, &apos;digits_currency&apos;, &apos;money_scale&apos;, &apos;total&apos;, &apos;total_orders&apos;, &apos;unresolved_currency_account_count&apos;] as Set
-Set booleanFields = [&apos;is_cent&apos;, &apos;normalization_complete&apos;] as Set
-def boolValue = { Object v -&gt;
-    if (v == null || String.valueOf(v).trim().length() == 0) return null
-    String s = String.valueOf(v).trim().toLowerCase()
-    if (s in [&apos;true&apos;, &apos;1&apos;]) return true
-    if (s in [&apos;false&apos;, &apos;0&apos;]) return false
-    null
-}
-
-def compareValue = { String field, Object apiVal, Object expectedVal, String expectedSource, boolean dbMode -&gt;
-    if (booleanFields.contains(field)) {
-        def ab = boolValue(apiVal); def eb = boolValue(expectedVal)
-        boolean same = ab != null &amp;&amp; eb != null &amp;&amp; ab == eb
-        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: &apos;N/A&apos;, percent: &apos;N/A(boolean)&apos;, formula: &apos;Boolean fields normalize true/1 and false/0 before exact comparison&apos;]
-    }
-    if (timeField(field)) {
-        String aCmp = dbMode ? normalizeApiTime(apiVal) : normalizeCsvTime(apiVal)
-        String eCmp = dbMode ? normalizeDbTime(expectedVal) : normalizeCsvTime(expectedVal)
-        long diffSec = secondDiff(aCmp, eCmp)
-        return [same: (aCmp == eCmp || diffSec &lt;= 60L), apiPrint: renderValue(field, apiVal, &apos;API&apos;, dbMode), expPrint: renderValue(field, expectedVal, expectedSource, dbMode), diff: diffSec + &apos;秒&apos;, percent: &apos;N/A(时间字段)&apos;, formula: &apos;时间字段按yyyy-MM-dd HH:mm:ss比较，允许相差&lt;=60秒&apos;]
-    }
-    BigDecimal an = asNum(apiVal)
-    BigDecimal en = asNum(expectedVal)
-    if (an != null &amp;&amp; en != null) {
-        BigDecimal diff = an.subtract(en).abs()
-        if (exactNumericFields.contains(field)) {
-            return [same: cleanNumText(apiVal) == cleanNumText(expectedVal), apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: &apos;N/A(编号类字段精确比较)&apos;, formula: &apos;编号类字段不使用误差，按数值精确比较&apos;]
-        }
-        BigDecimal tolerancePercent = dbMode ? new BigDecimal(&apos;10&apos;) : new BigDecimal(&apos;5&apos;)
-        BigDecimal base = en.abs()
-        BigDecimal allowed = BigDecimal.ZERO
-        boolean same
-        String pct
-        String formula
-        if (base.compareTo(BigDecimal.ZERO) == 0) {
-            same = diff.compareTo(BigDecimal.ZERO) == 0
-            pct = same ? &apos;0%&apos; : &apos;N/A(&apos; + expectedSource + &apos;=0无法作分母)&apos;
-            formula = &apos;abs(&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，&apos; + expectedSource + &apos;=0，无法计算百分比，要求API也等于0&apos;
-        } else {
-            allowed = base.multiply(tolerancePercent).divide(new BigDecimal(&apos;100&apos;), 10, RoundingMode.HALF_UP)
-            same = diff.compareTo(allowed) &lt;= 0
-            BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
-            pct = pctText(percent)
-            formula = &apos;abs((&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / &apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct
-        }
-        String toleranceText = pctText(tolerancePercent)
-        String note = same ? field + &apos; 误差小于&apos; + toleranceText + &apos;，通过&apos; : field + &apos; 误差大于&apos; + toleranceText + &apos;，失败&apos;
-        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: pct, formula: formula + &apos; | 允许误差&lt;=&apos; + toleranceText + &apos;(允许差值=&apos; + fmtNum(allowed) + &apos;)&apos;, note: note]
-    }
-    boolean same = String.valueOf(apiVal ?: &apos;&apos;).trim() == String.valueOf(expectedVal ?: &apos;&apos;).trim()
-    [same: same, apiPrint: String.valueOf(apiVal ?: &apos;&apos;), expPrint: String.valueOf(expectedVal ?: &apos;&apos;), diff: &apos;N/A&apos;, percent: &apos;N/A(非数值字段)&apos;, formula: &apos;非数值字段按字符串精确比较&apos;]
-}
-
-def compareComparable = { Object v -&gt;
-    if (numeric(v)) return new BigDecimal(String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;))
-    String.valueOf(v ?: &apos;&apos;)
-}
-
-def sumField = { List rows, String field -&gt;
-    BigDecimal total = BigDecimal.ZERO
-    rows.each { r -&gt;
-        BigDecimal n = asNum(valueOf(r, field))
-        if (n != null) total = total.add(n)
-    }
-    total
-}
-
-def disabledRaw = { boolean dbMode -&gt; dbMode ? (vars.get(&apos;pending_orders_db_api_disabled_compare_fields&apos;) ?: &apos;&apos;) : (vars.get(&apos;pending_orders_csv_api_disabled_compare_fields&apos;) ?: &apos;&apos;) }
-def disabledSet = { String raw -&gt; raw.split(/[，,;|\s]+/).collect { String t = String.valueOf(it ?: &apos;&apos;).trim(); t == &apos;*&apos; ? &apos;*&apos; : normKey(t) }.findAll { it }.toSet() }
-
-String shujuku = vars.get(&apos;pending_orders_shujuku&apos;) ?: vars.get(&apos;shujuku&apos;) ?: &apos;0&apos;
-boolean dbMode = shujuku == &apos;1&apos;
-String sourceName = dbMode ? &apos;DB&apos; : &apos;CSV&apos;
-String modeText = dbMode ? &apos;DB/API&apos; : &apos;CSV/API&apos;
-String sortBy = vars.get(&apos;pending_orders_sort_by&apos;) ?: &apos;time_setup_utc_ms&apos;
-boolean desc = (vars.get(&apos;pending_orders_sort_order&apos;) ?: &apos;desc&apos;).toLowerCase() != &apos;asc&apos;
-int page = ((vars.get(&apos;pending_orders_page&apos;) ?: &apos;1&apos;) as int)
-int pageSize = ((vars.get(&apos;pending_orders_page_size&apos;) ?: &apos;50&apos;) as int)
-int offset = Math.max(page - 1, 0) * pageSize
-Set disabled = disabledSet(disabledRaw(dbMode))
-boolean skipAll = disabled.contains(&apos;*&apos;)
-
-def isDisabledField = { String field, String apiFieldName = null -&gt;
-    if (skipAll) return true
-    List candidates = [field, apiFieldName].findAll { !blank(it) }.collect { normKey(it) }
-    aliases.each { canonical, aliasList -&gt;
-        boolean matched = candidates.contains(normKey(canonical)) || aliasList.any { candidates.contains(normKey(it)) }
-        if (matched) {
-            candidates &lt;&lt; normKey(canonical)
-            aliasList.each { candidates &lt;&lt; normKey(it) }
-        }
-    }
-    candidates.any { disabled.contains(it) }
-}
-def data = parsed instanceof Map ? parsed.data : null
-List apiItems = []
-if (data instanceof Map &amp;&amp; data.items instanceof List) apiItems = data.items.collect { rowToMap(it) }
-else if (data instanceof List) apiItems = data.collect { rowToMap(it) }
-else if (parsed instanceof Map &amp;&amp; parsed.items instanceof List) apiItems = parsed.items.collect { rowToMap(it) }
-if (!apiItems) {
-    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
-        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
-        &apos;\n【失败明细】\n - [失败] | 接口没有返回data.items可对比记录，可能接口失败或data为空&apos; +
-        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
-        &apos;\n\n【接口响应原文】\n&apos; + responseText
-    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
-    return
-}
-Map apiSummary = data instanceof Map &amp;&amp; data.summary instanceof Map ? rowToMap(data.summary) : [:]
-Object apiTotal = data instanceof Map ? data.total : parsed.total
-
-List okLines = []
-List failLines = []
-List skipLines = []
-int apiFieldTotal = 0
-
-String dbSummaryFeeBreakdown = &apos;&apos;
-String dbPageFeeBreakdown = &apos;&apos;
-
-List expectedRows = []
-List allDbRows = []
-Object dbTotalForReport = null
-if (dbMode) {
-    List summaryRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_summary_rows&apos;))
-    List pageRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_page_rows&apos;))
-    if (!summaryRows) {
-        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
-            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
-            &apos;\n请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;) +
-            &apos;\n【失败明细】\n - [失败] | 数据库summary统计SQL未返回记录&apos; +
-            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
-            &apos;\n\n【接口响应原文】\n&apos; + responseText
-        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
-        return
-    }
-    Map dbSummary = summaryRows[0]
-    dbTotalForReport = valueOf(dbSummary, &apos;total&apos;)
-    expectedRows = pageRows
-    allDbRows = pageRows
-    Object dbTotalCommissionVal = valueOf(dbSummary, &apos;total_commission&apos;)
-    Object dbTotalRawFeeVal = valueOf(dbSummary, &apos;total_raw_fee&apos;)
-    Object dbTotalFeeVal = valueOf(dbSummary, &apos;total_fee&apos;)
-    String dbTotalCommissionText = dbTotalCommissionVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_commission&apos;, dbTotalCommissionVal, &apos;DB&apos;, true)
-    String dbTotalRawFeeText = dbTotalRawFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_raw_fee&apos;, dbTotalRawFeeVal, &apos;DB&apos;, true)
-    String dbTotalFeeText = dbTotalFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_fee&apos;, dbTotalFeeVal, &apos;DB&apos;, true)
-    BigDecimal pageCommissionSum = sumField(pageRows, &apos;commission&apos;)
-    BigDecimal pageRawFeeSum = sumField(pageRows, &apos;fee&apos;)
-    BigDecimal pageCommissionFeeSum = pageCommissionSum.add(pageRawFeeSum)
-    dbSummaryFeeBreakdown = &apos;DB total_fee breakdown: total_fee=&apos; + dbTotalFeeText + &apos; = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;); pending orders are not executed, so expected value is 0.&apos;
-    dbPageFeeBreakdown = &apos;DB current page fee detail: commission_sum=&apos; + fmtNum(pageCommissionSum) + &apos; + fee_sum=&apos; + fmtNum(pageRawFeeSum) + &apos; = commission_plus_fee_sum(&apos; + fmtNum(pageCommissionFeeSum) + &apos;); row_total_fee column is commission+fee; pending-order financial fields are expected to be 0.&apos;
-    Map summaryExpected = [
-        total: valueOf(dbSummary, &apos;total&apos;), total_orders: valueOf(dbSummary, &apos;total_orders&apos;),
-        total_volume: valueOf(dbSummary, &apos;total_volume&apos;), cent_volume: valueOf(dbSummary, &apos;cent_volume&apos;), standard_volume: valueOf(dbSummary, &apos;standard_volume&apos;),
-        unresolved_volume: valueOf(dbSummary, &apos;unresolved_volume&apos;), unresolved_currency_account_count: valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;),
-        total_commission: dbTotalCommissionVal, total_raw_fee: dbTotalRawFeeVal, total_fee: dbTotalFeeVal,
-        total_storage: valueOf(dbSummary, &apos;total_storage&apos;), total_profit: valueOf(dbSummary, &apos;total_profit&apos;),
-        reporting_currency: &apos;USD&apos;, money_mode: &apos;reporting&apos;,
-        normalization_complete: (asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;)) ?: BigDecimal.ZERO).compareTo(BigDecimal.ZERO) == 0 ? 1 : 0
-    ]
-    Set strictSummaryVolumeFields = [&apos;total_volume&apos;, &apos;cent_volume&apos;, &apos;standard_volume&apos;, &apos;unresolved_volume&apos;] as Set
-    Map summaryActual = new LinkedHashMap()
-    if (apiTotal != null) summaryActual[&apos;total&apos;] = apiTotal
-    apiSummary.each { k, v -&gt; summaryActual[String.valueOf(k)] = v }
-    summaryActual.each { f, apiVal -&gt;
-        String field = String.valueOf(f)
-        apiFieldTotal++
-        def expKey = findKey(summaryExpected, field)
-        Object expVal = expKey == null ? null : summaryExpected[expKey]
-        if (isDisabledField(field, null)) {
-            skipLines &lt;&lt; &quot; - [跳过] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=${expKey == null ? &apos;&lt;empty&gt; 数据库summary SQL未返回此字段&apos; : renderValue(field, expVal, &apos;DB&apos;, true)} | DBField=${expKey ?: field} | reason=字段在DB/API跳过配置中&quot;
-            return
-        }
-        if (field == &apos;unresolved_currency_accounts&apos;) {
-            boolean isList = apiVal instanceof List
-            BigDecimal apiCount = isList ? new BigDecimal(apiVal.size()) : null
-            BigDecimal dbCount = asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;))
-            boolean same = isList &amp;&amp; apiCount != null &amp;&amp; dbCount != null &amp;&amp; apiCount.compareTo(dbCount) == 0
-            String line = &quot;summary | field=${field} | API=${apiVal} | DB_unresolved_currency_account_count=${dbCount == null ? &apos;&lt;empty&gt;&apos; : fmtNum(dbCount)} | diff=${apiCount == null || dbCount == null ? &apos;N/A&apos; : fmtNum(apiCount.subtract(dbCount).abs())} | formula=unresolved_currency_accounts must be a list and its size must equal unresolved_currency_account_count&quot;
-            if (same) okLines &lt;&lt; &apos; - [PASS] | &apos; + line else failLines &lt;&lt; &apos; - [FAIL] | &apos; + line
-            return
-        }
-        if (expKey == null || blank(expVal)) {
-            failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=&lt;empty&gt; 数据库summary SQL未返回此字段或值为空 | DBField=${expKey ?: field}&quot;
-            return
-        }
-        def cr = compareValue(field, apiVal, expVal, &apos;DB&apos;, true)
-        if (strictSummaryVolumeFields.contains(field)) {
-            BigDecimal an = asNum(apiVal)
-            BigDecimal en = asNum(expVal)
-            if (an != null &amp;&amp; en != null) {
-                BigDecimal diff = an.subtract(en).abs()
-                BigDecimal base = en.abs()
-                String pct
-                String formula
-                if (base.compareTo(BigDecimal.ZERO) == 0) {
-                    pct = diff.compareTo(BigDecimal.ZERO) == 0 ? &apos;0%&apos; : &apos;N/A(DB=0无法作分母)&apos;
-                    formula = &apos;abs(DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，summary成交量字段不使用百分比误差，要求差值=0&apos;
-                } else {
-                    BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
-                    pct = pctText(percent)
-                    formula = &apos;abs((DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / DB(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct + &apos;，summary成交量字段不使用10%或50%误差，要求差值=0&apos;
-                }
-                boolean same = diff.compareTo(BigDecimal.ZERO) == 0
-                cr = [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expVal), diff: fmtNum(diff), percent: pct, formula: formula, note: same ? field + &apos; 差值=0，通过&apos; : field + &apos; 差值不为0，失败&apos;]
-            }
-        }
-        if (field == &apos;total_fee&apos;) {
-            cr.formula = cr.formula + &apos; | DB total_fee = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;)&apos;
-            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; total_fee should be 0, and equals commission+fee(0+0)&apos;
-        }
-        if (field == &apos;total_storage&apos; || field == &apos;total_profit&apos;) {
-            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; this summary financial field should be 0&apos;
-        }
-        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
-        String line = &quot;summary | field=${field} | API=${cr.apiPrint} | DB=${cr.expPrint} | DBField=${expKey} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
-        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
-    }
-} else {
-    Map currentCsv = vars.getObject(&apos;pending_orders_current_csv_row&apos;) instanceof Map ? vars.getObject(&apos;pending_orders_current_csv_row&apos;) : [:]
-    String csvId = idOf(currentCsv)
-    Map apiRow = csvId ? apiItems.find { idOf(it) == csvId } : apiItems[0]
-    if (!apiRow) {
-        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
-            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
-            &apos;\n【失败明细】\n - [失败] | CSV订单号/仓位号和接口响应没有匹配上 | csvId=&apos; + csvId + &apos; | apiIds=&apos; + apiItems.collect { idOf(it) }.join(&apos;,&apos;) +
-            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
-            &apos;\n\n【接口响应原文】\n&apos; + responseText
-        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
-        return
-    }
-    apiItems = [apiRow]
-    expectedRows = [currentCsv]
-}
-
-if (dbMode) {
-    if (apiItems.size() != expectedRows.size()) {
-        failLines &lt;&lt; &quot; - [失败] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
-    } else {
-        okLines &lt;&lt; &quot; - [通过] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
-    }
-}
-
-List compareDrivers = dbMode ? expectedRows : apiItems
-compareDrivers.eachWithIndex { Map driverRow, int idx -&gt;
-    Map apiRow = idx &lt; apiItems.size() ? apiItems[idx] : [:]
-    Map expectedRow = dbMode ? (driverRow ?: [:]) : (idx &lt; expectedRows.size() ? expectedRows[idx] : [:])
-    String apiId = idOf(apiRow)
-    String expectedId = idOf(expectedRow)
-    def apiLoginKey = findKey(apiRow, &apos;login&apos;)
-    def expectedLoginKey = findKey(expectedRow, &apos;login&apos;)
-    String rowLogin = apiLoginKey == null ? (expectedLoginKey == null ? &apos;&lt;empty&gt;&apos; : String.valueOf(expectedRow[expectedLoginKey])) : String.valueOf(apiRow[apiLoginKey])
-    String rowText = &apos;row=&apos; + (idx + 1 + offset) + &apos; | apiId=&apos; + apiId + &apos; | expectedId=&apos; + expectedId + &apos; | login=&apos; + rowLogin
-    if (dbMode &amp;&amp; !apiRow) {
-        failLines &lt;&lt; &quot; - [失败] | ${rowText} | API=&lt;empty&gt; 接口返回缺少第${idx + 1}条明细记录 | DB记录=${expectedRow}&quot;
-        return
-    }
-    if (dbMode &amp;&amp; apiId &amp;&amp; expectedId &amp;&amp; apiId != expectedId) {
-        failLines &lt;&lt; &quot; - [失败] | ${rowText} | 接口和数据库数据记录没有匹配上&quot;
-    }
-    List compareFields = apiRow ? apiRow.keySet().collect { String.valueOf(it) } : expectedRow.keySet().collect { String.valueOf(it) }
-    apiFieldTotal += compareFields.size()
-    compareFields.each { rawField -&gt;
-        String field = String.valueOf(rawField)
-        String expKey = findKey(expectedRow, field)
-        Object expVal = expKey == null ? null : expectedRow[expKey]
-        String apiKey = findKey(apiRow, field)
-        Object apiVal = apiKey == null ? null : apiRow[apiKey]
-        if (isDisabledField(field, apiKey)) {
-            skipLines &lt;&lt; &quot; - [跳过] | ${rowText} | field=${field} | API=${apiKey == null ? &apos;&lt;empty&gt; 接口响应无此字段&apos; : renderValue(apiKey, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=${expKey == null ? &apos;&lt;empty&gt; &apos; + (dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;) : renderValue(field, expVal, sourceName, dbMode)} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey ?: field} | reason=字段在跳过配置中&quot;
-            return
-        }
-        if (expKey == null) {
-            String missingLine = &quot;${rowText} | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=&lt;empty&gt; ${dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;} | ${sourceName}Field=${field}&quot;
-            if (dbMode) failLines &lt;&lt; &apos; - [失败] | &apos; + missingLine else skipLines &lt;&lt; &apos; - [跳过] | &apos; + missingLine
-            return
-        }
-        if (dbMode &amp;&amp; apiKey == null) {
-            failLines &lt;&lt; &quot; - [失败] | ${rowText} | field=${field} | API=&lt;empty&gt; 接口响应无此字段 | DB=${renderValue(field, expVal, sourceName, dbMode)} | DBField=${expKey}&quot;
-            return
-        }
-        def cr = compareValue(field, apiVal, expVal, sourceName, dbMode)
-        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
-        String line = &quot;${rowText} | field=${field} | API=${cr.apiPrint} | ${sourceName}=${cr.expPrint} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
-        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
-    }
-}
-
-if (dbMode &amp;&amp; apiItems.size() &gt; expectedRows.size()) {
-    apiItems.drop(expectedRows.size()).eachWithIndex { Map apiRow, int extraIdx -&gt;
-        int rowNo = offset + expectedRows.size() + extraIdx + 1
-        String apiLogin = valueOf(apiRow, &apos;login&apos;) ?: &apos;&lt;empty&gt;&apos;
-        failLines &lt;&lt; &quot; - [失败] | row=${rowNo} | API订单/仓位号=${idOf(apiRow)} | login=${apiLogin} | DB=&lt;empty&gt; 接口多返回该明细记录 | API记录=${apiRow}&quot;
-    }
-}
-
-String status = failLines.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
-List report = []
-report &lt;&lt; &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=&apos; + status + &apos; | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku
-report &lt;&lt; &apos;接口: POST /crm20/list_pending_orders&apos;
-report &lt;&lt; &apos;请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;)
-report &lt;&lt; &apos;分页排序: page=&apos; + page + &apos; | page_size=&apos; + pageSize + &apos; | sort_by=&apos; + sortBy + &apos; | sort_order=&apos; + (desc ? &apos;desc&apos; : &apos;asc&apos;)
-report &lt;&lt; &apos;跳过字段配置: &apos; + (dbMode ? &apos;pending_orders_db_api_disabled_compare_fields&apos; : &apos;pending_orders_csv_api_disabled_compare_fields&apos;) + &apos;=[&apos; + disabledRaw(dbMode) + &apos;]&apos;
-report &lt;&lt; &apos;接口summary: total=&apos; + apiTotal + &apos; | summary=&apos; + apiSummary
-if (dbMode) report &lt;&lt; &apos;DB汇总: total_orders=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | DB总记录数(summary SQL)=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | 当前页DB记录数(page SQL)=&apos; + expectedRows.size()
-if (dbMode &amp;&amp; dbSummaryFeeBreakdown) report &lt;&lt; dbSummaryFeeBreakdown
-if (dbMode &amp;&amp; dbPageFeeBreakdown) report &lt;&lt; dbPageFeeBreakdown
-report &lt;&lt; &apos;对比结果统计: 失败数量=&apos; + failLines.size() + &apos; | 成功数量=&apos; + okLines.size() + &apos; | 跳过数量=&apos; + skipLines.size() + &apos; | 对比字段总数=&apos; + apiFieldTotal
-report &lt;&lt; &apos;数值规则: DB/API普通数值字段按DB为基准允许误差&lt;=10%；CSV/API普通数值字段允许误差&lt;=5%；编号类字段精确比较；时间字段API按Asia/Shanghai展示后减8小时与DB比较，允许相差&lt;=60秒。&apos;
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【失败明细：&apos; + failLines.size() + &apos;条】&apos;
-report.addAll(failLines ? failLines : [&apos; - 无&apos;])
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【成功字段明细：&apos; + okLines.size() + &apos;条】&apos;
-report.addAll(okLines ? okLines : [&apos; - 无&apos;])
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【跳过字段明细：&apos; + skipLines.size() + &apos;条（含DB/CSV数值）】&apos;
-report.addAll(skipLines ? skipLines : [&apos; - 无&apos;])
-report &lt;&lt; &apos;&apos;
-report &lt;&lt; &apos;【接口请求Body】&apos;
-report &lt;&lt; (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;)
-
-String finalReport = report.join(&apos;\n&apos;)
-publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, failLines.isEmpty())</stringProp>
-              <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="TestPlan.comments">summary按接口summary字段逐字段对比；DB/API当前页明细按SQL行顺序循环，每条DB记录下所有SQL字段都逐字段对比API items对应行；DB/API普通数值字段按DB为基准允许误差&lt;=10%；打印成功、失败、跳过字段明细；跳过字段同时打印API与DB/CSV值。</stringProp>
-            </JSR223Assertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_open_positions：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
@@ -42920,7 +42256,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -44545,7 +43881,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本007.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告07.jtlpython .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告11.jtl&quot; --no-openD:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告12.jtl D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告01.jtl
 python .\jtl_fail_report.py &quot;中间件接口1.56.2结果_失败详细报告01.jtl&quot; --no-open D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告03.jtl--发群的
 /crm20/list_history_positions
