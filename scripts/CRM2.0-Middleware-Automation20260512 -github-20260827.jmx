@@ -6,6 +6,7 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
@@ -35048,7 +35049,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅-22">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；API与DB字段均为空判定通过，DB结果无字段判定失败；所有字段均支持跳过配置。三个Groovy业务脚本已内嵌到JMX，不再依赖jmeter_scripts目录；CSV可与JMX同目录或通过-Juser_info_csv_path指定。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -35057,7 +35058,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="获取用户信息CSV循环">
-          <stringProp name="LoopController.loops">${__groovy(def explicit = props.getProperty(&apos;user_info_csv_path&apos;); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty(&apos;user_info_data_root&apos;); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty(&apos;user.dir&apos;)].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = [&apos;获取用户信息-数据校验.csv&apos;, &apos;data&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;, &apos;csv&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;]; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: &apos; + roots); props.put(&apos;user_info_resolved_csv_path&apos;, found.absolutePath); found; def rows = found.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim() }; rows.size() &lt;= 1 ? 0 : rows.size() - 1)}</stringProp>
+          <stringProp name="LoopController.loops">${__groovy(def explicit=props.getProperty(&apos;user_info_csv_path&apos;); File found=null; String base=org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(); if(explicit?.trim()){File e=new File(explicit.trim()); if(!e.isAbsolute())e=new File(base+File.separator+explicit.trim()); if(e.isFile())found=e.canonicalFile}; def roots=[]; def configured=props.getProperty(&apos;user_info_data_root&apos;); if(configured?.trim())roots&lt;&lt;new File(configured.trim()).canonicalFile; roots&lt;&lt;new File(base).canonicalFile; roots&lt;&lt;new File(System.getProperty(&apos;user.dir&apos;)).canonicalFile; def parents=roots.collect{it.parentFile}.findAll{it!=null}; roots.addAll(parents); roots=roots.unique(); if(found==null){def names=[]; names&lt;&lt;&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;data&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;csv&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; found=roots.collectMany{root-&gt;names.collect{name-&gt;new File(root.path+File.separator+name)}}.find{it.isFile()}?.canonicalFile}; if(found==null)throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；请将CSV与JMX放在同一目录；或使用-Juser_info_csv_path指定CSV绝对路径；已检查根目录：&apos;+roots); props[&apos;user_info_resolved_csv_path&apos;]=found.absolutePath; found; def rows=found.readLines(&apos;UTF-8&apos;).findAll{it!=null&amp;&amp;it.trim()}; rows.size()&lt;=1?0:rows.size()-1)}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -35070,7 +35071,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
-            <stringProp name="filename">${__groovy(def explicit = props.getProperty(&apos;user_info_csv_path&apos;); File found = null; if (explicit?.trim()) { File e = new File(explicit.trim()); if (!e.isAbsolute()) e = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), explicit.trim()); if (e.isFile()) found = e.canonicalFile }; def configured = props.getProperty(&apos;user_info_data_root&apos;); def roots = [configured, org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), System.getProperty(&apos;user.dir&apos;)].findAll { it != null &amp;&amp; it.toString().trim() }.collect { new File(it.toString()).canonicalFile }; roots.addAll(roots.collect { it.parentFile }.findAll { it != null }); roots = roots.unique(); if (found == null) { def relativeNames = [&apos;获取用户信息-数据校验.csv&apos;, &apos;data&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;, &apos;csv&apos; + File.separator + &apos;获取用户信息-数据校验.csv&apos;]; found = roots.collectMany { root -&gt; relativeNames.collect { name -&gt; new File(root, name) } }.find { it.isFile() }?.canonicalFile }; if (found == null) throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；可将CSV与JMX放在同一目录，或使用 -Juser_info_csv_path=CSV绝对路径，或 -Juser_info_data_root=数据目录；已检查根目录: &apos; + roots); props.put(&apos;user_info_resolved_csv_path&apos;, found.absolutePath); found; found.absolutePath)}</stringProp>
+            <stringProp name="filename">${__groovy(def explicit=props.getProperty(&apos;user_info_csv_path&apos;); File found=null; String base=org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(); if(explicit?.trim()){File e=new File(explicit.trim()); if(!e.isAbsolute())e=new File(base+File.separator+explicit.trim()); if(e.isFile())found=e.canonicalFile}; def roots=[]; def configured=props.getProperty(&apos;user_info_data_root&apos;); if(configured?.trim())roots&lt;&lt;new File(configured.trim()).canonicalFile; roots&lt;&lt;new File(base).canonicalFile; roots&lt;&lt;new File(System.getProperty(&apos;user.dir&apos;)).canonicalFile; def parents=roots.collect{it.parentFile}.findAll{it!=null}; roots.addAll(parents); roots=roots.unique(); if(found==null){def names=[]; names&lt;&lt;&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;data&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;csv&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; found=roots.collectMany{root-&gt;names.collect{name-&gt;new File(root.path+File.separator+name)}}.find{it.isFile()}?.canonicalFile}; if(found==null)throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；请将CSV与JMX放在同一目录；或使用-Juser_info_csv_path指定CSV绝对路径；已检查根目录：&apos;+roots); props[&apos;user_info_resolved_csv_path&apos;]=found.absolutePath; found; found.absolutePath)}</stringProp>
             <boolProp name="ignoreFirstLine">false</boolProp>
             <boolProp name="quotedData">true</boolProp>
             <boolProp name="recycle">false</boolProp>
@@ -36568,7 +36569,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-2计算get_user_info-profit数值✅✅" enabled="true">
         <stringProp name="TestPlan.comments">可移植盈亏校验：保留原流程（初始Equity→开平仓→最终Equity→历史profit求和→对比）；环境地址、账号、品种和时间窗口可通过-Jprofit_check_* 覆盖；启动时执行前置配置校验。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -37093,7 +37094,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -37284,7 +37285,7 @@ log.info(successMessage)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -37296,12 +37297,12 @@ log.info(successMessage)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./查询多个账户的挂单订单.csv</stringProp>
@@ -37313,7 +37314,7 @@ log.info(successMessage)
             <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_orders_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_orders_db_api_disabled_compare_fields</stringProp>
@@ -37807,7 +37808,7 @@ SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + r
             </JDBCSampler>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">10000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -38405,7 +38406,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -38427,7 +38428,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -38438,12 +38439,12 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19-2查询多个账户的挂单订单-多个实例验证事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19-2查询多个账户的挂单订单-多个实例验证事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">10000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -38522,7 +38523,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言msg为ok">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言msg为ok" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
               </collectionProp>
@@ -39090,7 +39091,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_open_positions：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
@@ -44425,7 +44426,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -44508,7 +44509,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.14版本013
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
