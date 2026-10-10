@@ -3204,7 +3204,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="23交易大赛-批量查询完全关闭持仓生命周期" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="23交易大赛-批量查询完全关闭持仓生命周期">
             <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
             <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -3226,7 +3226,15 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         },&#xd;
         {&#xd;
             &quot;instance_id&quot;: &quot;MT5_3&quot;,&#xd;
-            &quot;login&quot;: 201151665&#xd;
+            &quot;login&quot;: 201152602&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_4&quot;,&#xd;
+            &quot;login&quot;: 7753317&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_6&quot;,&#xd;
+            &quot;login&quot;: 301101522&#xd;
         },&#xd;
         {&#xd;
             &quot;instance_id&quot;: &quot;${mt5instanceid}&quot;,&#xd;
@@ -3265,7 +3273,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="22交易大赛-批量查询账户资金信息事务" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="22交易大赛-批量查询账户资金信息事务">
             <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
             <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -3287,7 +3295,15 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
         },&#xd;
         {&#xd;
             &quot;instance_id&quot;: &quot;MT5_3&quot;,&#xd;
-            &quot;login&quot;: 201151665&#xd;
+            &quot;login&quot;: 201152602&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_4&quot;,&#xd;
+            &quot;login&quot;: 7753317&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_6&quot;,&#xd;
+            &quot;login&quot;: 301101522&#xd;
         },&#xd;
         {&#xd;
             &quot;instance_id&quot;: &quot;${mt5instanceid}&quot;,&#xd;
@@ -51634,7 +51650,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本011.jtl</stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告07.jtlpython .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细报告11.jtl&quot; --no-openD:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告12.jtl D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告01.jtl
 python .\jtl_fail_report.py &quot;中间件接口1.56.2结果_失败详细报告01.jtl&quot; --no-open D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56.2结果_失败详细报告03.jtl--发群的
 /crm20/list_history_positions
