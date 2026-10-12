@@ -2554,7 +2554,7 @@ vars.put(&quot;loop_count_Loop4&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取挂单订单" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取挂单订单">
           <stringProp name="LoopController.loops">2</stringProp>
         </LoopController>
         <hashTree>
@@ -2601,7 +2601,7 @@ vars.put(&quot;loop_count_Loop5&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取持仓订单" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取持仓订单">
           <stringProp name="LoopController.loops">2</stringProp>
         </LoopController>
         <hashTree>
@@ -2649,7 +2649,7 @@ vars.put(&quot;loop_count_Loop6&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取历史订单" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取历史订单">
           <stringProp name="LoopController.loops">2</stringProp>
         </LoopController>
         <hashTree>
@@ -2670,7 +2670,7 @@ if (count == 0) {
 vars.put(&quot;loop_count_Loop7&quot;, String.valueOf(count + 1));</stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取历史" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取历史">
             <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -2835,7 +2835,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取服务器信息" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取服务器信息">
           <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -2860,7 +2860,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取归档账户" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取归档账户">
           <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -2931,7 +2931,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-修改杠杆" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-修改杠杆">
           <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -2967,7 +2967,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-重置密码" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-重置密码">
           <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -3336,7 +3336,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -30033,7 +30033,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅">
         <stringProp name="TestPlan.comments">新增持仓订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。SQL保留 SELECT mt.* 查询所有字段，并额外提供接口字段别名用于对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -30651,7 +30651,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅">
         <stringProp name="TestPlan.comments">新增汇总的已平仓仓位数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 --备注20260618
 open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&lt;=2%通过；字段跳过配置仍优先。</stringProp>
@@ -30665,7 +30665,7 @@ open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="4汇总的已平仓仓位(进出交易)事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="4汇总的已平仓仓位(进出交易)事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -30895,7 +30895,7 @@ LIMIT 50</stringProp>
             </JDBCSampler>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取汇总的已平仓仓位-数据库校验-${history_pos_login}-${history_pos_instanceid}" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取汇总的已平仓仓位-数据库校验-${history_pos_login}-${history_pos_instanceid}">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">5000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -35955,7 +35955,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -35966,16 +35966,16 @@ if (bad) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="！！14-1获取历史订单事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="！！14-1获取历史订单事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取历史订单" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="获取历史订单">
             <stringProp name="LoopController.loops">4</stringProp>
           </LoopController>
           <hashTree>
-            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="控制比对字段（跳过不参与比对的字段）" enabled="true">
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="控制比对字段（跳过不参与比对的字段）">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="skip_history_fields" elementType="Argument">
                   <stringProp name="Argument.name">skip_history_fields</stringProp>
@@ -35992,11 +35992,11 @@ if (bad) {
               </collectionProp>
             </Arguments>
             <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取历史 ${instanceid_val} ${login_val} " enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取历史 ${instanceid_val} ${login_val} ">
               <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
               <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.path">crm20/get_history_position?instanceid=${instanceid_val}&amp;login=${login_val}</stringProp>
+              <stringProp name="HTTPSampler.path">crm20/get_history_position?instanceid=${instanceid_val}&amp;login=${login_val}&amp;from=1780282092&amp;to=1827629292</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -36218,7 +36218,7 @@ try {
               <boolProp name="IfController.useExpression">false</boolProp>
             </IfController>
             <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="获取历史订单:mt4 ${login_val}:crm20/get_history_position?instanceid=${instanceid_val}&amp;login=${login_val}" enabled="true">
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="获取历史订单:mt4 ${login_val}:crm20/get_history_position?instanceid=${instanceid_val}&amp;login=${login_val}">
                 <stringProp name="dataSource">MySQL</stringProp>
                 <stringProp name="queryType">Select Statement</stringProp>
                 <stringProp name="query">SELECT MAGIC, REASON, SYMBOL, GW_VOLUME, MARGIN_RATE, OPEN_TIME, TAXES,
@@ -42181,16 +42181,16 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
             <stringProp name="LoopController.loops">238</stringProp>
           </LoopController>
           <hashTree>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置">
               <stringProp name="filename">./美分账号的currency-USC验证MT4账号.csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
               <stringProp name="variableNames">instanceid,login</stringProp>
@@ -51604,13 +51604,14 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本009.jtl</stringProp>
+        <stringProp name="filename"></stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本018.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本022.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.11版本001.jtl  &quot;granularity&quot;: &quot;deal&quot;
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.11版本006.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.14版本013.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本009.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
