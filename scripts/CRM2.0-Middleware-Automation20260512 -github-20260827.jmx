@@ -28,7 +28,7 @@
         <stringProp name="username">postgres</stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
         <stringProp name="dataSource">mysqlMT4</stringProp>
         <stringProp name="poolMax">0</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -47,7 +47,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
         <stringProp name="dataSource">mysqlMT5</stringProp>
         <stringProp name="poolMax">0</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -66,7 +66,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
         <stringProp name="dataSource">MySQL</stringProp>
         <stringProp name="poolMax">10</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -85,7 +85,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts1_report">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts1_report" enabled="true">
         <stringProp name="dataSource">mt51ts1_report</stringProp>
         <stringProp name="poolMax">10</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -104,7 +104,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts2_report">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt51ts2_report" enabled="true">
         <stringProp name="dataSource">mt51ts2_report</stringProp>
         <stringProp name="poolMax">10</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -123,7 +123,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_2">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_2" enabled="true">
         <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
         <stringProp name="poolMax">10</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -142,7 +142,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_3">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-mt4demo_report_MT4_3" enabled="true">
         <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
         <stringProp name="poolMax">10</stringProp>
         <stringProp name="timeout">10000</stringProp>
@@ -504,7 +504,7 @@ production account41</stringProp>
 635924--》639653</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -1434,7 +1434,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3337,7 +3337,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28742,7 +28742,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28918,7 +28918,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28971,7 +28971,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="false">
         <stringProp name="TestPlan.comments">新增挂单订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 
 -备注重要：20260618
@@ -29686,7 +29686,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅-优化后面" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2-1获取货币信息-数据库校验✅✅-优化后面" enabled="false">
         <stringProp name="TestPlan.comments">MT5_1 查询 mt5_symbols 数据库对比接口响应；MT4_1 或其他用 CSV 字段对比接口响应</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -30034,7 +30034,7 @@ if (!failures.isEmpty()) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3获取持仓订单-数据库校验✅✅" enabled="false">
         <stringProp name="TestPlan.comments">新增持仓订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。SQL保留 SELECT mt.* 查询所有字段，并额外提供接口字段别名用于对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -30652,7 +30652,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="false">
         <stringProp name="TestPlan.comments">新增汇总的已平仓仓位数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 --备注20260618
 open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&lt;=2%通过；字段跳过配置仍优先。</stringProp>
@@ -31366,7 +31366,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)✅✅---22" enabled="false">
         <stringProp name="TestPlan.comments">！！！！！5跨所有实例的账户级财务指标(权益:利润、利润率)--222 ✅-验证通过 -20260612-验证成功-最新-001
 新增跨所有实例账户级财务指标数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 数据库按完整实例ID精确路由：MT4_1→mysqlMT4；MT5_1→mysqlMT5；MT4_2→mt4demo_report_MT4_2；MT4_3→mt4demo_report_MT4_3；MT5_1_TS1→mt51ts1_report；MT5_1_TS2→mt51ts2_report。</stringProp>
@@ -32484,7 +32484,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="待确定-6待处理/历史订单✅✅-验证半成品 " enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="待确定-6待处理/历史订单✅✅-验证半成品 " enabled="false">
         <stringProp name="TestPlan.comments">新增待处理/历史订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 *****
 一下是bug  20260618
@@ -33351,7 +33351,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -33559,7 +33559,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -33570,7 +33570,7 @@ if (pass) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="7-2修改账户权限-modify_user_info接口事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="7-2修改账户权限-modify_user_info接口事务" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -33809,7 +33809,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="false">
         <stringProp name="TestPlan.comments">符号规格和实时报价字段校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比；支持按MT4、MT5、CSV分别手工配置跳过字段和逐字段百分比误差。严格区分字段存在但值为空与DB根本无此字段；API/DB均为空、API=0且DB字段存在但值为空时通过。point依据beta1.66.3契约按POW(10,-digits)生成并参与比较；MT5的volume_max、volume_min、volume_step使用DB原值除以10000后对比，MT4不缩放。接口保持 /crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -34499,7 +34499,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="9多维度聚合摘要(按实例、货币、组、风险、绩效)✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="9多维度聚合摘要(按实例、货币、组、风险、绩效)✅✅" enabled="false">
         <stringProp name="TestPlan.comments">-只是校验字段</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -34691,7 +34691,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="10返回某实例 SHM 用户索引中的每一个login ID✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="10返回某实例 SHM 用户索引中的每一个login ID✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -34735,7 +34735,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="false">
         <stringProp name="TestPlan.comments">按CSV数据行数循环；shujuku=1时读取整份CSV聚合所有MT4/MT5登录号后DB/API对比，shujuku=0时按当前CSV行做CSV/API对比。CSV变量名从表头读取，支持手动增删校验字段。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -35264,7 +35264,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="12获取持仓订单get_position_info -20260612-验证成功✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="12获取持仓订单get_position_info -20260612-验证成功✅✅" enabled="false">
         <stringProp name="TestPlan.comments">get_position_info：按CSV数据行数循环；shujuku=1时DB/API按订单号匹配后逐字段对比，shujuku=0时CSV/API按订单号匹配后逐字段对比。只改本线程组。
 
 *** 备注：
@@ -35956,7 +35956,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="14中间件相关接口-测试环境-japser-20260615-验证成功✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -39222,7 +39222,7 @@ vars.put(&quot;loop_count_恢复权限&quot;, String.valueOf(count + 1));
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="13激活归档用户✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="13激活归档用户✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -39274,7 +39274,7 @@ vars.put(&quot;loop_count_恢复权限&quot;, String.valueOf(count + 1));
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="15-2创建账户重置密码-充值-查询账号-获取持仓订单-历史订单✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="15-2创建账户重置密码-充值-查询账号-获取持仓订单-历史订单✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -40093,7 +40093,7 @@ modify_user_info接口</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="16获取归档账户✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="16获取归档账户✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -40149,7 +40149,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="false">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；MT5的ZIPCode必须返回并与DB/CSV对比；MT4若返回zipcode也与数据库ZIPCODE列对比，邮编单边为空判失败。API与DB字段均为空判定通过（备注：API 和 DB 返回都是为空，通过），DB结果无字段判定失败（备注：数据库无此字段）；所有字段含邮编均支持跳过配置。三个Groovy业务脚本已内嵌到JMX，不再依赖jmeter_scripts目录；CSV可与JMX同目录或通过-Juser_info_csv_path指定。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）</stringProp>
@@ -42171,7 +42171,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="17-3获取用户信息-美分账号的currency-USC验证" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -42232,7 +42232,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="18获取群组信息-✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -42423,7 +42423,7 @@ log.info(successMessage)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="false">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -43566,7 +43566,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -44229,7 +44229,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="20查询多个账户的当前持仓订单-数据库校验-back001-计算profit-增加字段✅✅" enabled="false">
         <stringProp name="TestPlan.comments">list_open_positions：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
@@ -44243,7 +44243,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-当前持仓profit专用mysqlMT5-cj">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-当前持仓profit专用mysqlMT5-cj" enabled="true">
           <stringProp name="dataSource">mysqlMT5_open_positions_profit</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -45880,7 +45880,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅" enabled="false">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/accounts/query 并逐字段进行 DB/API 校验；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应字段、类型、币种与 money_scale 语义依据 mt-hub-openapi-20260910.html（1.66.11）。严格区分数据库字段不存在与字段值为空。LoopController使用字符码44解析CSV首列，避免JMeter把Groovy代码中的逗号误判为__groovy函数参数分隔符。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -45892,7 +45892,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1账户资金校验mysqlMT5-cj">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1账户资金校验mysqlMT5-cj" enabled="true">
           <stringProp name="dataSource">mysqlMT5_competition_accounts</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -45911,7 +45911,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="22交易大赛-批量查询账户资金信息事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -46650,7 +46650,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj" enabled="true">
           <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -48059,19 +48059,19 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
-        <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002" enabled="true">
+        <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。路径可迁移：统一读取granularity-deal.csv；先自检加载一次，再按同一数据集计算业务循环次数；缺文件/空数据显式失败。支持competition_history_csv_file及competition_history_data_dir变量或-J参数。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="交易大赛V1历史生命周期CSV循环">
-          <stringProp name="LoopController.loops">${__groovy(def f = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + File.separator + &apos;交易大赛-批量查询已经完全关闭的持仓生命周期.csv&apos;); if (!f.exists()) return 0; def lines = f.readLines(&apos;UTF-8&apos;); if (lines.size() &lt;= 1) return 0; boolean hasDb = false; int csvCount = 0; for (int i = 1; i &lt; lines.size(); i++) { String line = lines.get(i); if (line != null &amp;&amp; line.trim().length() &gt; 0) { int p = -1; for (int j = 0; j &lt; line.length(); j++) { if ((int)line.charAt(j) == 44) { p = j; break } }; String first = p &lt; 0 ? line : line.take(p); if (first.length() &gt; 0 &amp;&amp; first.charAt(0) == (65279 as char)) first = first.drop(1); first = first.trim(); if (first.length() &gt;= 2 &amp;&amp; first.charAt(0) == (&apos;&quot;&apos; as char) &amp;&amp; first.charAt(first.length() - 1) == (&apos;&quot;&apos; as char)) first = first.drop(1).take(first.length() - 2).trim(); if (first == &apos;1&apos;) hasDb = true; else if (first == &apos;0&apos;) csvCount++ } }; return csvCount + (hasDb ? 1 : 0))}</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj" enabled="true">
           <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -48090,171 +48090,253 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-可迁移CSV路径配置" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="competition_history_csv_file" elementType="Argument">
+              <stringProp name="Argument.name">competition_history_csv_file</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">留空使用granularity-deal.csv；支持绝对路径或相对JMX目录的路径。-Jcompetition_history_csv_file优先。远程执行时路径指向各执行机本地文件。</stringProp>
+            </elementProp>
+            <elementProp name="competition_history_data_dir" elementType="Argument">
+              <stringProp name="Argument.name">competition_history_data_dir</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">可选CSV目录；相对路径以JMX目录为基准，-Jcompetition_history_data_dir优先。不配置时按JMX目录、其下中间件接口CSV数据目录、启动目录查找；显式配置错误时不回退其他数据。</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV数据文件设置-交易大赛完全关闭持仓生命周期（由初始化脚本读取）" enabled="false">
-            <stringProp name="delimiter">,</stringProp>
-            <stringProp name="fileEncoding">UTF-8</stringProp>
-            <stringProp name="filename">./交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv</stringProp>
-            <boolProp name="ignoreFirstLine">true</boolProp>
-            <boolProp name="quotedData">true</boolProp>
-            <boolProp name="recycle">false</boolProp>
-            <stringProp name="shareMode">shareMode.thread</stringProp>
-            <boolProp name="stopThread">false</boolProp>
-            <stringProp name="variableNames"></stringProp>
-          </CSVDataSet>
-          <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-DB/API与字段缺失配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="competition_history_db_api_manual_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_manual_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动追加DB/API对比字段名；英文逗号、分号或换行分隔，例如rate_profit。默认V1字段始终对比；如需排除字段，请填写到disabled_compare_fields，未配置跳过的默认字段和手动追加字段全部参与对比。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_api_disabled_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">DB/API及自行计算/API无条件跳过字段；支持默认字段、手动追加字段、接口字段名或calc_*字段名；英文逗号、分号或换行分隔，*表示全部。不填写则所有字段继续对比。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_missing_field_skip_fields" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_missing_field_skip_fields</stringProp>
-                <stringProp name="Argument.value">notional_calculation_version,notional_calculation_version,position_lifecycle_id,open_notional_value_usd,close_notional_value_usd,notional_status,notional_method,notional_calculation_version</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">这些字段属于中间件生命周期/名义价值投影，原始 MT4/MT5 报表库没有对应列；接口字段本身仍做必返、类型、枚举和语义校验。移除字段后，数据库无此字段将判失败。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_api_field_tolerance_percent" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_field_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">profit=20,open_price=0.01,close_price=0.01,calc_open_notional_value_usd=15,calc_close_notional_value_usd=15</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动字段百分比误差，格式字段名=百分比；例如rate_profit=20。以DB或自行计算期望值为基准计算abs(API-期望值)/abs(期望值)*100%，不大于配置百分比通过，大于配置百分比失败。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_api_field_absolute_tolerance" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_field_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000,calc_open_notional_value_usd=0.00001,calc_close_notional_value_usd=0.00001</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动字段绝对误差，格式字段名=数值；最终允许差值=max(绝对误差,abs(DB或自行计算期望值)*百分比/100)。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_api_default_tolerance_percent" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_default_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">0</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_api_default_absolute_tolerance" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_api_default_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">0</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_allow_partial_errors" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_allow_partial_errors</stringProp>
-                <stringProp name="Argument.value">false</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">false 时 HTTP 200 中 errors 非空仍判失败；无论是否允许，errors[] 每个字段都会校验。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_db_unmatched_row_policy" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_db_unmatched_row_policy</stringProp>
-                <stringProp name="Argument.value">fail</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">默认fail：无cursor的完整结果集中，数据库正常查询到但接口未返回的记录列入失败明细；仅排查接口分页时才可临时改为skip。存在cursor时始终只校验当前页，API行找不到唯一DB行在任何策略下都失败。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_sort_violation_policy" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_sort_violation_policy</stringProp>
-                <stringProp name="Argument.value">skip</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">data排序错误及data稳定排序错误的处理策略：skip=列入跳过明细，不影响订单按deal_ticket/order_id关联DB和逐字段对比；fail=列入失败明细。默认skip，报告会打印当前规则和跳过原因。</stringProp>
-              </elementProp>
-            </collectionProp>
-            <stringProp name="TestPlan.comments">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000</stringProp>
-          </Arguments>
-          <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-CSV/API配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="competition_history_csv_api_manual_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_manual_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动追加CSV/API对比字段名；英文逗号、分号或换行分隔，例如rate_profit。默认V1字段始终对比；如需排除字段，请填写到disabled_compare_fields，未配置跳过的默认字段和手动追加字段全部参与对比。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_csv_api_disabled_compare_fields" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">CSV/API无条件跳过字段；支持默认字段和手动追加字段，英文逗号、分号或换行分隔，*表示全部。不填写则所有字段继续对比。CSV单元格留空表示不设置期望值；填写&lt;empty&gt;或&lt;null&gt;才断言为空。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_csv_api_field_tolerance_percent" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_field_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">profit=20,open_price=0.01,close_price=0.01</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动字段百分比误差，格式字段名=百分比；例如rate_profit=20。以CSV期望值为基准计算abs(API-CSV)/abs(CSV)*100%，不大于配置百分比通过，大于配置百分比失败。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_csv_api_field_absolute_tolerance" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_field_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">手动字段绝对误差，格式字段名=数值；最终允许差值=max(绝对误差,abs(CSV期望值)*百分比/100)。</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_csv_api_default_tolerance_percent" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_default_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">0</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="competition_history_csv_api_default_absolute_tolerance" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_csv_api_default_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">0</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </Arguments>
-          <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化交易大赛V1历史生命周期参数、请求Body和数据库SQL" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="历史生命周期CSV路径自检、加载及执行次数初始化" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import groovy.json.JsonOutput
+            <stringProp name="script">import org.apache.jmeter.save.CSVSaveService
+import org.apache.jmeter.services.FileServer
 
-String csvName = &apos;交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv&apos;
-File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
-if (!csvFile.exists()) throw new AssertionError(&apos;CSV文件不存在: &apos; + csvFile.getPath())
-List&lt;String&gt; rawLines = csvFile.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim() }
-if (rawLines.size() &lt;= 1) throw new AssertionError(&apos;CSV没有数据行: &apos; + csvFile.getPath())
+// Keep file resolution and case counting in one startup step, before the business loop.
+vars.put(&apos;competition_history_case_total&apos;, &apos;0&apos;)
+vars.put(&apos;competition_history_case_index&apos;, &apos;0&apos;)
+vars.remove(&apos;competition_history_run_cases&apos;)
+vars.remove(&apos;competition_history_csv_resolved_path&apos;)
 
-def parseCsvLine = { String line -&gt;
-    List&lt;String&gt; values = []
-    StringBuilder cell = new StringBuilder()
-    boolean quoted = false
-    for (int i = 0; i &lt; line.length(); i++) {
-        char ch = line.charAt(i)
-        if (ch == (&apos;&quot;&apos; as char)) {
-            if (quoted &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == (&apos;&quot;&apos; as char)) { cell.append(&apos;&quot;&apos;); i++ }
-            else quoted = !quoted
-        } else if (ch == (&apos;,&apos; as char) &amp;&amp; !quoted) { values &lt;&lt; cell.toString(); cell.setLength(0) }
-        else cell.append(ch)
+try {
+    def setting = { String key -&gt;
+        String value = props.getProperty(key)
+        if (value == null || !value.trim()) value = vars.get(key)
+        (value ?: &apos;&apos;).trim()
     }
-    values &lt;&lt; cell.toString()
-    values
-}
+    String defaultName = &apos;交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv&apos;
+    String configuredFile = setting(&apos;competition_history_csv_file&apos;)
+    String configuredDir = setting(&apos;competition_history_data_dir&apos;)
+    File baseDir = new File(FileServer.getFileServer().getBaseDir()).getCanonicalFile()
+    File workingDir = new File(System.getProperty(&apos;user.dir&apos;)).getCanonicalFile()
+    String fileName = configuredFile ?: defaultName
+    File requested = new File(fileName)
+    List&lt;File&gt; candidates = []
+    if (requested.isAbsolute()) {
+        candidates &lt;&lt; requested
+    } else if (configuredDir) {
+        File dataDir = new File(configuredDir)
+        if (!dataDir.isAbsolute()) dataDir = new File(baseDir, configuredDir)
+        candidates &lt;&lt; new File(dataDir, fileName)
+    } else {
+        candidates &lt;&lt; new File(baseDir, fileName)
+        if (!configuredFile) candidates &lt;&lt; new File(new File(baseDir, &apos;中间件接口CSV数据&apos;), fileName)
+        candidates &lt;&lt; new File(workingDir, fileName)
+        if (!configuredFile) candidates &lt;&lt; new File(new File(workingDir, &apos;中间件接口CSV数据&apos;), fileName)
+    }
+    candidates = candidates.collect { it.getCanonicalFile() }.unique { it.getPath() }
+    File csvFile = candidates.find { it.isFile() &amp;&amp; it.canRead() }
+    if (csvFile == null) {
+        throw new IllegalArgumentException(&apos;CSV文件不存在或不可读。请将CSV随JMX一起部署，或设置 -Jcompetition_history_csv_file=/path/data.csv / -Jcompetition_history_data_dir=/path/data。已检查: &apos; + candidates.collect { it.getPath() }.join(&apos; | &apos;))
+    }
 
-List&lt;String&gt; headers = parseCsvLine(rawLines[0]).collect { String.valueOf(it).trim() }
-if (headers &amp;&amp; headers[0].startsWith(&apos;\uFEFF&apos;)) headers[0] = headers[0].substring(1)
-List&lt;Map&gt; csvRows = []
-rawLines.drop(1).eachWithIndex { String line, int idx -&gt;
-    List&lt;String&gt; values = parseCsvLine(line)
-    Map row = new LinkedHashMap()
-    headers.eachWithIndex { String h, int c -&gt; row[h] = c &lt; values.size() ? values[c].trim() : &apos;&apos; }
-    row.__line_no = idx + 2
-    if (String.valueOf(row.shujuku ?: &apos;&apos;).trim() in [&apos;0&apos;, &apos;1&apos;]) csvRows &lt;&lt; row
-}
-if (!csvRows) throw new AssertionError(&apos;CSV没有有效数据：shujuku 必须为 1(DB/API) 或 0(CSV/API)&apos;)
+    List&lt;Map&gt; csvRows = []
+    csvFile.withReader(&apos;UTF-8&apos;) { BufferedReader reader -&gt;
+        reader.mark(1)
+        if (reader.read() != 0xFEFF) reader.reset()
+        List&lt;String&gt; headers = CSVSaveService.csvReadFile(reader, &apos;,&apos; as char).collect { it.trim() }
+        List&lt;String&gt; missing = [&apos;shujuku&apos;, &apos;login&apos;, &apos;granularity&apos;].findAll { !headers.contains(it) }
+        if (missing) throw new IllegalArgumentException(&apos;CSV缺少必需表头: &apos; + missing.join(&apos;,&apos;) + &apos; | &apos; + csvFile.getPath())
+        int recordNo = 1
+        while (true) {
+            String[] values = CSVSaveService.csvReadFile(reader, &apos;,&apos; as char)
+            if (values.length == 0) break
+            recordNo++
+            if (values.every { !it.trim() }) continue
+            Map row = new LinkedHashMap()
+            headers.eachWithIndex { String header, int column -&gt; row[header] = column &lt; values.length ? values[column].trim() : &apos;&apos; }
+            row.__line_no = recordNo
+            if (String.valueOf(row.shujuku ?: &apos;&apos;).trim() in [&apos;0&apos;, &apos;1&apos;]) csvRows &lt;&lt; row
+        }
+    }
+    if (!csvRows) throw new IllegalArgumentException(&apos;CSV没有有效数据：shujuku必须为1(DB/API)或0(CSV/API) | &apos; + csvFile.getPath())
 
-List&lt;Map&gt; dbRows = csvRows.findAll { String.valueOf(it.shujuku).trim() == &apos;1&apos; }
-List&lt;Map&gt; csvRows0 = csvRows.findAll { String.valueOf(it.shujuku).trim() == &apos;0&apos; }
-List&lt;Map&gt; runCases = []
-if (dbRows) runCases &lt;&lt; [mode: &apos;DB&apos;, rows: dbRows, row: dbRows[0]]
-csvRows0.each { Map row -&gt; runCases &lt;&lt; [mode: &apos;CSV&apos;, rows: [row], row: row] }
+    List&lt;Map&gt; dbRows = csvRows.findAll { it.shujuku == &apos;1&apos; }
+    List&lt;Map&gt; csvRows0 = csvRows.findAll { it.shujuku == &apos;0&apos; }
+    List&lt;Map&gt; runCases = []
+    if (dbRows) runCases &lt;&lt; [mode: &apos;DB&apos;, rows: dbRows, row: dbRows[0]]
+    csvRows0.each { Map row -&gt; runCases &lt;&lt; [mode: &apos;CSV&apos;, rows: [row], row: row] }
+    vars.putObject(&apos;competition_history_run_cases&apos;, runCases)
+    vars.put(&apos;competition_history_csv_resolved_path&apos;, csvFile.getPath())
+    vars.put(&apos;competition_history_case_total&apos;, String.valueOf(runCases.size()))
+    String report = &apos;CSV加载成功 | path=&apos; + csvFile.getPath() + &apos; | DB行=&apos; + dbRows.size() + &apos; | CSV用例=&apos; + csvRows0.size() + &apos; | 执行次数=&apos; + runCases.size()
+    log.info(report)
+    SampleResult.setSuccessful(true)
+    SampleResult.setResponseCode(&apos;200&apos;)
+    SampleResult.setResponseMessage(&apos;OK&apos;)
+    SampleResult.setDataType(&apos;text&apos;)
+    SampleResult.setResponseData(report, &apos;UTF-8&apos;)
+} catch (Exception ex) {
+    // A visible failed sample replaces the old silent zero-iteration exit.
+    vars.put(&apos;competition_history_case_total&apos;, &apos;0&apos;)
+    vars.remove(&apos;competition_history_run_cases&apos;)
+    String report = &apos;历史生命周期CSV加载失败: &apos; + ex.getMessage()
+    log.error(report, ex)
+    SampleResult.setSuccessful(false)
+    SampleResult.setResponseCode(&apos;CSV_LOAD_ERROR&apos;)
+    SampleResult.setResponseMessage(report)
+    SampleResult.setDataType(&apos;text&apos;)
+    SampleResult.setResponseData(report, &apos;UTF-8&apos;)
+}
+</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="按同一CSV执行DB聚合及CSV逐行用例" enabled="true">
+            <stringProp name="LoopController.loops">${competition_history_case_total}</stringProp>
+            <boolProp name="LoopController.continue_forever">false</boolProp>
+          </LoopController>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV数据文件设置-交易大赛完全关闭持仓生命周期（由初始化脚本读取）" enabled="false">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="filename">./交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv</stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="quotedData">true</boolProp>
+              <boolProp name="recycle">false</boolProp>
+              <stringProp name="shareMode">shareMode.thread</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames"></stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-DB/API与字段缺失配置" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="competition_history_db_api_manual_compare_fields" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_manual_compare_fields</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动追加DB/API对比字段名；英文逗号、分号或换行分隔，例如rate_profit。默认V1字段始终对比；如需排除字段，请填写到disabled_compare_fields，未配置跳过的默认字段和手动追加字段全部参与对比。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_api_disabled_compare_fields" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_disabled_compare_fields</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">DB/API及自行计算/API无条件跳过字段；支持默认字段、手动追加字段、接口字段名或calc_*字段名；英文逗号、分号或换行分隔，*表示全部。不填写则所有字段继续对比。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_missing_field_skip_fields" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_missing_field_skip_fields</stringProp>
+                  <stringProp name="Argument.value">notional_calculation_version,notional_calculation_version,position_lifecycle_id,open_notional_value_usd,close_notional_value_usd,notional_status,notional_method,notional_calculation_version</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">这些字段属于中间件生命周期/名义价值投影，原始 MT4/MT5 报表库没有对应列；接口字段本身仍做必返、类型、枚举和语义校验。移除字段后，数据库无此字段将判失败。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_api_field_tolerance_percent" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_field_tolerance_percent</stringProp>
+                  <stringProp name="Argument.value">profit=20,open_price=0.01,close_price=0.01,calc_open_notional_value_usd=15,calc_close_notional_value_usd=15</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动字段百分比误差，格式字段名=百分比；例如rate_profit=20。以DB或自行计算期望值为基准计算abs(API-期望值)/abs(期望值)*100%，不大于配置百分比通过，大于配置百分比失败。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_api_field_absolute_tolerance" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_field_absolute_tolerance</stringProp>
+                  <stringProp name="Argument.value">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000,calc_open_notional_value_usd=0.00001,calc_close_notional_value_usd=0.00001</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动字段绝对误差，格式字段名=数值；最终允许差值=max(绝对误差,abs(DB或自行计算期望值)*百分比/100)。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_api_default_tolerance_percent" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_default_tolerance_percent</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_api_default_absolute_tolerance" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_api_default_absolute_tolerance</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_allow_partial_errors" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_allow_partial_errors</stringProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">false 时 HTTP 200 中 errors 非空仍判失败；无论是否允许，errors[] 每个字段都会校验。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_db_unmatched_row_policy" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_db_unmatched_row_policy</stringProp>
+                  <stringProp name="Argument.value">fail</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">默认fail：无cursor的完整结果集中，数据库正常查询到但接口未返回的记录列入失败明细；仅排查接口分页时才可临时改为skip。存在cursor时始终只校验当前页，API行找不到唯一DB行在任何策略下都失败。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_sort_violation_policy" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_sort_violation_policy</stringProp>
+                  <stringProp name="Argument.value">skip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">data排序错误及data稳定排序错误的处理策略：skip=列入跳过明细，不影响订单按deal_ticket/order_id关联DB和逐字段对比；fail=列入失败明细。默认skip，报告会打印当前规则和跳过原因。</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000</stringProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-CSV/API配置" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="competition_history_csv_api_manual_compare_fields" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_manual_compare_fields</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动追加CSV/API对比字段名；英文逗号、分号或换行分隔，例如rate_profit。默认V1字段始终对比；如需排除字段，请填写到disabled_compare_fields，未配置跳过的默认字段和手动追加字段全部参与对比。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_csv_api_disabled_compare_fields" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_disabled_compare_fields</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">CSV/API无条件跳过字段；支持默认字段和手动追加字段，英文逗号、分号或换行分隔，*表示全部。不填写则所有字段继续对比。CSV单元格留空表示不设置期望值；填写&lt;empty&gt;或&lt;null&gt;才断言为空。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_csv_api_field_tolerance_percent" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_field_tolerance_percent</stringProp>
+                  <stringProp name="Argument.value">profit=20,open_price=0.01,close_price=0.01</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动字段百分比误差，格式字段名=百分比；例如rate_profit=20。以CSV期望值为基准计算abs(API-CSV)/abs(CSV)*100%，不大于配置百分比通过，大于配置百分比失败。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_csv_api_field_absolute_tolerance" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_field_absolute_tolerance</stringProp>
+                  <stringProp name="Argument.value">volume_lots=0.00000001,open_price=0.00001,close_price=0.00001,profit=0.01,open_time_ms=1000,close_time_ms=1000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">手动字段绝对误差，格式字段名=数值；最终允许差值=max(绝对误差,abs(CSV期望值)*百分比/100)。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_csv_api_default_tolerance_percent" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_default_tolerance_percent</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_csv_api_default_absolute_tolerance" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_csv_api_default_absolute_tolerance</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化交易大赛V1历史生命周期参数、请求Body和数据库SQL" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import groovy.json.JsonOutput
+
+List&lt;Map&gt; runCases = vars.getObject(&apos;competition_history_run_cases&apos;) as List&lt;Map&gt;
+if (!runCases) throw new IllegalStateException(&apos;CSV尚未成功加载，请检查线程组CSV路径自检结果&apos;)
 int caseIndex
 try { caseIndex = Integer.parseInt(vars.get(&apos;competition_history_case_index&apos;) ?: &apos;0&apos;) } catch (ignored) { caseIndex = 0 }
 if (caseIndex &lt; 0 || caseIndex &gt;= runCases.size()) throw new AssertionError(&apos;CSV执行索引越界: &apos; + caseIndex + &apos;/&apos; + runCases.size())
@@ -48506,140 +48588,140 @@ SampleResult.setResponseCode(&apos;200&apos;)
 SampleResult.setResponseMessage(&apos;OK&apos;)
 SampleResult.setDataType(&apos;text&apos;)
 SampleResult.setResponseData(report + &apos;\n\n【请求Body】\n&apos; + requestBody + (runCase.mode == &apos;DB&apos; ? &apos;\n\n【数据库明细SQL】\n&apos; + detailSql : &apos;&apos;), &apos;UTF-8&apos;)</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="当shujuku=1-查询交易大赛V1完全关闭生命周期数据库明细" enabled="true">
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_shujuku&apos;) == &apos;1&apos;)}</stringProp>
-          </IfController>
-          <hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_1" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="当shujuku=1-查询交易大赛V1完全关闭生命周期数据库明细" enabled="true">
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_1&apos;) == &apos;1&apos;)}</stringProp>
+              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_shujuku&apos;) == &apos;1&apos;)}</stringProp>
             </IfController>
             <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_1" enabled="true">
-                <stringProp name="dataSource">mysqlMT4</stringProp>
-                <stringProp name="query">${competition_history_sql_MT4_1}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">30</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT4_1</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_2" enabled="true">
-              <boolProp name="IfController.evaluateAll">false</boolProp>
-              <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_2&apos;) == &apos;1&apos;)}</stringProp>
-            </IfController>
-            <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_2" enabled="true">
-                <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
-                <stringProp name="query">${competition_history_sql_MT4_2}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">30</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT4_2</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_3" enabled="true">
-              <boolProp name="IfController.evaluateAll">false</boolProp>
-              <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_3&apos;) == &apos;1&apos;)}</stringProp>
-            </IfController>
-            <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_3" enabled="true">
-                <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
-                <stringProp name="query">${competition_history_sql_MT4_3}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">30</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT4_3</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1" enabled="true">
-              <boolProp name="IfController.evaluateAll">false</boolProp>
-              <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1&apos;) == &apos;1&apos;)}</stringProp>
-            </IfController>
-            <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1" enabled="true">
-                <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
-                <stringProp name="query">${competition_history_sql_MT5_1}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">120</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT5_1</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1_TS1" enabled="true">
-              <boolProp name="IfController.evaluateAll">false</boolProp>
-              <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1_TS1&apos;) == &apos;1&apos;)}</stringProp>
-            </IfController>
-            <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1_TS1" enabled="true">
-                <stringProp name="dataSource">mt51ts1_report</stringProp>
-                <stringProp name="query">${competition_history_sql_MT5_1_TS1}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">120</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT5_1_TS1</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1_TS2" enabled="true">
-              <boolProp name="IfController.evaluateAll">false</boolProp>
-              <boolProp name="IfController.useExpression">true</boolProp>
-              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1_TS2&apos;) == &apos;1&apos;)}</stringProp>
-            </IfController>
-            <hashTree>
-              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1_TS2" enabled="true">
-                <stringProp name="dataSource">mt51ts2_report</stringProp>
-                <stringProp name="query">${competition_history_sql_MT5_1_TS2}</stringProp>
-                <stringProp name="queryArguments"></stringProp>
-                <stringProp name="queryArgumentsTypes"></stringProp>
-                <stringProp name="queryTimeout">120</stringProp>
-                <stringProp name="queryType">Select Statement</stringProp>
-                <stringProp name="resultSetHandler">Store as Object</stringProp>
-                <stringProp name="resultSetMaxRows">50000</stringProp>
-                <stringProp name="resultVariable">db_competition_history_rows_MT5_1_TS2</stringProp>
-                <stringProp name="variableNames"></stringProp>
-              </JDBCSampler>
-              <hashTree/>
-            </hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="合并六个实例的历史明细并设置辅助接口参数" enabled="true">
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="script">List&lt;String&gt; routes = [&apos;MT4_1&apos;,&apos;MT4_2&apos;,&apos;MT4_3&apos;,&apos;MT5_1&apos;,&apos;MT5_1_TS1&apos;,&apos;MT5_1_TS2&apos;]
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_1" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_1&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_1" enabled="true">
+                  <stringProp name="dataSource">mysqlMT4</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT4_1}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">30</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT4_1</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_2" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_2&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_2" enabled="true">
+                  <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT4_2}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">30</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT4_2</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT4_3" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT4_3&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT4_3" enabled="true">
+                  <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT4_3}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">30</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT4_3</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1" enabled="true">
+                  <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT5_1}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">120</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT5_1</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1_TS1" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1_TS1&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1_TS1" enabled="true">
+                  <stringProp name="dataSource">mt51ts1_report</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT5_1_TS1}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">120</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT5_1_TS1</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="按实例查询交易大赛历史明细-MT5_1_TS2" enabled="true">
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+                <stringProp name="IfController.condition">${__groovy(vars.get(&apos;competition_history_route_enabled_MT5_1_TS2&apos;) == &apos;1&apos;)}</stringProp>
+              </IfController>
+              <hashTree>
+                <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-交易大赛历史明细-MT5_1_TS2" enabled="true">
+                  <stringProp name="dataSource">mt51ts2_report</stringProp>
+                  <stringProp name="query">${competition_history_sql_MT5_1_TS2}</stringProp>
+                  <stringProp name="queryArguments"></stringProp>
+                  <stringProp name="queryArgumentsTypes"></stringProp>
+                  <stringProp name="queryTimeout">120</stringProp>
+                  <stringProp name="queryType">Select Statement</stringProp>
+                  <stringProp name="resultSetHandler">Store as Object</stringProp>
+                  <stringProp name="resultSetMaxRows">50000</stringProp>
+                  <stringProp name="resultVariable">db_competition_history_rows_MT5_1_TS2</stringProp>
+                  <stringProp name="variableNames"></stringProp>
+                </JDBCSampler>
+                <hashTree/>
+              </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="合并六个实例的历史明细并设置辅助接口参数" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">List&lt;String&gt; routes = [&apos;MT4_1&apos;,&apos;MT4_2&apos;,&apos;MT4_3&apos;,&apos;MT5_1&apos;,&apos;MT5_1_TS1&apos;,&apos;MT5_1_TS2&apos;]
 List&lt;Map&gt; merged = []
 List&lt;String&gt; counts = []
 routes.each { String route -&gt;
@@ -48688,50 +48770,50 @@ SampleResult.setResponseCode(&apos;200&apos;)
 SampleResult.setResponseMessage(&apos;OK&apos;)
 SampleResult.setResponseData(message, &apos;UTF-8&apos;)
 log.info(message)</stringProp>
-              <stringProp name="scriptLanguage">groovy</stringProp>
-            </JSR223Sampler>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
+            </hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-自行计算名义价值/API误差配置" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="competition_history_notional_calc_api_tolerance_percent" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_notional_calc_api_tolerance_percent</stringProp>
+                  <stringProp name="Argument.value">calc_open_notional_value_usd=1,calc_close_notional_value_usd=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">自行计算名义价值与API值的百分比误差；手工输入示例calc_open_notional_value_usd=1,calc_close_notional_value_usd=2；0表示不允许百分比误差；不读取普通DB/API或CSV/API字段误差配置。</stringProp>
+                </elementProp>
+                <elementProp name="competition_history_notional_calc_api_absolute_tolerance" elementType="Argument">
+                  <stringProp name="Argument.name">competition_history_notional_calc_api_absolute_tolerance</stringProp>
+                  <stringProp name="Argument.value">calc_open_notional_value_usd=0.00001,calc_close_notional_value_usd=0.00001</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">自行计算名义价值与API值的绝对误差；最终允许差值=max(绝对误差,自行计算值*百分比/100)。</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">只控制calc_open_notional_value_usd/API_open_notional_value_usd及calc_close_notional_value_usd/API_close_notional_value_usd；与普通DB/API、CSV/API误差配置相互独立。</stringProp>
+            </Arguments>
             <hashTree/>
-          </hashTree>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="交易大赛V1历史生命周期-自行计算名义价值/API误差配置" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="competition_history_notional_calc_api_tolerance_percent" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_notional_calc_api_tolerance_percent</stringProp>
-                <stringProp name="Argument.value">calc_open_notional_value_usd=1,calc_close_notional_value_usd=1</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">自行计算名义价值与API值的百分比误差；手工输入示例calc_open_notional_value_usd=1,calc_close_notional_value_usd=2；0表示不允许百分比误差；不读取普通DB/API或CSV/API字段误差配置。</stringProp>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="符号规格和实时报价-数据库校验-${instance_id}-${symbol}" enabled="true">
+              <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+              <intProp name="HTTPSampler.response_timeout">5000</intProp>
+              <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/crm20/get_symbol_ex?instanceid=${instance_id}&amp;name=${symbol}</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+                <collectionProp name="Arguments.arguments"/>
               </elementProp>
-              <elementProp name="competition_history_notional_calc_api_absolute_tolerance" elementType="Argument">
-                <stringProp name="Argument.name">competition_history_notional_calc_api_absolute_tolerance</stringProp>
-                <stringProp name="Argument.value">calc_open_notional_value_usd=0.00001,calc_close_notional_value_usd=0.00001</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">自行计算名义价值与API值的绝对误差；最终允许差值=max(绝对误差,自行计算值*百分比/100)。</stringProp>
-              </elementProp>
-            </collectionProp>
-            <stringProp name="TestPlan.comments">只控制calc_open_notional_value_usd/API_open_notional_value_usd及calc_close_notional_value_usd/API_close_notional_value_usd；与普通DB/API、CSV/API误差配置相互独立。</stringProp>
-          </Arguments>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="符号规格和实时报价-数据库校验-${instance_id}-${symbol}" enabled="true">
-            <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-            <intProp name="HTTPSampler.response_timeout">5000</intProp>
-            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/crm20/get_symbol_ex?instanceid=${instance_id}&amp;name=${symbol}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="数据库或CSV字段对比断言-符号规格和实时报价" enabled="false">
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="script">import groovy.json.JsonSlurper
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="数据库或CSV字段对比断言-符号规格和实时报价" enabled="false">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
 import org.apache.jmeter.samplers.SampleResult
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -49191,63 +49273,63 @@ if (bad) {
     log.info(report)
     AssertionResult.setFailure(false)
 }</stringProp>
-              <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="TestPlan.comments">依据MT-Hub API 1.0.1-beta1.59.9：shujuku=1执行DB/API字段对比，shujuku=0执行CSV/API字段对比。MT4、MT5、CSV分别支持所有字段跳过和逐字段百分比误差，未配置误差默认0%；严格按Map key区分字段存在但为空与根本无字段；空空、API=0且来源字段存在但为空时通过；DB无字段失败且可人工跳过。MT5 volume_max/volume_min/volume_step先将DB原值除以10000，MT4不缩放。*_utc_ms按Unix epoch毫秒比较，并兼容MT5 Windows FILETIME。</stringProp>
-            </JSR223Assertion>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询完全关闭持仓生命周期-${competition_history_mode}-${competition_history_case_index_display}" enabled="true">
-            <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-            <intProp name="HTTPSampler.response_timeout">15000</intProp>
-            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/contest/positions/history/query</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">${competition_history_request_body}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">set-cookie</stringProp>
-                  <stringProp name="Header.value">auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d; HttpOnly; Secure; SameSite=Lax; Max-Age=86400; Path=/</stringProp>
-                </elementProp>
-              </collectionProp>
-              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae</stringProp>
-            </HeaderManager>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言POST /v1/positions/history/query HTTP状态码为200" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="49586">200</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message">POST /v1/positions/history/query HTTP状态码不是200</stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">8</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="交易大赛V1历史生命周期-响应每个字段、DB或CSV校验" enabled="true">
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="script">import groovy.json.JsonSlurper
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="TestPlan.comments">依据MT-Hub API 1.0.1-beta1.59.9：shujuku=1执行DB/API字段对比，shujuku=0执行CSV/API字段对比。MT4、MT5、CSV分别支持所有字段跳过和逐字段百分比误差，未配置误差默认0%；严格按Map key区分字段存在但为空与根本无字段；空空、API=0且来源字段存在但为空时通过；DB无字段失败且可人工跳过。MT5 volume_max/volume_min/volume_step先将DB原值除以10000，MT4不缩放。*_utc_ms按Unix epoch毫秒比较，并兼容MT5 Windows FILETIME。</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询完全关闭持仓生命周期-${competition_history_mode}-${competition_history_case_index_display}" enabled="true">
+              <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+              <intProp name="HTTPSampler.response_timeout">15000</intProp>
+              <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/contest/positions/history/query</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${competition_history_request_body}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">set-cookie</stringProp>
+                    <stringProp name="Header.value">auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d; HttpOnly; Secure; SameSite=Lax; Max-Age=86400; Path=/</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae</stringProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言POST /v1/positions/history/query HTTP状态码为200" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message">POST /v1/positions/history/query HTTP状态码不是200</stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="交易大赛V1历史生命周期-响应每个字段、DB或CSV校验" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
 import org.apache.jmeter.samplers.SampleResult
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -49789,13 +49871,14 @@ report&lt;&lt;&apos;&apos;&lt;&lt;&apos;【通过明细：&apos;+okLines.size()+
 report&lt;&lt;&apos;&apos;&lt;&lt;&apos;【跳过明细：&apos;+skipLines.size()+&apos;条】&apos;;report.addAll(displaySkipLines?:[&apos; - 无&apos;])
 report&lt;&lt;&apos;&apos;&lt;&lt;&apos;【接口请求Body】&apos;&lt;&lt;(vars.get(&apos;competition_history_request_body&apos;)?:&apos;&apos;)
 String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isEmpty())</stringProp>
-              <stringProp name="scriptLanguage">groovy</stringProp>
-            </JSR223Assertion>
-            <hashTree/>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -49807,7 +49890,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-交易大赛V1历史生命周期校验mysqlMT5-cj" enabled="true">
           <stringProp name="dataSource">mysqlMT5_competition_history</stringProp>
           <stringProp name="poolMax">5</stringProp>
           <stringProp name="timeout">10000</stringProp>
@@ -51612,10 +51695,11 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.11版本001
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.11版本006.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.14版本013.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本009.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本009.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.44版本003.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -51672,7 +51756,8 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本007
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.19版本003.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.19版本004.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本010.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本012.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本012.jtl
+D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-20261014-151341.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="查询多个账户的挂单订单-性能测试大数据量测试" enabled="false">
@@ -68538,55 +68623,71 @@ access_token</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/v1/mt/session-pwan" enabled="false">
-            <stringProp name="HTTPSampler.domain">crm2-api-test.mohicanstech.com</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/m/v1/mt/session</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;mtAccountRecordId&quot;:43200}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="mt_hub 移动端接口--历史订单" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Authorization</stringProp>
-                  <stringProp name="Header.value">Bearer eyJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJtb2JpbGVfYWNjZXNzIiwic2lkIjoiNzdkMzkzNjAtNzNlZC00YjgwLWJjY2UtNDYyOTI2OWY5ZmUwIiwic3ViIjoiVVc2T1ZBIiwiaWF0IjoxNzg3NTUzODAyLCJleHAiOjE3ODc1NTQ3MDIsImlzcyI6ImNybS1tb2JpbGUifQ.p8MWHIf2qAmpis4truSFL9nhgIx9mX02w1EVjzcGam0</stringProp>
-                </elementProp>
-              </collectionProp>
-              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口--历史订单" enabled="true">
+              <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
+              <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.path">/v1/orders/history</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{	&#xd;
+	&quot;state&quot;: 4,&#xd;
+	&quot;from_time_ms&quot;: 0,&#xd;
+	&quot;to_time_ms&quot;: 0,&#xd;
+	&quot;limit&quot;: 1000,&#xd;
+	&quot;cursor&quot;: null&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer eyJhbGciOiJlZDI1NTE5LW5rZXkiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE3ODc1NDE5NTEsImlhdCI6MTc4NzU0MTA1MSwiaXNzIjoiQUNZTFA1UUVVTTQ2SlpaVjNRTkZDTVVMRUlRMjVWQ003SUdNWlBCQlNZTE5aUFBGR1pOU1FRUVoiLCJqdGkiOiJLRzZSNkRNQ0M1WE9YQU40N0FPNkhOIiwibmFtZSI6InVzZXJfZ3Vlc3Q6YTU1MmQ3YzVjN2Y0NjVmZmU3ZmFhN2ViYzM0Y2ZjNmUiLCJuYXRzIjp7ImJlYXJlcl90b2tlbiI6dHJ1ZSwiZGF0YSI6LTEsInBheWxvYWQiOjEwNDg1NzYsInB1YiI6eyJkZW55IjpbIj4iXX0sInN1YiI6eyJhbGxvdyI6WyJtdC5NVDVfMS50aWNrLnYxLj4iLCJtdC5NVDVfMS5iYXIudjEuKi4-IiwibXQuTVQ1XzEuc3ltYm9sLnYxLj4iLCJzeXMuTVQ1XzEuYWNjb3VudF9zdHJlYW0udjIuaGVhbHRoIiwic3lzLmdsb2JhbC52MS5icm9hZGNhc3QiXSwiZGVueSI6W119LCJzdWJzIjoyMDAsInR5cGUiOiJ1c2VyIiwidmVyc2lvbiI6Mn0sInN1YiI6IlVCRTNQUUdOUzc2NlE0SFZMQTdNTDZHR1RPVUc2NTQ3RFFSMlA3Rk5UUUcyN1ZDVVpJRUNPM1ZEIn0.gA4x2RkSrxQEIrdfjo58fAxQ0cOLba2qb6uf2rAafwgt2bihUm1lOmi4kD7Yv1Q1F5cHo7snjhcQUvWcyLxrCw</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
 162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
 admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
 162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
-auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
-            </HeaderManager>
-            <hashTree/>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="false">
-              <collectionProp name="HeaderManager.headers"/>
-            </HeaderManager>
-            <hashTree/>
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;
+x-csrf-token
+Authorization
+access_token</stringProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
           </hashTree>
-        </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="交易大赛-批量查询已经完全关闭的持仓生命周期事务" enabled="false">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
-        </TransactionController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询已经完全关闭的持仓生命周期" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询已经完全关闭的持仓生命周期" enabled="false">
             <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -68671,7 +68772,7 @@ auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
             &quot;login&quot;: 4060&#xd;
         }&#xd;
     ],&#xd;
-    &quot;from_time_ms&quot;: 1767225600000,&#xd;
+    &quot;from_time_ms&quot;: 1786550403000,&#xd;
     &quot;to_time_ms&quot;: 1798646399000,&#xd;
     &quot;limit&quot;: 1000,&#xd;
     &quot;cursor&quot;: null&#xd;
@@ -68682,16 +68783,6 @@ auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">2</intProp>
-            </ResponseAssertion>
-            <hashTree/>
             <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="" elementType="Header">
@@ -68700,7 +68791,7 @@ auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Authorization</stringProp>
-                  <stringProp name="Header.value">Bearer eyJhbGciOiJlZDI1NTE5LW5rZXkiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE3ODc1NDE5NTEsImlhdCI6MTc4NzU0MTA1MSwiaXNzIjoiQUNZTFA1UUVVTTQ2SlpaVjNRTkZDTVVMRUlRMjVWQ003SUdNWlBCQlNZTE5aUFBGR1pOU1FRUVoiLCJqdGkiOiJLRzZSNkRNQ0M1WE9YQU40N0FPNkhOIiwibmFtZSI6InVzZXJfZ3Vlc3Q6YTU1MmQ3YzVjN2Y0NjVmZmU3ZmFhN2ViYzM0Y2ZjNmUiLCJuYXRzIjp7ImJlYXJlcl90b2tlbiI6dHJ1ZSwiZGF0YSI6LTEsInBheWxvYWQiOjEwNDg1NzYsInB1YiI6eyJkZW55IjpbIj4iXX0sInN1YiI6eyJhbGxvdyI6WyJtdC5NVDVfMS50aWNrLnYxLj4iLCJtdC5NVDVfMS5iYXIudjEuKi4-IiwibXQuTVQ1XzEuc3ltYm9sLnYxLj4iLCJzeXMuTVQ1XzEuYWNjb3VudF9zdHJlYW0udjIuaGVhbHRoIiwic3lzLmdsb2JhbC52MS5icm9hZGNhc3QiXSwiZGVueSI6W119LCJzdWJzIjoyMDAsInR5cGUiOiJ1c2VyIiwidmVyc2lvbiI6Mn0sInN1YiI6IlVCRTNQUUdOUzc2NlE0SFZMQTdNTDZHR1RPVUc2NTQ3RFFSMlA3Rk5UUUcyN1ZDVVpJRUNPM1ZEIn0.gA4x2RkSrxQEIrdfjo58fAxQ0cOLba2qb6uf2rAafwgt2bihUm1lOmi4kD7Yv1Q1F5cHo7snjhcQUvWcyLxrCw</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
                 </elementProp>
               </collectionProp>
               <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
@@ -68711,6 +68802,547 @@ auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;
 x-csrf-token
 Authorization
 access_token</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/v1/mt/session-pwan" enabled="false">
+            <stringProp name="HTTPSampler.domain">crm2-api-test.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/m/v1/mt/session</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;mtAccountRecordId&quot;:43200}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJtb2JpbGVfYWNjZXNzIiwic2lkIjoiNzdkMzkzNjAtNzNlZC00YjgwLWJjY2UtNDYyOTI2OWY5ZmUwIiwic3ViIjoiVVc2T1ZBIiwiaWF0IjoxNzg3NTUzODAyLCJleHAiOjE3ODc1NTQ3MDIsImlzcyI6ImNybS1tb2JpbGUifQ.p8MWHIf2qAmpis4truSFL9nhgIx9mX02w1EVjzcGam0</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="false">
+              <collectionProp name="HeaderManager.headers"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="mt_hub 移动端接口app登录鉴权事务" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登录接口" enabled="true">
+            <stringProp name="TestPlan.comments">${middlewareip}
+crm2-api-test.mohicanstech.com
+https:///v1/auth/login
+${middlewareip}
+mthub-api2.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.domain">mthub-api2.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/v1/auth/login</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;instanceid&quot;: &quot;MT5_1&quot;,&#xd;
+    &quot;password&quot;: &quot;Passw0rd.&quot;,&#xd;
+    &quot;login&quot;: &quot;880084&quot;,&#xd;
+	&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-Mthub-SDK-Capabilities</stringProp>
+                  <stringProp name="Header.value">account-sync-v2,sequence-gap-resnapshot</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.access_token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="false">
+              <collectionProp name="HeaderManager.headers"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取访客权限" enabled="true">
+            <stringProp name="HTTPSampler.domain">mthub-api2.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/v1/auth/guest</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;instance_id&quot;:&quot;MT5_1&quot;,&#xd;
+	&quot;login&quot;:880084&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">access_token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.access_token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口--历史订单" enabled="true">
+            <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.domain">mthub-api2.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/v1/positions/history/query</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;accounts&quot;: [&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 880084&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;granularity&quot;: &quot;deal&quot;,&#xd;
+    &quot;from_time_ms&quot;: 1792339200000,&#xd;
+    &quot;to_time_ms&quot;: 1798646399000,&#xd;
+    &quot;limit&quot;: 1000,&#xd;
+    &quot;cursor&quot;: null&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Idempotency-Key</stringProp>
+                  <stringProp name="Header.value">1515151515151515151515</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;
+x-csrf-token
+Authorization
+access_token</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="mt_hub 移动端接口--历史订单" enabled="false">
+            <boolProp name="TransactionController.parent">true</boolProp>
+            <boolProp name="TransactionController.includeTimers">true</boolProp>
+          </TransactionController>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询已经完全关闭的持仓生命周期" enabled="false">
+            <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/v1/positions/history/query</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;accounts&quot;: [&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4170&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5283&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 197314&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4133&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5218&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 880043&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5285&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 1131&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 3028&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 197183&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 1119&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780011&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780014&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS2&quot;,&#xd;
+            &quot;login&quot;: 197350&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS2&quot;,&#xd;
+            &quot;login&quot;: 197351&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780018&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4060&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;from_time_ms&quot;: 1786550403000,&#xd;
+    &quot;to_time_ms&quot;: 1798646399000,&#xd;
+    &quot;limit&quot;: 1000,&#xd;
+    &quot;cursor&quot;: null&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;
+x-csrf-token
+Authorization
+access_token</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询已经完全关闭的持仓生命周期" enabled="false">
+            <stringProp name="TestPlan.comments">  ${CRM2.0middlewareip} ${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/v1/positions/history/query</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;accounts&quot;: [&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4170&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5283&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 197314&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4133&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5218&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 880043&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 5285&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 1131&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 3028&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 197183&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT4_1&quot;,&#xd;
+            &quot;login&quot;: 1119&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780011&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780014&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS2&quot;,&#xd;
+            &quot;login&quot;: 197350&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS2&quot;,&#xd;
+            &quot;login&quot;: 197351&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1_TS1&quot;,&#xd;
+            &quot;login&quot;: 780018&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;instance_id&quot;: &quot;MT5_1&quot;,&#xd;
+            &quot;login&quot;: 4060&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;from_time_ms&quot;: 1786550403000,&#xd;
+    &quot;to_time_ms&quot;: 1798646399000,&#xd;
+    &quot;limit&quot;: 1000,&#xd;
+    &quot;cursor&quot;: null&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;
+x-csrf-token
+Authorization
+access_token</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/v1/mt/session-pwan" enabled="false">
+            <stringProp name="HTTPSampler.domain">crm2-api-test.mohicanstech.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/m/v1/mt/session</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;mtAccountRecordId&quot;:43200}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJtb2JpbGVfYWNjZXNzIiwic2lkIjoiNzdkMzkzNjAtNzNlZC00YjgwLWJjY2UtNDYyOTI2OWY5ZmUwIiwic3ViIjoiVVc2T1ZBIiwiaWF0IjoxNzg3NTUzODAyLCJleHAiOjE3ODc1NTQ3MDIsImlzcyI6ImNybS1tb2JpbGUifQ.p8MWHIf2qAmpis4truSFL9nhgIx9mX02w1EVjzcGam0</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Authorization	Bearer 5d7636bcbb5ea1315a780d3bbed0b49909e38ff9e6427a587ee30b60ce10dbae
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebb
+admin_auth_token=9d7b9521-25ee-45e3-949e-d0bd33894949
+162470bb79d27b6ab25316ca72bee621c3f8411f76a631dd49de41a1aa65ebbd
+auth_token=3e05fa3e-27d0-4322-9957-52257b3dbe0d;</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="false">
+              <collectionProp name="HeaderManager.headers"/>
             </HeaderManager>
             <hashTree/>
           </hashTree>
@@ -71499,7 +72131,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="生产15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务--生产" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="生产15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务--生产" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -71511,8 +72143,8 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
               <stringProp name="-1349832915">deal_type</stringProp>
             </collectionProp>
             <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="306749790">
-                <stringProp name="1627922307">784578</stringProp>
+              <collectionProp name="-2033692675">
+                <stringProp name="1628786308">792598</stringProp>
                 <stringProp name="73667488">MT5_1</stringProp>
                 <stringProp name="50">2</stringProp>
               </collectionProp>
@@ -71530,7 +72162,7 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
           </UserParameters>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息-${instanceid}-${login}-查询-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-            <stringProp name="HTTPSampler.domain">13.214.249.50</stringProp>
+            <stringProp name="HTTPSampler.domain">54.255.125.211</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/crm20/get_user_info?instanceid=${instanceid}&amp;login=${login}&amp;live_equity=0</stringProp>
@@ -71579,9 +72211,9 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4充值/提现-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4充值/提现-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
             <stringProp name="TestPlan.comments">false  true</stringProp>
-            <stringProp name="HTTPSampler.domain">13.214.249.50</stringProp>
+            <stringProp name="HTTPSampler.domain">54.255.125.211</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/crm20/modify_balance</stringProp>
@@ -71596,11 +72228,11 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
                   <stringProp name="Argument.value">{&#xd;
   &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
   &quot;login&quot;: &quot;${login}&quot;,&#xd;
-  &quot;amount&quot;: -10,&#xd;
+  &quot;amount&quot;: 4000,&#xd;
   &quot;deal_type&quot;: ${deal_type},&#xd;
   &quot;comment&quot;: &quot;deduct credit with fallback&quot;,&#xd;
   &quot;check_margin&quot;: true,&#xd;
-  &quot;idempotency_key&quot;: &quot;deduct-credit-561711-028&quot;&#xd;
+  &quot;idempotency_key&quot;: &quot;deduct-credit-561711-093&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -71620,7 +72252,7 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5获取用户信息修改之前-${instanceid}-${login}-查询-生产-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
-            <stringProp name="HTTPSampler.domain">13.214.249.50</stringProp>
+            <stringProp name="HTTPSampler.domain">54.255.125.211</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/crm20/get_user_info?instanceid=${instanceid}&amp;login=${login}&amp;live_equity=0</stringProp>
@@ -71782,11 +72414,11 @@ MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:
                   <stringProp name="Argument.value">{&#xd;
   &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
   &quot;login&quot;: &quot;${login}&quot;,&#xd;
-  &quot;amount&quot;: -80,&#xd;
+  &quot;amount&quot;: -4,&#xd;
   &quot;deal_type&quot;: ${deal_type},&#xd;
   &quot;comment&quot;: &quot;deduct credit with fallback&quot;,&#xd;
   &quot;check_margin&quot;: true,&#xd;
-  &quot;idempotency_key&quot;: &quot;deduct-credit-561711-033&quot;&#xd;
+  &quot;idempotency_key&quot;: &quot;deduct-credit-561711-036&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
