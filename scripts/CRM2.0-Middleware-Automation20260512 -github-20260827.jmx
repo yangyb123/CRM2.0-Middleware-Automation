@@ -3337,7 +3337,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -33559,7 +33559,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-2修改账户权限-modify_user_info接口✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -43566,7 +43566,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -45880,7 +45880,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="22交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息✅✅" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询账户的余额、净值、信用额、保证金和账户币种等资金信息.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/accounts/query 并逐字段进行 DB/API 校验；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应字段、类型、币种与 money_scale 语义依据 mt-hub-openapi-20260910.html（1.66.11）。严格区分数据库字段不存在与字段值为空。LoopController使用字符码44解析CSV首列，避免JMeter把Groovy代码中的逗号误判为__groovy函数参数分隔符。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -48119,11 +48119,13 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
             <stringProp name="script">import org.apache.jmeter.save.CSVSaveService
 import org.apache.jmeter.services.FileServer
 
-// Keep file resolution and case counting in one startup step, before the business loop.
 vars.put(&apos;competition_history_case_total&apos;, &apos;0&apos;)
 vars.put(&apos;competition_history_case_index&apos;, &apos;0&apos;)
+vars.put(&apos;competition_history_startup_status&apos;, &apos;STARTED&apos;)
+vars.put(&apos;competition_history_startup_report&apos;, &apos;&apos;)
 vars.remove(&apos;competition_history_run_cases&apos;)
 vars.remove(&apos;competition_history_csv_resolved_path&apos;)
+String environmentReport = &apos;&apos;
 
 try {
     def setting = { String key -&gt;
@@ -48136,6 +48138,9 @@ try {
     String configuredDir = setting(&apos;competition_history_data_dir&apos;)
     File baseDir = new File(FileServer.getFileServer().getBaseDir()).getCanonicalFile()
     File workingDir = new File(System.getProperty(&apos;user.dir&apos;)).getCanonicalFile()
+    String workspace = (System.getenv(&apos;WORKSPACE&apos;) ?: &apos;&apos;).trim()
+    environmentReport = &apos;JMX基准目录=&apos; + baseDir.getPath() + &apos; | 启动目录=&apos; + workingDir.getPath() + &apos; | WORKSPACE=&apos; + (workspace ?: &apos;&lt;未设置&gt;&apos;)
+    vars.put(&apos;competition_history_environment_report&apos;, environmentReport)
     String fileName = configuredFile ?: defaultName
     File requested = new File(fileName)
     List&lt;File&gt; candidates = []
@@ -48145,16 +48150,28 @@ try {
         File dataDir = new File(configuredDir)
         if (!dataDir.isAbsolute()) dataDir = new File(baseDir, configuredDir)
         candidates &lt;&lt; new File(dataDir, fileName)
+    } else if (configuredFile) {
+        // An explicitly configured relative file is anchored to the JMX, never another dataset.
+        candidates &lt;&lt; new File(baseDir, configuredFile)
     } else {
-        candidates &lt;&lt; new File(baseDir, fileName)
-        if (!configuredFile) candidates &lt;&lt; new File(new File(baseDir, &apos;中间件接口CSV数据&apos;), fileName)
-        candidates &lt;&lt; new File(workingDir, fileName)
-        if (!configuredFile) candidates &lt;&lt; new File(new File(workingDir, &apos;中间件接口CSV数据&apos;), fileName)
+        List&lt;File&gt; roots = [baseDir]
+        if (baseDir.getName().toLowerCase(Locale.ROOT) in [&apos;scripts&apos;, &apos;script&apos;, &apos;jmx&apos;, &apos;testplans&apos;]) {
+            if (baseDir.getParentFile() != null) roots &lt;&lt; baseDir.getParentFile()
+        }
+        if (workspace) roots &lt;&lt; new File(workspace)
+        roots &lt;&lt; workingDir
+        roots = roots.collect { it.getCanonicalFile() }.unique { it.getPath() }
+        // Bounded conventional CI locations only; never recursively scan the server filesystem.
+        roots.each { File root -&gt;
+            [&apos;&apos;, &apos;中间件接口CSV数据&apos;, &apos;data&apos;, &apos;csv&apos;, &apos;scripts&apos;].each { String child -&gt;
+                candidates &lt;&lt; new File(child ? new File(root, child) : root, defaultName)
+            }
+        }
     }
     candidates = candidates.collect { it.getCanonicalFile() }.unique { it.getPath() }
     File csvFile = candidates.find { it.isFile() &amp;&amp; it.canRead() }
     if (csvFile == null) {
-        throw new IllegalArgumentException(&apos;CSV文件不存在或不可读。请将CSV随JMX一起部署，或设置 -Jcompetition_history_csv_file=/path/data.csv / -Jcompetition_history_data_dir=/path/data。已检查: &apos; + candidates.collect { it.getPath() }.join(&apos; | &apos;))
+        throw new IllegalArgumentException(&apos;CSV文件不存在或不可读。请部署CSV，或指定 -Jcompetition_history_csv_file=/path/data.csv / -Jcompetition_history_data_dir=/path/data。已检查: &apos; + candidates.collect { it.getPath() }.join(&apos; | &apos;))
     }
 
     List&lt;Map&gt; csvRows = []
@@ -48177,7 +48194,6 @@ try {
         }
     }
     if (!csvRows) throw new IllegalArgumentException(&apos;CSV没有有效数据：shujuku必须为1(DB/API)或0(CSV/API) | &apos; + csvFile.getPath())
-
     List&lt;Map&gt; dbRows = csvRows.findAll { it.shujuku == &apos;1&apos; }
     List&lt;Map&gt; csvRows0 = csvRows.findAll { it.shujuku == &apos;0&apos; }
     List&lt;Map&gt; runCases = []
@@ -48186,7 +48202,9 @@ try {
     vars.putObject(&apos;competition_history_run_cases&apos;, runCases)
     vars.put(&apos;competition_history_csv_resolved_path&apos;, csvFile.getPath())
     vars.put(&apos;competition_history_case_total&apos;, String.valueOf(runCases.size()))
-    String report = &apos;CSV加载成功 | path=&apos; + csvFile.getPath() + &apos; | DB行=&apos; + dbRows.size() + &apos; | CSV用例=&apos; + csvRows0.size() + &apos; | 执行次数=&apos; + runCases.size()
+    vars.put(&apos;competition_history_startup_status&apos;, &apos;SUCCESS&apos;)
+    String report = &apos;CSV加载成功 | path=&apos; + csvFile.getPath() + &apos; | DB行=&apos; + dbRows.size() + &apos; | CSV用例=&apos; + csvRows0.size() + &apos; | 执行次数=&apos; + runCases.size() + &apos;\n&apos; + environmentReport
+    vars.put(&apos;competition_history_startup_report&apos;, report)
     log.info(report)
     SampleResult.setSuccessful(true)
     SampleResult.setResponseCode(&apos;200&apos;)
@@ -48194,14 +48212,15 @@ try {
     SampleResult.setDataType(&apos;text&apos;)
     SampleResult.setResponseData(report, &apos;UTF-8&apos;)
 } catch (Exception ex) {
-    // A visible failed sample replaces the old silent zero-iteration exit.
     vars.put(&apos;competition_history_case_total&apos;, &apos;0&apos;)
+    vars.put(&apos;competition_history_startup_status&apos;, &apos;FAILED&apos;)
     vars.remove(&apos;competition_history_run_cases&apos;)
-    String report = &apos;历史生命周期CSV加载失败: &apos; + ex.getMessage()
+    String report = &apos;历史生命周期CSV加载失败: &apos; + ex.getMessage() + &apos;\n&apos; + environmentReport
+    vars.put(&apos;competition_history_startup_report&apos;, report)
     log.error(report, ex)
     SampleResult.setSuccessful(false)
     SampleResult.setResponseCode(&apos;CSV_LOAD_ERROR&apos;)
-    SampleResult.setResponseMessage(report)
+    SampleResult.setResponseMessage(&apos;CSV_LOAD_ERROR: &apos; + ex.getMessage())
     SampleResult.setDataType(&apos;text&apos;)
     SampleResult.setResponseData(report, &apos;UTF-8&apos;)
 }
@@ -49877,6 +49896,105 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
             </hashTree>
           </hashTree>
         </hashTree>
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="23线程组事务执行摘要与空执行检查" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="script">String transactionName = &apos;23交易大赛-批量查询完全关闭持仓生命周期事务&apos;
+if (sampleResult.getSampleLabel() != transactionName) return
+
+List leaves = []
+Closure collectLeaves
+collectLeaves = { result -&gt;
+    def children = result.getSubResults()
+    if (children != null &amp;&amp; children.length &gt; 0) children.each { collectLeaves(it) }
+    else leaves &lt;&lt; result
+}
+def children = sampleResult.getSubResults()
+if (children != null) children.each { collectLeaves(it) }
+int planned = Integer.parseInt(vars.get(&apos;competition_history_case_total&apos;) ?: &apos;0&apos;)
+int initialized = leaves.count { it.getSampleLabel().startsWith(&apos;初始化交易大赛V1历史生命周期参数、请求Body和数据库SQL&apos;) }
+boolean startupSeen = leaves.any { it.getSampleLabel() == &apos;历史生命周期CSV路径自检、加载及执行次数初始化&apos; }
+List&lt;String&gt; problems = []
+if (!startupSeen) problems &lt;&lt; &apos;未收到CSV自检采样结果：请确认服务器部署的是当前JMX且采样器已启用。&apos;
+if (vars.get(&apos;competition_history_startup_status&apos;) != &apos;SUCCESS&apos;) problems &lt;&lt; &apos;CSV自检未成功，业务循环不执行；请查看下方自检报告。&apos;
+if (planned &lt; 1) problems &lt;&lt; &apos;有效业务用例数为0，不能判定为执行成功。&apos;
+if (initialized != planned) problems &lt;&lt; &apos;业务初始化次数与计划不符: actual=&apos; + initialized + &apos;, planned=&apos; + planned
+leaves.findAll { !it.isSuccessful() }.each { result -&gt;
+    problems &lt;&lt; result.getSampleLabel() + &apos; | code=&apos; + result.getResponseCode() + &apos; | &apos; + result.getResponseMessage()
+}
+if (problems) {
+    sampleResult.setSuccessful(false)
+    if (sampleResult.getResponseCode() == &apos;200&apos; || !sampleResult.getResponseCode()) sampleResult.setResponseCode(&apos;TG23_INCOMPLETE&apos;)
+}
+String detailHint = props.getProperty(&apos;competition_history_detail_file&apos;)
+if (!detailHint) {
+    File resultRoot = new File(System.getenv(&apos;WORKSPACE&apos;) ?: org.apache.jmeter.services.FileServer.getFileServer().getBaseDir())
+    detailHint = new File(resultRoot, &apos;result/jtl/competition-history-23-details-*.jtl&apos;).getAbsolutePath()
+}
+String report = &apos;23线程组执行摘要 | status=&apos; + (sampleResult.isSuccessful() ? &apos;SUCCESS&apos; : &apos;FAILED&apos;) +
+    &apos; | 计划用例=&apos; + planned + &apos; | 已执行初始化=&apos; + initialized + &apos; | 子采样数=&apos; + leaves.size() +
+    &apos;\nCSV自检状态=&apos; + (vars.get(&apos;competition_history_startup_status&apos;) ?: &apos;&lt;未执行&gt;&apos;) +
+    &apos;\nCSV路径=&apos; + (vars.get(&apos;competition_history_csv_resolved_path&apos;) ?: &apos;&lt;未找到&gt;&apos;) +
+    &apos;\n完整子结果文件=&apos; + detailHint +
+    &apos;\n公共JTL如果关闭subresults会只显示本事务；请用查看结果树打开本线程组的专用XML JTL。&apos; +
+    &apos;\n\n【CSV自检报告】\n&apos; + (vars.get(&apos;competition_history_startup_report&apos;) ?: &apos;&lt;无自检报告&gt;&apos;) +
+    &apos;\n\n【采样步骤】\n&apos; + leaves.collect { result -&gt;
+        (result.isSuccessful() ? &apos;PASS &apos; : &apos;FAIL &apos;) + result.getSampleLabel() + &apos; | code=&apos; + result.getResponseCode()
+    }.join(&apos;\n&apos;) +
+    (problems ? &apos;\n\n【异常明细】\n&apos; + problems.join(&apos;\n&apos;) : &apos;&apos;)
+sampleResult.setDataType(&apos;text&apos;)
+sampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+sampleResult.setResponseData(report, &apos;UTF-8&apos;)
+// JMeter identifies transaction samples by this native response-message prefix.
+String nativeMessage = sampleResult.getResponseMessage() ?: &apos;&apos;
+sampleResult.setResponseMessage(nativeMessage + &apos; | TG23 &apos; + (sampleResult.isSuccessful() ? &apos;SUCCESS&apos; : &apos;FAILED&apos;) + &apos; | cases=&apos; + initialized + &apos;/&apos; + planned + &apos; | child_samples=&apos; + leaves.size())
+log.info(report)
+</stringProp>
+        </JSR223Listener>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树-23专用完整明细（服务器XML JTL）" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>2</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__P(competition_history_detail_file,${__groovy(new File(System.getenv(&apos;WORKSPACE&apos;) ?: org.apache.jmeter.services.FileServer.getFileServer().getBaseDir()).getCanonicalPath())}/result/jtl/competition-history-23-details-${__time(yyyyMMdd-HHmmss-SSS)}.jtl)}</stringProp>
+          <stringProp name="TestPlan.comments">仅收集本线程组，独立XML格式，强制保存成功/失败正文及全部子结果；不依赖公共JTL的subresults设置。默认输出到WORKSPACE（未设置则JMX目录）下result/jtl；可用-Jcompetition_history_detail_file指定完整文件路径。GUI回看时打开competition-history-23-details-*.jtl；公共ReportSafe文件可能未保存子结果。本文件可能含业务账号数据，请按测试结果文件权限管理。</stringProp>
+        </ResultCollector>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。</stringProp>
