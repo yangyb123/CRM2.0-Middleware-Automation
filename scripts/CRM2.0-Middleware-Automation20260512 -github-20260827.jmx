@@ -161,7 +161,7 @@
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量-测试环境" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip" elementType="Argument">
             <stringProp name="Argument.name">ip</stringProp>
@@ -344,7 +344,7 @@ Passw0rd.
 production account41</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -1274,7 +1274,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-空闲生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -2701,7 +2701,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取归档账户">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="空闲生产环境-获取归档账户" enabled="true">
           <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -2906,7 +2906,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="空闲生产环境-持仓订单查询多个账户挂单订单- 备注意：有真实账号">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="空闲生产环境-持仓订单查询多个账户挂单订单- 备注意：有真实账号" enabled="true">
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
@@ -2974,11 +2974,11 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="空闲生产环境-生产环境-查询多个账户的当前持仓订单 备注意：有真实账号">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="空闲生产环境-生产环境-查询多个账户的当前持仓订单 备注意：有真实账号" enabled="true">
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户持仓订单">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户持仓订单" enabled="true">
             <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
             <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -3041,11 +3041,11 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="23空闲生产环境-生产环境-查询多个账户的当前持仓订单 备注意：有真实账号">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="23空闲生产环境-生产环境-查询多个账户的当前持仓订单 备注意：有真实账号" enabled="true">
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="23交易大赛-批量查询完全关闭持仓生命周期">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="23交易大赛-批量查询完全关闭持仓生命周期" enabled="true">
             <stringProp name="TestPlan.comments">http://13.214.249.50:8080/crm20/list_pending_orders</stringProp>
             <stringProp name="HTTPSampler.domain">${free production environment}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
@@ -3177,7 +3177,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -17607,7 +17607,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境中间件版本-稳定-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="真实生产环境中间件版本-稳定-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
           <stringProp name="HTTPSampler.domain">${production environment}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -17649,7 +17649,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-最新✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -17702,7 +17702,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1获取挂单订单-数据库校验✅✅--22" enabled="true">
         <stringProp name="TestPlan.comments">新增挂单订单数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 
 -备注重要：20260618
@@ -17710,7 +17710,9 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
 2. DB/API对比 currentPrice 时打印误差百分比，误差5%以内计入成功字段。
 3. 挂单 closePrice、closeTime、profit、swap 的API值为0时计入成功字段，并打印DB值和原因。
 4. 报告最上面和每条明细都会打印订单类型。
-5. 时间字段兼容 yyyy-MM-ddTHH:mm、yyyy-MM-dd HH:mm:ss 及毫秒格式；缺少秒时自动补 :00 后再对比。</stringProp>
+5. 2026-11-09：MT4仅查询CLOSE_TIME为空/零日期的当前挂单，不以CONV_RATE1判断状态；按票号排序。
+6. 全量按订单号对账，报告记录数、缺失订单及失败快照；JDBC失败、截断与API业务错误独立报错。
+7. 时间字段兼容 yyyy-MM-ddTHH:mm、yyyy-MM-dd HH:mm:ss 及毫秒格式；缺少秒时自动补 :00 后再对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -17721,12 +17723,12 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="1获取挂单订单-数据库校验事务-${__P(CRM2.0middlewareip_file_version,)}">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="1获取挂单订单-数据库校验事务-${__P(CRM2.0middlewareip_file_version,)}" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取挂单订单数据库校验">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取挂单订单数据库校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./获取挂单订单-数据库校验.csv</stringProp>
@@ -17738,7 +17740,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
             <stringProp name="variableNames">shujuku,order_instanceid_val,order_login,orderId,orderType,symbol,swap,currentPrice,openPrice,login,volume,closeTime,sl,closePrice,position,openTime,tp,profit</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_order_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_order_db_api_disabled_compare_fields</stringProp>
@@ -17749,7 +17751,7 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单CSV/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="挂单订单CSV/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_order_csv_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_order_csv_api_disabled_compare_fields</stringProp>
@@ -17760,11 +17762,20 @@ props.put(&quot;CRM2.0middlewareip_file_version&quot;, vars.get(&quot;CRM2.0midd
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化挂单订单数据库校验变量">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化挂单订单数据库校验变量" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String csvName = &apos;获取挂单订单-数据库校验.csv&apos;
+            <stringProp name="script">// Clear state before validation so a failed iteration cannot reuse prior JDBC rows.
+vars.put(&apos;pending_check_initialized&apos;, &apos;false&apos;)
+vars.put(&apos;pending_check_login&apos;, &apos;&apos;)
+vars.putObject(&apos;pending_check_context&apos;, [:])
+vars.putObject(&apos;db_pending_check_rows&apos;, [])
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, &apos;&apos;)
+vars.put(&apos;pending_order_compare_report&apos;, &apos;&apos;)
+String csvName = &apos;获取挂单订单-数据库校验.csv&apos;
 File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
 if (!csvFile.exists()) {
     throw new AssertionError(&apos;挂单订单CSV文件不存在: &apos; + csvFile.getPath())
@@ -17780,11 +17791,19 @@ String login = (vars.get(&apos;order_login&apos;) ?: vars.get(&apos;login&apos;)
 
 if (!(shujuku in [&apos;0&apos;, &apos;1&apos;])) throw new AssertionError(&apos;挂单订单 shujuku只能是0或1，当前=&apos; + shujuku)
 if (!instanceId) throw new AssertionError(&apos;挂单订单 order_instanceid_val不能为空&apos;)
-if (!login) throw new AssertionError(&apos;挂单订单 order_login/login不能为空&apos;)
+if (!(login ==~ /[0-9]+/) || new BigInteger(login).signum() &lt;= 0) throw new AssertionError(&apos;挂单订单 order_login/login必须为正整数，当前=&apos; + login)
 
 String platform = instanceId.toUpperCase().contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (instanceId.toUpperCase().contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
 if (!platform) throw new AssertionError(&apos;挂单订单 order_instanceid_val只支持MT4_*/MT5_*，当前=&apos; + instanceId)
 
+Map routes = [
+    MT4_1: &apos;mysqlMT4&apos;, MT4_2: &apos;mt4demo_report_MT4_2&apos;, MT4_3: &apos;mt4demo_report_MT4_3&apos;,
+    MT5_1: &apos;mysqlMT5&apos;, MT5_1_TS1: &apos;mt51ts1_report&apos;, MT5_1_TS2: &apos;mt51ts2_report&apos;
+]
+String pool = routes[instanceId.toUpperCase()] ?: &apos;&apos;
+if (shujuku == &apos;1&apos; &amp;&amp; !pool) throw new AssertionError(&apos;挂单订单没有配置此实例的数据库路由: &apos; + instanceId)
+vars.putObject(&apos;pending_check_context&apos;, [login: login, instanceid: instanceId, platform: platform, shujuku: shujuku, pool: pool])
+vars.put(&apos;pending_check_initialized&apos;, &apos;true&apos;)
 vars.put(&apos;pending_check_shujuku&apos;, shujuku)
 vars.put(&apos;pending_check_login&apos;, login)
 vars.put(&apos;pending_check_instanceid&apos;, instanceId)
@@ -17796,7 +17815,7 @@ log.info(&apos;pending order init | shujuku=&apos; + shujuku + &apos; | platform
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询挂单数据库">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询挂单数据库" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
             <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;pending_check_instanceid&apos;).equalsIgnoreCase(&apos;MT4_1&apos;))}</stringProp>
@@ -17807,22 +17826,37 @@ log.info(&apos;pending order init | shujuku=&apos; + shujuku + &apos; | platform
               <stringProp name="query">select *
 from MT4_TRADES mt
 where mt.LOGIN = ?
+  and mt.CMD in (2, 3, 4, 5)
+  and (mt.CLOSE_TIME is null
+       or mt.CLOSE_TIME = &apos;1970-01-01 00:00:00&apos;
+       or cast(mt.CLOSE_TIME as char) = &apos;0000-00-00 00:00:00&apos;)
   and mt.SYMBOL is not null
   and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-order by mt.MODIFY_TIME desc</stringProp>
+order by mt.TICKET desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5-查询挂单数据库" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -17838,19 +17872,33 @@ where mt.Login = ?
   and mt.Symbol is not null
   and trim(mt.Symbol) &lt;&gt; &apos;&apos;
   and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
-  and State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
+  and mt.Type in (2, 3, 4, 5, 6, 7)
+  and mt.State &lt;&gt; 7
+order by mt.TimeSetupMsc desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT4_2-查询mt4demo_report挂单" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -17863,22 +17911,37 @@ order by mt.TimeSetupMsc desc</stringProp>
               <stringProp name="query">select *
 from mt4_trades mt
 where mt.LOGIN = ?
+  and mt.CMD in (2, 3, 4, 5)
+  and (mt.CLOSE_TIME is null
+       or mt.CLOSE_TIME = &apos;1970-01-01 00:00:00&apos;
+       or cast(mt.CLOSE_TIME as char) = &apos;0000-00-00 00:00:00&apos;)
   and mt.SYMBOL is not null
   and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-order by mt.MODIFY_TIME desc</stringProp>
+order by mt.TICKET desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT4_3-查询mt4demo_report挂单" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -17891,22 +17954,37 @@ order by mt.MODIFY_TIME desc</stringProp>
               <stringProp name="query">select *
 from mt4_trades mt
 where mt.LOGIN = ?
+  and mt.CMD in (2, 3, 4, 5)
+  and (mt.CLOSE_TIME is null
+       or mt.CLOSE_TIME = &apos;1970-01-01 00:00:00&apos;
+       or cast(mt.CLOSE_TIME as char) = &apos;0000-00-00 00:00:00&apos;)
   and mt.SYMBOL is not null
   and trim(mt.SYMBOL) &lt;&gt; &apos;&apos;
-  and mt.SYMBOL regexp &apos;[A-Za-z]&apos;
-  and mt.CONV_RATE1 = 0
-  and mt.CMD in (2, 3, 4, 5)
-limit 1000</stringProp>
+order by mt.TICKET desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">30</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT5_1_TS1-查询mt51ts1_report挂单" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -17922,19 +18000,33 @@ where mt.Login = ?
   and mt.Symbol is not null
   and trim(mt.Symbol) &lt;&gt; &apos;&apos;
   and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
+  and mt.Type in (2, 3, 4, 5, 6, 7)
   and mt.State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
+order by mt.TimeSetupMsc desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且实例为MT5_1_TS2-查询mt51ts2_report挂单" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -17950,19 +18042,33 @@ where mt.Login = ?
   and mt.Symbol is not null
   and trim(mt.Symbol) &lt;&gt; &apos;&apos;
   and mt.Symbol regexp &apos;[A-Za-z]&apos;
-  and mt.Type in (2, 3, 4, 5)
+  and mt.Type in (2, 3, 4, 5, 6, 7)
   and mt.State &lt;&gt; 7
-order by mt.TimeSetupMsc desc</stringProp>
+order by mt.TimeSetupMsc desc
+limit 1001</stringProp>
               <stringProp name="queryArguments">${pending_check_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1000</stringProp>
+              <stringProp name="resultSetMaxRows">1001</stringProp>
               <stringProp name="resultVariable">db_pending_check_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录挂单JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Capture JDBC status independently from an empty result set.
+vars.put(&apos;pending_check_jdbc_executed&apos;, &apos;true&apos;)
+vars.put(&apos;pending_check_jdbc_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;pending_check_jdbc_error&apos;, prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(1500))
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取挂单订单-数据库校验-${pending_check_login}-${order_instanceid_val}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
@@ -17986,6 +18092,7 @@ order by mt.TimeSetupMsc desc</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="script">import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
 import org.apache.jmeter.samplers.SampleResult
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
@@ -17993,11 +18100,12 @@ import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.TimeZone
 
+Map context = (vars.getObject(&apos;pending_check_context&apos;) ?: [:]) as Map
 String shujuku = (vars.get(&apos;pending_check_shujuku&apos;) ?: vars.get(&apos;shujuku&apos;) ?: &apos;&apos;).trim()
 String platform = (vars.get(&apos;pending_check_db_platform&apos;) ?: &apos;&apos;).trim().toUpperCase()
 boolean isMt4 = platform == &apos;MT4&apos;
 String instanceId = vars.get(&apos;pending_check_instanceid&apos;) ?: vars.get(&apos;order_instanceid_val&apos;) ?: &apos;&apos;
-String login = vars.get(&apos;pending_check_login&apos;) ?: vars.get(&apos;order_login&apos;) ?: vars.get(&apos;login&apos;) ?: &apos;&apos;
+String accountLogin = context.login ?: vars.get(&apos;pending_check_login&apos;) ?: vars.get(&apos;order_login&apos;) ?: vars.get(&apos;login&apos;) ?: &apos;&apos;
 String sourceName = shujuku == &apos;1&apos; ? &apos;DB&apos; : &apos;CSV&apos;
 String compareSource = sourceName + &apos;/API&apos;
 String tableName = shujuku == &apos;1&apos; ? (isMt4 ? &apos;MT4_TRADES&apos; : &apos;mt5_orders&apos;) : &apos;CSV&apos;
@@ -18161,45 +18269,47 @@ def hasAnyKey = { Map row, List names -&gt;
     return names.any { n -&gt; keys.contains(n) || lower.contains(n.toLowerCase()) || norm.contains(keyNorm(n)) }
 }
 def orderId = { Map row -&gt; rawText(findVal(row, [apiOrderField, &apos;Order&apos;, &apos;order&apos;, &apos;TICKET&apos;, &apos;Ticket&apos;])).trim() }
-Closure extractRecords
-extractRecords = { Object obj -&gt;
-    if (obj == null) return []
-    if (obj instanceof List) return obj.findAll { it instanceof Map }
-    if (obj instanceof Map) {
-        for (String k in [&apos;data&apos;,&apos;rows&apos;,&apos;list&apos;,&apos;result&apos;,&apos;records&apos;,&apos;orders&apos;]) {
-            if (obj.containsKey(k)) {
-                def got = extractRecords(obj[k])
-                if (got) return got
-            }
-        }
-        if (obj.values().any { it instanceof Map || it instanceof List }) {
-            for (def v in obj.values()) {
-                def got = extractRecords(v)
-                if (got) return got
-            }
-        }
-        return [obj]
-    }
-    return []
-}
-
+// Read only the documented data array. Never mistake an error envelope for an order.
 List ok = []
 List bad = []
 List skipped = []
 List errors = []
 List apiRows = []
+boolean apiEnvelopeOk = false
+if (vars.get(&apos;pending_check_initialized&apos;) != &apos;true&apos;) errors &lt;&lt; &apos;初始化未完成，禁止沿用上一轮数据库结果&apos;
 try {
     Object json = new JsonSlurper().parseText(prev.getResponseDataAsString())
-    apiRows = extractRecords(json)
-} catch (Throwable e) {
+    if (!(json instanceof Map)) {
+        errors &lt;&lt; &apos;接口响应必须为包含 code/data 的JSON对象&apos;
+    } else if (toNum(json.code)?.compareTo(BigDecimal.ZERO) != 0) {
+        errors &lt;&lt; &apos;接口业务失败 | code=&apos; + rawText(json.code) + &apos; | msg=&apos; + rawText(json.msg)
+    } else if (!(json.data instanceof List)) {
+        errors &lt;&lt; &apos;接口data必须为数组（空挂单应为[]），实际=&apos; + rawText(json.data)
+    } else {
+        apiRows = json.data.findAll { it instanceof Map }
+        if (apiRows.size() != json.data.size()) errors &lt;&lt; &apos;接口data包含非对象记录&apos;
+        else apiEnvelopeOk = true
+    }
+} catch (Exception e) {
     errors &lt;&lt; &apos;接口响应JSON解析失败 | error=&apos; + e.message
 }
+if (!(prev.getResponseCode() ==~ /2[0-9][0-9]/)) errors &lt;&lt; &apos;HTTP响应失败 | status=&apos; + prev.getResponseCode()
 
+def dbObj = vars.getObject(&apos;db_pending_check_rows&apos;)
+List dbRows = (dbObj instanceof List || dbObj instanceof Object[]) ? dbObj.findAll { it instanceof Map } : []
 String apiFirstOrderId = apiRows ? orderId(apiRows[0] as Map) : &apos;&apos;
+String dbFirstOrderId = dbRows ? rawText(findVal(dbRows[0] as Map, [dbOrderField])).trim() : &apos;&apos;
 int apiCompareFieldTotal = 0
-String dbFirstOrderId = &apos;&apos;
 String matchedOrder = &apos;&apos;
 String matchedOrderType = &apos;&apos;
+List matchedIds = []
+List onlyDb = []
+List onlyApi = []
+List snapshots = []
+def snapshot = { String side, Map row -&gt;
+    String id = side == &apos;DB&apos; ? rawText(findVal(row, [dbOrderField])) : orderId(row)
+    snapshots &lt;&lt; &apos; - [&apos; + side + &apos;] orderId=&apos; + id + &apos; | &apos; + JsonOutput.toJson(row)
+}
 String currentPriceToleranceRemark = &apos;误差相差5%之内可以通过&apos;
 String pendingZeroRemark = &apos;因为此订单是挂单 API 字段数值是0，还未平仓！！！&apos;
 
@@ -18270,62 +18380,70 @@ def addCompare = { String order, String field, Object srcVal, Object apiVal, Str
     else bad &lt;&lt; &apos; - [不同]&apos; + line
 }
 
-if (!apiRows) {
-    errors &lt;&lt; &quot;接口响应没有找到挂单订单记录 | instanceid=${instanceId} | login=${login}&quot;
-} else if (shujuku == &apos;1&apos;) {
-    def dbObj = vars.getObject(&apos;db_pending_check_rows&apos;)
-    List dbRows = []
-    if (dbObj instanceof List) dbRows = dbObj.findAll { it instanceof Map }
-    else if (dbObj instanceof Object[]) dbRows = dbObj.findAll { it instanceof Map }
-
-    if (!dbRows) {
-        errors &lt;&lt; &quot;数据库未返回挂单订单记录 | table=${tableName} | login=${login}&quot;
-    } else {
-        dbFirstOrderId = rawText(findVal(dbRows[0] as Map, [dbOrderField, dbOrderField.toUpperCase(), dbOrderField.toLowerCase()])).trim()
+if (shujuku == &apos;1&apos;) {
+    if (vars.get(&apos;pending_check_jdbc_executed&apos;) != &apos;true&apos;) {
+        errors &lt;&lt; &apos;JDBC未执行，检查初始化及实例路由 | instanceid=&apos; + instanceId
+    } else if (vars.get(&apos;pending_check_jdbc_success&apos;) != &apos;true&apos;) {
+        errors &lt;&lt; &apos;JDBC执行失败 | &apos; + (vars.get(&apos;pending_check_jdbc_error&apos;) ?: &apos;请查看JDBC采样结果&apos;)
+    }
+    if (dbRows.size() &gt;= 1001) errors &lt;&lt; &apos;数据库达到1001条截断检测上限，不能据此判定订单集合完整；请缩小账户范围或提高上限&apos;
+    if (apiEnvelopeOk &amp;&amp; errors.isEmpty()) {
         Map dbByOrder = [:]
-        dbRows.each { r -&gt;
-            String id = rawText(findVal(r as Map, [dbOrderField, dbOrderField.toUpperCase(), dbOrderField.toLowerCase()])).trim()
-            if (id &amp;&amp; id != &apos;null&apos; &amp;&amp; !dbByOrder.containsKey(id)) dbByOrder[id] = r
+        Map apiByOrder = [:]
+        dbRows.each { row -&gt;
+            String id = rawText(findVal(row, [dbOrderField])).trim()
+            if (!id || id == &apos;null&apos; || id == &apos;&lt;empty&gt;&apos;) errors &lt;&lt; &apos;数据库记录缺少订单号 | &apos; + JsonOutput.toJson(row)
+            else if (dbByOrder.containsKey(id)) errors &lt;&lt; &apos;数据库订单号重复 | orderId=&apos; + id
+            else dbByOrder[id] = row
         }
-        List apiOrderIds = apiRows.collect { orderId(it as Map) }.findAll { it &amp;&amp; it != &apos;null&apos; }
-        for (Map api in apiRows) {
-            String id = orderId(api)
-            if (dbByOrder.containsKey(id)) {
-                matchedOrder = id
-                Map dbRow = dbByOrder[id] as Map
-                matchedOrderType = orderTypeName(
-                    findVal(dbRow, (dbMap[&apos;orderType&apos;] ?: [&apos;orderType&apos;]) as List),
-                    findVal(dbRow, (dbMap[&apos;closeTime&apos;] ?: [&apos;closeTime&apos;]) as List),
-                    findVal(api, [&apos;orderType&apos;, &apos;Type&apos;, &apos;type&apos;]),
-                    findVal(api, [&apos;closeTime&apos;, &apos;CloseTime&apos;, &apos;close_time&apos;])
-                )
-                apiCompareFieldTotal = api.keySet().size()
-                api.each { field, apiVal -&gt;
-                    String f = field.toString()
-                    List aliases = (dbMap[f] ?: [f]) as List
-                    if (isDisabledField(f)) {
-                        boolean timeField = isTimeField(f, aliases, null, apiVal)
-                        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-                        skipped &lt;&lt; &quot; - [跳过] orderId=${matchedOrder} | orderType=${matchedOrderType} | field=${f} | DB=&lt;skip&gt; | API=${apiPrint} | DB字段=${aliases.join(&apos;/&apos;)} | reason=${disabledConfigName}&quot;
-                        return
-                    }
-                    if (!hasAnyKey(dbRow, aliases)) {
-                        boolean timeField = isTimeField(f, aliases, null, apiVal)
-                        String apiPrint = timeField ? timeInfo(apiVal, &apos;API&apos;).print : rawText(apiVal)
-                        skipped &lt;&lt; &quot; - [跳过] orderId=${matchedOrder} | orderType=${matchedOrderType} | field=${f} | DB=&lt;empty&gt; 数据库查询无此字段数据 | API=${apiPrint} | DB字段=${aliases.join(&apos;/&apos;)} | reason=数据库查询无此字段数据&quot;
-                        return
-                    }
-                    Object dbVal = findVal(dbRow, aliases)
-                    addCompare(matchedOrder, f, dbVal, apiVal, &apos;DB&apos;, aliases)
+        apiRows.each { row -&gt;
+            String id = orderId(row)
+            if (!id || id == &apos;null&apos; || id == &apos;&lt;empty&gt;&apos;) errors &lt;&lt; &apos;接口记录缺少订单号 | &apos; + JsonOutput.toJson(row)
+            else if (apiByOrder.containsKey(id)) errors &lt;&lt; &apos;接口订单号重复 | orderId=&apos; + id
+            else apiByOrder[id] = row
+        }
+        onlyDb = (dbByOrder.keySet() - apiByOrder.keySet()).toList()
+        onlyApi = (apiByOrder.keySet() - dbByOrder.keySet()).toList()
+        if (onlyDb) errors &lt;&lt; &apos;数据库有、接口没有的当前挂单 | orderIds=&apos; + onlyDb.join(&apos;,&apos;)
+        if (onlyApi) errors &lt;&lt; &apos;接口有、数据库没有的当前挂单 | orderIds=&apos; + onlyApi.join(&apos;,&apos;)
+        for (String id in apiByOrder.keySet()) {
+            if (!dbByOrder.containsKey(id)) continue
+            matchedOrder = id
+            matchedIds &lt;&lt; id
+            Map api = apiByOrder[id] as Map
+            Map dbRow = dbByOrder[id] as Map
+            matchedOrderType = orderTypeName(findVal(dbRow, dbMap.orderType as List), findVal(dbRow, dbMap.closeTime as List), api.orderType, api.closeTime)
+            if (rawText(findVal(dbRow, dbMap.login as List)) != accountLogin) errors &lt;&lt; &apos;数据库login不属于当前账户 | orderId=&apos; + id
+            if (rawText(findVal(api, [&apos;login&apos;])) != accountLogin) errors &lt;&lt; &apos;接口login不属于当前账户 | orderId=&apos; + id
+            if (matchedOrderType != &apos;挂单&apos;) errors &lt;&lt; &apos;匹配记录不是挂单 | orderId=&apos; + id
+            apiCompareFieldTotal += api.size()
+            // Check every shared ticket, not just the first match.
+            api.each { field, apiVal -&gt;
+                String f = field.toString()
+                List aliases = (dbMap[f] ?: [f]) as List
+                if (!hasAnyKey(dbRow, aliases) &amp;&amp; !isDisabledField(f)) {
+                    skipped &lt;&lt; &quot; - [跳过] orderId=${id} | orderType=${matchedOrderType} | field=${f} | DB=&lt;无对应字段&gt; | API=${rawText(apiVal)} | DB字段=${aliases.join(&apos;/&apos;)} | reason=数据库无直接对应字段&quot;
+                } else {
+                    addCompare(id, f, findVal(dbRow, aliases), apiVal, &apos;DB&apos;, aliases)
                 }
-                break
+            }
+            dbMap.each { field, aliases -&gt;
+                if (!api.containsKey(field) &amp;&amp; !isDisabledField(field.toString())) {
+                    apiCompareFieldTotal++
+                    bad &lt;&lt; &quot; - [不同] orderId=${id} | orderType=${matchedOrderType} | field=${field} | DB=${rawText(findVal(dbRow, aliases as List))} | API=&lt;字段缺失&gt; | reason=缺少挂单基准字段&quot;
+                }
             }
         }
-        if (!matchedOrder) {
-            errors &lt;&lt; &apos;接口和数据库数据记录没有匹配上订单号 | DB订单号=&apos; + dbByOrder.keySet().take(20).join(&apos;,&apos;) + &apos; | API订单号=&apos; + apiOrderIds.take(20).join(&apos;,&apos;)
+        // Keep snapshots on failure/no match, rather than pairing unrelated tickets.
+        if (errors || bad || matchedIds.isEmpty()) {
+            dbRows.take(20).each { snapshot(&apos;DB&apos;, it as Map) }
+            apiRows.take(20).each { snapshot(&apos;API&apos;, it as Map) }
         }
+    } else {
+        dbRows.take(20).each { snapshot(&apos;DB&apos;, it as Map) }
+        apiRows.take(20).each { snapshot(&apos;API&apos;, it as Map) }
     }
-} else if (shujuku == &apos;0&apos;) {
+} else if (shujuku == &apos;0&apos; &amp;&amp; apiEnvelopeOk &amp;&amp; errors.isEmpty()) {
     String expectedOrder = (vars.get(&apos;orderId&apos;) ?: vars.get(&apos;order_orderId&apos;) ?: vars.get(&apos;Order&apos;) ?: vars.get(&apos;order&apos;) ?: &apos;&apos;).trim()
     if (!expectedOrder || expectedOrder == &apos;&lt;EOF&gt;&apos;) {
         errors &lt;&lt; &apos;CSV当前行缺少 orderId，无法匹配接口返回订单号&apos;
@@ -18335,6 +18453,7 @@ if (!apiRows) {
             errors &lt;&lt; &apos;CSV订单号和接口响应返回订单号没有匹配上 | CSV订单号=&apos; + expectedOrder + &apos; | API订单号=&apos; + apiRows.collect { orderId(it as Map) }.findAll { it &amp;&amp; it != &apos;null&apos; }.take(20).join(&apos;,&apos;)
         } else {
             matchedOrder = orderId(apiOrder)
+            matchedIds &lt;&lt; matchedOrder
             matchedOrderType = orderTypeName(
                 findVal(apiOrder, [&apos;orderType&apos;, &apos;Type&apos;, &apos;type&apos;]) ?: vars.get(&apos;orderType&apos;),
                 findVal(apiOrder, [&apos;closeTime&apos;, &apos;CloseTime&apos;, &apos;close_time&apos;]) ?: vars.get(&apos;closeTime&apos;)
@@ -18360,7 +18479,7 @@ if (!apiRows) {
             }
         }
     }
-} else {
+} else if (!(shujuku in [&apos;0&apos;, &apos;1&apos;])) {
     errors &lt;&lt; &apos;shujuku只能是0或1，当前=&apos; + shujuku
 }
 
@@ -18368,7 +18487,9 @@ errors.each { bad &lt;&lt; &apos; - [错误] &apos; + it }
 
 String status = bad.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
 List reportLines = []
-reportLines &lt;&lt; &quot;挂单订单 ${compareSource} 字段对比结果 | status=${status} | orderType=${matchedOrderType ?: &apos;其他订单&apos;} | instanceid=${instanceId} | login=${login} | table=${tableName} | dbFirstOrderId=${dbFirstOrderId} | apiFirstOrderId=${apiFirstOrderId} | matchedOrderId=${matchedOrder} | dbApiDisabledFields=[${dbApiDisabledRaw}] | csvApiDisabledFields=[${csvApiDisabledRaw}] | activeDisabledFields=[${disabledRaw}]&quot;
+reportLines &lt;&lt; &quot;挂单订单 ${compareSource} 字段对比结果 | status=${status} | orderType=${matchedOrderType ?: &apos;其他订单&apos;} | instanceid=${instanceId} | login=${accountLogin} | table=${tableName} | dbFirstOrderId=${dbFirstOrderId} | apiFirstOrderId=${apiFirstOrderId} | matchedOrderId=${matchedOrder} | dbApiDisabledFields=[${dbApiDisabledRaw}] | csvApiDisabledFields=[${csvApiDisabledRaw}] | activeDisabledFields=[${disabledRaw}]&quot;
+reportLines &lt;&lt; &quot;订单集合：DB记录数=${dbRows.size()} | API记录数=${apiRows.size()} | 匹配订单数=${matchedIds.size()} | 匹配订单号=${matchedIds.join(&apos;,&apos;)} | 仅DB订单号=${onlyDb.join(&apos;,&apos;)} | 仅API订单号=${onlyApi.join(&apos;,&apos;)} | JDBC数据源=${context.pool ?: &apos;-&apos;}&quot;
+if (shujuku == &apos;1&apos; &amp;&amp; apiEnvelopeOk &amp;&amp; dbRows.isEmpty() &amp;&amp; apiRows.isEmpty() &amp;&amp; bad.isEmpty()) reportLines &lt;&lt; &apos;空集合一致：数据库和接口均无当前挂单，本次通过（不是漏比字段）。&apos;
 reportLines &lt;&lt; &quot;统计：接口对比字段总数量=${apiCompareFieldTotal} | 相同字段数量=${ok.size()} | 不同字段数量=${bad.size()} | 跳过字段数量=${skipped.size()}&quot;
 reportLines &lt;&lt; &quot;时间规则：API/CSV时间戳先按UTC+8打印，再减8小时生成对比值；DB时间直接格式化为 yyyy-MM-dd HH:mm:ss 后参与比较。&quot;
 reportLines &lt;&lt; &quot;currentPrice规则：DB/API对比时打印误差百分比；误差相差5%之内计入成功字段，并备注：${currentPriceToleranceRemark}。&quot;
@@ -18383,6 +18504,9 @@ reportLines &lt;&lt; &apos;&apos;
 reportLines &lt;&lt; &quot;跳过字段（未校验）（${skipped.size()}）：&quot;
 reportLines.addAll(skipped ? skipped : [&apos; - 无&apos;])
 
+reportLines &lt;&lt; &apos;&apos;
+reportLines &lt;&lt; &apos;DB/API原始记录快照（失败或未匹配时各最多20条；其余订单见JDBC及接口原响应）：&apos;
+reportLines.addAll(snapshots ? snapshots : [&apos; - 无需额外快照，请查看上述逐字段对比&apos;])
 String report = reportLines.join(&apos;\n&apos;)
 vars.put(&apos;pending_order_compare_report&apos;, report)
 
@@ -20111,12 +20235,12 @@ if (failCount &gt; 0) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="5跨所有实例的账户级财务指标(权益:利润、利润率)事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-账户级财务指标数据库校验">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-账户级财务指标数据库校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./账户级财务指标-数据库校验.csv</stringProp>
@@ -22082,7 +22206,7 @@ if (failCount &gt; 0) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="7-1修改账户权限-change_user_rights✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -22110,7 +22234,7 @@ if (failCount &gt; 0) {
             <stringProp name="variableNames">instanceid,login,rights,duanyan,scenario</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1获取用户信息修改之前-${instanceid}-${login}-查询">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1获取用户信息修改之前-${instanceid}-${login}-查询" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -22136,7 +22260,7 @@ if (failCount &gt; 0) {
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="22修改账户权限 -${instanceid}-${login}-修改成 ${rights}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="22修改账户权限 -${instanceid}-${login}-修改成 ${rights}" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -22185,7 +22309,7 @@ if (failCount &gt; 0) {
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-断言中--${duanyan}---修改之后的断言-${rightsAAA}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-断言中--${duanyan}---修改之后的断言-${rightsAAA}" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -22199,7 +22323,7 @@ if (failCount &gt; 0) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器">
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
               <stringProp name="ConstantTimer.delay">2000</stringProp>
             </ConstantTimer>
             <hashTree/>
@@ -22418,7 +22542,7 @@ modify_user_info接口</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-预期结果:${duanyan}- 修改之后的断言-${rightsAAA}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息修改之后-${instanceid}-${login}-预期结果:${duanyan}- 修改之后的断言-${rightsAAA}" enabled="true">
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -22432,7 +22556,7 @@ modify_user_info接口</stringProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器">
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
               <stringProp name="ConstantTimer.delay">1500</stringProp>
             </ConstantTimer>
             <hashTree/>
@@ -22540,7 +22664,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="true">
         <stringProp name="TestPlan.comments">符号规格和实时报价字段校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比；支持按MT4、MT5、CSV分别手工配置跳过字段和逐字段百分比误差。严格区分字段存在但值为空与DB根本无此字段；API/DB均为空、API=0且DB字段存在但值为空时通过。point依据beta1.66.3契约按POW(10,-digits)生成并参与比较；MT5的volume_max、volume_min、volume_step使用DB原值除以10000后对比，MT4不缩放。接口保持 /crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -22552,7 +22676,7 @@ if (pass) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="8符号规格和实时报价事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="8符号规格和实时报价事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -22656,7 +22780,7 @@ log.info(&apos;symbol_ex_check init | shujuku=&apos; + shujuku + &apos; | platfo
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询符号规格实时报价数据库">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4-查询符号规格实时报价数据库" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
             <stringProp name="IfController.condition">${__groovy(vars.get(&apos;symbol_ex_check_shujuku&apos;) == &apos;1&apos; &amp;&amp; vars.get(&apos;symbol_ex_check_db_platform&apos;) == &apos;MT4&apos;)}</stringProp>
@@ -22741,7 +22865,7 @@ WHERE s.Symbol = ?</stringProp>
             </JDBCSampler>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="符号规格和实时报价-数据库校验-${instanceid_val}-${symbol_val}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="符号规格和实时报价-数据库校验-${instanceid_val}-${symbol_val}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">5000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -23466,7 +23590,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="true">
         <stringProp name="TestPlan.comments">按CSV数据行数循环；shujuku=1时读取整份CSV聚合所有MT4/MT5登录号后DB/API对比，shujuku=0时按当前CSV行做CSV/API对比。CSV变量名从表头读取，支持手动增删校验字段。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -25867,7 +25991,7 @@ if (failures.isEmpty()) {
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-2获取服务器信息事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-2获取服务器信息事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -25967,7 +26091,7 @@ instanceid=[MT5_1] address不一致：预期=[18.171.245.143:443]，实际=[43.1
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-3修改杠杆事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="14-3修改杠杆事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -28883,7 +29007,8 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！17-1优化脚本获取用户信息-数据校验✅✅-22">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；MT5的ZIPCode必须返回并与DB/CSV对比；MT4若返回zipcode也与数据库ZIPCODE列对比，邮编单边为空判失败。API与DB字段均为空判定通过（备注：API 和 DB 返回都是为空，通过），DB结果无字段判定失败（备注：数据库无此字段）；所有字段含邮编均支持跳过配置。三个Groovy业务脚本已内嵌到JMX，不再依赖jmeter_scripts目录；CSV可与JMX同目录或通过-Juser_info_csv_path指定。只修改本线程组。
 
-（profit  是动态数值，在CSV 设置跳过了）</stringProp>
+（profit  是动态数值，在CSV 设置跳过了）
+2026-11-09：MT4用户资料与活动持仓汇总分离，资料按LOGIN主键查询；持仓汇总仅按当前LOGIN且不对CLOSE_TIME套CAST。JDBC逐阶段记录耗时、成功状态及错误。MT4超时默认15秒，可用-Juser_info_jdbc_timeout_seconds=15调整（1..120秒）。汇总失败仍比较已获得的资料，动态字段标未校验且整体失败，不再制造几十个数据库缺字段错误。MT5业务SQL与原有跳过/误差规则不变。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -28894,12 +29019,12 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17获取用户信息-数据校验事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17获取用户信息-数据校验事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">${__groovy(def explicit=props.getProperty(&apos;user_info_csv_path&apos;); File found=null; String base=org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(); if(explicit?.trim()){File e=new File(explicit.trim()); if(!e.isAbsolute())e=new File(base+File.separator+explicit.trim()); if(e.isFile())found=e.canonicalFile}; def roots=[]; def configured=props.getProperty(&apos;user_info_data_root&apos;); if(configured?.trim())roots&lt;&lt;new File(configured.trim()).canonicalFile; roots&lt;&lt;new File(base).canonicalFile; roots&lt;&lt;new File(System.getProperty(&apos;user.dir&apos;)).canonicalFile; def parents=roots.collect{it.parentFile}.findAll{it!=null}; roots.addAll(parents); roots=roots.unique(); if(found==null){def names=[]; names&lt;&lt;&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;data&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;csv&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; found=roots.collectMany{root-&gt;names.collect{name-&gt;new File(root.path+File.separator+name)}}.find{it.isFile()}?.canonicalFile}; if(found==null)throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；请将CSV与JMX放在同一目录；或使用-Juser_info_csv_path指定CSV绝对路径；已检查根目录：&apos;+roots); props[&apos;user_info_resolved_csv_path&apos;]=found.absolutePath; found; found.absolutePath)}</stringProp>
@@ -28979,8 +29104,28 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">String csvName = &apos;获取用户信息-数据校验.csv&apos;
-File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
+            <stringProp name="script">// Reset per-case state before CSV/route validation; never reuse a prior account.
+vars.put(&apos;user_info_init_ready&apos;, &apos;false&apos;)
+vars.put(&apos;user_info_instance_route&apos;, &apos;&apos;)
+vars.putObject(&apos;db_user_info_rows&apos;, [])
+vars.putObject(&apos;db_user_info_mt4_position_rows&apos;, [])
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, [])
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, &apos;&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_executed&apos;, &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_success&apos;, &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_error&apos;, &apos;&apos;)
+vars.put(&apos;user_info_compare_report&apos;, &apos;&apos;)
+vars.put(&apos;user_info_compare_status&apos;, &apos;INIT&apos;)
+String timeoutText = props.getProperty(&apos;user_info_jdbc_timeout_seconds&apos;, &apos;15&apos;).trim()
+if (!(timeoutText ==~ /[0-9]+/) || new BigInteger(timeoutText) &lt; 1 || new BigInteger(timeoutText) &gt; 120) {
+    throw new IllegalArgumentException(&apos;user_info_jdbc_timeout_seconds必须为1..120秒&apos;)
+}
+vars.put(&apos;user_info_jdbc_timeout_seconds&apos;, timeoutText)
+String csvName = &apos;获取用户信息-数据校验.csv&apos;
+String resolvedCsv = props.getProperty(&apos;user_info_resolved_csv_path&apos;) ?: &apos;&apos;
+File csvFile = resolvedCsv ? new File(resolvedCsv) : new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
 if (!csvFile.exists()) {
     throw new AssertionError(&apos;获取用户信息CSV文件不存在: &apos; + csvFile.getPath())
 }
@@ -29595,6 +29740,64 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
     &apos; | route=&apos; + vars.get(&apos;user_info_instance_route&apos;) + &apos; | dataSource=&apos; +
     vars.get(&apos;user_info_db_data_source&apos;) + &apos; | schema=&apos; + selectedSchema +
     &apos; | optimized MT4/MT5 position aggregates enabled&apos;)
+
+
+// MT4: keep the indexed user read independent from potentially slow trade aggregation.
+// The existing projection stays unchanged; dynamic fields are filled only after a
+// successful aggregate, and are explicitly unavailable if that stage fails.
+if (platform == &apos;MT4&apos;) {
+    String oldSql = vars.get(&apos;user_info_mt4_sql&apos;)
+    int projectionStart = oldSql.indexOf(&apos;SELECT\n  calc.LOGIN AS login&apos;)
+    if (projectionStart &lt; 0) throw new IllegalStateException(&apos;MT4用户字段投影未找到&apos;)
+    String projection = oldSql.substring(projectionStart)
+    int fromStart = projection.indexOf(&apos;\nFROM &apos;)
+    if (fromStart &lt; 0) throw new IllegalStateException(&apos;MT4用户字段投影缺少FROM&apos;)
+    projection = projection.substring(0, fromStart) + &apos;&apos;&apos;,
+  calc.BALANCE AS _user_info_raw_balance,
+  calc.CREDIT AS _user_info_raw_credit,
+  calc.MARGIN AS _user_info_raw_margin&apos;&apos;&apos;
+    String usersTable = selectedSchema == &apos;mt4demo_report&apos; ? &apos;mt4_users&apos; : &apos;MT4_USERS&apos;
+    String tradesTable = selectedSchema == &apos;mt4demo_report&apos; ? &apos;mt4_trades&apos; : &apos;MT4_TRADES&apos;
+    String baseSql = &apos;&apos;&apos;
+FROM (
+  SELECT
+    u.*,
+    (352
+      | CASE WHEN u.ENABLE &lt;&gt; 0 THEN 1 ELSE 0 END
+      | CASE WHEN u.ENABLE_CHANGE_PASS &lt;&gt; 0 THEN 2 ELSE 0 END
+      | CASE WHEN u.ENABLE = 0 THEN 4 ELSE 0 END
+      | CASE WHEN u.ENABLE_READONLY &lt;&gt; 0 THEN 516 ELSE 0 END
+      | CASE WHEN u.ENABLE_OTP &lt;&gt; 0 THEN 2048 ELSE 0 END
+    ) AS rights_calc,
+    NULL AS position_count,
+    NULL AS swap_total,
+    NULL AS commission_total,
+    NULL AS consolidated_profit,
+    NULL AS calculated_equity
+  FROM __SCHEMA__.__USERS__ u
+  WHERE u.LOGIN = ?
+) calc
+&apos;&apos;&apos;.trim().replace(&apos;__SCHEMA__&apos;, selectedSchema).replace(&apos;__USERS__&apos;, usersTable)
+    vars.put(&apos;user_info_mt4_sql&apos;, projection + &apos;\n&apos; + baseSql)
+    String aggregateSql = &apos;&apos;&apos;
+SELECT
+  COUNT(*) AS position_count,
+  COALESCE(SUM(COALESCE(t.PROFIT, 0)), 0) AS price_profit_total,
+  COALESCE(SUM(COALESCE(t.SWAPS, 0)), 0) AS swap_total,
+  COALESCE(SUM(COALESCE(t.COMMISSION, 0)), 0) AS commission_total,
+  COALESCE(SUM(COALESCE(t.PROFIT, 0) + COALESCE(t.SWAPS, 0) + COALESCE(t.COMMISSION, 0)), 0) AS consolidated_profit
+FROM __SCHEMA__.__TRADES__ t
+WHERE t.LOGIN = ?
+  AND t.TICKET &gt; 0
+  AND t.CMD IN (0, 1)
+  AND (t.CLOSE_TIME IS NULL OR t.CLOSE_TIME &lt;= &apos;1970-01-01 00:00:00&apos;)
+  AND t.SYMBOL IS NOT NULL
+  AND TRIM(t.SYMBOL) &lt;&gt; &apos;&apos;
+  AND t.SYMBOL REGEXP &apos;[A-Za-z]&apos;
+&apos;&apos;&apos;.trim().replace(&apos;__SCHEMA__&apos;, selectedSchema).replace(&apos;__TRADES__&apos;, tradesTable)
+    vars.put(&apos;user_info_mt4_position_sql&apos;, aggregateSql)
+}
+vars.put(&apos;user_info_init_ready&apos;, &apos;true&apos;)
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223Sampler>
@@ -29610,14 +29813,112 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="query">${user_info_mt4_sql}</stringProp>
               <stringProp name="queryArguments">${user_info_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
+              <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="用户资料查询成功后汇总MT4当前持仓" enabled="true">
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">true</boolProp>
+              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;user_info_jdbc_primary_success&apos;) == &apos;true&apos; &amp;&amp; (vars.getObject(&apos;db_user_info_rows&apos;) instanceof List) &amp;&amp; vars.getObject(&apos;db_user_info_rows&apos;).size() == 1)}</stringProp>
+            </IfController>
+            <hashTree>
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-汇总mysqlMT4当前持仓-${user_info_login}" enabled="true">
+                <stringProp name="dataSource">mysqlMT4</stringProp>
+                <stringProp name="query">${user_info_mt4_position_sql}</stringProp>
+                <stringProp name="queryArguments">${user_info_login}</stringProp>
+                <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
+                <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
+                <stringProp name="queryType">Prepared Select Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as Object</stringProp>
+                <stringProp name="resultSetMaxRows">1</stringProp>
+                <stringProp name="resultVariable">db_user_info_mt4_position_rows</stringProp>
+                <stringProp name="variableNames"></stringProp>
+              </JDBCSampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录MT4持仓汇总状态并合并财务字段" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.math.RoundingMode
+
+vars.put(&apos;user_info_jdbc_aggregate_executed&apos;, &apos;true&apos;)
+boolean success = prev.isSuccessful()
+String errorText = success ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+List users = (vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List
+List positions = (vars.getObject(&apos;db_user_info_mt4_position_rows&apos;) ?: []) as List
+if (success) {
+    try {
+        if (users.size() != 1 || positions.size() != 1 || !(positions[0] instanceof Map)) {
+            throw new IllegalStateException(&apos;用户/聚合结果应各有一行，实际=&apos; + users.size() + &apos;/&apos; + positions.size())
+        }
+        Map user = new LinkedHashMap(users[0] as Map)
+        Map sums = (positions[0] as Map).collectEntries { k,v -&gt; [(k.toString().toLowerCase()):v] }
+        def decimal = { Object value -&gt;
+            if (value == null) throw new IllegalStateException(&apos;动态财务计算缺少字段值&apos;)
+            new BigDecimal(value.toString())
+        }
+        def userValue = { String field -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            key == null ? null : user[key]
+        }
+        def putValue = { String field, Object value -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            user[key ?: field] = value
+        }
+        BigDecimal profit = decimal(sums.consolidated_profit)
+        BigDecimal equity = decimal(userValue(&apos;_user_info_raw_balance&apos;)) + decimal(userValue(&apos;_user_info_raw_credit&apos;)) + profit
+        BigDecimal margin = decimal(userValue(&apos;_user_info_raw_margin&apos;))
+        putValue(&apos;position_count&apos;, sums.position_count)
+        putValue(&apos;profit&apos;, profit.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;swap_total&apos;, decimal(sums.swap_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;commission_total&apos;, decimal(sums.commission_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;equity&apos;, equity.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_free&apos;, (equity - margin).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_level&apos;, margin &gt; 0 ? equity.multiply(new BigDecimal(&apos;100&apos;)).divide(margin, 6, RoundingMode.HALF_UP) : null)
+        vars.putObject(&apos;db_user_info_rows&apos;, [user])
+    } catch (Exception e) {
+        success = false
+        errorText = &apos;持仓汇总合并失败: &apos; + e.message
+        prev.setSuccessful(false)
+        prev.setResponseMessage(errorText)
+    }
+}
+vars.put(&apos;user_info_jdbc_aggregate_success&apos;, success ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;MT4当前账户持仓汇总&apos;, label:prev.getSampleLabel(), success:success,
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_jdbc_timeout_seconds&apos;), rows:positions.size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4_2-查询mt4demo_report" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -29630,14 +29931,112 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="query">${user_info_mt4_sql}</stringProp>
               <stringProp name="queryArguments">${user_info_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
+              <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="用户资料查询成功后汇总MT4当前持仓" enabled="true">
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">true</boolProp>
+              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;user_info_jdbc_primary_success&apos;) == &apos;true&apos; &amp;&amp; (vars.getObject(&apos;db_user_info_rows&apos;) instanceof List) &amp;&amp; vars.getObject(&apos;db_user_info_rows&apos;).size() == 1)}</stringProp>
+            </IfController>
+            <hashTree>
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-汇总MT4_2当前持仓-${user_info_login}" enabled="true">
+                <stringProp name="dataSource">mt4demo_report_MT4_2</stringProp>
+                <stringProp name="query">${user_info_mt4_position_sql}</stringProp>
+                <stringProp name="queryArguments">${user_info_login}</stringProp>
+                <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
+                <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
+                <stringProp name="queryType">Prepared Select Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as Object</stringProp>
+                <stringProp name="resultSetMaxRows">1</stringProp>
+                <stringProp name="resultVariable">db_user_info_mt4_position_rows</stringProp>
+                <stringProp name="variableNames"></stringProp>
+              </JDBCSampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录MT4持仓汇总状态并合并财务字段" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.math.RoundingMode
+
+vars.put(&apos;user_info_jdbc_aggregate_executed&apos;, &apos;true&apos;)
+boolean success = prev.isSuccessful()
+String errorText = success ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+List users = (vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List
+List positions = (vars.getObject(&apos;db_user_info_mt4_position_rows&apos;) ?: []) as List
+if (success) {
+    try {
+        if (users.size() != 1 || positions.size() != 1 || !(positions[0] instanceof Map)) {
+            throw new IllegalStateException(&apos;用户/聚合结果应各有一行，实际=&apos; + users.size() + &apos;/&apos; + positions.size())
+        }
+        Map user = new LinkedHashMap(users[0] as Map)
+        Map sums = (positions[0] as Map).collectEntries { k,v -&gt; [(k.toString().toLowerCase()):v] }
+        def decimal = { Object value -&gt;
+            if (value == null) throw new IllegalStateException(&apos;动态财务计算缺少字段值&apos;)
+            new BigDecimal(value.toString())
+        }
+        def userValue = { String field -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            key == null ? null : user[key]
+        }
+        def putValue = { String field, Object value -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            user[key ?: field] = value
+        }
+        BigDecimal profit = decimal(sums.consolidated_profit)
+        BigDecimal equity = decimal(userValue(&apos;_user_info_raw_balance&apos;)) + decimal(userValue(&apos;_user_info_raw_credit&apos;)) + profit
+        BigDecimal margin = decimal(userValue(&apos;_user_info_raw_margin&apos;))
+        putValue(&apos;position_count&apos;, sums.position_count)
+        putValue(&apos;profit&apos;, profit.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;swap_total&apos;, decimal(sums.swap_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;commission_total&apos;, decimal(sums.commission_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;equity&apos;, equity.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_free&apos;, (equity - margin).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_level&apos;, margin &gt; 0 ? equity.multiply(new BigDecimal(&apos;100&apos;)).divide(margin, 6, RoundingMode.HALF_UP) : null)
+        vars.putObject(&apos;db_user_info_rows&apos;, [user])
+    } catch (Exception e) {
+        success = false
+        errorText = &apos;持仓汇总合并失败: &apos; + e.message
+        prev.setSuccessful(false)
+        prev.setResponseMessage(errorText)
+    }
+}
+vars.put(&apos;user_info_jdbc_aggregate_success&apos;, success ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;MT4当前账户持仓汇总&apos;, label:prev.getSampleLabel(), success:success,
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_jdbc_timeout_seconds&apos;), rows:positions.size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT4_3-查询mt4demo_report" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -29650,14 +30049,112 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="query">${user_info_mt4_sql}</stringProp>
               <stringProp name="queryArguments">${user_info_login}</stringProp>
               <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
-              <stringProp name="queryTimeout">5</stringProp>
+              <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="用户资料查询成功后汇总MT4当前持仓" enabled="true">
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">true</boolProp>
+              <stringProp name="IfController.condition">${__groovy(vars.get(&apos;user_info_jdbc_primary_success&apos;) == &apos;true&apos; &amp;&amp; (vars.getObject(&apos;db_user_info_rows&apos;) instanceof List) &amp;&amp; vars.getObject(&apos;db_user_info_rows&apos;).size() == 1)}</stringProp>
+            </IfController>
+            <hashTree>
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-汇总MT4_3当前持仓-${user_info_login}" enabled="true">
+                <stringProp name="dataSource">mt4demo_report_MT4_3</stringProp>
+                <stringProp name="query">${user_info_mt4_position_sql}</stringProp>
+                <stringProp name="queryArguments">${user_info_login}</stringProp>
+                <stringProp name="queryArgumentsTypes">BIGINT</stringProp>
+                <stringProp name="queryTimeout">${user_info_jdbc_timeout_seconds}</stringProp>
+                <stringProp name="queryType">Prepared Select Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as Object</stringProp>
+                <stringProp name="resultSetMaxRows">1</stringProp>
+                <stringProp name="resultVariable">db_user_info_mt4_position_rows</stringProp>
+                <stringProp name="variableNames"></stringProp>
+              </JDBCSampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录MT4持仓汇总状态并合并财务字段" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.math.RoundingMode
+
+vars.put(&apos;user_info_jdbc_aggregate_executed&apos;, &apos;true&apos;)
+boolean success = prev.isSuccessful()
+String errorText = success ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+List users = (vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List
+List positions = (vars.getObject(&apos;db_user_info_mt4_position_rows&apos;) ?: []) as List
+if (success) {
+    try {
+        if (users.size() != 1 || positions.size() != 1 || !(positions[0] instanceof Map)) {
+            throw new IllegalStateException(&apos;用户/聚合结果应各有一行，实际=&apos; + users.size() + &apos;/&apos; + positions.size())
+        }
+        Map user = new LinkedHashMap(users[0] as Map)
+        Map sums = (positions[0] as Map).collectEntries { k,v -&gt; [(k.toString().toLowerCase()):v] }
+        def decimal = { Object value -&gt;
+            if (value == null) throw new IllegalStateException(&apos;动态财务计算缺少字段值&apos;)
+            new BigDecimal(value.toString())
+        }
+        def userValue = { String field -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            key == null ? null : user[key]
+        }
+        def putValue = { String field, Object value -&gt;
+            def key = user.keySet().find { it.toString().equalsIgnoreCase(field) }
+            user[key ?: field] = value
+        }
+        BigDecimal profit = decimal(sums.consolidated_profit)
+        BigDecimal equity = decimal(userValue(&apos;_user_info_raw_balance&apos;)) + decimal(userValue(&apos;_user_info_raw_credit&apos;)) + profit
+        BigDecimal margin = decimal(userValue(&apos;_user_info_raw_margin&apos;))
+        putValue(&apos;position_count&apos;, sums.position_count)
+        putValue(&apos;profit&apos;, profit.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;swap_total&apos;, decimal(sums.swap_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;commission_total&apos;, decimal(sums.commission_total).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;equity&apos;, equity.setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_free&apos;, (equity - margin).setScale(2, RoundingMode.HALF_UP))
+        putValue(&apos;margin_level&apos;, margin &gt; 0 ? equity.multiply(new BigDecimal(&apos;100&apos;)).divide(margin, 6, RoundingMode.HALF_UP) : null)
+        vars.putObject(&apos;db_user_info_rows&apos;, [user])
+    } catch (Exception e) {
+        success = false
+        errorText = &apos;持仓汇总合并失败: &apos; + e.message
+        prev.setSuccessful(false)
+        prev.setResponseMessage(errorText)
+    }
+}
+vars.put(&apos;user_info_jdbc_aggregate_success&apos;, success ? &apos;true&apos; : &apos;false&apos;)
+vars.put(&apos;user_info_jdbc_aggregate_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;MT4当前账户持仓汇总&apos;, label:prev.getSampleLabel(), success:success,
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_jdbc_timeout_seconds&apos;), rows:positions.size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5_1-查询mt5_report" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -29673,11 +30170,30 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5_1_TS1-查询mt51ts1_report" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -29693,11 +30209,30 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果shujuku=1且MT5_1_TS2或MT5_TS2-查询mt51ts2_report" enabled="true">
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -29713,11 +30248,30 @@ log.info(&apos;get_user_info target init override | live_equity=0 | instance=&ap
               <stringProp name="queryTimeout">5</stringProp>
               <stringProp name="queryType">Prepared Select Statement</stringProp>
               <stringProp name="resultSetHandler">Store as Object</stringProp>
-              <stringProp name="resultSetMaxRows">1</stringProp>
+              <stringProp name="resultSetMaxRows">2</stringProp>
               <stringProp name="resultVariable">db_user_info_rows</stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="记录获取用户信息JDBC执行状态" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">// Empty rows and an unsuccessful JDBC sample are different failure modes.
+vars.put(&apos;user_info_jdbc_primary_executed&apos;, &apos;true&apos;)
+vars.put(&apos;user_info_jdbc_primary_success&apos;, prev.isSuccessful() ? &apos;true&apos; : &apos;false&apos;)
+String errorText = prev.isSuccessful() ? &apos;&apos; : prev.getResponseMessage() + &apos; | &apos; + prev.getResponseDataAsString().take(2000)
+vars.put(&apos;user_info_jdbc_primary_error&apos;, errorText)
+List diagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+diagnostics &lt;&lt; [stage:&apos;用户资料/主查询&apos;, label:prev.getSampleLabel(), success:prev.isSuccessful(),
+    elapsed_ms:prev.getTime(), timeout_seconds:vars.get(&apos;user_info_platform&apos;) == &apos;MT4&apos; ? vars.get(&apos;user_info_jdbc_timeout_seconds&apos;) : &apos;5&apos;,
+    rows:((vars.getObject(&apos;db_user_info_rows&apos;) ?: []) as List).size(), error:errorText]
+vars.putObject(&apos;user_info_jdbc_diagnostics&apos;, diagnostics)
+</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取用户信息-数据校验-${user_info_instanceid}-${user_info_login}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
@@ -30070,6 +30624,14 @@ List&lt;String&gt; failLines = []
 List&lt;String&gt; okLines = []
 List&lt;String&gt; skipLines = []
 int apiFieldTotal = 0
+int sourceComparedFields = 0
+boolean dbReady = !dbMode
+boolean aggregateReady = !dbMode || platform != &apos;MT4&apos;
+List jdbcDiagnostics = (vars.getObject(&apos;user_info_jdbc_diagnostics&apos;) ?: []) as List
+List databaseRows = []
+if (vars.get(&apos;user_info_init_ready&apos;) != &apos;true&apos;) failLines &lt;&lt; &apos; - [失败] | 本轮初始化未完成，不允许沿用上一轮结果&apos;
+if (!(prev.getResponseCode() ==~ /2[0-9][0-9]/)) failLines &lt;&lt; &apos; - [失败] | HTTP状态异常=&apos; + prev.getResponseCode()
+
 
 Map response = null
 try {
@@ -30101,7 +30663,7 @@ if (apiData) {
         apiItem = matched as Map
     } else {
         failLines &lt;&lt; &apos; - [失败] | 接口响应没有匹配登录号 | expectedLogin=&apos; + login
-        if (apiData[0] instanceof Map) apiItem = apiData[0] as Map
+        // Do not compare another login&apos;s row as if it belonged to this account.
     }
 }
 Map apiFlat = flattenApi(apiItem)
@@ -30113,11 +30675,27 @@ if (dbMode) {
     disabledConfigName = platform == &apos;MT4&apos; ? &apos;user_info_mt4_db_api_disabled_compare_fields&apos; : &apos;user_info_mt5_db_api_disabled_compare_fields&apos;
     toleranceConfigName = platform == &apos;MT4&apos; ? &apos;user_info_mt4_db_api_field_tolerance_percent&apos; : &apos;user_info_mt5_db_api_field_tolerance_percent&apos;
     Object rowsObject = vars.getObject(&apos;db_user_info_rows&apos;)
-    List databaseRows = rowsObject instanceof List ? rowsObject as List : []
-    if (!databaseRows || !(databaseRows[0] instanceof Map)) {
-        failLines &lt;&lt; &apos; - [失败] | 数据库没有查询到用户信息记录 | platform=&apos; + platform + &apos; | instanceid=&apos; + instanceId + &apos; | login=&apos; + login
+    databaseRows = rowsObject instanceof List ? rowsObject.findAll { it instanceof Map } : []
+    if (vars.get(&apos;user_info_jdbc_primary_executed&apos;) != &apos;true&apos;) {
+        failLines &lt;&lt; &apos; - [失败] | JDBC用户查询未执行，请检查本轮初始化及实例路由&apos;
+    } else if (vars.get(&apos;user_info_jdbc_primary_success&apos;) != &apos;true&apos;) {
+        failLines &lt;&lt; &apos; - [失败] | JDBC用户查询失败（不是数据库无此字段） | &apos; + (vars.get(&apos;user_info_jdbc_primary_error&apos;) ?: &apos;查看JDBC采样结果&apos;)
+    } else if (databaseRows.size() != 1) {
+        failLines &lt;&lt; &apos; - [失败] | 数据库用户查询应返回1行 | rows=&apos; + databaseRows.size() + &apos; | login=&apos; + login
     } else {
-        expected = normalizeMap(databaseRows[0] as Map)
+        Map userRow = normalizeMap(databaseRows[0] as Map)
+        if (cleanText(valueOf(userRow, &apos;login&apos;)) != login) {
+            failLines &lt;&lt; &apos; - [失败] | 数据库返回账户不匹配 | expectedLogin=&apos; + login + &apos; | DBLogin=&apos; + cleanText(valueOf(userRow, &apos;login&apos;))
+        } else {
+            expected = userRow
+            dbReady = true
+        }
+    }
+    if (platform == &apos;MT4&apos; &amp;&amp; dbReady) {
+        aggregateReady = vars.get(&apos;user_info_jdbc_aggregate_executed&apos;) == &apos;true&apos; &amp;&amp; vars.get(&apos;user_info_jdbc_aggregate_success&apos;) == &apos;true&apos;
+        if (!aggregateReady) {
+            failLines &lt;&lt; &apos; - [失败] | MT4持仓汇总不可用，用户资料继续对比，动态财务字段不冒充0 | &apos; + (vars.get(&apos;user_info_jdbc_aggregate_error&apos;) ?: &apos;持仓汇总未执行&apos;)
+        }
     }
 } else {
     disabledConfigName = &apos;user_info_csv_api_disabled_compare_fields&apos;
@@ -30134,7 +30712,7 @@ String compareModeText = dbMode ? platform + &apos; DB/API&apos; : &apos;CSV/API
 
 // OpenAPI 1.66.19：MT5 get_user_info 必须校验 ZIPCode；缺失不能因只遍历 API 返回字段而漏检。
 // MT4 文档没有声明 zipcode；若实际返回，下面的通用逐字段流程仍会和 DB/CSV 比对。
-if (platform == &apos;MT5&apos; &amp;&amp; apiItem &amp;&amp; findKey(apiFlat, &apos;ZIPCode&apos;) == null) {
+if (platform == &apos;MT5&apos; &amp;&amp; apiItem &amp;&amp; (!dbMode || dbReady) &amp;&amp; findKey(apiFlat, &apos;ZIPCode&apos;) == null) {
     String zipField = &apos;ZIPCode&apos;
     String zipExpectedKey = findKey(expected, zipField)
     String zipSource = zipExpectedKey == null ? &apos;&lt;field-missing&gt;&apos; : renderValue(zipField, expected[zipExpectedKey])
@@ -30186,6 +30764,12 @@ Map liveEquityDisabledExpected = [
     brokererrorplatform: null,
     brokerrecomputeprobesymbol: null
 ]
+
+Set mt4AggregateFields = [
+    &apos;equity&apos;, &apos;equityreporting&apos;, &apos;marginfree&apos;, &apos;marginfreereporting&apos;, &apos;marginlevel&apos;,
+    &apos;profit&apos;, &apos;profitreporting&apos;, &apos;swaptotal&apos;, &apos;swaptotalreporting&apos;,
+    &apos;commissiontotal&apos;, &apos;commissiontotalreporting&apos;, &apos;positioncount&apos;
+] as Set
 
 apiFlat.each { rawField, apiValue -&gt;
     String field = String.valueOf(rawField)
@@ -30284,6 +30868,15 @@ apiFlat.each { rawField, apiValue -&gt;
         return
     }
 
+    // An unavailable query is not a field mismatch. Show API values but never
+    // treat contract-only checks or absent dynamic numbers as database evidence.
+    if (dbMode &amp;&amp; (!dbReady || (platform == &apos;MT4&apos; &amp;&amp; !aggregateReady &amp;&amp; mt4AggregateFields.contains(normalizedField)))) {
+        String reason = !dbReady ? &apos;用户JDBC查询不可用，未取得数据库基准&apos; : &apos;持仓汇总不可用，不伪造动态财务值&apos;
+        skipLines &lt;&lt; &apos; - [未校验] | field=&apos; + field + &apos; | API=&apos; + renderValue(field, apiValue) +
+            &apos; | DB=&lt;不可用&gt; | reason=&apos; + reason
+        return
+    }
+
     String expectedKey = directExpectedKey
     Object expectedValue = directExpectedValue
     String reportingNativeField = reportingNativeFields[normalizedField]
@@ -30338,6 +30931,7 @@ apiFlat.each { rawField, apiValue -&gt;
         return
     }
 
+    sourceComparedFields++
     BigDecimal tolerance = toleranceFor(field, toleranceMap)
     Map result = compareValue(field, apiValue, expectedValue, sourceName, tolerance)
     String line = &apos;field=&apos; + field + &apos; | API=&apos; + result.apiPrint + &apos; | &apos; + sourceName + &apos;=&apos; + result.expectedPrint +
@@ -30358,6 +30952,14 @@ report &lt;&lt; &apos;匹配依据: login=&apos; + login + &apos; | instanceid=&
     &apos; | JDBC=&apos; + (vars.get(&apos;user_info_db_data_source&apos;) ?: &apos;&lt;CSV模式不查库&gt;&apos;) +
     &apos; | schema=&apos; + (vars.get(&apos;user_info_db_schema&apos;) ?: &apos;&lt;CSV模式不查库&gt;&apos;) +
     &apos; | platform=&apos; + platform + &apos; | source=&apos; + sourceName + &apos; | _data_source=&apos; + (dataSource ?: &apos;&lt;empty&gt;&apos;)
+report &lt;&lt; &apos;JDBC执行诊断: 用户查询已执行=&apos; + vars.get(&apos;user_info_jdbc_primary_executed&apos;) +
+    &apos; | 用户查询成功=&apos; + vars.get(&apos;user_info_jdbc_primary_success&apos;) + &apos; | 用户返回行数=&apos; + databaseRows.size() +
+    &apos; | MT4持仓汇总成功=&apos; + vars.get(&apos;user_info_jdbc_aggregate_success&apos;) +
+    &apos; | MT4查询超时上限(秒)=&apos; + vars.get(&apos;user_info_jdbc_timeout_seconds&apos;)
+jdbcDiagnostics.each { d -&gt; report &lt;&lt; &apos; - [JDBC] stage=&apos; + d.stage + &apos; | label=&apos; + d.label +
+    &apos; | success=&apos; + d.success + &apos; | elapsed_ms=&apos; + d.elapsed_ms + &apos; | timeout_seconds=&apos; + d.timeout_seconds +
+    &apos; | rows=&apos; + d.rows + &apos; | error=&apos; + (d.error ?: &apos;&lt;none&gt;&apos;) }
+report &lt;&lt; &apos;实际DB/CSV取值对比字段数=&apos; + sourceComparedFields + &apos;；成功字段列表也包含独立的接口契约校验，不能视为全部已经DB对账。&apos;
 report &lt;&lt; &apos;跳过字段配置: &apos; + disabledConfigName + &apos;=[&apos; + disabledRaw + &apos;]&apos;
 report &lt;&lt; &apos;字段误差配置: &apos; + toleranceConfigName + &apos;=[&apos; + toleranceRaw + &apos;]；格式 field=percent，逗号分隔；未配置数值字段默认0%&apos;
 report &lt;&lt; &apos;数值规则: 以&apos; + sourceName + &apos;绝对值为基准，abs((&apos; + sourceName + &apos;-API)/abs(&apos; + sourceName + &apos;))*100；误差小于等于字段配置值通过&apos;
@@ -30375,6 +30977,13 @@ report &lt;&lt; &apos;&apos;
 report &lt;&lt; &apos;【跳过字段明细：&apos; + skipLines.size() + &apos;条】&apos;
 report.addAll(skipLines ?: [&apos; - 无&apos;])
 
+if (dbMode &amp;&amp; (!dbReady || !aggregateReady)) {
+    report &lt;&lt; &apos;&apos;
+    report &lt;&lt; &apos;【查询不可用时的原始数据（不强行配对、不把失败当通过）】&apos;
+    report &lt;&lt; &apos;API匹配账户: &apos; + JsonOutput.toJson(apiItem)
+    report &lt;&lt; &apos;DB用户记录: &apos; + JsonOutput.toJson(databaseRows.take(2))
+    report &lt;&lt; &apos;诊断: 若仅持仓汇总超时，已保留资料/余额对比；请在数据库检查索引、执行计划、锁等待和负载。&apos;
+}
 String finalReport = report.join(&apos;\n&apos;)
 vars.put(&apos;user_info_compare_report&apos;, finalReport)
 vars.put(&apos;user_info_compare_status&apos;, status)
@@ -30428,16 +31037,16 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17-3获取用户信息-美分账号的currency-USC验证-003事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
             <stringProp name="LoopController.loops">238</stringProp>
           </LoopController>
           <hashTree>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置">
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
               <stringProp name="filename">./美分账号的currency-USC验证MT4账号.csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
               <stringProp name="variableNames">instanceid,login</stringProp>
@@ -31812,7 +32421,7 @@ SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19-2查询多个账户的挂单订单-多个实例验证✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -32525,7 +33134,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
             <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_deal_ticket,filter_symbol,order_types,open_time_from_utc_ms,open_time_to_utc_ms,volume_lots_condition,volume_lots_value,floating_pl,sort_by,sort_order,reason,symbol,position_ticket,updated_utc_ms,fee,open_time_utc_ms,price_open,margin_rate,source,price_sl,commission,digits_currency,state,order_type,profit,price_current,volume_lots,side,swap,deal_ticket,price_tp,order_ticket,instance_id,net_profit,comment,digits,contract_size,db_result_max_rows</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户当前持仓DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户当前持仓DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="open_positions_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">open_positions_db_api_disabled_compare_fields</stringProp>
@@ -33081,7 +33690,7 @@ SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + r
             </JDBCSampler>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户当前持仓订单-${open_positions_mode}-${open_positions_case_index_display}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户当前持仓订单-${open_positions_mode}-${open_positions_case_index_display}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">5000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -34104,7 +34713,7 @@ publishReport(&apos;查询多个账户当前持仓字段对比结果&apos;, fina
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户当前持仓对比结果">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户当前持仓对比结果" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -34884,7 +35493,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-原来正确的，参数是之前默认的" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -34915,7 +35524,7 @@ publish(finalReport, failLines.isEmpty())</stringProp>
           <stringProp name="connectionProperties"></stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="23交易大赛-批量查询完全关闭持仓生命周期事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -35825,7 +36434,7 @@ if (bad) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询完全关闭持仓生命周期-${competition_history_mode}-${competition_history_case_index_display}">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易大赛-批量查询完全关闭持仓生命周期-${competition_history_mode}-${competition_history_case_index_display}" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">15000</intProp>
             <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
@@ -36305,7 +36914,7 @@ String finalReport=report.join(&apos;\n&apos;);publish(finalReport,failLines.isE
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23-back0002" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。路径可迁移：统一读取granularity-deal.csv；先自检加载一次，再按同一数据集计算业务循环次数；缺文件/空数据显式失败。支持competition_history_csv_file及competition_history_data_dir变量或-J参数。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40299,7 +40908,7 @@ log.info(report)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本004.jtl</stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本018.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.63.0版本022.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.11版本001.jtl  &quot;granularity&quot;: &quot;deal&quot;
@@ -40309,7 +40918,9 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.18版本002
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本009.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.44版本003.jtl
 C:\Users\10477\Downloads\TestReport_2026-10-23_02-23-10_ReportSafe.jtl
-D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.47版本003.jtl</stringProp>
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.47版本003.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本001.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本001.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
@@ -40384,23 +40995,23 @@ D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-202
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数" enabled="false">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="-2101995259">instance_id</stringProp>
             <stringProp name="103149417">login</stringProp>
             <stringProp name="1216985755">password</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-821779900">
+            <collectionProp name="536096045">
               <stringProp name="73667488">MT5_1</stringProp>
-              <stringProp name="1656427516">880084</stringProp>
-              <stringProp name="1073943922">Passw0rd.</stringProp>
+              <stringProp name="1261606881">99897458</stringProp>
+              <stringProp name="-1867367765">123456Aa.</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数" enabled="false">
           <collectionProp name="UserParameters.names">
             <stringProp name="-2101995259">instance_id</stringProp>
             <stringProp name="103149417">login</stringProp>
@@ -40416,7 +41027,7 @@ D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-202
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="一认证与会话事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="一认证与会话事务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -40512,7 +41123,7 @@ D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-202
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="二账户、行情与历史读取事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="二账户、行情与历史读取事务" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
@@ -40760,7 +41371,7 @@ D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-202
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/bars/{symbol}/{tf} 查询品种 K 线数据 | 获取指定品种、指定周期的 K 线 |">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/bars/{symbol}/{tf} 查询品种 K 线数据 | 获取指定品种、指定周期的 K 线 |" enabled="true">
             <stringProp name="TestPlan.comments">| 参数 | 必填 | 说明 |
 |---|---|---|
 | `symbol` | 是 | 完整品种名 |
@@ -41042,11 +41653,11 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="三交易指令" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="三交易指令" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/place" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/place 用于市价下单或提交挂单，支持 MT4、MT5，但两平台能力存在差异。" enabled="true">
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
             <intProp name="HTTPSampler.response_timeout">8000</intProp>
             <stringProp name="HTTPSampler.domain">mthub-api2.mohicanstech.com</stringProp>
@@ -41094,7 +41705,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/cancel" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/cancel" enabled="false">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD
 /v1/orders、/v1/orders/{id}</stringProp>
             <intProp name="HTTPSampler.connect_timeout">3000</intProp>
@@ -41138,7 +41749,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/modify_order 修改挂单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/modify_order 修改挂单" enabled="false">
             <stringProp name="TestPlan.comments">修改挂单价格，并取消止盈
 | 参数 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -41195,7 +41806,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/modify_position  修改持仓止损止盈" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/modify_position  修改持仓止损止盈" enabled="false">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD
 /v1/orders、/v1/orders/{id}
 | 参数 | 类型 | 必填 | 说明 |
@@ -41247,7 +41858,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close全平或部分平仓" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close全平或部分平仓" enabled="false">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD
 /v1/orders、/v1/orders/{id}
 
@@ -41301,7 +41912,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close_by 对冲平仓" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close_by 对冲平仓" enabled="false">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD
 /v1/orders、/v1/orders/{id}
 | 参数 | 类型 | 必填 | 说明 |
@@ -41357,7 +41968,7 @@ M2、M3、M4、M6、M10、M12、M20、H2、H3、H6、H8、H12
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close_batch 批量平仓" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mt_hub 移动端接口-/v1/trade/close_batch 批量平仓" enabled="false">
             <stringProp name="TestPlan.comments">BTCUSTecn, Bitcoin vs Tether USD CFD
 /v1/orders、/v1/orders/{id}
 | 参数 | 类型 | 必填 | 说明 |
@@ -62652,6 +63263,238 @@ log.info(&apos;中间件最终响应: type={}, elapsed={}ms, observeTimeout={}ms
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="造数据-充值和修改密码" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="测试环境15-1（先禁用）创建账户-删除后-查询账号信息-手动执行事务--测试" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="用户参数-MT5_1 账号" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="103149417">login</stringProp>
+              <stringProp name="902025328">instanceid</stringProp>
+              <stringProp name="-1349832915">deal_type</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1621898458">
+                <stringProp name="1261606881">99897458</stringProp>
+                <stringProp name="73667488">MT5_1</stringProp>
+                <stringProp name="50">2</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+            <stringProp name="TestPlan.comments">{
+    &quot;user_name&quot;: &quot;SIB3 Test&quot;,
+    &quot;passwd&quot;: &quot;123456Aa.&quot;,
+    &quot;group&quot;: &quot;T_STD_P00S&quot;,
+    &quot;leverage&quot;: 200,
+    &quot;login&quot;: 4190000,
+    &quot;instanceid&quot;: &quot;MT4_1&quot;
+}
+MT5_1 账号-美元-中文验证-中文名中文名测${__time(yyyy-MM-dd-HH:mm:ss.SSS)}</stringProp>
+          </UserParameters>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3获取用户信息-${instanceid}-${login}-查询-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/get_user_info?instanceid=${instanceid}&amp;login=${login}&amp;live_equity=0</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+              <stringProp name="ConstantTimer.delay">90</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="103149417">login</stringProp>
+                <stringProp name="73596745">Login</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">48</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">group</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;(?:group|Group)&quot;\s*:\s*&quot;([^&quot;]+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">leverage</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;(?i)leverage&quot;\s*:\s*(\d+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="重置密码 ${instanceid_val} ${login_val}-${middlewareip}" enabled="true">
+            <stringProp name="TestPlan.comments">780018</stringProp>
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/change_password</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
+	&quot;login&quot;: &quot;${login}&quot;,&#xd;
+	&quot;password&quot;: &quot;123456Aa.&quot;,&#xd;
+	&quot;pwd_type&quot;: 0&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言&quot;msg&quot;: &quot;ok&quot;" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4充值/提现-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="true">
+            <stringProp name="TestPlan.comments">false  true</stringProp>
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/modify_balance</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;instanceid&quot;: &quot;${instanceid}&quot;,&#xd;
+  &quot;login&quot;: &quot;${login}&quot;,&#xd;
+  &quot;amount&quot;: 20000,&#xd;
+  &quot;deal_type&quot;: ${deal_type},&#xd;
+  &quot;comment&quot;: &quot;deduct credit with fallback&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-339185956">balance</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5获取用户信息修改之前-${instanceid}-${login}-查询-生产-${login}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="false">
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/get_user_info?instanceid=${instanceid}&amp;login=${login}&amp;live_equity=0</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="103149417">login</stringProp>
+                <stringProp name="73596745">Login</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">48</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">group</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;(?:group|Group)&quot;\s*:\s*&quot;([^&quot;]+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">leverage</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;(?i)leverage&quot;\s*:\s*(\d+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+              <stringProp name="ConstantTimer.delay">80</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6跨所有实例的账户级财务指标(权益:利润、利润率) get_account_metrics_ex}-${__time(yyyy-MM-dd-HH:mm:ss.SSS)}" enabled="false">
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">8080</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/get_account_metrics_ex?instanceid=${instanceid}&amp;login__in=${login}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
         </hashTree>
       </hashTree>
     </hashTree>
