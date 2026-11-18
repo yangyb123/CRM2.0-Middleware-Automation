@@ -344,7 +344,7 @@ Passw0rd.
 production account41</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-测试环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3177,7 +3177,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -17473,7 +17473,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -19507,7 +19507,7 @@ if (bad) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4汇总的已平仓仓位(进出交易)✅✅" enabled="true">
         <stringProp name="TestPlan.comments">新增汇总的已平仓仓位数据库校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比。
 --备注20260618
 open_price/close_price 支持按DB或CSV为基准计算误差百分比，误差&lt;=2%通过；字段跳过配置仍优先。</stringProp>
@@ -20240,7 +20240,7 @@ if (failCount &gt; 0) {
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-账户级财务指标数据库校验">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-账户级财务指标数据库校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./账户级财务指标-数据库校验.csv</stringProp>
@@ -20252,7 +20252,7 @@ if (failCount &gt; 0) {
             <stringProp name="variableNames">shujuku,order_instanceid_val,order_login,leverage,margin,position_count,margin_free,login,equity,platform,instance_id,balance,metrics_updated_utc_ms,currency,credit,margin_level,metrics_degraded,profit,group,server_type,degrade_reason</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="账户级财务指标DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="账户级财务指标DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="acct_metrics_mt5_db_query_timeout_seconds" elementType="Argument">
                 <stringProp name="Argument.name">acct_metrics_mt5_db_query_timeout_seconds</stringProp>
@@ -20276,7 +20276,7 @@ if (failCount &gt; 0) {
             <stringProp name="TestPlan.comments">metrics_updated_utc_ms,margin,margin_free,margin_level,equity,profit,metrics_degraded   currency  equity  margin_level</stringProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="账户级财务指标CSV/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="账户级财务指标CSV/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="acct_metrics_csv_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">acct_metrics_csv_disabled_compare_fields</stringProp>
@@ -20294,7 +20294,7 @@ if (failCount &gt; 0) {
             <stringProp name="TestPlan.comments">equity</stringProp>
           </Arguments>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化账户级财务指标数据库校验变量">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化账户级财务指标数据库校验变量" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -21385,7 +21385,7 @@ volume_current  -kenA 回复  ---这个脚本可优化，--先设置跳过
             <collectionProp name="Arguments.arguments">
               <elementProp name="order_ex_mt4_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">order_ex_mt4_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">volume_current,time_done_utc_ms,state,position_ticket</stringProp>
+                <stringProp name="Argument.value">volume_current,time_done_utc_ms,state,position_ticket,time_done_broker_ms,time_setup_broker_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -21400,7 +21400,7 @@ position_ticket --在mt4 中 （历史平仓， 和挂单中为空  历史挂单
             <collectionProp name="Arguments.arguments">
               <elementProp name="order_ex_mt5_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">order_ex_mt5_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">volume_current,state,account_mode,time_done_utc_ms</stringProp>
+                <stringProp name="Argument.value">volume_current,state,account_mode,time_done_utc_ms,time_done_broker_ms,time_setup_broker_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -21413,7 +21413,7 @@ position_ticket --在mt4 中 （历史平仓， 和挂单中为空  历史挂单
             <collectionProp name="Arguments.arguments">
               <elementProp name="order_ex_csv_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">order_ex_csv_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">time_done_utc_ms</stringProp>
+                <stringProp name="Argument.value">time_done_utc_ms,time_done_broker_ms,time_setup_broker_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -22664,7 +22664,7 @@ if (pass) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="8符号规格和实时报价✅✅" enabled="true">
         <stringProp name="TestPlan.comments">符号规格和实时报价字段校验：shujuku=1时DB/API对比，shujuku=0时CSV/API对比；支持按MT4、MT5、CSV分别手工配置跳过字段和逐字段百分比误差。严格区分字段存在但值为空与DB根本无此字段；API/DB均为空、API=0且DB字段存在但值为空时通过。point依据beta1.66.3契约按POW(10,-digits)生成并参与比较；MT5的volume_max、volume_min、volume_step使用DB原值除以10000后对比，MT4不缩放。接口保持 /crm20/get_symbol_ex?instanceid=${instanceid_val}&amp;name=${symbol_val}。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -28948,7 +28948,7 @@ modify_user_info接口</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="16获取归档账户✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="16获取归档账户✅✅" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -29004,7 +29004,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！17-1优化脚本获取用户信息-数据校验✅✅-22">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！！！17-1优化脚本获取用户信息-数据校验✅✅-22" enabled="true">
         <stringProp name="TestPlan.comments">get_user_info：按 获取用户信息-数据校验.csv 数据行数循环；shujuku=1时按完整实例ID精确路由数据库（MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，兼容MT5_TS2）并逐字段DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。BrokerRecomputeUnavailableReason纳入比较；MT5的ZIPCode必须返回并与DB/CSV对比；MT4若返回zipcode也与数据库ZIPCODE列对比，邮编单边为空判失败。API与DB字段均为空判定通过（备注：API 和 DB 返回都是为空，通过），DB结果无字段判定失败（备注：数据库无此字段）；所有字段含邮编均支持跳过配置。三个Groovy业务脚本已内嵌到JMX，不再依赖jmeter_scripts目录；CSV可与JMX同目录或通过-Juser_info_csv_path指定。只修改本线程组。
 
 （profit  是动态数值，在CSV 设置跳过了）
@@ -29019,12 +29019,12 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17获取用户信息-数据校验事务">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="17获取用户信息-数据校验事务" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-获取用户信息数据校验" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">${__groovy(def explicit=props.getProperty(&apos;user_info_csv_path&apos;); File found=null; String base=org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(); if(explicit?.trim()){File e=new File(explicit.trim()); if(!e.isAbsolute())e=new File(base+File.separator+explicit.trim()); if(e.isFile())found=e.canonicalFile}; def roots=[]; def configured=props.getProperty(&apos;user_info_data_root&apos;); if(configured?.trim())roots&lt;&lt;new File(configured.trim()).canonicalFile; roots&lt;&lt;new File(base).canonicalFile; roots&lt;&lt;new File(System.getProperty(&apos;user.dir&apos;)).canonicalFile; def parents=roots.collect{it.parentFile}.findAll{it!=null}; roots.addAll(parents); roots=roots.unique(); if(found==null){def names=[]; names&lt;&lt;&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;data&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; names&lt;&lt;&apos;csv&apos;+File.separator+&apos;获取用户信息-数据校验.csv&apos;; found=roots.collectMany{root-&gt;names.collect{name-&gt;new File(root.path+File.separator+name)}}.find{it.isFile()}?.canonicalFile}; if(found==null)throw new IllegalStateException(&apos;找不到获取用户信息-数据校验.csv；请将CSV与JMX放在同一目录；或使用-Juser_info_csv_path指定CSV绝对路径；已检查根目录：&apos;+roots); props[&apos;user_info_resolved_csv_path&apos;]=found.absolutePath; found; found.absolutePath)}</stringProp>
@@ -29036,7 +29036,7 @@ FROM mt5_users WHERE  login = 4109;</stringProp>
             <stringProp name="variableNames"></stringProp>
           </CSVDataSet>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="17-1跨机器路径诊断-CSV与内嵌脚本已就绪">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="17-1跨机器路径诊断-CSV与内嵌脚本已就绪" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="script">String csvPath = props.getProperty(&apos;user_info_resolved_csv_path&apos;) ?: &apos;&apos;
@@ -29049,7 +29049,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             <stringProp name="filename"></stringProp>
           </JSR223Sampler>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT4-DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT4-DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="user_info_mt4_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">user_info_mt4_db_api_disabled_compare_fields</stringProp>
@@ -29066,7 +29066,7 @@ SampleResult.setSuccessful(true); SampleResult.setResponseCode(&apos;200&apos;);
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT5-DB/API字段对比配置">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="获取用户信息MT5-DB/API字段对比配置" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="user_info_mt5_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">user_info_mt5_db_api_disabled_compare_fields</stringProp>
@@ -31278,7 +31278,7 @@ log.info(successMessage)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -33138,7 +33138,7 @@ publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, fina
             <collectionProp name="Arguments.arguments">
               <elementProp name="open_positions_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">open_positions_db_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value">comment,updated_utc_ms,contract_size,net_profit_reporting,net_profit,profit,profit_reporting</stringProp>
+                <stringProp name="Argument.value">comment,updated_utc_ms,contract_size,net_profit_reporting,net_profit,profit,profit_reporting,open_time_broker_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.desc">DB/API字段跳过配置；同时控制summary和当前页明细；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
               </elementProp>
@@ -33169,7 +33169,7 @@ comment,（数据库是中文乱码）updated_utc_ms -接口更新时间   deal_
             <collectionProp name="Arguments.arguments">
               <elementProp name="open_positions_csv_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">open_positions_csv_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.value">open_time_broker_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <stringProp name="Argument.desc">CSV/API字段跳过配置；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
               </elementProp>
@@ -38874,7 +38874,7 @@ log.info(report)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23" enabled="true">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。路径可迁移：统一读取granularity-deal.csv；先自检加载一次，再按同一数据集计算业务循环次数；缺文件/空数据显式失败。支持competition_history_csv_file及competition_history_data_dir变量或-J参数。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40834,7 +40834,7 @@ log.info(report)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -40872,7 +40872,8 @@ log.info(report)
           </value>
         </objProp>
         <stringProp name="filename"></stringProp>
-        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本006.jtl</stringProp>
+        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本007.jtl
+D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.51版本005.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
@@ -40928,7 +40929,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本001
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本005.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -40987,6 +40988,44 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.19版本004
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本010.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.35版本012.jtl
 D:\softer\git仓库\mercury2.0-202603111956\CRM2.0\CRM2.0\scripts\sse-1users-20261014-151341.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本001.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="mt_hub 移动端接口--历史订单" enabled="false">
