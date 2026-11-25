@@ -3177,7 +3177,7 @@ vars.put(&quot;loop_count_Loop10&quot;, String.valueOf(count + 1));</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="中间件相关接口-真实生产环境-github✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -12581,6 +12581,2615 @@ python .\jtl_fail_report.py &quot;中间件接口1.56版本结果_失败详细�
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.56版本结果_失败详细报告08.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅-增加字段了调试-删除" enabled="false">
+        <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="查询多个账户挂单订单CSV循环">
+          <stringProp name="LoopController.loops">${__groovy(def f = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + File.separator + &apos;查询多个账户的挂单订单.csv&apos;); if (!f.exists()) return 0; def lines = f.readLines(&apos;UTF-8&apos;); if (lines.size() &lt;= 1) return 0; boolean hasDb = false; int csvCount = 0; for (int i = 1; i &lt; lines.size(); i++) { String line = lines.get(i); if (line != null &amp;&amp; line.trim().length() &gt; 0) { int p = -1; for (int j = 0; j &lt; line.length(); j++) { if ((int)line.charAt(j) == 44) { p = j; break } }; String first = p &lt; 0 ? line : line.take(p); if (first.length() &gt; 0 &amp;&amp; first.charAt(0) == (65279 as char)) first = first.drop(1); first = first.trim(); if (first.length() &gt;= 2 &amp;&amp; first.charAt(0) == (&apos;&quot;&apos; as char) &amp;&amp; first.charAt(first.length() - 1) == (&apos;&quot;&apos; as char)) first = first.drop(1).take(first.length() - 2).trim(); if (first == &apos;1&apos;) hasDb = true; else if (first == &apos;0&apos;) csvCount++ } }; return csvCount + (hasDb ? 1 : 0))}</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mysqlMT4" enabled="true">
+          <stringProp name="dataSource">pending_orders_mysqlMT4</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://54.179.187.241:3306/mt4_report?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">dun</stringProp>
+          <stringProp name="password">AAbb1122!</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mysqlMT5" enabled="true">
+          <stringProp name="dataSource">pending_orders_mysqlMT5</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://54.179.187.241:3306/mt5_report?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">dun</stringProp>
+          <stringProp name="password">AAbb1122!</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_MySQL" enabled="true">
+          <stringProp name="dataSource">pending_orders_MySQL</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://54.179.187.241:3306/mt5_report?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">dun</stringProp>
+          <stringProp name="password">AAbb1122!</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mt51ts1_report" enabled="true">
+          <stringProp name="dataSource">pending_orders_mt51ts1_report</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://54.179.187.241:3306/mt51ts1_report?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">dun</stringProp>
+          <stringProp name="password">AAbb1122!</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mt51ts2_report" enabled="true">
+          <stringProp name="dataSource">pending_orders_mt51ts2_report</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://54.179.187.241:3306/mt51ts2_report?allowPublicKeyRetrieval=true&amp;useSSL=false &amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">dun</stringProp>
+          <stringProp name="password">AAbb1122!</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mt4demo_report_MT4_2" enabled="true">
+          <stringProp name="dataSource">pending_orders_mt4demo_report_MT4_2</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://20.108.67.161:3306/mt4demo_report?allowPublicKeyRetrieval=true&amp;useSSL=false &amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">mohi2</stringProp>
+          <stringProp name="password">YangonMohi999</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="挂单校验限时连接池 - pending_orders_mt4demo_report_MT4_3" enabled="true">
+          <stringProp name="dataSource">pending_orders_mt4demo_report_MT4_3</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">3000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery"></stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://20.108.67.161:3306/mt4demo_report?allowPublicKeyRetrieval=true&amp;useSSL=false &amp;connectTimeout=3000&amp;socketTimeout=10000</stringProp>
+          <stringProp name="driver">com.mysql.cj.jdbc.Driver</stringProp>
+          <stringProp name="username">mohi2</stringProp>
+          <stringProp name="password">YangonMohi999</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务" enabled="true">
+          <boolProp name="TransactionController.includeTimers">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">./查询多个账户的挂单订单.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">true</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单 JDBC 连接池配置" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pending_orders_mt5_1_jdbc_pool" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_mt5_1_jdbc_pool</stringProp>
+                <stringProp name="Argument.value">mysqlMT5</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">填写本线程组限时连接池名，原连接池名称会自动加 pending_orders_ 前缀。可通过同名 JMeter 属性覆盖。</stringProp>
+              </elementProp>
+              <elementProp name="pending_orders_mt4_1_jdbc_pool" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_mt4_1_jdbc_pool</stringProp>
+                <stringProp name="Argument.value">mysqlMT4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">填写本线程组限时连接池名，原连接池名称会自动加 pending_orders_ 前缀。可通过同名 JMeter 属性覆盖。</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pending_orders_db_api_disabled_compare_fields" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_db_api_disabled_compare_fields</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">DB/API字段跳过配置，留空时校验所有参与对比的字段。支持summary和明细字段，多个字段用英文逗号分隔，* 跳过全部字段校验。</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单CSV/API字段对比配置" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pending_orders_csv_api_disabled_compare_fields" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_csv_api_disabled_compare_fields</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">CSV/API字段跳过配置，留空时校验CSV有配置的接口字段。多个字段用英文逗号分隔，* 跳过全部字段校验。</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化查询多个账户挂单订单参数" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import groovy.json.JsonOutput
+
+vars.put(&apos;pending_orders_init_ok&apos;, &apos;false&apos;)
+vars.put(&apos;pending_orders_compare_report&apos;, &apos;&apos;)
+vars.put(&apos;pending_orders_compare_status&apos;, &apos;&apos;)
+
+String csvName = &apos;查询多个账户的挂单订单.csv&apos;
+File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
+if (!csvFile.exists()) throw new AssertionError(&apos;查询多个账户挂单订单CSV文件不存在: &apos; + csvFile.getPath())
+List rawLines = csvFile.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim().length() &gt; 0 }
+if (rawLines.size() &lt;= 1) throw new AssertionError(&apos;查询多个账户挂单订单CSV没有数据行: &apos; + csvFile.getPath())
+
+def parseCsvLine = { String line -&gt;
+    List values = []
+    StringBuilder cur = new StringBuilder()
+    boolean inQuotes = false
+    for (int i = 0; i &lt; line.length(); i++) {
+        char c = line.charAt(i)
+        if (c == (&apos;&quot;&apos; as char)) {
+            if (inQuotes &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == (&apos;&quot;&apos; as char)) {
+                cur.append(c)
+                i++
+            } else {
+                inQuotes = !inQuotes
+            }
+        } else if (c == (&apos;,&apos; as char) &amp;&amp; !inQuotes) {
+            values &lt;&lt; cur.toString().trim()
+            cur.setLength(0)
+        } else {
+            cur.append(c)
+        }
+    }
+    values &lt;&lt; cur.toString().trim()
+    values
+}
+
+List headers = parseCsvLine(rawLines[0]).collect { (it ?: &apos;&apos;).replaceAll(/^\uFEFF/, &apos;&apos;).trim() }
+List csvRows = []
+rawLines.drop(1).eachWithIndex { line, idx -&gt;
+    List vals = parseCsvLine(line)
+    Map row = [__line_no: idx + 2]
+    headers.eachWithIndex { h, hidx -&gt; if (h) row[h] = hidx &lt; vals.size() ? vals[hidx] : &apos;&apos; }
+    if ((row[&apos;shujuku&apos;] ?: &apos;&apos;).toString().trim()) csvRows &lt;&lt; row
+}
+if (!csvRows) throw new AssertionError(&apos;查询多个账户挂单订单CSV没有有效数据行: &apos; + csvFile.getPath())
+
+def firstValue = { Map row, List names -&gt;
+    for (String n : names) {
+        Object v = row[n]
+        String s = v == null ? &apos;&apos; : v.toString().trim()
+        if (s &amp;&amp; !s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return s
+    }
+    &apos;&apos;
+}
+
+def cleanInt = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&apos;
+    s = s.replaceAll(/\.0+$/, &apos;&apos;)
+    s ==~ /^-?\d+$/ ? s : &apos;&apos;
+}
+
+def cleanNumber = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&apos;
+    s = s.replace(&apos;,&apos;, &apos;&apos;)
+    s ==~ /^-?\d+(\.\d+)?$/ ? s : &apos;&apos;
+}
+
+def intOrDefault = { Object raw, String defVal -&gt;
+    String v = cleanInt(raw)
+    v ? v : defVal
+}
+
+def sqlQuote = { Object raw -&gt;
+    &quot;&apos;&quot; + (raw == null ? &apos;&apos; : raw.toString()).replace(&quot;&apos;&quot;, &quot;&apos;&apos;&quot;) + &quot;&apos;&quot;
+}
+
+def platformOf = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim().toUpperCase()
+    s.contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (s.contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
+}
+
+def splitList = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return []
+    s.split(/[，,;|\s]+/).collect { it.trim() }.findAll { it }
+}
+
+def opOf = { Object raw -&gt;
+    String c = raw == null ? &apos;&apos; : raw.toString().trim().toLowerCase()
+    [gte: &apos;&gt;=&apos;, gt: &apos;&gt;&apos;, eq: &apos;=&apos;, lt: &apos;&lt;&apos;, lte: &apos;&lt;=&apos;][c] ?: &apos;&gt;=&apos;
+}
+
+def putRowVars = { Map row -&gt;
+    headers.each { h -&gt; vars.put(h, row[h] == null ? &apos;&apos; : row[h].toString()) }
+}
+
+List dbRows = csvRows.findAll { firstValue(it, [&apos;shujuku&apos;]) == &apos;1&apos; }
+List csvModeRows = csvRows.findAll { firstValue(it, [&apos;shujuku&apos;]) == &apos;0&apos; }
+List runCases = []
+if (dbRows) runCases &lt;&lt; [mode: &apos;DB&apos;, row: dbRows[0]]
+csvModeRows.each { runCases &lt;&lt; [mode: &apos;CSV&apos;, row: it] }
+if (!runCases) throw new AssertionError(&apos;查询多个账户挂单订单CSV中没有可执行数据：需要至少一行 shujuku=1 或 shujuku=0&apos;)
+
+int caseIndex = ((vars.get(&apos;pending_orders_case_index&apos;) ?: &apos;0&apos;) as int)
+if (caseIndex &gt;= runCases.size()) throw new AssertionError(&apos;查询多个账户挂单订单循环次数超出用例数 | caseIndex=&apos; + caseIndex + &apos; | caseCount=&apos; + runCases.size())
+vars.put(&apos;pending_orders_case_index&apos;, String.valueOf(caseIndex + 1))
+Map runCase = runCases[caseIndex] as Map
+Map currentRow = runCase.row as Map
+putRowVars(currentRow)
+
+String shujuku = runCase.mode == &apos;DB&apos; ? &apos;1&apos; : &apos;0&apos;
+boolean dbMode = shujuku == &apos;1&apos;
+List accountSourceRows = dbMode ? dbRows : [currentRow]
+List accounts = []
+Set accountKeys = [] as Set
+List mt4Logins = []
+List mt5Logins = []
+accountSourceRows.each { row -&gt;
+    String instanceId = firstValue(row, [&apos;instanceid&apos;, &apos;instance_id&apos;, &apos;order_instanceid_val&apos;, &apos;instanceid_val&apos;])
+    String platform = platformOf(instanceId)
+    List loginValues = splitList(firstValue(row, [&apos;login&apos;, &apos;order_login&apos;, &apos;login_val&apos;])).collect { cleanInt(it) }.findAll { it }
+    if (!loginValues) {
+        String singleLogin = cleanInt(firstValue(row, [&apos;login&apos;, &apos;order_login&apos;, &apos;login_val&apos;]))
+        if (singleLogin) loginValues &lt;&lt; singleLogin
+    }
+    loginValues.each { login -&gt;
+        if (instanceId &amp;&amp; login &amp;&amp; platform) {
+            String key = instanceId + &apos;|&apos; + login
+            if (!accountKeys.contains(key)) {
+                accountKeys &lt;&lt; key
+                accounts &lt;&lt; [instanceid: instanceId, login: Long.parseLong(login)]
+            }
+            if (platform == &apos;MT4&apos;) {
+                mt4Logins &lt;&lt; login
+            } else if (platform == &apos;MT5&apos;) {
+                mt5Logins &lt;&lt; login
+            }
+        }
+    }
+}
+mt4Logins = mt4Logins.collect { it.toString().trim() }.findAll { it ==~ /^\d+$/ }.unique()
+mt5Logins = mt5Logins.collect { it.toString().trim() }.findAll { it ==~ /^\d+$/ }.unique()
+if (!accounts) throw new AssertionError(&apos;查询多个账户挂单订单没有可用accounts，CSV需要填写 order_instanceid_val/order_login 或 instanceid/login&apos;)
+
+String page = intOrDefault(firstValue(currentRow, [&apos;page&apos;]), &apos;1&apos;)
+String pageSize = intOrDefault(firstValue(currentRow, [&apos;page_size&apos;]), &apos;50&apos;)
+String sortBy = firstValue(currentRow, [&apos;sort_by&apos;]) ?: &apos;time_setup_utc_ms&apos;
+String sortOrder = (firstValue(currentRow, [&apos;sort_order&apos;]) ?: &apos;desc&apos;).toLowerCase() == &apos;asc&apos; ? &apos;asc&apos; : &apos;desc&apos;
+String maxRows = intOrDefault(firstValue(currentRow, [&apos;db_result_max_rows&apos;]), &apos;50000&apos;)
+
+String filterOrderTicket = cleanInt(firstValue(currentRow, [&apos;filter_order_ticket&apos;, &apos;order_ticket_filter&apos;]))
+String filterPositionTicket = cleanInt(firstValue(currentRow, [&apos;filter_position_ticket&apos;, &apos;position_ticket_filter&apos;]))
+String symbol = firstValue(currentRow, [&apos;filter_symbol&apos;, &apos;symbol&apos;])
+List orderTypeList = splitList(firstValue(currentRow, [&apos;order_types&apos;, &apos;filter_order_types&apos;])).collect { cleanInt(it) }.findAll { it in [&apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;] }.unique()
+if (!orderTypeList) orderTypeList = [&apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;]
+String setupFrom = cleanInt(firstValue(currentRow, [&apos;time_setup_from_utc_ms&apos;, &apos;setup_time_from_utc_ms&apos;]))
+String setupTo = cleanInt(firstValue(currentRow, [&apos;time_setup_to_utc_ms&apos;, &apos;setup_time_to_utc_ms&apos;]))
+String volumeCondition = firstValue(currentRow, [&apos;volume_lots_condition&apos;, &apos;volume_condition&apos;]) ?: &apos;gte&apos;
+String volumeValue = cleanNumber(firstValue(currentRow, [&apos;volume_lots_value&apos;, &apos;filter_volume_lots_value&apos;]))
+if (!volumeValue) volumeValue = &apos;0.01&apos;
+
+Map filters = [:]
+if (filterOrderTicket) filters[&apos;order_ticket&apos;] = Long.parseLong(filterOrderTicket)
+if (symbol) filters[&apos;symbol&apos;] = symbol
+if (orderTypeList) filters[&apos;order_types&apos;] = orderTypeList.collect { Integer.parseInt(it) }
+if (setupFrom) filters[&apos;time_setup_from_utc_ms&apos;] = Long.parseLong(setupFrom)
+if (setupTo) filters[&apos;time_setup_to_utc_ms&apos;] = Long.parseLong(setupTo)
+if (volumeValue) filters[&apos;volume_lots&apos;] = [condition: volumeCondition, value: new BigDecimal(volumeValue)]
+
+Map body = [accounts: accounts, page: Integer.parseInt(page), page_size: Integer.parseInt(pageSize)]
+if (filters) body[&apos;filters&apos;] = filters
+if (sortBy) body[&apos;sort_by&apos;] = sortBy
+if (sortOrder) body[&apos;sort_order&apos;] = sortOrder
+String requestBody = JsonOutput.prettyPrint(JsonOutput.toJson(body))
+
+vars.put(&apos;shujuku&apos;, shujuku)
+vars.put(&apos;pending_orders_shujuku&apos;, shujuku)
+vars.put(&apos;pending_orders_mode&apos;, runCase.mode.toString())
+vars.put(&apos;pending_orders_case_index_display&apos;, String.valueOf(caseIndex + 1))
+vars.put(&apos;pending_orders_case_total&apos;, String.valueOf(runCases.size()))
+vars.put(&apos;pending_orders_csv_line_no&apos;, String.valueOf(currentRow.__line_no))
+vars.put(&apos;pending_orders_request_body&apos;, requestBody)
+vars.put(&apos;pending_orders_page&apos;, page)
+vars.put(&apos;pending_orders_page_size&apos;, pageSize)
+vars.put(&apos;pending_orders_sort_by&apos;, sortBy)
+vars.put(&apos;pending_orders_sort_order&apos;, sortOrder)
+vars.put(&apos;pending_orders_mt4_login&apos;, mt4Logins ? mt4Logins.join(&apos;,&apos;) : &apos;-1&apos;)
+vars.put(&apos;pending_orders_mt5_login&apos;, mt5Logins ? mt5Logins.join(&apos;,&apos;) : &apos;-1&apos;)
+vars.putObject(&apos;pending_orders_current_csv_row&apos;, currentRow)
+vars.putObject(&apos;db_pending_orders_summary_rows&apos;, [])
+vars.putObject(&apos;db_pending_orders_page_rows&apos;, [])
+vars.put(&apos;pending_orders_db_error&apos;, &apos;&apos;)
+
+String mt5VolumeExpr = &quot;(CASE WHEN mt.VolumeCurrentExt &gt; 0 THEN mt.VolumeCurrentExt / 100000000.0 ELSE mt.VolumeCurrent / 10000.0 END)&quot;
+String setupMsMt5 = &quot;CASE WHEN CAST(mt.TimeSetupMsc AS CHAR) NOT IN (&apos;0000-00-00 00:00:00.000000&apos;, &apos;1970-01-01 00:00:00.000000&apos;) THEN CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetupMsc) / 1000 AS UNSIGNED) ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetup) / 1000 AS UNSIGNED) END&quot;
+String updatedMsMt5 = &quot;CASE WHEN mt.`Timestamp` &gt; 100000000000 THEN CAST(mt.`Timestamp` AS UNSIGNED) WHEN mt.`Timestamp` &gt; 0 THEN CAST(mt.`Timestamp` AS UNSIGNED) * 1000 WHEN CAST(mt.TimeDoneMsc AS CHAR) NOT IN (&apos;0000-00-00 00:00:00.000000&apos;, &apos;1970-01-01 00:00:00.000000&apos;) THEN CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeDoneMsc) / 1000 AS UNSIGNED) ELSE ${setupMsMt5} END&quot;
+String expirationMsMt5 = &quot;CASE WHEN CAST(mt.TimeExpiration AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeExpiration) * 1000 END&quot;
+String setupBrokerMsMt5 = &quot;(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetupMsc) DIV 1000)&quot;
+String setupMsMt4 = &quot;CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.OPEN_TIME) / 1000 AS UNSIGNED)&quot;
+String updatedMsMt4 = &quot;CASE WHEN mt.`TIMESTAMP` &gt; 100000000000 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) WHEN mt.`TIMESTAMP` &gt; 0 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) * 1000 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.MODIFY_TIME) / 1000 AS UNSIGNED) END&quot;
+String expirationMsMt4 = &quot;CASE WHEN CAST(mt.EXPIRATION AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.EXPIRATION) * 1000 END&quot;
+String setupBrokerMsMt4 = &quot;(TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.OPEN_TIME) * 1000)&quot;
+String orderTypeSql = orderTypeList.join(&apos;,&apos;)
+String volOp = opOf(volumeCondition)
+
+// 按实例使用测试计划已有的 JDBC 连接池。演示库使用小写表名。
+Map instanceRoutes = [
+    MT4_1:     [pool: &apos;mysqlMT4&apos;, schema: &apos;mt4_report&apos;, orders: &apos;MT4_TRADES&apos;, users: &apos;MT4_USERS&apos;],
+    MT4_2:     [pool: &apos;mt4demo_report_MT4_2&apos;, schema: &apos;mt4demo_report&apos;, orders: &apos;mt4_trades&apos;, users: &apos;mt4_users&apos;],
+    MT4_3:     [pool: &apos;mt4demo_report_MT4_3&apos;, schema: &apos;mt4demo_report&apos;, orders: &apos;mt4_trades&apos;, users: &apos;mt4_users&apos;],
+    MT5_1:     [pool: &apos;mysqlMT5&apos;, schema: &apos;mt5_report&apos;],
+    MT5_1_TS1: [pool: &apos;mt51ts1_report&apos;, schema: &apos;mt51ts1_report&apos;],
+    MT5_1_TS2: [pool: &apos;mt51ts2_report&apos;, schema: &apos;mt51ts2_report&apos;]
+]
+instanceRoutes[&apos;MT5_TS2&apos;] = instanceRoutes[&apos;MT5_1_TS2&apos;]
+
+def buildRowsSql = { String instanceId, Map route, String loginSql -&gt;
+    String instanceExpr = sqlQuote(instanceId)
+    if (platformOf(instanceId) == &apos;MT4&apos;) {
+        List mt4Where = []
+        mt4Where &lt;&lt; &apos;mt.LOGIN IN (&apos; + loginSql + &apos;)&apos;
+        mt4Where &lt;&lt; &apos;mt.TICKET &gt; 0&apos;
+        mt4Where &lt;&lt; &apos;mt.SYMBOL IS NOT NULL&apos;
+        mt4Where &lt;&lt; &quot;TRIM(mt.SYMBOL) &lt;&gt; &apos;&apos;&quot;
+        mt4Where &lt;&lt; &quot;mt.SYMBOL REGEXP &apos;[A-Za-z]&apos;&quot;
+        mt4Where &lt;&lt; &apos;mt.CMD IN (&apos; + orderTypeSql + &apos;)&apos;
+        mt4Where &lt;&lt; &apos;(mt.VOLUME / 100.0) &apos; + volOp + &apos; &apos; + volumeValue
+        mt4Where &lt;&lt; &apos;mt.CONV_RATE1 = 0&apos;
+        mt4Where &lt;&lt; &quot;CAST(mt.CLOSE_TIME AS CHAR) IN (&apos;1970-01-01 00:00:00&apos;, &apos;0000-00-00 00:00:00&apos;)&quot;
+        if (filterOrderTicket) mt4Where &lt;&lt; &apos;mt.TICKET = &apos; + filterOrderTicket
+        if (filterPositionTicket) mt4Where &lt;&lt; &apos;mt.TICKET = &apos; + filterPositionTicket
+        if (symbol) mt4Where &lt;&lt; &apos;mt.SYMBOL = &apos; + sqlQuote(symbol)
+        if (setupFrom) mt4Where &lt;&lt; setupMsMt4 + &apos; &gt;= &apos; + setupFrom
+        if (setupTo) mt4Where &lt;&lt; setupMsMt4 + &apos; &lt;= &apos; + setupTo
+        return &quot;&quot;&quot;
+        SELECT
+          ${instanceExpr} AS instance_id,
+          mt.LOGIN AS login,
+          &apos;mt4&apos; AS source,
+          mt.TICKET AS order_ticket,
+          mt.REASON AS reason,
+          mt.SYMBOL AS symbol,
+          CASE WHEN mt.CMD IN (2, 4) THEN &apos;buy&apos; WHEN mt.CMD IN (3, 5) THEN &apos;sell&apos; ELSE CAST(mt.CMD AS CHAR) END AS side,
+          0.0 AS swap,
+          ${updatedMsMt4} AS updated_utc_ms,
+          0.0 AS fee,
+          0.0 AS commission,
+          mt.OPEN_PRICE AS price_open,
+          mt.TP AS price_tp,
+          CAST(mt.OPEN_TIME AS CHAR) AS db_time_setup,
+          CAST(mt.EXPIRATION AS CHAR) AS db_time_expiration,
+          ${setupMsMt4} AS time_setup_utc_ms,
+          ${setupBrokerMsMt4} AS time_setup_broker_ms,
+          ${expirationMsMt4} AS time_expiration_broker_ms,
+          mt.SL AS price_sl,
+          mt.COMMENT AS comment,
+          mt.DIGITS AS digits,
+          0.0 AS contract_size,
+          0 AS digits_currency,
+          1 AS state,
+          mt.CMD AS order_type,
+          0.0 AS profit,
+          0.0 AS price_current,
+          mt.VOLUME / 100.0 AS volume_lots,
+          UPPER(TRIM(NULLIF(u.CURRENCY, &apos;&apos;))) AS currency,
+          &apos;native&apos; AS money_unit,
+          CASE UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) WHEN &apos;USD&apos; THEN 1 WHEN &apos;USC&apos; THEN 100 ELSE NULL END AS money_scale,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USC&apos; THEN 1 WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USD&apos; THEN 0 ELSE NULL END AS is_cent,
+          &apos;USD&apos; AS reporting_currency,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 1 ELSE 0 END AS normalization_complete,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS profit_reporting,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS fee_reporting,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS swap_reporting,
+          CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USC&apos; THEN 1 ELSE 0 END AS is_cent_account
+        FROM ${route.schema}.${route.orders} mt
+        LEFT JOIN ${route.schema}.${route.users} u ON u.LOGIN = mt.LOGIN
+        WHERE ${mt4Where.join(&apos; AND &apos;)}
+        &quot;&quot;&quot;.trim()
+    }
+
+    List mt5Where = []
+    mt5Where &lt;&lt; &apos;mt.Login IN (&apos; + loginSql + &apos;)&apos;
+    mt5Where &lt;&lt; &apos;mt.`Order` &gt; 0&apos;
+    mt5Where &lt;&lt; &apos;mt.Symbol IS NOT NULL&apos;
+    mt5Where &lt;&lt; &quot;TRIM(mt.Symbol) &lt;&gt; &apos;&apos;&quot;
+    mt5Where &lt;&lt; &quot;mt.Symbol REGEXP &apos;[A-Za-z]&apos;&quot;
+    mt5Where &lt;&lt; &apos;mt.Type IN (&apos; + orderTypeSql + &apos;)&apos;
+    mt5Where &lt;&lt; &apos;mt.State = 1&apos;
+    mt5Where &lt;&lt; mt5VolumeExpr + &apos; &apos; + volOp + &apos; &apos; + volumeValue
+    if (filterOrderTicket) mt5Where &lt;&lt; &apos;mt.`Order` = &apos; + filterOrderTicket
+    if (filterPositionTicket) mt5Where &lt;&lt; (filterPositionTicket == &apos;0&apos; ? &apos;0 = 0&apos; : &apos;mt.PositionID = &apos; + filterPositionTicket)
+    if (symbol) mt5Where &lt;&lt; &apos;mt.Symbol = &apos; + sqlQuote(symbol)
+    if (setupFrom) mt5Where &lt;&lt; setupMsMt5 + &apos; &gt;= &apos; + setupFrom
+    if (setupTo) mt5Where &lt;&lt; setupMsMt5 + &apos; &lt;= &apos; + setupTo
+    return &quot;&quot;&quot;
+    SELECT
+      ${instanceExpr} AS instance_id,
+      mt.Login AS login,
+      &apos;mt5&apos; AS source,
+      mt.`Order` AS order_ticket,
+      mt.Reason AS reason,
+      mt.Symbol AS symbol,
+      CASE WHEN mt.Type IN (2, 4) THEN &apos;buy&apos; WHEN mt.Type IN (3, 5) THEN &apos;sell&apos; ELSE CAST(mt.Type AS CHAR) END AS side,
+      0.0 AS swap,
+      ${updatedMsMt5} AS updated_utc_ms,
+      0.0 AS fee,
+      0.0 AS commission,
+      mt.PriceOrder AS price_open,
+      mt.PriceTP AS price_tp,
+      CAST(mt.TimeSetupMsc AS CHAR) AS db_time_setup,
+      CAST(mt.TimeExpiration AS CHAR) AS db_time_expiration,
+      ${setupMsMt5} AS time_setup_utc_ms,
+      ${setupBrokerMsMt5} AS time_setup_broker_ms,
+      ${expirationMsMt5} AS time_expiration_broker_ms,
+      mt.PriceSL AS price_sl,
+      mt.Comment AS comment,
+      mt.Digits AS digits,
+      mt.ContractSize AS contract_size,
+      mt.DigitsCurrency AS digits_currency,
+      mt.State AS state,
+      mt.Type AS order_type,
+      0.0 AS profit,
+      mt.PriceCurrent AS price_current,
+      ${mt5VolumeExpr} AS volume_lots,
+      UPPER(TRIM(NULLIF(d.Currency, &apos;&apos;))) AS currency,
+      &apos;native&apos; AS money_unit,
+      CASE UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) WHEN &apos;USD&apos; THEN 1 WHEN &apos;USC&apos; THEN 100 ELSE NULL END AS money_scale,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USC&apos; THEN 1 WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USD&apos; THEN 0 ELSE NULL END AS is_cent,
+      &apos;USD&apos; AS reporting_currency,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 1 ELSE 0 END AS normalization_complete,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS profit_reporting,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS fee_reporting,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS swap_reporting,
+      CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USC&apos; THEN 1 ELSE 0 END AS is_cent_account
+    FROM ${route.schema}.mt5_orders mt
+    LEFT JOIN (
+      SELECT d1.Login, MAX(COALESCE(d1.Currency, &apos;&apos;)) AS Currency
+      FROM ${route.schema}.mt5_daily d1
+      INNER JOIN (
+        SELECT Login, MAX(`Datetime`) AS max_datetime
+        FROM ${route.schema}.mt5_daily
+        WHERE Login IN (${loginSql})
+        GROUP BY Login
+      ) latest ON latest.Login = d1.Login AND latest.max_datetime = d1.`Datetime`
+      GROUP BY d1.Login
+    ) d ON d.Login = mt.Login
+    WHERE ${mt5Where.join(&apos; AND &apos;)}
+    &quot;&quot;&quot;.trim()
+}
+
+Set allowedSortColumns = [&apos;time_setup_utc_ms&apos;, &apos;order_ticket&apos;, &apos;updated_utc_ms&apos;, &apos;volume_lots&apos;, &apos;login&apos;, &apos;symbol&apos;] as Set
+String sortColumn = allowedSortColumns.contains(sortBy) ? sortBy : &apos;time_setup_utc_ms&apos;
+int pageNoInt = Integer.parseInt(page)
+int pageSizeInt = Integer.parseInt(pageSize)
+int offsetInt = Math.max(pageNoInt - 1, 0) * pageSizeInt
+String dbOrder = sortOrder?.toLowerCase() == &apos;asc&apos; ? &apos;ASC&apos; : &apos;DESC&apos;
+long fetchLimit = (long) offsetInt + pageSizeInt
+def buildSummarySql = { String pendingRowsSql -&gt;
+    &quot;&quot;&quot;
+SELECT
+  COUNT(*) AS total,
+  COUNT(*) AS total_orders,
+  COALESCE(SUM(volume_lots), 0) AS total_volume,
+  COALESCE(SUM(CASE WHEN currency = &apos;USC&apos; THEN volume_lots ELSE 0 END), 0) AS cent_volume,
+  COALESCE(SUM(CASE WHEN currency = &apos;USD&apos; THEN volume_lots ELSE 0 END), 0) AS standard_volume,
+  COALESCE(SUM(CASE WHEN normalization_complete = 0 THEN volume_lots ELSE 0 END), 0) AS unresolved_volume,
+  COUNT(DISTINCT CASE WHEN normalization_complete = 0 THEN CONCAT(instance_id, &apos;:&apos;, login) ELSE NULL END) AS unresolved_currency_account_count,
+  COALESCE(SUM(COALESCE(commission, 0)), 0) AS total_commission,
+  COALESCE(SUM(COALESCE(fee, 0)), 0) AS total_raw_fee,
+  0.0 AS total_fee,
+  0.0 AS total_storage,
+  0.0 AS total_profit
+FROM (
+${pendingRowsSql}
+) pending_rows
+&quot;&quot;&quot;.trim()
+}
+def buildPageSql = { String pendingRowsSql -&gt;
+    &quot;&quot;&quot;
+SELECT
+  reason,
+  symbol,
+  side,
+  swap,
+  updated_utc_ms,
+  fee,
+  commission,
+  COALESCE(commission, 0) + COALESCE(fee, 0) AS row_total_fee,
+  price_open,
+  price_tp,
+  source,
+  login,
+  time_expiration_broker_ms AS time_expiration_utc_ms,
+  time_setup_utc_ms,
+  time_setup_broker_ms,
+  time_expiration_broker_ms,
+  db_time_setup,
+  db_time_expiration,
+  order_ticket,
+  instance_id,
+  price_sl,
+  comment,
+  digits,
+  contract_size,
+  digits_currency,
+  state,
+  order_type,
+  profit,
+  price_current,
+  volume_lots,
+  currency,
+  money_unit,
+  money_scale,
+  is_cent,
+  reporting_currency,
+  normalization_complete,
+  profit_reporting,
+  fee_reporting,
+  swap_reporting
+FROM (
+${pendingRowsSql}
+) pending_rows
+ORDER BY ${sortColumn} ${dbOrder}, order_ticket ${dbOrder}
+LIMIT ${fetchLimit}
+&quot;&quot;&quot;.trim()
+}
+
+def compactSql = { String sql -&gt;
+    (sql ?: &apos;&apos;).replace(&apos;\r&apos;, &apos; &apos;).replace(&apos;\n&apos;, &apos; &apos;).replaceAll(/[\r\n]+/, &apos; &apos;).replaceAll(/\s+/, &apos; &apos;).trim()
+}
+List pendingDbQueries = []
+if (dbMode) {
+    accounts.groupBy { it.instanceid }.each { String instanceId, List instanceAccounts -&gt;
+        String routeId = instanceId.trim().toUpperCase(Locale.ROOT).replace(&apos;-&apos;, &apos;_&apos;)
+        Map route = instanceRoutes[routeId]
+        if (!route) {
+            vars.put(&apos;pending_orders_db_error&apos;, &apos;没有配置报表库连接: &apos; + instanceId)
+            return
+        }
+        String poolRouteId = routeId == &apos;MT5_TS2&apos; ? &apos;MT5_1_TS2&apos; : routeId
+        String poolConfig = &apos;pending_orders_&apos; + poolRouteId.toLowerCase(Locale.ROOT) + &apos;_jdbc_pool&apos;
+        String pool = props.getProperty(poolConfig)?.trim() ?: vars.get(poolConfig)?.trim() ?: route.pool
+        if (!pool.startsWith(&apos;pending_orders_&apos;)) pool = &apos;pending_orders_&apos; + pool
+        String loginSql = instanceAccounts.collect { it.login }.join(&apos;,&apos;)
+        String rowsSql = buildRowsSql(instanceId, route, loginSql)
+        pendingDbQueries &lt;&lt; [instanceId: instanceId, pool: pool,
+            summarySql: compactSql(buildSummarySql(rowsSql)), pageSql: compactSql(buildPageSql(rowsSql))]
+    }
+}
+vars.putObject(&apos;pending_orders_db_queries&apos;, pendingDbQueries)
+vars.putObject(&apos;pending_orders_db_sort&apos;, [column: sortColumn, descending: dbOrder == &apos;DESC&apos;, offset: offsetInt, size: pageSizeInt])
+
+String initReport = &apos;list_pending_orders init | case=&apos; + (caseIndex + 1) + &apos;/&apos; + runCases.size() +
+    &apos; | mode=&apos; + runCase.mode + &apos; | CSV行=&apos; + currentRow.__line_no + &apos; | shujuku=&apos; + shujuku +
+    &apos; | accounts=&apos; + accounts.collect { it.instanceid + &apos;:&apos; + it.login }.join(&apos;,&apos;) +
+    &apos; | MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;) +
+    &apos; | page=&apos; + page + &apos; | page_size=&apos; + pageSize + &apos; | sort=&apos; + sortBy + &apos; &apos; + sortOrder +
+    &apos; | filters=&apos; + JsonOutput.toJson(filters)
+log.info(initReport + &apos;\nrequestBody=&apos; + requestBody)
+SampleResult.setSuccessful(true)
+SampleResult.setResponseCode(&apos;200&apos;)
+SampleResult.setResponseMessage(&apos;init passed&apos;)
+vars.put(&apos;pending_orders_init_ok&apos;, &apos;true&apos;)
+SampleResult.setDataType(&apos;text&apos;)
+SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+String sqlReport = pendingDbQueries.collect { q -&gt;
+    &apos;\n\n【&apos; + q.instanceId + &apos; | &apos; + q.pool + &apos;】\nsummary SQL: &apos; + q.summarySql + &apos;\n明细 SQL: &apos; + q.pageSql
+}.join(&apos;&apos;)
+SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + requestBody + sqlReport, &apos;UTF-8&apos;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="TestPlan.comments">从查询多个账户的挂单订单.csv读取接口传参和期望结果；shujuku=1聚合全部DB模式accounts并按实例生成查询SQL；shujuku=0按当前CSV行做CSV/API对比。</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="当shujuku=1-查询挂单订单summary统计和当前页明细" enabled="true">
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_orders_init_ok&apos;) == &apos;true&apos; &amp;&amp; vars.get(&apos;pending_orders_shujuku&apos;) == &apos;1&apos;)}</stringProp>
+          </IfController>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="查询各实例挂单订单并合并统计和分页" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import org.apache.jmeter.protocol.jdbc.config.DataSourceElement
+import java.sql.SQLException
+import java.sql.SQLTimeoutException
+import java.net.SocketTimeoutException
+
+List queries = vars.getObject(&apos;pending_orders_db_queries&apos;) ?: []
+Map sort = vars.getObject(&apos;pending_orders_db_sort&apos;) ?: [:]
+List details = []
+Map mergedSummary = null
+List candidates = []
+
+def queryRows = { connection, String sqlText -&gt;
+    connection.createStatement().withCloseable { statement -&gt;
+        statement.setQueryTimeout(10)
+        statement.executeQuery(sqlText).withCloseable { result -&gt;
+            def metadata = result.getMetaData()
+            List labels = (1..metadata.getColumnCount()).collect { metadata.getColumnLabel(it) }
+            List rows = []
+            while (result.next()) {
+                Map row = [:]
+                labels.eachWithIndex { label, index -&gt; row[label] = result.getObject(index + 1) }
+                rows &lt;&lt; row
+            }
+            rows
+        }
+    }
+}
+
+String currentQuery = &apos;&apos;
+boolean acquiringConnection = false
+try {
+    String routeError = vars.get(&apos;pending_orders_db_error&apos;)
+    if (routeError) throw new IllegalStateException(routeError)
+    if (!queries) throw new IllegalStateException(&apos;未生成挂单数据库查询&apos;)
+    queries.each { q -&gt;
+        String context = q.instanceId + &apos; | &apos; + q.pool
+        currentQuery = context + &apos; | 获取 JDBC 连接&apos;
+        acquiringConnection = true
+        DataSourceElement.getConnection(q.pool as String).withCloseable { connection -&gt;
+            acquiringConnection = false
+            currentQuery = context + &apos; | summary SQL&apos;
+            List summaryRows = queryRows(connection, q.summarySql as String)
+            if (summaryRows.size() != 1) throw new IllegalStateException(&apos;数据库summary统计SQL应返回一行&apos;)
+            Map summary = summaryRows[0]
+            if (mergedSummary == null) {
+                mergedSummary = new LinkedHashMap(summary)
+            } else {
+                mergedSummary.keySet().retainAll(summary.keySet())
+                mergedSummary.replaceAll { key, value -&gt;
+                    def next = summary[key]
+                    value == null ? next : (next == null ? value : value + next)
+                }
+            }
+
+            currentQuery = context + &apos; | 明细 SQL&apos;
+            List rows = queryRows(connection, q.pageSql as String)
+            candidates.addAll(rows)
+            details &lt;&lt; context + &apos; | 总记录数=&apos; + summary[&apos;total&apos;] + &apos; | 参与合并的明细数=&apos; + rows.size()
+        }
+    }
+
+    if (queries.size() &gt; 1) {
+        candidates.sort { Map a, Map b -&gt;
+            String column = sort.column
+            int result = column == &apos;symbol&apos; ?
+                String.CASE_INSENSITIVE_ORDER.compare(a[column] as String, b[column] as String) : (a[column] &lt;=&gt; b[column])
+            if (result == 0) result = a.order_ticket &lt;=&gt; b.order_ticket
+            sort.descending ? -result : result
+        }
+    }
+    List pageRows = candidates.drop(sort.offset as int).take(sort.size as int)
+    vars.putObject(&apos;db_pending_orders_summary_rows&apos;, [mergedSummary])
+    vars.putObject(&apos;db_pending_orders_page_rows&apos;, pageRows)
+    details &lt;&lt; &apos;合并后当前页记录数=&apos; + pageRows.size()
+    SampleResult.setSuccessful(true)
+    SampleResult.setResponseCode(&apos;200&apos;)
+    SampleResult.setResponseMessage(&apos;PASS&apos;)
+} catch (Exception e) {
+    String reason = acquiringConnection ? &apos;数据库连接失败，尚未执行此实例的 SQL&apos; :
+        (e instanceof SQLException &amp;&amp; e.errorCode == 1054 ? &apos;数据库无此字段&apos; : &apos;数据库查询失败&apos;)
+    Throwable cause = e
+    boolean timedOut = false
+    for (Throwable problem = e; problem != null; problem = problem.cause) {
+        cause = problem
+        if (problem instanceof SocketTimeoutException || problem instanceof SQLTimeoutException) timedOut = true
+    }
+    String sqlState = e instanceof SQLException &amp;&amp; e.SQLState ? &apos;SQLState=&apos; + e.SQLState : &apos;&apos;
+    String message = [currentQuery, reason, sqlState, e.message ?: e.class.simpleName,
+        cause != e ? &apos;根因=&apos; + cause.class.simpleName + &apos;: &apos; + (cause.message ?: &apos;&apos;) : &apos;&apos;].findAll { it }.join(&apos; | &apos;)
+    if (timedOut) message = &apos;数据库超时 | &apos; + message
+    vars.put(&apos;pending_orders_db_error&apos;, message)
+    vars.put(&apos;pending_orders_compare_status&apos;, &apos;FAIL&apos;)
+    vars.put(&apos;pending_orders_compare_report&apos;, &apos;[失败] &apos; + message + &apos;\n本次 DB/API 对账已结束。&apos;)
+    details &lt;&lt; message
+    SampleResult.setSuccessful(false)
+    SampleResult.setResponseCode(timedOut ? &apos;504&apos; : &apos;500&apos;)
+    SampleResult.setResponseMessage(timedOut ? &apos;数据库超时&apos; : &apos;数据库失败&apos;)
+}
+SampleResult.setDataType(&apos;text&apos;)
+SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+SampleResult.setResponseData(details.join(&apos;\n&apos;), &apos;UTF-8&apos;)</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="TestPlan.comments">通过本线程组的限时JDBC连接池按实例查询。连接或查询超时立即报错，成功后合并汇总并截取全局当前页。</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="初始化成功且数据库校验数据可用时请求接口" enabled="true">
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_orders_init_ok&apos;) == &apos;true&apos; &amp;&amp; !vars.get(&apos;pending_orders_db_error&apos;))}</stringProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}" enabled="true">
+              <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+              <intProp name="HTTPSampler.response_timeout">10000</intProp>
+              <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/crm20/list_pending_orders</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${pending_orders_request_body}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言msg为ok" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="DB或CSV字段对比断言-查询多个账户挂单订单" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.samplers.SampleResult
+import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.SimpleDateFormat
+
+String responseText = prev.getResponseDataAsString()
+def publishReport = { String label, String text, boolean success -&gt;
+    String out = text ?: &apos;&apos;
+    vars.put(&apos;pending_orders_compare_report&apos;, out)
+    vars.put(&apos;pending_orders_compare_status&apos;, success ? &apos;PASS&apos; : &apos;FAIL&apos;)
+    log.info(&apos;\n&apos; + out)
+    def detail = new SampleResult()
+    detail.setSampleLabel(label)
+    detail.setSuccessful(success)
+    detail.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
+    detail.setResponseMessage(success ? &apos;PASS&apos; : &apos;FAIL&apos;)
+    detail.setResponseData(out, &apos;UTF-8&apos;)
+    detail.setDataType(SampleResult.TEXT)
+    detail.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+    detail.setResponseHeaders(&apos;Content-Type: text/plain; charset=UTF-8&apos;)
+    prev.addSubResult(detail)
+    AssertionResult.setFailure(!success)
+    AssertionResult.setFailureMessage(out)
+}
+def parsed
+try {
+    parsed = new JsonSlurper().parseText(responseText ?: &apos;{}&apos;)
+} catch (Throwable e) {
+    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 对比结果 | status=FAIL | reason=接口响应不是合法JSON&apos; +
+        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+        &apos;\n【失败明细】\n - [失败] | 接口响应不是合法JSON: &apos; + e.message +
+        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+        &apos;\n\n【接口响应原文】\n&apos; + responseText
+    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+    return
+}
+
+def rowToMap
+rowToMap = { row -&gt;
+    Map out = new LinkedHashMap()
+    if (row instanceof Map) {
+        row.each { k, v -&gt; out[String.valueOf(k)] = v }
+    } else if (row != null) {
+        try {
+            row.metaClass.properties.each { p -&gt; if (p.name != &apos;class&apos;) out[p.name] = row.&quot;${p.name}&quot; }
+        } catch (ignored) {}
+    }
+    out
+}
+
+def rowsFromObject = { obj -&gt;
+    if (obj == null) return []
+    if (obj instanceof List) return obj.collect { rowToMap(it) }.findAll { it }
+    if (obj instanceof Object[]) return obj.collect { rowToMap(it) }.findAll { it }
+    if (obj instanceof Map) return [rowToMap(obj)]
+    []
+}
+
+def blank = { v -&gt; v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) }
+def normKey = { Object v -&gt; (v == null ? &apos;&apos; : v.toString()).replaceAll(&apos;[^A-Za-z0-9]&apos;, &apos;&apos;).toLowerCase() }
+boolean numeric(Object v) {
+    if (v == null) return false
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    return s.length() &gt; 0 &amp;&amp; !s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) &amp;&amp; (s ==~ /^-?\d+(\.\d+)?$/)
+}
+def cleanNumText = { v -&gt;
+    if (blank(v)) return &apos;&apos;
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (s ==~ /^-?\d+\.0+$/) return s.substring(0, s.indexOf(&apos;.&apos;))
+    if (s ==~ /^-?\d+(\.\d+)?$/) {
+        try { return new BigDecimal(s).stripTrailingZeros().toPlainString() } catch (ignored) {}
+    }
+    s
+}
+
+Map aliases = [
+    &apos;position_ticket&apos;: [&apos;position_ticket&apos;, &apos;position&apos;, &apos;PositionID&apos;, &apos;POSITIONID&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
+    &apos;order_ticket&apos;: [&apos;order_ticket&apos;, &apos;orderId&apos;, &apos;order_id&apos;, &apos;order&apos;, &apos;Order&apos;, &apos;ORDER&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
+    &apos;deal_ticket&apos;: [&apos;deal_ticket&apos;, &apos;deal&apos;, &apos;Deal&apos;, &apos;DEAL&apos;],
+    &apos;instance_id&apos;: [&apos;instance_id&apos;, &apos;instanceid&apos;, &apos;instanceId&apos;, &apos;order_instanceid_val&apos;],
+    &apos;login&apos;: [&apos;login&apos;, &apos;Login&apos;, &apos;LOGIN&apos;, &apos;order_login&apos;],
+    &apos;source&apos;: [&apos;source&apos;, &apos;platform&apos;],
+    &apos;symbol&apos;: [&apos;symbol&apos;, &apos;Symbol&apos;, &apos;SYMBOL&apos;],
+    &apos;order_type&apos;: [&apos;order_type&apos;, &apos;orderType&apos;, &apos;type&apos;, &apos;Type&apos;, &apos;action&apos;, &apos;Action&apos;, &apos;CMD&apos;, &apos;cmd&apos;],
+    &apos;side&apos;: [&apos;side&apos;],
+    &apos;reason&apos;: [&apos;reason&apos;, &apos;Reason&apos;, &apos;REASON&apos;],
+    &apos;volume_lots&apos;: [&apos;volume_lots&apos;, &apos;volume&apos;, &apos;Volume&apos;, &apos;VOLUME&apos;, &apos;volume_current&apos;, &apos;VolumeCurrent&apos;, &apos;volume_current_ext&apos;, &apos;VolumeCurrentExt&apos;],
+    &apos;price_open&apos;: [&apos;price_open&apos;, &apos;openPrice&apos;, &apos;open_price&apos;, &apos;PriceOrder&apos;, &apos;PriceOpen&apos;, &apos;OPEN_PRICE&apos;],
+    &apos;price_close&apos;: [&apos;price_close&apos;, &apos;closePrice&apos;, &apos;close_price&apos;, &apos;PriceClose&apos;, &apos;CLOSE_PRICE&apos;],
+    &apos;price_current&apos;: [&apos;price_current&apos;, &apos;currentPrice&apos;, &apos;current_price&apos;, &apos;PriceCurrent&apos;, &apos;CLOSE_PRICE&apos;],
+    &apos;price_sl&apos;: [&apos;price_sl&apos;, &apos;sl&apos;, &apos;SL&apos;, &apos;PriceSL&apos;],
+    &apos;price_tp&apos;: [&apos;price_tp&apos;, &apos;tp&apos;, &apos;TP&apos;, &apos;PriceTP&apos;],
+    &apos;profit&apos;: [&apos;profit&apos;, &apos;Profit&apos;, &apos;PROFIT&apos;],
+    &apos;swap&apos;: [&apos;swap&apos;, &apos;Storage&apos;, &apos;SWAPS&apos;],
+    &apos;commission&apos;: [&apos;commission&apos;, &apos;Commission&apos;, &apos;COMMISSION&apos;],
+    &apos;fee&apos;: [&apos;fee&apos;, &apos;Fee&apos;],
+    &apos;net_profit&apos;: [&apos;net_profit&apos;],
+    &apos;open_time_utc_ms&apos;: [&apos;open_time_utc_ms&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeCreate&apos;, &apos;TimeMsc&apos;],
+    &apos;close_time_utc_ms&apos;: [&apos;close_time_utc_ms&apos;, &apos;close_time&apos;, &apos;CLOSE_TIME&apos;, &apos;TimeMsc&apos;, &apos;Time&apos;],
+    &apos;updated_utc_ms&apos;: [&apos;updated_utc_ms&apos;, &apos;time_update_utc_ms&apos;, &apos;Timestamp&apos;, &apos;TIMESTAMP&apos;, &apos;MODIFY_TIME&apos;, &apos;TimeDoneMsc&apos;, &apos;TimeMsc&apos;],
+    &apos;time_setup_utc_ms&apos;: [&apos;time_setup_utc_ms&apos;, &apos;openTime&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeSetupMsc&apos;, &apos;TimeSetup&apos;],
+    &apos;time_expiration_utc_ms&apos;: [&apos;time_expiration_utc_ms&apos;, &apos;closeTime&apos;, &apos;expiration&apos;, &apos;EXPIRATION&apos;, &apos;TimeExpiration&apos;],
+    &apos;state&apos;: [&apos;state&apos;, &apos;State&apos;],
+    &apos;digits&apos;: [&apos;digits&apos;, &apos;Digits&apos;, &apos;DIGITS&apos;],
+    &apos;digits_currency&apos;: [&apos;digits_currency&apos;, &apos;DigitsCurrency&apos;],
+    &apos;contract_size&apos;: [&apos;contract_size&apos;, &apos;ContractSize&apos;],
+    &apos;comment&apos;: [&apos;comment&apos;, &apos;Comment&apos;, &apos;COMMENT&apos;],
+    &apos;currency&apos;: [&apos;currency&apos;, &apos;Currency&apos;],
+    &apos;money_unit&apos;: [&apos;money_unit&apos;, &apos;moneyUnit&apos;],
+    &apos;money_scale&apos;: [&apos;money_scale&apos;, &apos;moneyScale&apos;],
+    &apos;is_cent&apos;: [&apos;is_cent&apos;, &apos;isCent&apos;],
+    &apos;reporting_currency&apos;: [&apos;reporting_currency&apos;, &apos;reportingCurrency&apos;],
+    &apos;normalization_complete&apos;: [&apos;normalization_complete&apos;, &apos;normalizationComplete&apos;],
+    &apos;profit_reporting&apos;: [&apos;profit_reporting&apos;, &apos;profitReporting&apos;],
+    &apos;fee_reporting&apos;: [&apos;fee_reporting&apos;, &apos;feeReporting&apos;],
+    &apos;swap_reporting&apos;: [&apos;swap_reporting&apos;, &apos;swapReporting&apos;]
+]
+
+def findKey
+findKey = { Map m, String field -&gt;
+    if (m == null) return null
+    if (m.containsKey(field)) return field
+    for (String a : (aliases[field] ?: [])) {
+        if (m.containsKey(a)) return a
+    }
+    String want = normKey(field)
+    m.keySet().find { normKey(it) == want }
+}
+
+def valueOf
+valueOf = { Map m, String field -&gt;
+    def k = findKey(m, field)
+    k == null ? null : m[k]
+}
+
+def idOf = { Map row -&gt;
+    for (String f : [&apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;]) {
+        def v = valueOf(row, f)
+        if (!blank(v)) return cleanNumText(v)
+    }
+    &apos;&apos;
+}
+
+boolean brokerTimestampField(String field) {
+    field in [&apos;time_setup_broker_ms&apos;, &apos;time_expiration_broker_ms&apos;]
+}
+
+boolean timeField(String f) {
+    String n = (f ?: &apos;&apos;).toLowerCase()
+    return n.contains(&apos;time&apos;) || n.endsWith(&apos;utc_ms&apos;) || n.contains(&apos;updated&apos;)
+}
+
+Date parseDateLike(v) {
+    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return null
+    if (v instanceof java.util.Date) return v
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (s ==~ /^-?\d+(\.\d+)?$/) {
+        BigDecimal n = new BigDecimal(s)
+        long ms = n.abs().compareTo(new BigDecimal(&apos;100000000000&apos;)) &gt;= 0 ? n.longValue() : n.longValue() * 1000L
+        return new Date(ms)
+    }
+    s = s.replace(&apos;T&apos;, &apos; &apos;)
+    if (s.contains(&apos;.&apos;)) s = s.substring(0, s.indexOf(&apos;.&apos;))
+    for (String fmt : [&apos;yyyy-MM-dd HH:mm:ss&apos;, &apos;yyyy-MM-dd HH:mm&apos;, &apos;yyyy-MM-dd&apos;]) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(fmt)
+            sdf.setLenient(false)
+            return sdf.parse(s)
+        } catch (ignored) {}
+    }
+    null
+}
+
+String fmt(Date d, String tz) {
+    if (d == null) return &apos;&apos;
+    SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
+    sdf.setTimeZone(TimeZone.getTimeZone(tz))
+    sdf.format(d)
+}
+
+String normalizeApiTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;UTC&apos;)
+}
+
+String normalizeDbTime(v) {
+    Date d = parseDateLike(v)
+    if (d == null) return String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim()
+    numeric(v) ? fmt(d, &apos;UTC&apos;) : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+String normalizeCsvTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+String displayApiTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+long secondDiff(String a, String b) {
+    try {
+        SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
+        return Math.abs((sdf.parse(a).time - sdf.parse(b).time) / 1000L)
+    } catch (ignored) { return Long.MAX_VALUE }
+}
+
+String renderValue(String field, Object v, String side, boolean dbMode) {
+    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&lt;empty&gt;&apos;
+    if (brokerTimestampField(field) || !timeField(field)) return String.valueOf(v)
+    if (side == &apos;API&apos; &amp;&amp; dbMode) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值(减8小时)=&apos; + normalizeApiTime(v)
+    if (side == &apos;API&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值=&apos; + normalizeCsvTime(v)
+    if (side == &apos;DB&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + normalizeDbTime(v)
+    return String.valueOf(v) + &apos; -&gt; &apos; + normalizeCsvTime(v)
+}
+
+def asNum = { Object v -&gt;
+    if (blank(v)) return null
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (!(s ==~ /^-?\d+(\.\d+)?$/)) return null
+    try { return new BigDecimal(s) } catch (ignored) { return null }
+}
+
+def fmtNum = { BigDecimal n -&gt; n == null ? &apos;&lt;empty&gt;&apos; : n.stripTrailingZeros().toPlainString() }
+def pctText = { BigDecimal p -&gt; p == null ? &apos;N/A&apos; : p.setScale(6, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + &apos;%&apos; }
+Set exactNumericFields = [&apos;login&apos;, &apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;, &apos;reason&apos;, &apos;order_type&apos;, &apos;digits&apos;, &apos;digits_currency&apos;, &apos;money_scale&apos;, &apos;total&apos;, &apos;total_orders&apos;, &apos;unresolved_currency_account_count&apos;] as Set
+Set booleanFields = [&apos;is_cent&apos;, &apos;normalization_complete&apos;] as Set
+def boolValue = { Object v -&gt;
+    if (v == null || String.valueOf(v).trim().length() == 0) return null
+    String s = String.valueOf(v).trim().toLowerCase()
+    if (s in [&apos;true&apos;, &apos;1&apos;]) return true
+    if (s in [&apos;false&apos;, &apos;0&apos;]) return false
+    null
+}
+
+def compareValue = { String field, Object apiVal, Object expectedVal, String expectedSource, boolean dbMode -&gt;
+    boolean apiBlank = blank(apiVal)
+    boolean expectedBlank = blank(expectedVal)
+    if (apiBlank || expectedBlank) {
+        boolean same = apiBlank &amp;&amp; expectedBlank
+        String note = same ? &apos;API 和 &apos; + expectedSource + &apos; 返回都是为空，通过&apos; : &apos;仅一侧值为空，失败&apos;
+        return [same: same, apiPrint: renderValue(field, apiVal, &apos;API&apos;, dbMode),
+            expPrint: renderValue(field, expectedVal, expectedSource, dbMode), diff: &apos;N/A&apos;,
+            percent: &apos;N/A&apos;, formula: &apos;按字段是否为空比较&apos;, note: note]
+    }
+    if (brokerTimestampField(field)) {
+        BigDecimal apiMs = asNum(apiVal)
+        BigDecimal expectedMs = asNum(expectedVal)
+        boolean integers = apiMs != null &amp;&amp; expectedMs != null &amp;&amp;
+            apiMs.stripTrailingZeros().scale() &lt;= 0 &amp;&amp; expectedMs.stripTrailingZeros().scale() &lt;= 0
+        BigDecimal diff = integers ? apiMs.subtract(expectedMs).abs() : null
+        return [same: integers &amp;&amp; diff.signum() == 0, apiPrint: String.valueOf(apiVal),
+            expPrint: String.valueOf(expectedVal), diff: integers ? fmtNum(diff) + &apos;毫秒&apos; : &apos;N/A&apos;,
+            percent: &apos;N/A&apos;, formula: &apos;按券商时钟的整数毫秒值精确比较&apos;,
+            note: integers ? &apos;&apos; : &apos;时间戳必须为整数毫秒&apos;]
+    }
+    if (booleanFields.contains(field)) {
+        def ab = boolValue(apiVal); def eb = boolValue(expectedVal)
+        boolean same = ab != null &amp;&amp; eb != null &amp;&amp; ab == eb
+        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: &apos;N/A&apos;, percent: &apos;N/A(boolean)&apos;, formula: &apos;Boolean fields normalize true/1 and false/0 before exact comparison&apos;]
+    }
+    if (timeField(field)) {
+        String aCmp = dbMode ? normalizeApiTime(apiVal) : normalizeCsvTime(apiVal)
+        String eCmp = dbMode ? normalizeDbTime(expectedVal) : normalizeCsvTime(expectedVal)
+        long diffSec = secondDiff(aCmp, eCmp)
+        return [same: (aCmp == eCmp || diffSec &lt;= 60L), apiPrint: renderValue(field, apiVal, &apos;API&apos;, dbMode), expPrint: renderValue(field, expectedVal, expectedSource, dbMode), diff: diffSec + &apos;秒&apos;, percent: &apos;N/A(时间字段)&apos;, formula: &apos;时间字段按yyyy-MM-dd HH:mm:ss比较，允许相差&lt;=60秒&apos;]
+    }
+    BigDecimal an = asNum(apiVal)
+    BigDecimal en = asNum(expectedVal)
+    if (an != null &amp;&amp; en != null) {
+        BigDecimal diff = an.subtract(en).abs()
+        if (exactNumericFields.contains(field)) {
+            return [same: cleanNumText(apiVal) == cleanNumText(expectedVal), apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: &apos;N/A(编号类字段精确比较)&apos;, formula: &apos;编号类字段不使用误差，按数值精确比较&apos;]
+        }
+        BigDecimal tolerancePercent = dbMode ? new BigDecimal(&apos;10&apos;) : new BigDecimal(&apos;5&apos;)
+        BigDecimal base = en.abs()
+        BigDecimal allowed = BigDecimal.ZERO
+        boolean same
+        String pct
+        String formula
+        if (base.compareTo(BigDecimal.ZERO) == 0) {
+            same = diff.compareTo(BigDecimal.ZERO) == 0
+            pct = same ? &apos;0%&apos; : &apos;N/A(&apos; + expectedSource + &apos;=0无法作分母)&apos;
+            formula = &apos;abs(&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，&apos; + expectedSource + &apos;=0，无法计算百分比，要求API也等于0&apos;
+        } else {
+            allowed = base.multiply(tolerancePercent).divide(new BigDecimal(&apos;100&apos;), 10, RoundingMode.HALF_UP)
+            same = diff.compareTo(allowed) &lt;= 0
+            BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
+            pct = pctText(percent)
+            formula = &apos;abs((&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / &apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct
+        }
+        String toleranceText = pctText(tolerancePercent)
+        String note = same ? field + &apos; 误差小于&apos; + toleranceText + &apos;，通过&apos; : field + &apos; 误差大于&apos; + toleranceText + &apos;，失败&apos;
+        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: pct, formula: formula + &apos; | 允许误差&lt;=&apos; + toleranceText + &apos;(允许差值=&apos; + fmtNum(allowed) + &apos;)&apos;, note: note]
+    }
+    boolean same = String.valueOf(apiVal).trim() == String.valueOf(expectedVal).trim()
+    [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: &apos;N/A&apos;, percent: &apos;N/A(非数值字段)&apos;, formula: &apos;非数值字段按字符串精确比较&apos;]
+}
+
+def compareComparable = { Object v -&gt;
+    if (numeric(v)) return new BigDecimal(String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;))
+    String.valueOf(v ?: &apos;&apos;)
+}
+
+def sumField = { List rows, String field -&gt;
+    BigDecimal total = BigDecimal.ZERO
+    rows.each { r -&gt;
+        BigDecimal n = asNum(valueOf(r, field))
+        if (n != null) total = total.add(n)
+    }
+    total
+}
+
+def disabledRaw = { boolean dbMode -&gt; dbMode ? (vars.get(&apos;pending_orders_db_api_disabled_compare_fields&apos;) ?: &apos;&apos;) : (vars.get(&apos;pending_orders_csv_api_disabled_compare_fields&apos;) ?: &apos;&apos;) }
+def disabledSet = { String raw -&gt; raw.split(/[，,;|\s]+/).collect { String t = String.valueOf(it ?: &apos;&apos;).trim(); t == &apos;*&apos; ? &apos;*&apos; : normKey(t) }.findAll { it }.toSet() }
+
+String shujuku = vars.get(&apos;pending_orders_shujuku&apos;) ?: vars.get(&apos;shujuku&apos;) ?: &apos;0&apos;
+boolean dbMode = shujuku == &apos;1&apos;
+String sourceName = dbMode ? &apos;DB&apos; : &apos;CSV&apos;
+String modeText = dbMode ? &apos;DB/API&apos; : &apos;CSV/API&apos;
+String sortBy = vars.get(&apos;pending_orders_sort_by&apos;) ?: &apos;time_setup_utc_ms&apos;
+boolean desc = (vars.get(&apos;pending_orders_sort_order&apos;) ?: &apos;desc&apos;).toLowerCase() != &apos;asc&apos;
+int page = ((vars.get(&apos;pending_orders_page&apos;) ?: &apos;1&apos;) as int)
+int pageSize = ((vars.get(&apos;pending_orders_page_size&apos;) ?: &apos;50&apos;) as int)
+int offset = Math.max(page - 1, 0) * pageSize
+Set disabled = disabledSet(disabledRaw(dbMode))
+boolean skipAll = disabled.contains(&apos;*&apos;)
+
+def isDisabledField = { String field, String apiFieldName = null -&gt;
+    if (skipAll) return true
+    List candidates = [field, apiFieldName].findAll { !blank(it) }.collect { normKey(it) }
+    aliases.each { canonical, aliasList -&gt;
+        boolean matched = candidates.contains(normKey(canonical)) || aliasList.any { candidates.contains(normKey(it)) }
+        if (matched) {
+            candidates &lt;&lt; normKey(canonical)
+            aliasList.each { candidates &lt;&lt; normKey(it) }
+        }
+    }
+    candidates.any { disabled.contains(it) }
+}
+def data = parsed instanceof Map ? parsed.data : null
+List apiItems = []
+if (data instanceof Map &amp;&amp; data.items instanceof List) apiItems = data.items.collect { rowToMap(it) }
+else if (data instanceof List) apiItems = data.collect { rowToMap(it) }
+else if (parsed instanceof Map &amp;&amp; parsed.items instanceof List) apiItems = parsed.items.collect { rowToMap(it) }
+if (!apiItems) {
+    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+        &apos;\n【失败明细】\n - [失败] | 接口没有返回data.items可对比记录，可能接口失败或data为空&apos; +
+        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+        &apos;\n\n【接口响应原文】\n&apos; + responseText
+    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+    return
+}
+Map apiSummary = data instanceof Map &amp;&amp; data.summary instanceof Map ? rowToMap(data.summary) : [:]
+Object apiTotal = data instanceof Map ? data.total : parsed.total
+
+List okLines = []
+List failLines = []
+List skipLines = []
+int apiFieldTotal = 0
+
+String dbSummaryFeeBreakdown = &apos;&apos;
+String dbPageFeeBreakdown = &apos;&apos;
+
+List expectedRows = []
+List allDbRows = []
+Object dbTotalForReport = null
+if (dbMode) {
+    String dbError = vars.get(&apos;pending_orders_db_error&apos;)
+    if (dbError) {
+        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;,
+            &apos;Assertion message: 查询多个账户的挂单订单 DB/API 对比结果 | status=FAIL\n - [失败] | &apos; + dbError, false)
+        return
+    }
+    List summaryRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_summary_rows&apos;))
+    List pageRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_page_rows&apos;))
+    if (!summaryRows) {
+        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+            &apos;\n请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;) +
+            &apos;\n【失败明细】\n - [失败] | 数据库summary统计SQL未返回记录&apos; +
+            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+            &apos;\n\n【接口响应原文】\n&apos; + responseText
+        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+        return
+    }
+    Map dbSummary = summaryRows[0]
+    dbTotalForReport = valueOf(dbSummary, &apos;total&apos;)
+    expectedRows = pageRows
+    allDbRows = pageRows
+    Object dbTotalCommissionVal = valueOf(dbSummary, &apos;total_commission&apos;)
+    Object dbTotalRawFeeVal = valueOf(dbSummary, &apos;total_raw_fee&apos;)
+    Object dbTotalFeeVal = valueOf(dbSummary, &apos;total_fee&apos;)
+    String dbTotalCommissionText = dbTotalCommissionVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_commission&apos;, dbTotalCommissionVal, &apos;DB&apos;, true)
+    String dbTotalRawFeeText = dbTotalRawFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_raw_fee&apos;, dbTotalRawFeeVal, &apos;DB&apos;, true)
+    String dbTotalFeeText = dbTotalFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_fee&apos;, dbTotalFeeVal, &apos;DB&apos;, true)
+    BigDecimal pageCommissionSum = sumField(pageRows, &apos;commission&apos;)
+    BigDecimal pageRawFeeSum = sumField(pageRows, &apos;fee&apos;)
+    BigDecimal pageCommissionFeeSum = pageCommissionSum.add(pageRawFeeSum)
+    dbSummaryFeeBreakdown = &apos;DB total_fee breakdown: total_fee=&apos; + dbTotalFeeText + &apos; = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;); pending orders are not executed, so expected value is 0.&apos;
+    dbPageFeeBreakdown = &apos;DB current page fee detail: commission_sum=&apos; + fmtNum(pageCommissionSum) + &apos; + fee_sum=&apos; + fmtNum(pageRawFeeSum) + &apos; = commission_plus_fee_sum(&apos; + fmtNum(pageCommissionFeeSum) + &apos;); row_total_fee column is commission+fee; pending-order financial fields are expected to be 0.&apos;
+    Map summaryExpected = new LinkedHashMap(dbSummary)
+    summaryExpected.putAll([reporting_currency: &apos;USD&apos;, money_mode: &apos;reporting&apos;])
+    def countKey = findKey(dbSummary, &apos;unresolved_currency_account_count&apos;)
+    if (countKey != null) {
+        BigDecimal count = asNum(dbSummary[countKey])
+        summaryExpected[&apos;normalization_complete&apos;] = count == null ? null : (count.signum() == 0 ? 1 : 0)
+    }
+    Set strictSummaryVolumeFields = [&apos;total_volume&apos;, &apos;cent_volume&apos;, &apos;standard_volume&apos;, &apos;unresolved_volume&apos;] as Set
+    Map summaryActual = new LinkedHashMap()
+    if ((data instanceof Map &amp;&amp; data.containsKey(&apos;total&apos;)) || (parsed instanceof Map &amp;&amp; parsed.containsKey(&apos;total&apos;))) summaryActual[&apos;total&apos;] = apiTotal
+    apiSummary.each { k, v -&gt; summaryActual[String.valueOf(k)] = v }
+    summaryActual.each { f, apiVal -&gt;
+        String field = String.valueOf(f)
+        apiFieldTotal++
+        def expKey = findKey(summaryExpected, field)
+        Object expVal = expKey == null ? null : summaryExpected[expKey]
+        if (isDisabledField(field, null)) {
+            skipLines &lt;&lt; &quot; - [跳过] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=${expKey == null ? &apos;&lt;empty&gt; 数据库summary SQL未返回此字段&apos; : renderValue(field, expVal, &apos;DB&apos;, true)} | DBField=${expKey ?: field} | reason=字段在DB/API跳过配置中&quot;
+            return
+        }
+        if (field == &apos;unresolved_currency_accounts&apos;) {
+            if (countKey == null) {
+                failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${apiVal} | DB=&lt;empty&gt; | DBField=unresolved_currency_account_count | 备注=数据库无此字段&quot;
+                return
+            }
+            if (blank(apiVal) &amp;&amp; blank(dbSummary[countKey])) {
+                okLines &lt;&lt; &quot; - [通过] | summary | field=${field} | API=&lt;empty&gt; | DB=&lt;empty&gt; | 备注=API 和 DB 返回都是为空，通过&quot;
+                return
+            }
+            boolean isList = apiVal instanceof List
+            BigDecimal apiCount = isList ? new BigDecimal(apiVal.size()) : null
+            BigDecimal dbCount = asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;))
+            boolean same = isList &amp;&amp; apiCount != null &amp;&amp; dbCount != null &amp;&amp; apiCount.compareTo(dbCount) == 0
+            String line = &quot;summary | field=${field} | API=${apiVal} | DB_unresolved_currency_account_count=${dbCount == null ? &apos;&lt;empty&gt;&apos; : fmtNum(dbCount)} | diff=${apiCount == null || dbCount == null ? &apos;N/A&apos; : fmtNum(apiCount.subtract(dbCount).abs())} | formula=unresolved_currency_accounts must be a list and its size must equal unresolved_currency_account_count&quot;
+            if (same) okLines &lt;&lt; &apos; - [PASS] | &apos; + line else failLines &lt;&lt; &apos; - [FAIL] | &apos; + line
+            return
+        }
+        if (expKey == null) {
+            failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=&lt;empty&gt; | DBField=${field} | 备注=数据库无此字段&quot;
+            return
+        }
+        def cr = compareValue(field, apiVal, expVal, &apos;DB&apos;, true)
+        if (strictSummaryVolumeFields.contains(field)) {
+            BigDecimal an = asNum(apiVal)
+            BigDecimal en = asNum(expVal)
+            if (an != null &amp;&amp; en != null) {
+                BigDecimal diff = an.subtract(en).abs()
+                BigDecimal base = en.abs()
+                String pct
+                String formula
+                if (base.compareTo(BigDecimal.ZERO) == 0) {
+                    pct = diff.compareTo(BigDecimal.ZERO) == 0 ? &apos;0%&apos; : &apos;N/A(DB=0无法作分母)&apos;
+                    formula = &apos;abs(DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，summary成交量字段不使用百分比误差，要求差值=0&apos;
+                } else {
+                    BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
+                    pct = pctText(percent)
+                    formula = &apos;abs((DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / DB(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct + &apos;，summary成交量字段不使用10%或50%误差，要求差值=0&apos;
+                }
+                boolean same = diff.compareTo(BigDecimal.ZERO) == 0
+                cr = [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expVal), diff: fmtNum(diff), percent: pct, formula: formula, note: same ? field + &apos; 差值=0，通过&apos; : field + &apos; 差值不为0，失败&apos;]
+            }
+        }
+        if (field == &apos;total_fee&apos;) {
+            cr.formula = cr.formula + &apos; | DB total_fee = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;)&apos;
+            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; total_fee should be 0, and equals commission+fee(0+0)&apos;
+        }
+        if (field == &apos;total_storage&apos; || field == &apos;total_profit&apos;) {
+            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; this summary financial field should be 0&apos;
+        }
+        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
+        String line = &quot;summary | field=${field} | API=${cr.apiPrint} | DB=${cr.expPrint} | DBField=${expKey} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
+        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    }
+} else {
+    Map currentCsv = vars.getObject(&apos;pending_orders_current_csv_row&apos;) instanceof Map ? vars.getObject(&apos;pending_orders_current_csv_row&apos;) : [:]
+    String csvId = idOf(currentCsv)
+    Map apiRow = csvId ? apiItems.find { idOf(it) == csvId } : apiItems[0]
+    if (!apiRow) {
+        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+            &apos;\n【失败明细】\n - [失败] | CSV订单号/仓位号和接口响应没有匹配上 | csvId=&apos; + csvId + &apos; | apiIds=&apos; + apiItems.collect { idOf(it) }.join(&apos;,&apos;) +
+            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+            &apos;\n\n【接口响应原文】\n&apos; + responseText
+        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+        return
+    }
+    apiItems = [apiRow]
+    expectedRows = [currentCsv]
+}
+
+if (dbMode) {
+    if (apiItems.size() != expectedRows.size()) {
+        failLines &lt;&lt; &quot; - [失败] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
+    } else {
+        okLines &lt;&lt; &quot; - [通过] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
+    }
+}
+
+List compareDrivers = dbMode ? expectedRows : apiItems
+compareDrivers.eachWithIndex { Map driverRow, int idx -&gt;
+    Map apiRow = idx &lt; apiItems.size() ? apiItems[idx] : [:]
+    Map expectedRow = dbMode ? (driverRow ?: [:]) : (idx &lt; expectedRows.size() ? expectedRows[idx] : [:])
+    String apiId = idOf(apiRow)
+    String expectedId = idOf(expectedRow)
+    def apiLoginKey = findKey(apiRow, &apos;login&apos;)
+    def expectedLoginKey = findKey(expectedRow, &apos;login&apos;)
+    String rowLogin = apiLoginKey == null ? (expectedLoginKey == null ? &apos;&lt;empty&gt;&apos; : String.valueOf(expectedRow[expectedLoginKey])) : String.valueOf(apiRow[apiLoginKey])
+    String rowText = &apos;row=&apos; + (idx + 1 + offset) + &apos; | apiId=&apos; + apiId + &apos; | expectedId=&apos; + expectedId + &apos; | login=&apos; + rowLogin
+    if (dbMode &amp;&amp; !apiRow) {
+        failLines &lt;&lt; &quot; - [失败] | ${rowText} | API=&lt;empty&gt; 接口返回缺少第${idx + 1}条明细记录 | DB记录=${expectedRow}&quot;
+        return
+    }
+    if (dbMode &amp;&amp; apiId &amp;&amp; expectedId &amp;&amp; apiId != expectedId) {
+        failLines &lt;&lt; &quot; - [失败] | ${rowText} | 接口和数据库数据记录没有匹配上&quot;
+    }
+    Set compareFields = new LinkedHashSet(apiRow.keySet())
+    if (dbMode) compareFields.addAll([&apos;time_setup_broker_ms&apos;, &apos;time_expiration_broker_ms&apos;])
+    apiFieldTotal += compareFields.size()
+    compareFields.each { rawField -&gt;
+        String field = String.valueOf(rawField)
+        String expKey = findKey(expectedRow, field)
+        Object expVal = expKey == null ? null : expectedRow[expKey]
+        String apiKey = findKey(apiRow, field)
+        Object apiVal = apiKey == null ? null : apiRow[apiKey]
+        if (isDisabledField(field, apiKey)) {
+            skipLines &lt;&lt; &quot; - [跳过] | ${rowText} | field=${field} | API=${apiKey == null ? &apos;&lt;empty&gt; 接口响应无此字段&apos; : renderValue(apiKey, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=${expKey == null ? &apos;&lt;empty&gt; &apos; + (dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;) : renderValue(field, expVal, sourceName, dbMode)} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey ?: field} | reason=字段在跳过配置中&quot;
+            return
+        }
+        if (expKey == null) {
+            String missingLine = &quot;${rowText} | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=&lt;empty&gt; ${dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;} | ${sourceName}Field=${field}${dbMode ? &apos; | 备注=数据库无此字段&apos; : &apos;&apos;}&quot;
+            if (dbMode) failLines &lt;&lt; &apos; - [失败] | &apos; + missingLine else skipLines &lt;&lt; &apos; - [跳过] | &apos; + missingLine
+            return
+        }
+        if (dbMode &amp;&amp; apiKey == null) {
+            failLines &lt;&lt; &quot; - [失败] | ${rowText} | field=${field} | API=&lt;empty&gt; 接口响应无此字段 | DB=${renderValue(field, expVal, sourceName, dbMode)} | DBField=${expKey}&quot;
+            return
+        }
+        def cr = compareValue(field, apiVal, expVal, sourceName, dbMode)
+        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
+        String rawTime = &apos;&apos;
+        if (dbMode &amp;&amp; brokerTimestampField(field)) {
+            String rawTimeColumn = field == &apos;time_setup_broker_ms&apos; ? &apos;db_time_setup&apos; : &apos;db_time_expiration&apos;
+            if (expectedRow.containsKey(rawTimeColumn)) {
+                rawTime = &apos; | DB原始时间=&apos; + (blank(expectedRow[rawTimeColumn]) ? &apos;&lt;empty&gt;&apos; : expectedRow[rawTimeColumn])
+            }
+        }
+        String line = &quot;${rowText} | field=${field} | API=${cr.apiPrint} | ${sourceName}=${cr.expPrint} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey}${rawTime} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
+        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    }
+}
+
+if (dbMode &amp;&amp; apiItems.size() &gt; expectedRows.size()) {
+    apiItems.drop(expectedRows.size()).eachWithIndex { Map apiRow, int extraIdx -&gt;
+        int rowNo = offset + expectedRows.size() + extraIdx + 1
+        String apiLogin = valueOf(apiRow, &apos;login&apos;) ?: &apos;&lt;empty&gt;&apos;
+        failLines &lt;&lt; &quot; - [失败] | row=${rowNo} | API订单/仓位号=${idOf(apiRow)} | login=${apiLogin} | DB=&lt;empty&gt; 接口多返回该明细记录 | API记录=${apiRow}&quot;
+    }
+}
+
+String status = failLines.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
+List report = []
+report &lt;&lt; &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=&apos; + status + &apos; | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku
+report &lt;&lt; &apos;接口: POST /crm20/list_pending_orders&apos;
+report &lt;&lt; &apos;请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;)
+report &lt;&lt; &apos;分页排序: page=&apos; + page + &apos; | page_size=&apos; + pageSize + &apos; | sort_by=&apos; + sortBy + &apos; | sort_order=&apos; + (desc ? &apos;desc&apos; : &apos;asc&apos;)
+report &lt;&lt; &apos;跳过字段配置: &apos; + (dbMode ? &apos;pending_orders_db_api_disabled_compare_fields&apos; : &apos;pending_orders_csv_api_disabled_compare_fields&apos;) + &apos;=[&apos; + disabledRaw(dbMode) + &apos;]&apos;
+report &lt;&lt; &apos;接口summary: total=&apos; + apiTotal + &apos; | summary=&apos; + apiSummary
+if (dbMode) report &lt;&lt; &apos;DB汇总: total_orders=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | DB总记录数(summary SQL)=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | 当前页DB记录数(page SQL)=&apos; + expectedRows.size()
+if (dbMode &amp;&amp; dbSummaryFeeBreakdown) report &lt;&lt; dbSummaryFeeBreakdown
+if (dbMode &amp;&amp; dbPageFeeBreakdown) report &lt;&lt; dbPageFeeBreakdown
+report &lt;&lt; &apos;对比结果统计: 失败数量=&apos; + failLines.size() + &apos; | 成功数量=&apos; + okLines.size() + &apos; | 跳过数量=&apos; + skipLines.size() + &apos; | 对比字段总数=&apos; + apiFieldTotal
+report &lt;&lt; &apos;数值规则: DB/API普通数值字段按DB为基准允许误差&lt;=10%；CSV/API普通数值字段允许误差&lt;=5%；编号类字段精确比较；两个 broker_ms 字段按整数毫秒精确比较，其他时间字段仍按原规则允许相差&lt;=60秒。&apos;
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【失败明细：&apos; + failLines.size() + &apos;条】&apos;
+report.addAll(failLines ? failLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【成功字段明细：&apos; + okLines.size() + &apos;条】&apos;
+report.addAll(okLines ? okLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【跳过字段明细：&apos; + skipLines.size() + &apos;条（含DB/CSV数值）】&apos;
+report.addAll(skipLines ? skipLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【接口请求Body】&apos;
+report &lt;&lt; (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;)
+
+String finalReport = report.join(&apos;\n&apos;)
+publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, failLines.isEmpty())</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="TestPlan.comments">沿用summary和当前页字段对比，两个broker_ms字段必查并按整数毫秒精确比较。区分字段缺失与值为空，支持按字段跳过。</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">String finalReport = vars.get(&apos;pending_orders_compare_report&apos;)
+if (finalReport == null || finalReport.trim().length() == 0) {
+    finalReport = &apos;未生成查询多个账户挂单订单对比结果，请检查前置接口请求和DB或CSV字段对比断言是否执行。&apos;
+}
+String status = vars.get(&apos;pending_orders_compare_status&apos;) ?: &apos;UNKNOWN&apos;
+boolean success = status == &apos;PASS&apos;
+SampleResult.setSuccessful(success)
+SampleResult.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
+SampleResult.setResponseMessage(status)
+SampleResult.setDataType(SampleResult.TEXT)
+SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="TestPlan.comments">独立打印上一节点生成的查询多个账户挂单订单字段对比结果，方便在查看结果树直接点击查看。</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅-后面再删除-20261125" enabled="false">
+        <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="查询多个账户挂单订单CSV循环">
+          <stringProp name="LoopController.loops">${__groovy(def f = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir() + File.separator + &apos;查询多个账户的挂单订单.csv&apos;); if (!f.exists()) return 0; def lines = f.readLines(&apos;UTF-8&apos;); if (lines.size() &lt;= 1) return 0; boolean hasDb = false; int csvCount = 0; for (int i = 1; i &lt; lines.size(); i++) { String line = lines.get(i); if (line != null &amp;&amp; line.trim().length() &gt; 0) { int p = -1; for (int j = 0; j &lt; line.length(); j++) { if ((int)line.charAt(j) == 44) { p = j; break } }; String first = p &lt; 0 ? line : line.take(p); if (first.length() &gt; 0 &amp;&amp; first.charAt(0) == (65279 as char)) first = first.drop(1); first = first.trim(); if (first.length() &gt;= 2 &amp;&amp; first.charAt(0) == (&apos;&quot;&apos; as char) &amp;&amp; first.charAt(first.length() - 1) == (&apos;&quot;&apos; as char)) first = first.drop(1).take(first.length() - 2).trim(); if (first == &apos;1&apos;) hasDb = true; else if (first == &apos;0&apos;) csvCount++ } }; return csvCount + (hasDb ? 1 : 0))}</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">./查询多个账户的挂单订单.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">true</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pending_orders_db_api_disabled_compare_fields" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_db_api_disabled_compare_fields</stringProp>
+                <stringProp name="Argument.value">updated_utc_ms,time_expiration_broker_ms</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">DB/API字段跳过配置；同时控制summary和当前页明细；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单CSV/API字段对比配置" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pending_orders_csv_api_disabled_compare_fields" elementType="Argument">
+                <stringProp name="Argument.name">pending_orders_csv_api_disabled_compare_fields</stringProp>
+                <stringProp name="Argument.value">,time_expiration_broker_ms</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">CSV/API字段跳过配置；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化查询多个账户挂单订单参数" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import groovy.json.JsonOutput
+
+String csvName = &apos;查询多个账户的挂单订单.csv&apos;
+File csvFile = new File(org.apache.jmeter.services.FileServer.getFileServer().getBaseDir(), csvName)
+if (!csvFile.exists()) throw new AssertionError(&apos;查询多个账户挂单订单CSV文件不存在: &apos; + csvFile.getPath())
+List rawLines = csvFile.readLines(&apos;UTF-8&apos;).findAll { it != null &amp;&amp; it.trim().length() &gt; 0 }
+if (rawLines.size() &lt;= 1) throw new AssertionError(&apos;查询多个账户挂单订单CSV没有数据行: &apos; + csvFile.getPath())
+
+def parseCsvLine = { String line -&gt;
+    List values = []
+    StringBuilder cur = new StringBuilder()
+    boolean inQuotes = false
+    for (int i = 0; i &lt; line.length(); i++) {
+        char c = line.charAt(i)
+        if (c == (&apos;&quot;&apos; as char)) {
+            if (inQuotes &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == (&apos;&quot;&apos; as char)) {
+                cur.append(c)
+                i++
+            } else {
+                inQuotes = !inQuotes
+            }
+        } else if (c == (&apos;,&apos; as char) &amp;&amp; !inQuotes) {
+            values &lt;&lt; cur.toString().trim()
+            cur.setLength(0)
+        } else {
+            cur.append(c)
+        }
+    }
+    values &lt;&lt; cur.toString().trim()
+    values
+}
+
+List headers = parseCsvLine(rawLines[0]).collect { (it ?: &apos;&apos;).replaceAll(/^\uFEFF/, &apos;&apos;).trim() }
+List csvRows = []
+rawLines.drop(1).eachWithIndex { line, idx -&gt;
+    List vals = parseCsvLine(line)
+    Map row = [__line_no: idx + 2]
+    headers.eachWithIndex { h, hidx -&gt; if (h) row[h] = hidx &lt; vals.size() ? vals[hidx] : &apos;&apos; }
+    if ((row[&apos;shujuku&apos;] ?: &apos;&apos;).toString().trim()) csvRows &lt;&lt; row
+}
+if (!csvRows) throw new AssertionError(&apos;查询多个账户挂单订单CSV没有有效数据行: &apos; + csvFile.getPath())
+
+def firstValue = { Map row, List names -&gt;
+    for (String n : names) {
+        Object v = row[n]
+        String s = v == null ? &apos;&apos; : v.toString().trim()
+        if (s &amp;&amp; !s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return s
+    }
+    &apos;&apos;
+}
+
+def cleanInt = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&apos;
+    s = s.replaceAll(/\.0+$/, &apos;&apos;)
+    s ==~ /^-?\d+$/ ? s : &apos;&apos;
+}
+
+def cleanNumber = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&apos;
+    s = s.replace(&apos;,&apos;, &apos;&apos;)
+    s ==~ /^-?\d+(\.\d+)?$/ ? s : &apos;&apos;
+}
+
+def intOrDefault = { Object raw, String defVal -&gt;
+    String v = cleanInt(raw)
+    v ? v : defVal
+}
+
+def sqlQuote = { Object raw -&gt;
+    &quot;&apos;&quot; + (raw == null ? &apos;&apos; : raw.toString()).replace(&quot;&apos;&quot;, &quot;&apos;&apos;&quot;) + &quot;&apos;&quot;
+}
+
+def platformOf = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim().toUpperCase()
+    s.contains(&apos;MT5&apos;) ? &apos;MT5&apos; : (s.contains(&apos;MT4&apos;) ? &apos;MT4&apos; : &apos;&apos;)
+}
+
+def splitList = { Object raw -&gt;
+    String s = raw == null ? &apos;&apos; : raw.toString().trim()
+    if (!s || s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return []
+    s.split(/[，,;|\s]+/).collect { it.trim() }.findAll { it }
+}
+
+def opOf = { Object raw -&gt;
+    String c = raw == null ? &apos;&apos; : raw.toString().trim().toLowerCase()
+    [gte: &apos;&gt;=&apos;, gt: &apos;&gt;&apos;, eq: &apos;=&apos;, lt: &apos;&lt;&apos;, lte: &apos;&lt;=&apos;][c] ?: &apos;&gt;=&apos;
+}
+
+def putRowVars = { Map row -&gt;
+    headers.each { h -&gt; vars.put(h, row[h] == null ? &apos;&apos; : row[h].toString()) }
+}
+
+List dbRows = csvRows.findAll { firstValue(it, [&apos;shujuku&apos;]) == &apos;1&apos; }
+List csvModeRows = csvRows.findAll { firstValue(it, [&apos;shujuku&apos;]) == &apos;0&apos; }
+List runCases = []
+if (dbRows) runCases &lt;&lt; [mode: &apos;DB&apos;, row: dbRows[0]]
+csvModeRows.each { runCases &lt;&lt; [mode: &apos;CSV&apos;, row: it] }
+if (!runCases) throw new AssertionError(&apos;查询多个账户挂单订单CSV中没有可执行数据：需要至少一行 shujuku=1 或 shujuku=0&apos;)
+
+int caseIndex = ((vars.get(&apos;pending_orders_case_index&apos;) ?: &apos;0&apos;) as int)
+if (caseIndex &gt;= runCases.size()) throw new AssertionError(&apos;查询多个账户挂单订单循环次数超出用例数 | caseIndex=&apos; + caseIndex + &apos; | caseCount=&apos; + runCases.size())
+vars.put(&apos;pending_orders_case_index&apos;, String.valueOf(caseIndex + 1))
+Map runCase = runCases[caseIndex] as Map
+Map currentRow = runCase.row as Map
+putRowVars(currentRow)
+
+String shujuku = runCase.mode == &apos;DB&apos; ? &apos;1&apos; : &apos;0&apos;
+boolean dbMode = shujuku == &apos;1&apos;
+List accountSourceRows = dbMode ? dbRows : [currentRow]
+List accounts = []
+Set accountKeys = [] as Set
+List mt4Logins = []
+List mt5Logins = []
+Map mt4LoginInstance = [:]
+Map mt5LoginInstance = [:]
+accountSourceRows.each { row -&gt;
+    String instanceId = firstValue(row, [&apos;instanceid&apos;, &apos;instance_id&apos;, &apos;order_instanceid_val&apos;, &apos;instanceid_val&apos;])
+    String platform = platformOf(instanceId)
+    List loginValues = splitList(firstValue(row, [&apos;login&apos;, &apos;order_login&apos;, &apos;login_val&apos;])).collect { cleanInt(it) }.findAll { it }
+    if (!loginValues) {
+        String singleLogin = cleanInt(firstValue(row, [&apos;login&apos;, &apos;order_login&apos;, &apos;login_val&apos;]))
+        if (singleLogin) loginValues &lt;&lt; singleLogin
+    }
+    loginValues.each { login -&gt;
+        if (instanceId &amp;&amp; login &amp;&amp; platform) {
+            String key = instanceId + &apos;|&apos; + login
+            if (!accountKeys.contains(key)) {
+                accountKeys &lt;&lt; key
+                accounts &lt;&lt; [instanceid: instanceId, login: Long.parseLong(login)]
+            }
+            if (platform == &apos;MT4&apos;) {
+                mt4Logins &lt;&lt; login
+                mt4LoginInstance[login] = instanceId
+            } else if (platform == &apos;MT5&apos;) {
+                mt5Logins &lt;&lt; login
+                mt5LoginInstance[login] = instanceId
+            }
+        }
+    }
+}
+mt4Logins = mt4Logins.collect { it.toString().trim() }.findAll { it ==~ /^\d+$/ }.unique()
+mt5Logins = mt5Logins.collect { it.toString().trim() }.findAll { it ==~ /^\d+$/ }.unique()
+if (!accounts) throw new AssertionError(&apos;查询多个账户挂单订单没有可用accounts，CSV需要填写 order_instanceid_val/order_login 或 instanceid/login&apos;)
+
+String page = intOrDefault(firstValue(currentRow, [&apos;page&apos;]), &apos;1&apos;)
+String pageSize = intOrDefault(firstValue(currentRow, [&apos;page_size&apos;]), &apos;50&apos;)
+String sortBy = firstValue(currentRow, [&apos;sort_by&apos;]) ?: &apos;time_setup_utc_ms&apos;
+String sortOrder = (firstValue(currentRow, [&apos;sort_order&apos;]) ?: &apos;desc&apos;).toLowerCase() == &apos;asc&apos; ? &apos;asc&apos; : &apos;desc&apos;
+String maxRows = intOrDefault(firstValue(currentRow, [&apos;db_result_max_rows&apos;]), &apos;50000&apos;)
+
+String filterOrderTicket = cleanInt(firstValue(currentRow, [&apos;filter_order_ticket&apos;, &apos;order_ticket_filter&apos;]))
+String filterPositionTicket = cleanInt(firstValue(currentRow, [&apos;filter_position_ticket&apos;, &apos;position_ticket_filter&apos;]))
+String symbol = firstValue(currentRow, [&apos;filter_symbol&apos;, &apos;symbol&apos;])
+List orderTypeList = splitList(firstValue(currentRow, [&apos;order_types&apos;, &apos;filter_order_types&apos;])).collect { cleanInt(it) }.findAll { it in [&apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;] }.unique()
+if (!orderTypeList) orderTypeList = [&apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;]
+String setupFrom = cleanInt(firstValue(currentRow, [&apos;time_setup_from_utc_ms&apos;, &apos;setup_time_from_utc_ms&apos;]))
+String setupTo = cleanInt(firstValue(currentRow, [&apos;time_setup_to_utc_ms&apos;, &apos;setup_time_to_utc_ms&apos;]))
+String volumeCondition = firstValue(currentRow, [&apos;volume_lots_condition&apos;, &apos;volume_condition&apos;]) ?: &apos;gte&apos;
+String volumeValue = cleanNumber(firstValue(currentRow, [&apos;volume_lots_value&apos;, &apos;filter_volume_lots_value&apos;]))
+if (!volumeValue) volumeValue = &apos;0.01&apos;
+
+Map filters = [:]
+if (filterOrderTicket) filters[&apos;order_ticket&apos;] = Long.parseLong(filterOrderTicket)
+if (symbol) filters[&apos;symbol&apos;] = symbol
+if (orderTypeList) filters[&apos;order_types&apos;] = orderTypeList.collect { Integer.parseInt(it) }
+if (setupFrom) filters[&apos;time_setup_from_utc_ms&apos;] = Long.parseLong(setupFrom)
+if (setupTo) filters[&apos;time_setup_to_utc_ms&apos;] = Long.parseLong(setupTo)
+if (volumeValue) filters[&apos;volume_lots&apos;] = [condition: volumeCondition, value: new BigDecimal(volumeValue)]
+
+Map body = [accounts: accounts, page: Integer.parseInt(page), page_size: Integer.parseInt(pageSize)]
+if (filters) body[&apos;filters&apos;] = filters
+if (sortBy) body[&apos;sort_by&apos;] = sortBy
+if (sortOrder) body[&apos;sort_order&apos;] = sortOrder
+String requestBody = JsonOutput.prettyPrint(JsonOutput.toJson(body))
+
+vars.put(&apos;shujuku&apos;, shujuku)
+vars.put(&apos;pending_orders_shujuku&apos;, shujuku)
+vars.put(&apos;pending_orders_mode&apos;, runCase.mode.toString())
+vars.put(&apos;pending_orders_case_index_display&apos;, String.valueOf(caseIndex + 1))
+vars.put(&apos;pending_orders_case_total&apos;, String.valueOf(runCases.size()))
+vars.put(&apos;pending_orders_csv_line_no&apos;, String.valueOf(currentRow.__line_no))
+vars.put(&apos;pending_orders_request_body&apos;, requestBody)
+vars.put(&apos;pending_orders_page&apos;, page)
+vars.put(&apos;pending_orders_page_size&apos;, pageSize)
+vars.put(&apos;pending_orders_sort_by&apos;, sortBy)
+vars.put(&apos;pending_orders_sort_order&apos;, sortOrder)
+vars.put(&apos;pending_orders_mt4_login&apos;, mt4Logins ? mt4Logins.join(&apos;,&apos;) : &apos;-1&apos;)
+vars.put(&apos;pending_orders_mt5_login&apos;, mt5Logins ? mt5Logins.join(&apos;,&apos;) : &apos;-1&apos;)
+vars.putObject(&apos;pending_orders_current_csv_row&apos;, currentRow)
+vars.putObject(&apos;db_pending_orders_summary_rows&apos;, [])
+vars.putObject(&apos;db_pending_orders_page_rows&apos;, [])
+
+String mt5VolumeExpr = &quot;(CASE WHEN mt.VolumeCurrentExt &gt; 0 THEN mt.VolumeCurrentExt / 100000000.0 ELSE mt.VolumeCurrent / 10000.0 END)&quot;
+String setupMsMt5 = &quot;CASE WHEN CAST(mt.TimeSetupMsc AS CHAR) NOT IN (&apos;0000-00-00 00:00:00.000000&apos;, &apos;1970-01-01 00:00:00.000000&apos;) THEN CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetupMsc) / 1000 AS UNSIGNED) ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetup) / 1000 AS UNSIGNED) END&quot;
+String updatedMsMt5 = &quot;CASE WHEN mt.`Timestamp` &gt; 100000000000 THEN CAST(mt.`Timestamp` AS UNSIGNED) WHEN mt.`Timestamp` &gt; 0 THEN CAST(mt.`Timestamp` AS UNSIGNED) * 1000 WHEN CAST(mt.TimeDoneMsc AS CHAR) NOT IN (&apos;0000-00-00 00:00:00.000000&apos;, &apos;1970-01-01 00:00:00.000000&apos;) THEN CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeDoneMsc) / 1000 AS UNSIGNED) ELSE ${setupMsMt5} END&quot;
+String expirationMsMt5 = &quot;CASE WHEN CAST(mt.TimeExpiration AS CHAR) IN (&apos;0000-00-00 00:00:00&apos;, &apos;1970-01-01 00:00:00&apos;) THEN 0 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeExpiration) / 1000 AS UNSIGNED) END&quot;
+String setupMsMt4 = &quot;CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.OPEN_TIME) / 1000 AS UNSIGNED)&quot;
+String updatedMsMt4 = &quot;CASE WHEN mt.`TIMESTAMP` &gt; 100000000000 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) WHEN mt.`TIMESTAMP` &gt; 0 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) * 1000 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.MODIFY_TIME) / 1000 AS UNSIGNED) END&quot;
+String expirationMsMt4 = &quot;CASE WHEN CAST(mt.EXPIRATION AS CHAR) IN (&apos;0000-00-00 00:00:00&apos;, &apos;1970-01-01 00:00:00&apos;) THEN 0 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.EXPIRATION) / 1000 AS UNSIGNED) END&quot;
+String orderTypeSql = orderTypeList.join(&apos;,&apos;)
+String volOp = opOf(volumeCondition)
+
+def caseInstance = { String expr, Map loginInstance, String defaultValue -&gt;
+    if (!loginInstance) return sqlQuote(defaultValue)
+    String cases = loginInstance.collect { k, v -&gt; &apos;WHEN &apos; + k + &apos; THEN &apos; + sqlQuote(v) }.join(&apos; &apos;)
+    &apos;CASE &apos; + expr + &apos; &apos; + cases + &apos; ELSE &apos; + sqlQuote(defaultValue) + &apos; END&apos;
+}
+
+String mt4LoginSql = mt4Logins ? mt4Logins.join(&apos;,&apos;) : &apos;-1&apos;
+String mt5LoginSql = mt5Logins ? mt5Logins.join(&apos;,&apos;) : &apos;-1&apos;
+
+List mt4Where = []
+mt4Where &lt;&lt; &apos;mt.LOGIN IN (&apos; + mt4LoginSql + &apos;)&apos;
+mt4Where &lt;&lt; &apos;mt.TICKET &gt; 0&apos;
+mt4Where &lt;&lt; &apos;mt.SYMBOL IS NOT NULL&apos;
+mt4Where &lt;&lt; &quot;TRIM(mt.SYMBOL) &lt;&gt; &apos;&apos;&quot;
+mt4Where &lt;&lt; &quot;mt.SYMBOL REGEXP &apos;[A-Za-z]&apos;&quot;
+mt4Where &lt;&lt; &apos;mt.CMD IN (&apos; + orderTypeSql + &apos;)&apos;
+mt4Where &lt;&lt; &apos;(mt.VOLUME / 100.0) &apos; + volOp + &apos; &apos; + volumeValue
+mt4Where &lt;&lt; &apos;mt.CONV_RATE1 = 0&apos;
+mt4Where &lt;&lt; &quot;CAST(mt.CLOSE_TIME AS CHAR) IN (&apos;1970-01-01 00:00:00&apos;, &apos;0000-00-00 00:00:00&apos;)&quot;
+if (filterOrderTicket) mt4Where &lt;&lt; &apos;mt.TICKET = &apos; + filterOrderTicket
+if (filterPositionTicket) mt4Where &lt;&lt; &apos;mt.TICKET = &apos; + filterPositionTicket
+if (symbol) mt4Where &lt;&lt; &apos;mt.SYMBOL = &apos; + sqlQuote(symbol)
+if (setupFrom) mt4Where &lt;&lt; setupMsMt4 + &apos; &gt;= &apos; + setupFrom
+if (setupTo) mt4Where &lt;&lt; setupMsMt4 + &apos; &lt;= &apos; + setupTo
+
+List mt5Where = []
+mt5Where &lt;&lt; &apos;mt.Login IN (&apos; + mt5LoginSql + &apos;)&apos;
+mt5Where &lt;&lt; &apos;mt.`Order` &gt; 0&apos;
+mt5Where &lt;&lt; &apos;mt.Symbol IS NOT NULL&apos;
+mt5Where &lt;&lt; &quot;TRIM(mt.Symbol) &lt;&gt; &apos;&apos;&quot;
+mt5Where &lt;&lt; &quot;mt.Symbol REGEXP &apos;[A-Za-z]&apos;&quot;
+mt5Where &lt;&lt; &apos;mt.Type IN (&apos; + orderTypeSql + &apos;)&apos;
+mt5Where &lt;&lt; &apos;mt.State = 1&apos;
+mt5Where &lt;&lt; mt5VolumeExpr + &apos; &apos; + volOp + &apos; &apos; + volumeValue
+if (filterOrderTicket) mt5Where &lt;&lt; &apos;mt.`Order` = &apos; + filterOrderTicket
+if (filterPositionTicket) mt5Where &lt;&lt; (filterPositionTicket == &apos;0&apos; ? &apos;0 = 0&apos; : &apos;mt.PositionID = &apos; + filterPositionTicket)
+if (symbol) mt5Where &lt;&lt; &apos;mt.Symbol = &apos; + sqlQuote(symbol)
+if (setupFrom) mt5Where &lt;&lt; setupMsMt5 + &apos; &gt;= &apos; + setupFrom
+if (setupTo) mt5Where &lt;&lt; setupMsMt5 + &apos; &lt;= &apos; + setupTo
+
+String mt4InstanceExpr = caseInstance(&apos;mt.LOGIN&apos;, mt4LoginInstance, mt4LoginInstance.values().find { it } ?: &apos;MT4&apos;)
+String mt5InstanceExpr = caseInstance(&apos;mt.Login&apos;, mt5LoginInstance, mt5LoginInstance.values().find { it } ?: &apos;MT5&apos;)
+
+String mt4Sql = &quot;&quot;&quot;
+SELECT
+  ${mt4InstanceExpr} AS instance_id,
+  mt.LOGIN AS login,
+  &apos;mt4&apos; AS source,
+  mt.TICKET AS order_ticket,
+  mt.REASON AS reason,
+  mt.SYMBOL AS symbol,
+  CASE WHEN mt.CMD IN (2, 4) THEN &apos;buy&apos; WHEN mt.CMD IN (3, 5) THEN &apos;sell&apos; ELSE CAST(mt.CMD AS CHAR) END AS side,
+  0.0 AS swap,
+  ${updatedMsMt4} AS updated_utc_ms,
+  0.0 AS fee,
+  0.0 AS commission,
+  mt.OPEN_PRICE AS price_open,
+  mt.TP AS price_tp,
+  ${expirationMsMt4} AS time_expiration_utc_ms,
+  ${setupMsMt4} AS time_setup_utc_ms,
+  mt.SL AS price_sl,
+  mt.COMMENT AS comment,
+  mt.DIGITS AS digits,
+  0.0 AS contract_size,
+  0 AS digits_currency,
+  1 AS state,
+  mt.CMD AS order_type,
+  0.0 AS profit,
+  0.0 AS price_current,
+  mt.VOLUME / 100.0 AS volume_lots,
+  UPPER(TRIM(NULLIF(u.CURRENCY, &apos;&apos;))) AS currency,
+  &apos;native&apos; AS money_unit,
+  CASE UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) WHEN &apos;USD&apos; THEN 1 WHEN &apos;USC&apos; THEN 100 ELSE NULL END AS money_scale,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USC&apos; THEN 1 WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USD&apos; THEN 0 ELSE NULL END AS is_cent,
+  &apos;USD&apos; AS reporting_currency,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 1 ELSE 0 END AS normalization_complete,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS profit_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS fee_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS swap_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(u.CURRENCY, &apos;&apos;))) = &apos;USC&apos; THEN 1 ELSE 0 END AS is_cent_account
+FROM mt4_report.MT4_TRADES mt
+LEFT JOIN mt4_report.MT4_USERS u ON u.LOGIN = mt.LOGIN
+WHERE ${mt4Where.join(&apos; AND &apos;)}
+&quot;&quot;&quot;.trim()
+
+String mt5Sql = &quot;&quot;&quot;
+SELECT
+  ${mt5InstanceExpr} AS instance_id,
+  mt.Login AS login,
+  &apos;mt5&apos; AS source,
+  mt.`Order` AS order_ticket,
+  mt.Reason AS reason,
+  mt.Symbol AS symbol,
+  CASE WHEN mt.Type IN (2, 4) THEN &apos;buy&apos; WHEN mt.Type IN (3, 5) THEN &apos;sell&apos; ELSE CAST(mt.Type AS CHAR) END AS side,
+  0.0 AS swap,
+  ${updatedMsMt5} AS updated_utc_ms,
+  0.0 AS fee,
+  0.0 AS commission,
+  mt.PriceOrder AS price_open,
+  mt.PriceTP AS price_tp,
+  ${expirationMsMt5} AS time_expiration_utc_ms,
+  ${setupMsMt5} AS time_setup_utc_ms,
+  mt.PriceSL AS price_sl,
+  mt.Comment AS comment,
+  mt.Digits AS digits,
+  mt.ContractSize AS contract_size,
+  mt.DigitsCurrency AS digits_currency,
+  mt.State AS state,
+  mt.Type AS order_type,
+  0.0 AS profit,
+  mt.PriceCurrent AS price_current,
+  ${mt5VolumeExpr} AS volume_lots,
+  UPPER(TRIM(NULLIF(d.Currency, &apos;&apos;))) AS currency,
+  &apos;native&apos; AS money_unit,
+  CASE UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) WHEN &apos;USD&apos; THEN 1 WHEN &apos;USC&apos; THEN 100 ELSE NULL END AS money_scale,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USC&apos; THEN 1 WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USD&apos; THEN 0 ELSE NULL END AS is_cent,
+  &apos;USD&apos; AS reporting_currency,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 1 ELSE 0 END AS normalization_complete,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS profit_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS fee_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) IN (&apos;USD&apos;, &apos;USC&apos;) THEN 0.0 ELSE NULL END AS swap_reporting,
+  CASE WHEN UPPER(TRIM(COALESCE(d.Currency, &apos;&apos;))) = &apos;USC&apos; THEN 1 ELSE 0 END AS is_cent_account
+FROM mt5_report.mt5_orders mt
+LEFT JOIN (
+  SELECT d1.Login, MAX(COALESCE(d1.Currency, &apos;&apos;)) AS Currency
+  FROM mt5_report.mt5_daily d1
+  INNER JOIN (
+    SELECT Login, MAX(`Datetime`) AS max_datetime
+    FROM mt5_report.mt5_daily
+    WHERE Login IN (${mt5LoginSql})
+    GROUP BY Login
+  ) latest ON latest.Login = d1.Login AND latest.max_datetime = d1.`Datetime`
+  GROUP BY d1.Login
+) d ON d.Login = mt.Login
+WHERE ${mt5Where.join(&apos; AND &apos;)}
+&quot;&quot;&quot;.trim()
+
+Set allowedSortColumns = [&apos;time_setup_utc_ms&apos;, &apos;order_ticket&apos;, &apos;updated_utc_ms&apos;, &apos;volume_lots&apos;, &apos;login&apos;, &apos;symbol&apos;] as Set
+String sortColumn = allowedSortColumns.contains(sortBy) ? sortBy : &apos;time_setup_utc_ms&apos;
+int pageNoInt = Integer.parseInt(page)
+int pageSizeInt = Integer.parseInt(pageSize)
+int offsetInt = Math.max(pageNoInt - 1, 0) * pageSizeInt
+String dbOrder = sortOrder?.toLowerCase() == &apos;asc&apos; ? &apos;ASC&apos; : &apos;DESC&apos;
+String pendingRowsSql = mt5Sql + &apos; UNION ALL &apos; + mt4Sql
+String summarySql = &quot;&quot;&quot;
+SELECT
+  COUNT(*) AS total,
+  COUNT(*) AS total_orders,
+  COALESCE(SUM(volume_lots), 0) AS total_volume,
+  COALESCE(SUM(CASE WHEN currency = &apos;USC&apos; THEN volume_lots ELSE 0 END), 0) AS cent_volume,
+  COALESCE(SUM(CASE WHEN currency = &apos;USD&apos; THEN volume_lots ELSE 0 END), 0) AS standard_volume,
+  COALESCE(SUM(CASE WHEN normalization_complete = 0 THEN volume_lots ELSE 0 END), 0) AS unresolved_volume,
+  COUNT(DISTINCT CASE WHEN normalization_complete = 0 THEN CONCAT(instance_id, &apos;:&apos;, login) ELSE NULL END) AS unresolved_currency_account_count,
+  COALESCE(SUM(COALESCE(commission, 0)), 0) AS total_commission,
+  COALESCE(SUM(COALESCE(fee, 0)), 0) AS total_raw_fee,
+  0.0 AS total_fee,
+  0.0 AS total_storage,
+  0.0 AS total_profit
+FROM (
+${pendingRowsSql}
+) pending_rows
+&quot;&quot;&quot;.trim()
+String pageSql = &quot;&quot;&quot;
+SELECT
+  reason,
+  symbol,
+  side,
+  swap,
+  updated_utc_ms,
+  fee,
+  commission,
+  COALESCE(commission, 0) + COALESCE(fee, 0) AS row_total_fee,
+  price_open,
+  price_tp,
+  source,
+  login,
+  time_expiration_utc_ms,
+  time_setup_utc_ms,
+  order_ticket,
+  instance_id,
+  price_sl,
+  comment,
+  digits,
+  contract_size,
+  digits_currency,
+  state,
+  order_type,
+  profit,
+  price_current,
+  volume_lots,
+  currency,
+  money_unit,
+  money_scale,
+  is_cent,
+  reporting_currency,
+  normalization_complete,
+  profit_reporting,
+  fee_reporting,
+  swap_reporting
+FROM (
+${pendingRowsSql}
+) pending_rows
+ORDER BY ${sortColumn} ${dbOrder}, order_ticket ${dbOrder}
+LIMIT ${pageSizeInt} OFFSET ${offsetInt}
+&quot;&quot;&quot;.trim()
+
+def compactSql = { String sql -&gt;
+    (sql ?: &apos;&apos;).replace(&apos;\r&apos;, &apos; &apos;).replace(&apos;\n&apos;, &apos; &apos;).replaceAll(/[\r\n]+/, &apos; &apos;).replaceAll(/\s+/, &apos; &apos;).trim()
+}
+String summarySqlExec = compactSql(summarySql)
+String pageSqlExec = compactSql(pageSql)
+vars.put(&apos;pending_orders_summary_sql&apos;, summarySqlExec)
+vars.put(&apos;pending_orders_page_sql&apos;, pageSqlExec)
+
+String initReport = &apos;list_pending_orders init | case=&apos; + (caseIndex + 1) + &apos;/&apos; + runCases.size() +
+    &apos; | mode=&apos; + runCase.mode + &apos; | CSV行=&apos; + currentRow.__line_no + &apos; | shujuku=&apos; + shujuku +
+    &apos; | accounts=&apos; + accounts.collect { it.instanceid + &apos;:&apos; + it.login }.join(&apos;,&apos;) +
+    &apos; | MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;) +
+    &apos; | page=&apos; + page + &apos; | page_size=&apos; + pageSize + &apos; | sort=&apos; + sortBy + &apos; &apos; + sortOrder +
+    &apos; | filters=&apos; + JsonOutput.toJson(filters)
+log.info(initReport + &apos;\nrequestBody=&apos; + requestBody)
+SampleResult.setSuccessful(true)
+SampleResult.setResponseCode(&apos;200&apos;)
+SampleResult.setResponseMessage(&apos;init passed&apos;)
+SampleResult.setDataType(&apos;text&apos;)
+SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+SampleResult.setResponseData(initReport + &apos;\n\n【请求Body】\n&apos; + requestBody + &apos;\n\n【统计summary SQL（MT4+MT5合并，只查询一次，实际执行SQL）】\n&apos; + summarySqlExec + &apos;\n\n【当前页明细 SQL（MT4+MT5合并，实际执行SQL）】\n&apos; + pageSqlExec, &apos;UTF-8&apos;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="TestPlan.comments">从查询多个账户的挂单订单.csv读取接口传参和期望结果；shujuku=1聚合全部DB模式accounts并执行MT4+MT5合并挂单SQL；shujuku=0按当前CSV行做CSV/API对比。</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="当shujuku=1-查询挂单订单summary统计和当前页明细" enabled="true">
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+            <stringProp name="IfController.condition">${__groovy(vars.get(&apos;pending_orders_shujuku&apos;) == &apos;1&apos;)}</stringProp>
+          </IfController>
+          <hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询多个账户挂单订单summary统计(MT4+MT5)" enabled="true">
+              <stringProp name="dataSource">mysqlMT5</stringProp>
+              <stringProp name="query">${pending_orders_summary_sql}</stringProp>
+              <stringProp name="queryArguments"></stringProp>
+              <stringProp name="queryArgumentsTypes"></stringProp>
+              <stringProp name="queryTimeout">60</stringProp>
+              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="resultSetHandler">Store as Object</stringProp>
+              <stringProp name="resultSetMaxRows">10</stringProp>
+              <stringProp name="resultVariable">db_pending_orders_summary_rows</stringProp>
+              <stringProp name="variableNames"></stringProp>
+            </JDBCSampler>
+            <hashTree/>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-查询多个账户挂单订单当前页明细(MT4+MT5)" enabled="true">
+              <stringProp name="dataSource">mysqlMT5</stringProp>
+              <stringProp name="query">${pending_orders_page_sql}</stringProp>
+              <stringProp name="queryArguments"></stringProp>
+              <stringProp name="queryArgumentsTypes"></stringProp>
+              <stringProp name="queryTimeout">60</stringProp>
+              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="resultSetHandler">Store as Object</stringProp>
+              <stringProp name="resultSetMaxRows">50000</stringProp>
+              <stringProp name="resultVariable">db_pending_orders_page_rows</stringProp>
+              <stringProp name="variableNames"></stringProp>
+            </JDBCSampler>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="查询多个账户挂单订单-${pending_orders_mode}-${pending_orders_case_index_display}" enabled="true">
+            <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+            <intProp name="HTTPSampler.response_timeout">10000</intProp>
+            <stringProp name="HTTPSampler.domain">${middlewareip}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/crm20/list_pending_orders</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${pending_orders_request_body}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-JSON" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="断言msg为ok" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1887116403">&quot;msg&quot;\s*:\s*&quot;ok&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="DB或CSV字段对比断言-查询多个账户挂单订单" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.samplers.SampleResult
+import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.SimpleDateFormat
+
+String responseText = prev.getResponseDataAsString()
+def publishReport = { String label, String text, boolean success -&gt;
+    String out = text ?: &apos;&apos;
+    vars.put(&apos;pending_orders_compare_report&apos;, out)
+    vars.put(&apos;pending_orders_compare_status&apos;, success ? &apos;PASS&apos; : &apos;FAIL&apos;)
+    log.info(&apos;\n&apos; + out)
+    def detail = new SampleResult()
+    detail.setSampleLabel(label)
+    detail.setSuccessful(success)
+    detail.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
+    detail.setResponseMessage(success ? &apos;PASS&apos; : &apos;FAIL&apos;)
+    detail.setResponseData(out, &apos;UTF-8&apos;)
+    detail.setDataType(SampleResult.TEXT)
+    detail.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+    detail.setResponseHeaders(&apos;Content-Type: text/plain; charset=UTF-8&apos;)
+    prev.addSubResult(detail)
+    AssertionResult.setFailure(!success)
+    AssertionResult.setFailureMessage(out)
+}
+def parsed
+try {
+    parsed = new JsonSlurper().parseText(responseText ?: &apos;{}&apos;)
+} catch (Throwable e) {
+    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 对比结果 | status=FAIL | reason=接口响应不是合法JSON&apos; +
+        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+        &apos;\n【失败明细】\n - [失败] | 接口响应不是合法JSON: &apos; + e.message +
+        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+        &apos;\n\n【接口响应原文】\n&apos; + responseText
+    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+    return
+}
+
+def rowToMap
+rowToMap = { row -&gt;
+    Map out = new LinkedHashMap()
+    if (row instanceof Map) {
+        row.each { k, v -&gt; out[String.valueOf(k)] = v }
+    } else if (row != null) {
+        try {
+            row.metaClass.properties.each { p -&gt; if (p.name != &apos;class&apos;) out[p.name] = row.&quot;${p.name}&quot; }
+        } catch (ignored) {}
+    }
+    out
+}
+
+def rowsFromObject = { obj -&gt;
+    if (obj == null) return []
+    if (obj instanceof List) return obj.collect { rowToMap(it) }.findAll { it }
+    if (obj instanceof Object[]) return obj.collect { rowToMap(it) }.findAll { it }
+    if (obj instanceof Map) return [rowToMap(obj)]
+    []
+}
+
+def blank = { v -&gt; v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) }
+def normKey = { Object v -&gt; (v == null ? &apos;&apos; : v.toString()).replaceAll(&apos;[^A-Za-z0-9]&apos;, &apos;&apos;).toLowerCase() }
+boolean numeric(Object v) {
+    if (v == null) return false
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    return s.length() &gt; 0 &amp;&amp; !s.equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;) &amp;&amp; (s ==~ /^-?\d+(\.\d+)?$/)
+}
+def cleanNumText = { v -&gt;
+    if (blank(v)) return &apos;&apos;
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (s ==~ /^-?\d+\.0+$/) return s.substring(0, s.indexOf(&apos;.&apos;))
+    if (s ==~ /^-?\d+(\.\d+)?$/) {
+        try { return new BigDecimal(s).stripTrailingZeros().toPlainString() } catch (ignored) {}
+    }
+    s
+}
+
+Map aliases = [
+    &apos;position_ticket&apos;: [&apos;position_ticket&apos;, &apos;position&apos;, &apos;PositionID&apos;, &apos;POSITIONID&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
+    &apos;order_ticket&apos;: [&apos;order_ticket&apos;, &apos;orderId&apos;, &apos;order_id&apos;, &apos;order&apos;, &apos;Order&apos;, &apos;ORDER&apos;, &apos;TICKET&apos;, &apos;ticket&apos;],
+    &apos;deal_ticket&apos;: [&apos;deal_ticket&apos;, &apos;deal&apos;, &apos;Deal&apos;, &apos;DEAL&apos;],
+    &apos;instance_id&apos;: [&apos;instance_id&apos;, &apos;instanceid&apos;, &apos;instanceId&apos;, &apos;order_instanceid_val&apos;],
+    &apos;login&apos;: [&apos;login&apos;, &apos;Login&apos;, &apos;LOGIN&apos;, &apos;order_login&apos;],
+    &apos;source&apos;: [&apos;source&apos;, &apos;platform&apos;],
+    &apos;symbol&apos;: [&apos;symbol&apos;, &apos;Symbol&apos;, &apos;SYMBOL&apos;],
+    &apos;order_type&apos;: [&apos;order_type&apos;, &apos;orderType&apos;, &apos;type&apos;, &apos;Type&apos;, &apos;action&apos;, &apos;Action&apos;, &apos;CMD&apos;, &apos;cmd&apos;],
+    &apos;side&apos;: [&apos;side&apos;],
+    &apos;reason&apos;: [&apos;reason&apos;, &apos;Reason&apos;, &apos;REASON&apos;],
+    &apos;volume_lots&apos;: [&apos;volume_lots&apos;, &apos;volume&apos;, &apos;Volume&apos;, &apos;VOLUME&apos;, &apos;volume_current&apos;, &apos;VolumeCurrent&apos;, &apos;volume_current_ext&apos;, &apos;VolumeCurrentExt&apos;],
+    &apos;price_open&apos;: [&apos;price_open&apos;, &apos;openPrice&apos;, &apos;open_price&apos;, &apos;PriceOrder&apos;, &apos;PriceOpen&apos;, &apos;OPEN_PRICE&apos;],
+    &apos;price_close&apos;: [&apos;price_close&apos;, &apos;closePrice&apos;, &apos;close_price&apos;, &apos;PriceClose&apos;, &apos;CLOSE_PRICE&apos;],
+    &apos;price_current&apos;: [&apos;price_current&apos;, &apos;currentPrice&apos;, &apos;current_price&apos;, &apos;PriceCurrent&apos;, &apos;CLOSE_PRICE&apos;],
+    &apos;price_sl&apos;: [&apos;price_sl&apos;, &apos;sl&apos;, &apos;SL&apos;, &apos;PriceSL&apos;],
+    &apos;price_tp&apos;: [&apos;price_tp&apos;, &apos;tp&apos;, &apos;TP&apos;, &apos;PriceTP&apos;],
+    &apos;profit&apos;: [&apos;profit&apos;, &apos;Profit&apos;, &apos;PROFIT&apos;],
+    &apos;swap&apos;: [&apos;swap&apos;, &apos;Storage&apos;, &apos;SWAPS&apos;],
+    &apos;commission&apos;: [&apos;commission&apos;, &apos;Commission&apos;, &apos;COMMISSION&apos;],
+    &apos;fee&apos;: [&apos;fee&apos;, &apos;Fee&apos;],
+    &apos;net_profit&apos;: [&apos;net_profit&apos;],
+    &apos;open_time_utc_ms&apos;: [&apos;open_time_utc_ms&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeCreate&apos;, &apos;TimeMsc&apos;],
+    &apos;close_time_utc_ms&apos;: [&apos;close_time_utc_ms&apos;, &apos;close_time&apos;, &apos;CLOSE_TIME&apos;, &apos;TimeMsc&apos;, &apos;Time&apos;],
+    &apos;updated_utc_ms&apos;: [&apos;updated_utc_ms&apos;, &apos;time_update_utc_ms&apos;, &apos;Timestamp&apos;, &apos;TIMESTAMP&apos;, &apos;MODIFY_TIME&apos;, &apos;TimeDoneMsc&apos;, &apos;TimeMsc&apos;],
+    &apos;time_setup_utc_ms&apos;: [&apos;time_setup_utc_ms&apos;, &apos;openTime&apos;, &apos;open_time&apos;, &apos;OPEN_TIME&apos;, &apos;TimeSetupMsc&apos;, &apos;TimeSetup&apos;],
+    &apos;time_expiration_utc_ms&apos;: [&apos;time_expiration_utc_ms&apos;, &apos;closeTime&apos;, &apos;expiration&apos;, &apos;EXPIRATION&apos;, &apos;TimeExpiration&apos;],
+    &apos;state&apos;: [&apos;state&apos;, &apos;State&apos;],
+    &apos;digits&apos;: [&apos;digits&apos;, &apos;Digits&apos;, &apos;DIGITS&apos;],
+    &apos;digits_currency&apos;: [&apos;digits_currency&apos;, &apos;DigitsCurrency&apos;],
+    &apos;contract_size&apos;: [&apos;contract_size&apos;, &apos;ContractSize&apos;],
+    &apos;comment&apos;: [&apos;comment&apos;, &apos;Comment&apos;, &apos;COMMENT&apos;],
+    &apos;currency&apos;: [&apos;currency&apos;, &apos;Currency&apos;],
+    &apos;money_unit&apos;: [&apos;money_unit&apos;, &apos;moneyUnit&apos;],
+    &apos;money_scale&apos;: [&apos;money_scale&apos;, &apos;moneyScale&apos;],
+    &apos;is_cent&apos;: [&apos;is_cent&apos;, &apos;isCent&apos;],
+    &apos;reporting_currency&apos;: [&apos;reporting_currency&apos;, &apos;reportingCurrency&apos;],
+    &apos;normalization_complete&apos;: [&apos;normalization_complete&apos;, &apos;normalizationComplete&apos;],
+    &apos;profit_reporting&apos;: [&apos;profit_reporting&apos;, &apos;profitReporting&apos;],
+    &apos;fee_reporting&apos;: [&apos;fee_reporting&apos;, &apos;feeReporting&apos;],
+    &apos;swap_reporting&apos;: [&apos;swap_reporting&apos;, &apos;swapReporting&apos;]
+]
+
+def findKey
+findKey = { Map m, String field -&gt;
+    if (m == null) return null
+    if (m.containsKey(field)) return field
+    for (String a : (aliases[field] ?: [])) {
+        if (m.containsKey(a)) return a
+    }
+    String want = normKey(field)
+    m.keySet().find { normKey(it) == want }
+}
+
+def valueOf
+valueOf = { Map m, String field -&gt;
+    def k = findKey(m, field)
+    k == null ? null : m[k]
+}
+
+def idOf = { Map row -&gt;
+    for (String f : [&apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;]) {
+        def v = valueOf(row, f)
+        if (!blank(v)) return cleanNumText(v)
+    }
+    &apos;&apos;
+}
+
+boolean timeField(String f) {
+    String n = (f ?: &apos;&apos;).toLowerCase()
+    return n.contains(&apos;time&apos;) || n.endsWith(&apos;utc_ms&apos;) || n.contains(&apos;updated&apos;)
+}
+
+Date parseDateLike(v) {
+    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return null
+    if (v instanceof java.util.Date) return v
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (s ==~ /^-?\d+(\.\d+)?$/) {
+        BigDecimal n = new BigDecimal(s)
+        long ms = n.abs().compareTo(new BigDecimal(&apos;100000000000&apos;)) &gt;= 0 ? n.longValue() : n.longValue() * 1000L
+        return new Date(ms)
+    }
+    s = s.replace(&apos;T&apos;, &apos; &apos;)
+    if (s.contains(&apos;.&apos;)) s = s.substring(0, s.indexOf(&apos;.&apos;))
+    for (String fmt : [&apos;yyyy-MM-dd HH:mm:ss&apos;, &apos;yyyy-MM-dd HH:mm&apos;, &apos;yyyy-MM-dd&apos;]) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(fmt)
+            sdf.setLenient(false)
+            return sdf.parse(s)
+        } catch (ignored) {}
+    }
+    null
+}
+
+String fmt(Date d, String tz) {
+    if (d == null) return &apos;&apos;
+    SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
+    sdf.setTimeZone(TimeZone.getTimeZone(tz))
+    sdf.format(d)
+}
+
+String normalizeApiTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;UTC&apos;)
+}
+
+String normalizeDbTime(v) {
+    Date d = parseDateLike(v)
+    if (d == null) return String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim()
+    numeric(v) ? fmt(d, &apos;UTC&apos;) : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+String normalizeCsvTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).replace(&apos;T&apos;, &apos; &apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+String displayApiTime(v) {
+    Date d = parseDateLike(v)
+    d == null ? String.valueOf(v ?: &apos;&apos;).trim() : fmt(d, &apos;Asia/Shanghai&apos;)
+}
+
+long secondDiff(String a, String b) {
+    try {
+        SimpleDateFormat sdf = new SimpleDateFormat(&apos;yyyy-MM-dd HH:mm:ss&apos;)
+        return Math.abs((sdf.parse(a).time - sdf.parse(b).time) / 1000L)
+    } catch (ignored) { return Long.MAX_VALUE }
+}
+
+String renderValue(String field, Object v, String side, boolean dbMode) {
+    if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&lt;empty&gt;&apos;
+    if (!timeField(field)) return String.valueOf(v)
+    if (side == &apos;API&apos; &amp;&amp; dbMode) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值(减8小时)=&apos; + normalizeApiTime(v)
+    if (side == &apos;API&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值=&apos; + normalizeCsvTime(v)
+    if (side == &apos;DB&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + normalizeDbTime(v)
+    return String.valueOf(v) + &apos; -&gt; &apos; + normalizeCsvTime(v)
+}
+
+def asNum = { Object v -&gt;
+    if (blank(v)) return null
+    String s = String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;)
+    if (!(s ==~ /^-?\d+(\.\d+)?$/)) return null
+    try { return new BigDecimal(s) } catch (ignored) { return null }
+}
+
+def fmtNum = { BigDecimal n -&gt; n == null ? &apos;&lt;empty&gt;&apos; : n.stripTrailingZeros().toPlainString() }
+def pctText = { BigDecimal p -&gt; p == null ? &apos;N/A&apos; : p.setScale(6, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + &apos;%&apos; }
+Set exactNumericFields = [&apos;login&apos;, &apos;order_ticket&apos;, &apos;position_ticket&apos;, &apos;deal_ticket&apos;, &apos;reason&apos;, &apos;order_type&apos;, &apos;digits&apos;, &apos;digits_currency&apos;, &apos;money_scale&apos;, &apos;total&apos;, &apos;total_orders&apos;, &apos;unresolved_currency_account_count&apos;] as Set
+Set booleanFields = [&apos;is_cent&apos;, &apos;normalization_complete&apos;] as Set
+def boolValue = { Object v -&gt;
+    if (v == null || String.valueOf(v).trim().length() == 0) return null
+    String s = String.valueOf(v).trim().toLowerCase()
+    if (s in [&apos;true&apos;, &apos;1&apos;]) return true
+    if (s in [&apos;false&apos;, &apos;0&apos;]) return false
+    null
+}
+
+def compareValue = { String field, Object apiVal, Object expectedVal, String expectedSource, boolean dbMode -&gt;
+    if (booleanFields.contains(field)) {
+        def ab = boolValue(apiVal); def eb = boolValue(expectedVal)
+        boolean same = ab != null &amp;&amp; eb != null &amp;&amp; ab == eb
+        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: &apos;N/A&apos;, percent: &apos;N/A(boolean)&apos;, formula: &apos;Boolean fields normalize true/1 and false/0 before exact comparison&apos;]
+    }
+    if (timeField(field)) {
+        String aCmp = dbMode ? normalizeApiTime(apiVal) : normalizeCsvTime(apiVal)
+        String eCmp = dbMode ? normalizeDbTime(expectedVal) : normalizeCsvTime(expectedVal)
+        long diffSec = secondDiff(aCmp, eCmp)
+        return [same: (aCmp == eCmp || diffSec &lt;= 60L), apiPrint: renderValue(field, apiVal, &apos;API&apos;, dbMode), expPrint: renderValue(field, expectedVal, expectedSource, dbMode), diff: diffSec + &apos;秒&apos;, percent: &apos;N/A(时间字段)&apos;, formula: &apos;时间字段按yyyy-MM-dd HH:mm:ss比较，允许相差&lt;=60秒&apos;]
+    }
+    BigDecimal an = asNum(apiVal)
+    BigDecimal en = asNum(expectedVal)
+    if (an != null &amp;&amp; en != null) {
+        BigDecimal diff = an.subtract(en).abs()
+        if (exactNumericFields.contains(field)) {
+            return [same: cleanNumText(apiVal) == cleanNumText(expectedVal), apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: &apos;N/A(编号类字段精确比较)&apos;, formula: &apos;编号类字段不使用误差，按数值精确比较&apos;]
+        }
+        BigDecimal tolerancePercent = dbMode ? new BigDecimal(&apos;10&apos;) : new BigDecimal(&apos;5&apos;)
+        BigDecimal base = en.abs()
+        BigDecimal allowed = BigDecimal.ZERO
+        boolean same
+        String pct
+        String formula
+        if (base.compareTo(BigDecimal.ZERO) == 0) {
+            same = diff.compareTo(BigDecimal.ZERO) == 0
+            pct = same ? &apos;0%&apos; : &apos;N/A(&apos; + expectedSource + &apos;=0无法作分母)&apos;
+            formula = &apos;abs(&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，&apos; + expectedSource + &apos;=0，无法计算百分比，要求API也等于0&apos;
+        } else {
+            allowed = base.multiply(tolerancePercent).divide(new BigDecimal(&apos;100&apos;), 10, RoundingMode.HALF_UP)
+            same = diff.compareTo(allowed) &lt;= 0
+            BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
+            pct = pctText(percent)
+            formula = &apos;abs((&apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / &apos; + expectedSource + &apos;(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct
+        }
+        String toleranceText = pctText(tolerancePercent)
+        String note = same ? field + &apos; 误差小于&apos; + toleranceText + &apos;，通过&apos; : field + &apos; 误差大于&apos; + toleranceText + &apos;，失败&apos;
+        return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: pct, formula: formula + &apos; | 允许误差&lt;=&apos; + toleranceText + &apos;(允许差值=&apos; + fmtNum(allowed) + &apos;)&apos;, note: note]
+    }
+    boolean same = String.valueOf(apiVal ?: &apos;&apos;).trim() == String.valueOf(expectedVal ?: &apos;&apos;).trim()
+    [same: same, apiPrint: String.valueOf(apiVal ?: &apos;&apos;), expPrint: String.valueOf(expectedVal ?: &apos;&apos;), diff: &apos;N/A&apos;, percent: &apos;N/A(非数值字段)&apos;, formula: &apos;非数值字段按字符串精确比较&apos;]
+}
+
+def compareComparable = { Object v -&gt;
+    if (numeric(v)) return new BigDecimal(String.valueOf(v).trim().replace(&apos;,&apos;, &apos;&apos;))
+    String.valueOf(v ?: &apos;&apos;)
+}
+
+def sumField = { List rows, String field -&gt;
+    BigDecimal total = BigDecimal.ZERO
+    rows.each { r -&gt;
+        BigDecimal n = asNum(valueOf(r, field))
+        if (n != null) total = total.add(n)
+    }
+    total
+}
+
+def disabledRaw = { boolean dbMode -&gt; dbMode ? (vars.get(&apos;pending_orders_db_api_disabled_compare_fields&apos;) ?: &apos;&apos;) : (vars.get(&apos;pending_orders_csv_api_disabled_compare_fields&apos;) ?: &apos;&apos;) }
+def disabledSet = { String raw -&gt; raw.split(/[，,;|\s]+/).collect { String t = String.valueOf(it ?: &apos;&apos;).trim(); t == &apos;*&apos; ? &apos;*&apos; : normKey(t) }.findAll { it }.toSet() }
+
+String shujuku = vars.get(&apos;pending_orders_shujuku&apos;) ?: vars.get(&apos;shujuku&apos;) ?: &apos;0&apos;
+boolean dbMode = shujuku == &apos;1&apos;
+String sourceName = dbMode ? &apos;DB&apos; : &apos;CSV&apos;
+String modeText = dbMode ? &apos;DB/API&apos; : &apos;CSV/API&apos;
+String sortBy = vars.get(&apos;pending_orders_sort_by&apos;) ?: &apos;time_setup_utc_ms&apos;
+boolean desc = (vars.get(&apos;pending_orders_sort_order&apos;) ?: &apos;desc&apos;).toLowerCase() != &apos;asc&apos;
+int page = ((vars.get(&apos;pending_orders_page&apos;) ?: &apos;1&apos;) as int)
+int pageSize = ((vars.get(&apos;pending_orders_page_size&apos;) ?: &apos;50&apos;) as int)
+int offset = Math.max(page - 1, 0) * pageSize
+Set disabled = disabledSet(disabledRaw(dbMode))
+boolean skipAll = disabled.contains(&apos;*&apos;)
+
+def isDisabledField = { String field, String apiFieldName = null -&gt;
+    if (skipAll) return true
+    List candidates = [field, apiFieldName].findAll { !blank(it) }.collect { normKey(it) }
+    aliases.each { canonical, aliasList -&gt;
+        boolean matched = candidates.contains(normKey(canonical)) || aliasList.any { candidates.contains(normKey(it)) }
+        if (matched) {
+            candidates &lt;&lt; normKey(canonical)
+            aliasList.each { candidates &lt;&lt; normKey(it) }
+        }
+    }
+    candidates.any { disabled.contains(it) }
+}
+def data = parsed instanceof Map ? parsed.data : null
+List apiItems = []
+if (data instanceof Map &amp;&amp; data.items instanceof List) apiItems = data.items.collect { rowToMap(it) }
+else if (data instanceof List) apiItems = data.collect { rowToMap(it) }
+else if (parsed instanceof Map &amp;&amp; parsed.items instanceof List) apiItems = parsed.items.collect { rowToMap(it) }
+if (!apiItems) {
+    String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+        &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+        &apos;\n【失败明细】\n - [失败] | 接口没有返回data.items可对比记录，可能接口失败或data为空&apos; +
+        &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+        &apos;\n\n【接口响应原文】\n&apos; + responseText
+    publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+    return
+}
+Map apiSummary = data instanceof Map &amp;&amp; data.summary instanceof Map ? rowToMap(data.summary) : [:]
+Object apiTotal = data instanceof Map ? data.total : parsed.total
+
+List okLines = []
+List failLines = []
+List skipLines = []
+int apiFieldTotal = 0
+
+String dbSummaryFeeBreakdown = &apos;&apos;
+String dbPageFeeBreakdown = &apos;&apos;
+
+List expectedRows = []
+List allDbRows = []
+Object dbTotalForReport = null
+if (dbMode) {
+    List summaryRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_summary_rows&apos;))
+    List pageRows = rowsFromObject(vars.getObject(&apos;db_pending_orders_page_rows&apos;))
+    if (!summaryRows) {
+        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+            &apos;\n请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;) +
+            &apos;\n【失败明细】\n - [失败] | 数据库summary统计SQL未返回记录&apos; +
+            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+            &apos;\n\n【接口响应原文】\n&apos; + responseText
+        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+        return
+    }
+    Map dbSummary = summaryRows[0]
+    dbTotalForReport = valueOf(dbSummary, &apos;total&apos;)
+    expectedRows = pageRows
+    allDbRows = pageRows
+    Object dbTotalCommissionVal = valueOf(dbSummary, &apos;total_commission&apos;)
+    Object dbTotalRawFeeVal = valueOf(dbSummary, &apos;total_raw_fee&apos;)
+    Object dbTotalFeeVal = valueOf(dbSummary, &apos;total_fee&apos;)
+    String dbTotalCommissionText = dbTotalCommissionVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_commission&apos;, dbTotalCommissionVal, &apos;DB&apos;, true)
+    String dbTotalRawFeeText = dbTotalRawFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_raw_fee&apos;, dbTotalRawFeeVal, &apos;DB&apos;, true)
+    String dbTotalFeeText = dbTotalFeeVal == null ? &apos;&lt;empty&gt;&apos; : renderValue(&apos;total_fee&apos;, dbTotalFeeVal, &apos;DB&apos;, true)
+    BigDecimal pageCommissionSum = sumField(pageRows, &apos;commission&apos;)
+    BigDecimal pageRawFeeSum = sumField(pageRows, &apos;fee&apos;)
+    BigDecimal pageCommissionFeeSum = pageCommissionSum.add(pageRawFeeSum)
+    dbSummaryFeeBreakdown = &apos;DB total_fee breakdown: total_fee=&apos; + dbTotalFeeText + &apos; = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;); pending orders are not executed, so expected value is 0.&apos;
+    dbPageFeeBreakdown = &apos;DB current page fee detail: commission_sum=&apos; + fmtNum(pageCommissionSum) + &apos; + fee_sum=&apos; + fmtNum(pageRawFeeSum) + &apos; = commission_plus_fee_sum(&apos; + fmtNum(pageCommissionFeeSum) + &apos;); row_total_fee column is commission+fee; pending-order financial fields are expected to be 0.&apos;
+    Map summaryExpected = [
+        total: valueOf(dbSummary, &apos;total&apos;), total_orders: valueOf(dbSummary, &apos;total_orders&apos;),
+        total_volume: valueOf(dbSummary, &apos;total_volume&apos;), cent_volume: valueOf(dbSummary, &apos;cent_volume&apos;), standard_volume: valueOf(dbSummary, &apos;standard_volume&apos;),
+        unresolved_volume: valueOf(dbSummary, &apos;unresolved_volume&apos;), unresolved_currency_account_count: valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;),
+        total_commission: dbTotalCommissionVal, total_raw_fee: dbTotalRawFeeVal, total_fee: dbTotalFeeVal,
+        total_storage: valueOf(dbSummary, &apos;total_storage&apos;), total_profit: valueOf(dbSummary, &apos;total_profit&apos;),
+        reporting_currency: &apos;USD&apos;, money_mode: &apos;reporting&apos;,
+        normalization_complete: (asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;)) ?: BigDecimal.ZERO).compareTo(BigDecimal.ZERO) == 0 ? 1 : 0
+    ]
+    Set strictSummaryVolumeFields = [&apos;total_volume&apos;, &apos;cent_volume&apos;, &apos;standard_volume&apos;, &apos;unresolved_volume&apos;] as Set
+    Map summaryActual = new LinkedHashMap()
+    if (apiTotal != null) summaryActual[&apos;total&apos;] = apiTotal
+    apiSummary.each { k, v -&gt; summaryActual[String.valueOf(k)] = v }
+    summaryActual.each { f, apiVal -&gt;
+        String field = String.valueOf(f)
+        apiFieldTotal++
+        def expKey = findKey(summaryExpected, field)
+        Object expVal = expKey == null ? null : summaryExpected[expKey]
+        if (isDisabledField(field, null)) {
+            skipLines &lt;&lt; &quot; - [跳过] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=${expKey == null ? &apos;&lt;empty&gt; 数据库summary SQL未返回此字段&apos; : renderValue(field, expVal, &apos;DB&apos;, true)} | DBField=${expKey ?: field} | reason=字段在DB/API跳过配置中&quot;
+            return
+        }
+        if (field == &apos;unresolved_currency_accounts&apos;) {
+            boolean isList = apiVal instanceof List
+            BigDecimal apiCount = isList ? new BigDecimal(apiVal.size()) : null
+            BigDecimal dbCount = asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;))
+            boolean same = isList &amp;&amp; apiCount != null &amp;&amp; dbCount != null &amp;&amp; apiCount.compareTo(dbCount) == 0
+            String line = &quot;summary | field=${field} | API=${apiVal} | DB_unresolved_currency_account_count=${dbCount == null ? &apos;&lt;empty&gt;&apos; : fmtNum(dbCount)} | diff=${apiCount == null || dbCount == null ? &apos;N/A&apos; : fmtNum(apiCount.subtract(dbCount).abs())} | formula=unresolved_currency_accounts must be a list and its size must equal unresolved_currency_account_count&quot;
+            if (same) okLines &lt;&lt; &apos; - [PASS] | &apos; + line else failLines &lt;&lt; &apos; - [FAIL] | &apos; + line
+            return
+        }
+        if (expKey == null || blank(expVal)) {
+            failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=&lt;empty&gt; 数据库summary SQL未返回此字段或值为空 | DBField=${expKey ?: field}&quot;
+            return
+        }
+        def cr = compareValue(field, apiVal, expVal, &apos;DB&apos;, true)
+        if (strictSummaryVolumeFields.contains(field)) {
+            BigDecimal an = asNum(apiVal)
+            BigDecimal en = asNum(expVal)
+            if (an != null &amp;&amp; en != null) {
+                BigDecimal diff = an.subtract(en).abs()
+                BigDecimal base = en.abs()
+                String pct
+                String formula
+                if (base.compareTo(BigDecimal.ZERO) == 0) {
+                    pct = diff.compareTo(BigDecimal.ZERO) == 0 ? &apos;0%&apos; : &apos;N/A(DB=0无法作分母)&apos;
+                    formula = &apos;abs(DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;))=&apos; + fmtNum(diff) + &apos;，summary成交量字段不使用百分比误差，要求差值=0&apos;
+                } else {
+                    BigDecimal percent = diff.multiply(new BigDecimal(&apos;100&apos;)).divide(base, 10, RoundingMode.HALF_UP)
+                    pct = pctText(percent)
+                    formula = &apos;abs((DB(&apos; + fmtNum(en) + &apos;) - API(&apos; + fmtNum(an) + &apos;)) / DB(&apos; + fmtNum(en) + &apos;)) * 100 = &apos; + pct + &apos;，summary成交量字段不使用10%或50%误差，要求差值=0&apos;
+                }
+                boolean same = diff.compareTo(BigDecimal.ZERO) == 0
+                cr = [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expVal), diff: fmtNum(diff), percent: pct, formula: formula, note: same ? field + &apos; 差值=0，通过&apos; : field + &apos; 差值不为0，失败&apos;]
+            }
+        }
+        if (field == &apos;total_fee&apos;) {
+            cr.formula = cr.formula + &apos; | DB total_fee = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;)&apos;
+            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; total_fee should be 0, and equals commission+fee(0+0)&apos;
+        }
+        if (field == &apos;total_storage&apos; || field == &apos;total_profit&apos;) {
+            cr.note = (cr.note ? cr.note + &apos;; &apos; : &apos;&apos;) + &apos;pending orders are not executed; this summary financial field should be 0&apos;
+        }
+        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
+        String line = &quot;summary | field=${field} | API=${cr.apiPrint} | DB=${cr.expPrint} | DBField=${expKey} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
+        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    }
+} else {
+    Map currentCsv = vars.getObject(&apos;pending_orders_current_csv_row&apos;) instanceof Map ? vars.getObject(&apos;pending_orders_current_csv_row&apos;) : [:]
+    String csvId = idOf(currentCsv)
+    Map apiRow = csvId ? apiItems.find { idOf(it) == csvId } : apiItems[0]
+    if (!apiRow) {
+        String finalReport = &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=FAIL | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku +
+            &apos;\n接口: POST /crm20/list_pending_orders&apos; +
+            &apos;\n【失败明细】\n - [失败] | CSV订单号/仓位号和接口响应没有匹配上 | csvId=&apos; + csvId + &apos; | apiIds=&apos; + apiItems.collect { idOf(it) }.join(&apos;,&apos;) +
+            &apos;\n\n【接口请求Body】\n&apos; + (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;) +
+            &apos;\n\n【接口响应原文】\n&apos; + responseText
+        publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, false)
+        return
+    }
+    apiItems = [apiRow]
+    expectedRows = [currentCsv]
+}
+
+if (dbMode) {
+    if (apiItems.size() != expectedRows.size()) {
+        failLines &lt;&lt; &quot; - [失败] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
+    } else {
+        okLines &lt;&lt; &quot; - [通过] | page=${page} | 接口返回items数量=${apiItems.size()} | DB分页后数量=${expectedRows.size()} | offset=${offset} | page_size=${pageSize}&quot;
+    }
+}
+
+List compareDrivers = dbMode ? expectedRows : apiItems
+compareDrivers.eachWithIndex { Map driverRow, int idx -&gt;
+    Map apiRow = idx &lt; apiItems.size() ? apiItems[idx] : [:]
+    Map expectedRow = dbMode ? (driverRow ?: [:]) : (idx &lt; expectedRows.size() ? expectedRows[idx] : [:])
+    String apiId = idOf(apiRow)
+    String expectedId = idOf(expectedRow)
+    def apiLoginKey = findKey(apiRow, &apos;login&apos;)
+    def expectedLoginKey = findKey(expectedRow, &apos;login&apos;)
+    String rowLogin = apiLoginKey == null ? (expectedLoginKey == null ? &apos;&lt;empty&gt;&apos; : String.valueOf(expectedRow[expectedLoginKey])) : String.valueOf(apiRow[apiLoginKey])
+    String rowText = &apos;row=&apos; + (idx + 1 + offset) + &apos; | apiId=&apos; + apiId + &apos; | expectedId=&apos; + expectedId + &apos; | login=&apos; + rowLogin
+    if (dbMode &amp;&amp; !apiRow) {
+        failLines &lt;&lt; &quot; - [失败] | ${rowText} | API=&lt;empty&gt; 接口返回缺少第${idx + 1}条明细记录 | DB记录=${expectedRow}&quot;
+        return
+    }
+    if (dbMode &amp;&amp; apiId &amp;&amp; expectedId &amp;&amp; apiId != expectedId) {
+        failLines &lt;&lt; &quot; - [失败] | ${rowText} | 接口和数据库数据记录没有匹配上&quot;
+    }
+    List compareFields = apiRow ? apiRow.keySet().collect { String.valueOf(it) } : expectedRow.keySet().collect { String.valueOf(it) }
+    apiFieldTotal += compareFields.size()
+    compareFields.each { rawField -&gt;
+        String field = String.valueOf(rawField)
+        String expKey = findKey(expectedRow, field)
+        Object expVal = expKey == null ? null : expectedRow[expKey]
+        String apiKey = findKey(apiRow, field)
+        Object apiVal = apiKey == null ? null : apiRow[apiKey]
+        if (isDisabledField(field, apiKey)) {
+            skipLines &lt;&lt; &quot; - [跳过] | ${rowText} | field=${field} | API=${apiKey == null ? &apos;&lt;empty&gt; 接口响应无此字段&apos; : renderValue(apiKey, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=${expKey == null ? &apos;&lt;empty&gt; &apos; + (dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;) : renderValue(field, expVal, sourceName, dbMode)} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey ?: field} | reason=字段在跳过配置中&quot;
+            return
+        }
+        if (expKey == null) {
+            String missingLine = &quot;${rowText} | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=&lt;empty&gt; ${dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;} | ${sourceName}Field=${field}&quot;
+            if (dbMode) failLines &lt;&lt; &apos; - [失败] | &apos; + missingLine else skipLines &lt;&lt; &apos; - [跳过] | &apos; + missingLine
+            return
+        }
+        if (dbMode &amp;&amp; apiKey == null) {
+            failLines &lt;&lt; &quot; - [失败] | ${rowText} | field=${field} | API=&lt;empty&gt; 接口响应无此字段 | DB=${renderValue(field, expVal, sourceName, dbMode)} | DBField=${expKey}&quot;
+            return
+        }
+        def cr = compareValue(field, apiVal, expVal, sourceName, dbMode)
+        String note = cr.note ? &apos; | 备注=&apos; + cr.note : &apos;&apos;
+        String line = &quot;${rowText} | field=${field} | API=${cr.apiPrint} | ${sourceName}=${cr.expPrint} | APIField=${apiKey ?: field} | ${sourceName}Field=${expKey} | 差值=${cr.diff} | 相差百分比=${cr.percent} | 计算过程=${cr.formula}${note}&quot;
+        if (cr.same) okLines &lt;&lt; &apos; - [通过] | &apos; + line else failLines &lt;&lt; &apos; - [失败] | &apos; + line
+    }
+}
+
+if (dbMode &amp;&amp; apiItems.size() &gt; expectedRows.size()) {
+    apiItems.drop(expectedRows.size()).eachWithIndex { Map apiRow, int extraIdx -&gt;
+        int rowNo = offset + expectedRows.size() + extraIdx + 1
+        String apiLogin = valueOf(apiRow, &apos;login&apos;) ?: &apos;&lt;empty&gt;&apos;
+        failLines &lt;&lt; &quot; - [失败] | row=${rowNo} | API订单/仓位号=${idOf(apiRow)} | login=${apiLogin} | DB=&lt;empty&gt; 接口多返回该明细记录 | API记录=${apiRow}&quot;
+    }
+}
+
+String status = failLines.isEmpty() ? &apos;PASS&apos; : &apos;FAIL&apos;
+List report = []
+report &lt;&lt; &apos;Assertion message: 查询多个账户的挂单订单 &apos; + modeText + &apos; 对比结果 | status=&apos; + status + &apos; | case=&apos; + vars.get(&apos;pending_orders_case_index_display&apos;) + &apos;/&apos; + vars.get(&apos;pending_orders_case_total&apos;) + &apos; | CSV行=&apos; + vars.get(&apos;pending_orders_csv_line_no&apos;) + &apos; | shujuku=&apos; + shujuku
+report &lt;&lt; &apos;接口: POST /crm20/list_pending_orders&apos;
+report &lt;&lt; &apos;请求accounts: MT4_login=&apos; + vars.get(&apos;pending_orders_mt4_login&apos;) + &apos; | MT5_login=&apos; + vars.get(&apos;pending_orders_mt5_login&apos;)
+report &lt;&lt; &apos;分页排序: page=&apos; + page + &apos; | page_size=&apos; + pageSize + &apos; | sort_by=&apos; + sortBy + &apos; | sort_order=&apos; + (desc ? &apos;desc&apos; : &apos;asc&apos;)
+report &lt;&lt; &apos;跳过字段配置: &apos; + (dbMode ? &apos;pending_orders_db_api_disabled_compare_fields&apos; : &apos;pending_orders_csv_api_disabled_compare_fields&apos;) + &apos;=[&apos; + disabledRaw(dbMode) + &apos;]&apos;
+report &lt;&lt; &apos;接口summary: total=&apos; + apiTotal + &apos; | summary=&apos; + apiSummary
+if (dbMode) report &lt;&lt; &apos;DB汇总: total_orders=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | DB总记录数(summary SQL)=&apos; + (dbTotalForReport == null ? &apos;&lt;empty&gt;&apos; : dbTotalForReport) + &apos; | 当前页DB记录数(page SQL)=&apos; + expectedRows.size()
+if (dbMode &amp;&amp; dbSummaryFeeBreakdown) report &lt;&lt; dbSummaryFeeBreakdown
+if (dbMode &amp;&amp; dbPageFeeBreakdown) report &lt;&lt; dbPageFeeBreakdown
+report &lt;&lt; &apos;对比结果统计: 失败数量=&apos; + failLines.size() + &apos; | 成功数量=&apos; + okLines.size() + &apos; | 跳过数量=&apos; + skipLines.size() + &apos; | 对比字段总数=&apos; + apiFieldTotal
+report &lt;&lt; &apos;数值规则: DB/API普通数值字段按DB为基准允许误差&lt;=10%；CSV/API普通数值字段允许误差&lt;=5%；编号类字段精确比较；时间字段API按Asia/Shanghai展示后减8小时与DB比较，允许相差&lt;=60秒。&apos;
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【失败明细：&apos; + failLines.size() + &apos;条】&apos;
+report.addAll(failLines ? failLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【成功字段明细：&apos; + okLines.size() + &apos;条】&apos;
+report.addAll(okLines ? okLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【跳过字段明细：&apos; + skipLines.size() + &apos;条（含DB/CSV数值）】&apos;
+report.addAll(skipLines ? skipLines : [&apos; - 无&apos;])
+report &lt;&lt; &apos;&apos;
+report &lt;&lt; &apos;【接口请求Body】&apos;
+report &lt;&lt; (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apos;)
+
+String finalReport = report.join(&apos;\n&apos;)
+publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, failLines.isEmpty())</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="TestPlan.comments">summary按接口summary字段逐字段对比；DB/API当前页明细按SQL行顺序循环，每条DB记录下所有SQL字段都逐字段对比API items对应行；DB/API普通数值字段按DB为基准允许误差&lt;=10%；打印成功、失败、跳过字段明细；跳过字段同时打印API与DB/CSV值。</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="打印查询多个账户挂单订单对比结果" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">String finalReport = vars.get(&apos;pending_orders_compare_report&apos;)
+if (finalReport == null || finalReport.trim().length() == 0) {
+    finalReport = &apos;未生成查询多个账户挂单订单对比结果，请检查前置接口请求和DB或CSV字段对比断言是否执行。&apos;
+}
+String status = vars.get(&apos;pending_orders_compare_status&apos;) ?: &apos;UNKNOWN&apos;
+boolean success = status == &apos;PASS&apos;
+SampleResult.setSuccessful(success)
+SampleResult.setResponseCode(success ? &apos;200&apos; : &apos;500&apos;)
+SampleResult.setResponseMessage(status)
+SampleResult.setDataType(SampleResult.TEXT)
+SampleResult.setContentType(&apos;text/plain; charset=UTF-8&apos;)
+SampleResult.setResponseData(finalReport, &apos;UTF-8&apos;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="TestPlan.comments">独立打印上一节点生成的查询多个账户挂单订单字段对比结果，方便在查看结果树直接点击查看。</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="21交易大赛-批量查询指定账户的当前未平仓持仓✅" enabled="false">
         <stringProp name="TestPlan.comments">仅本线程组：按“交易大赛-批量查询指定账户的当前未平仓持仓.csv”执行。shujuku=1 聚合全部数据库模式账号做 DB/API 校验；shujuku=0 按当前 CSV 行做 CSV/API 校验；按 mt-hub-openapi 7.html（MT-Hub API 1.0.1-beta1.60.3）校验 /v1/positions/query 响应信封及 data[] 全部18个必返字段。competition_positions_db_missing_field_skip_fields 在DB模式下可手动跳过指定字段的DB/API值比较，不受SQL是否已生成该列影响；接口必返、类型和语义校验仍执行。open_notional_value_usd 复算与线程组23的NOTIONAL_CALC_PRINT_V4口径一致，按品种类型、合约大小、剩余手数、开仓价及USD换算率计算并与API对比。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
@@ -17473,7 +20082,7 @@ AssertionResult.setFailureMessage(finalReport)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="获取中间件版本-稳定版本✅✅">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -23590,7 +26199,7 @@ mt5</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="11-2自定义统计聚合(SUM、AVG、MINMAX等)，支持可选分组-数据库校验001✅✅">
         <stringProp name="TestPlan.comments">按CSV数据行数循环；shujuku=1时读取整份CSV聚合所有MT4/MT5登录号后DB/API对比，shujuku=0时按当前CSV行做CSV/API对比。CSV变量名从表头读取，支持手动增删校验字段。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -31278,7 +33887,7 @@ log.info(successMessage)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="19查询多个账户的挂单订单-数据库校验✅✅-增加字段了调试002">
         <stringProp name="TestPlan.comments">list_pending_orders：按CSV行数循环；shujuku=1时聚合CSV中全部 shujuku=1 的 accounts 一次请求并DB/API对比；shujuku=0时按当前CSV行做CSV/API对比。只修改本线程组。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -31290,12 +33899,12 @@ log.info(successMessage)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="19查询多个账户的挂单订单事务">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单" enabled="true">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-查询多个账户挂单订单">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="filename">./查询多个账户的挂单订单.csv</stringProp>
@@ -31307,29 +33916,29 @@ log.info(successMessage)
             <stringProp name="variableNames">shujuku,instanceid,login,page,page_size,filter_order_ticket,filter_position_ticket,filter_symbol,order_types,time_setup_from_utc_ms,time_setup_to_utc_ms,volume_lots_condition,volume_lots_value,sort_by,sort_order,reason,symbol,side,swap,updated_utc_ms,fee,price_open,price_tp,source,time_expiration_utc_ms,time_setup_utc_ms,order_ticket,instance_id,price_sl,comment,digits,contract_size,digits_currency,state,order_type,profit,price_current,volume_lots,db_result_max_rows</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单DB/API字段对比配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_orders_db_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_orders_db_api_disabled_compare_fields</stringProp>
                 <stringProp name="Argument.value">updated_utc_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">DB/API字段跳过配置；同时控制summary和当前页明细；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
+                <stringProp name="Argument.desc">DB/API 字段跳过配置，默认留空。支持汇总和明细字段，多个字段用逗号分隔，* 跳过所有字段对比。</stringProp>
               </elementProp>
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单CSV/API字段对比配置" enabled="true">
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="查询多个账户挂单订单CSV/API字段对比配置">
             <collectionProp name="Arguments.arguments">
               <elementProp name="pending_orders_csv_api_disabled_compare_fields" elementType="Argument">
                 <stringProp name="Argument.name">pending_orders_csv_api_disabled_compare_fields</stringProp>
-                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.value">updated_utc_ms</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
-                <stringProp name="Argument.desc">CSV/API字段跳过配置；多个字段用英文逗号分隔，* 表示跳过全部字段。</stringProp>
+                <stringProp name="Argument.desc">CSV/API 字段跳过配置，默认留空。多个字段用逗号分隔，* 跳过所有字段对比。</stringProp>
               </elementProp>
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化查询多个账户挂单订单参数" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="初始化查询多个账户挂单订单参数">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -31534,6 +34143,11 @@ String expirationMsMt5 = &quot;CASE WHEN CAST(mt.TimeExpiration AS CHAR) IN (&ap
 String setupMsMt4 = &quot;CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.OPEN_TIME) / 1000 AS UNSIGNED)&quot;
 String updatedMsMt4 = &quot;CASE WHEN mt.`TIMESTAMP` &gt; 100000000000 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) WHEN mt.`TIMESTAMP` &gt; 0 THEN CAST(mt.`TIMESTAMP` AS UNSIGNED) * 1000 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.MODIFY_TIME) / 1000 AS UNSIGNED) END&quot;
 String expirationMsMt4 = &quot;CASE WHEN CAST(mt.EXPIRATION AS CHAR) IN (&apos;0000-00-00 00:00:00&apos;, &apos;1970-01-01 00:00:00&apos;) THEN 0 ELSE CAST(TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.EXPIRATION) / 1000 AS UNSIGNED) END&quot;
+// 新增接口字段按券商时钟计算，旧字段的筛选及排序表达式保持原样。
+String setupBrokerMsMt5 = &quot;TIMESTAMPDIFF(MICROSECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeSetupMsc) DIV 1000&quot;
+String setupBrokerMsMt4 = &quot;TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.OPEN_TIME) * 1000&quot;
+String expirationBrokerMsMt5 = &quot;CASE WHEN CAST(mt.TimeExpiration AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.TimeExpiration) * 1000 END&quot;
+String expirationBrokerMsMt4 = &quot;CASE WHEN CAST(mt.EXPIRATION AS CHAR) = &apos;0000-00-00 00:00:00&apos; THEN 0 ELSE TIMESTAMPDIFF(SECOND, &apos;1970-01-01 00:00:00&apos;, mt.EXPIRATION) * 1000 END&quot;
 String orderTypeSql = orderTypeList.join(&apos;,&apos;)
 String volOp = opOf(volumeCondition)
 
@@ -31597,6 +34211,8 @@ SELECT
   mt.TP AS price_tp,
   ${expirationMsMt4} AS time_expiration_utc_ms,
   ${setupMsMt4} AS time_setup_utc_ms,
+  ${setupBrokerMsMt4} AS time_setup_broker_ms,
+  ${expirationBrokerMsMt4} AS time_expiration_broker_ms,
   mt.SL AS price_sl,
   mt.COMMENT AS comment,
   mt.DIGITS AS digits,
@@ -31639,6 +34255,8 @@ SELECT
   mt.PriceTP AS price_tp,
   ${expirationMsMt5} AS time_expiration_utc_ms,
   ${setupMsMt5} AS time_setup_utc_ms,
+  ${setupBrokerMsMt5} AS time_setup_broker_ms,
+  ${expirationBrokerMsMt5} AS time_expiration_broker_ms,
   mt.PriceSL AS price_sl,
   mt.Comment AS comment,
   mt.Digits AS digits,
@@ -31715,6 +34333,8 @@ SELECT
   login,
   time_expiration_utc_ms,
   time_setup_utc_ms,
+  time_setup_broker_ms,
+  time_expiration_broker_ms,
   order_ticket,
   instance_id,
   price_sl,
@@ -31991,6 +34611,8 @@ def idOf = { Map row -&gt;
     &apos;&apos;
 }
 
+Set brokerTimeFields = [&apos;time_setup_broker_ms&apos;, &apos;time_expiration_broker_ms&apos;] as Set
+
 boolean timeField(String f) {
     String n = (f ?: &apos;&apos;).toLowerCase()
     return n.contains(&apos;time&apos;) || n.endsWith(&apos;utc_ms&apos;) || n.contains(&apos;updated&apos;)
@@ -32054,7 +34676,7 @@ long secondDiff(String a, String b) {
 
 String renderValue(String field, Object v, String side, boolean dbMode) {
     if (v == null || String.valueOf(v).trim().length() == 0 || String.valueOf(v).trim().equalsIgnoreCase(&apos;&lt;EOF&gt;&apos;)) return &apos;&lt;empty&gt;&apos;
-    if (!timeField(field)) return String.valueOf(v)
+    if (field in [&apos;time_setup_broker_ms&apos;, &apos;time_expiration_broker_ms&apos;] || !timeField(field)) return String.valueOf(v)
     if (side == &apos;API&apos; &amp;&amp; dbMode) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值(减8小时)=&apos; + normalizeApiTime(v)
     if (side == &apos;API&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + displayApiTime(v) + &apos; -&gt; 对比值=&apos; + normalizeCsvTime(v)
     if (side == &apos;DB&apos;) return String.valueOf(v) + &apos; -&gt; &apos; + normalizeDbTime(v)
@@ -32081,6 +34703,26 @@ def boolValue = { Object v -&gt;
 }
 
 def compareValue = { String field, Object apiVal, Object expectedVal, String expectedSource, boolean dbMode -&gt;
+    boolean apiEmpty = blank(apiVal)
+    boolean expectedEmpty = blank(expectedVal)
+    if (apiEmpty || expectedEmpty) {
+        boolean same = apiEmpty &amp;&amp; expectedEmpty
+        return [same: same, apiPrint: renderValue(field, apiVal, &apos;API&apos;, dbMode),
+            expPrint: renderValue(field, expectedVal, expectedSource, dbMode), diff: &apos;N/A&apos;,
+            percent: &apos;N/A&apos;, formula: &apos;按空值比较&apos;,
+            note: same ? &apos;API 和 &apos; + expectedSource + &apos; 返回都是为空，通过&apos; : &apos;仅一侧为空，失败&apos;]
+    }
+    if (brokerTimeFields.contains(field)) {
+        BigDecimal apiMs = asNum(apiVal)
+        BigDecimal expectedMs = asNum(expectedVal)
+        boolean integers = apiMs != null &amp;&amp; expectedMs != null &amp;&amp;
+            apiMs.stripTrailingZeros().scale() &lt;= 0 &amp;&amp; expectedMs.stripTrailingZeros().scale() &lt;= 0
+        BigDecimal delta = integers ? apiMs.subtract(expectedMs).abs() : null
+        return [same: integers &amp;&amp; delta.signum() == 0, apiPrint: String.valueOf(apiVal),
+            expPrint: String.valueOf(expectedVal), diff: integers ? fmtNum(delta) + &apos;毫秒&apos; : &apos;N/A&apos;,
+            percent: &apos;N/A&apos;, formula: &apos;券商时钟整数毫秒精确比较&apos;,
+            note: integers ? &apos;&apos; : &apos;API 和 &apos; + expectedSource + &apos; 均须返回整数毫秒&apos;]
+    }
     if (booleanFields.contains(field)) {
         def ab = boolValue(apiVal); def eb = boolValue(expectedVal)
         boolean same = ab != null &amp;&amp; eb != null &amp;&amp; ab == eb
@@ -32120,8 +34762,8 @@ def compareValue = { String field, Object apiVal, Object expectedVal, String exp
         String note = same ? field + &apos; 误差小于&apos; + toleranceText + &apos;，通过&apos; : field + &apos; 误差大于&apos; + toleranceText + &apos;，失败&apos;
         return [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: fmtNum(diff), percent: pct, formula: formula + &apos; | 允许误差&lt;=&apos; + toleranceText + &apos;(允许差值=&apos; + fmtNum(allowed) + &apos;)&apos;, note: note]
     }
-    boolean same = String.valueOf(apiVal ?: &apos;&apos;).trim() == String.valueOf(expectedVal ?: &apos;&apos;).trim()
-    [same: same, apiPrint: String.valueOf(apiVal ?: &apos;&apos;), expPrint: String.valueOf(expectedVal ?: &apos;&apos;), diff: &apos;N/A&apos;, percent: &apos;N/A(非数值字段)&apos;, formula: &apos;非数值字段按字符串精确比较&apos;]
+    boolean same = String.valueOf(apiVal).trim() == String.valueOf(expectedVal).trim()
+    [same: same, apiPrint: String.valueOf(apiVal), expPrint: String.valueOf(expectedVal), diff: &apos;N/A&apos;, percent: &apos;N/A(非数值字段)&apos;, formula: &apos;非数值字段按字符串精确比较&apos;]
 }
 
 def compareComparable = { Object v -&gt;
@@ -32221,39 +34863,37 @@ if (dbMode) {
     BigDecimal pageCommissionFeeSum = pageCommissionSum.add(pageRawFeeSum)
     dbSummaryFeeBreakdown = &apos;DB total_fee breakdown: total_fee=&apos; + dbTotalFeeText + &apos; = total_commission(&apos; + dbTotalCommissionText + &apos;) + total_raw_fee(&apos; + dbTotalRawFeeText + &apos;); pending orders are not executed, so expected value is 0.&apos;
     dbPageFeeBreakdown = &apos;DB current page fee detail: commission_sum=&apos; + fmtNum(pageCommissionSum) + &apos; + fee_sum=&apos; + fmtNum(pageRawFeeSum) + &apos; = commission_plus_fee_sum(&apos; + fmtNum(pageCommissionFeeSum) + &apos;); row_total_fee column is commission+fee; pending-order financial fields are expected to be 0.&apos;
-    Map summaryExpected = [
-        total: valueOf(dbSummary, &apos;total&apos;), total_orders: valueOf(dbSummary, &apos;total_orders&apos;),
-        total_volume: valueOf(dbSummary, &apos;total_volume&apos;), cent_volume: valueOf(dbSummary, &apos;cent_volume&apos;), standard_volume: valueOf(dbSummary, &apos;standard_volume&apos;),
-        unresolved_volume: valueOf(dbSummary, &apos;unresolved_volume&apos;), unresolved_currency_account_count: valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;),
-        total_commission: dbTotalCommissionVal, total_raw_fee: dbTotalRawFeeVal, total_fee: dbTotalFeeVal,
-        total_storage: valueOf(dbSummary, &apos;total_storage&apos;), total_profit: valueOf(dbSummary, &apos;total_profit&apos;),
-        reporting_currency: &apos;USD&apos;, money_mode: &apos;reporting&apos;,
-        normalization_complete: (asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;)) ?: BigDecimal.ZERO).compareTo(BigDecimal.ZERO) == 0 ? 1 : 0
-    ]
+    Map summaryExpected = new LinkedHashMap(dbSummary)
+    summaryExpected.putAll([reporting_currency: &apos;USD&apos;, money_mode: &apos;reporting&apos;])
+    String unresolvedCountKey = findKey(dbSummary, &apos;unresolved_currency_account_count&apos;)
+    if (unresolvedCountKey != null) {
+        BigDecimal count = asNum(dbSummary[unresolvedCountKey])
+        summaryExpected[&apos;normalization_complete&apos;] = count == null ? null : (count.signum() == 0 ? 1 : 0)
+    }
     Set strictSummaryVolumeFields = [&apos;total_volume&apos;, &apos;cent_volume&apos;, &apos;standard_volume&apos;, &apos;unresolved_volume&apos;] as Set
     Map summaryActual = new LinkedHashMap()
-    if (apiTotal != null) summaryActual[&apos;total&apos;] = apiTotal
+    if ((data instanceof Map &amp;&amp; data.containsKey(&apos;total&apos;)) || (parsed instanceof Map &amp;&amp; parsed.containsKey(&apos;total&apos;))) summaryActual[&apos;total&apos;] = apiTotal
     apiSummary.each { k, v -&gt; summaryActual[String.valueOf(k)] = v }
     summaryActual.each { f, apiVal -&gt;
         String field = String.valueOf(f)
         apiFieldTotal++
-        def expKey = findKey(summaryExpected, field)
+        String expKey = field == &apos;unresolved_currency_accounts&apos; ? unresolvedCountKey : findKey(summaryExpected, field)
         Object expVal = expKey == null ? null : summaryExpected[expKey]
         if (isDisabledField(field, null)) {
             skipLines &lt;&lt; &quot; - [跳过] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=${expKey == null ? &apos;&lt;empty&gt; 数据库summary SQL未返回此字段&apos; : renderValue(field, expVal, &apos;DB&apos;, true)} | DBField=${expKey ?: field} | reason=字段在DB/API跳过配置中&quot;
             return
         }
-        if (field == &apos;unresolved_currency_accounts&apos;) {
+        if (expKey == null) {
+            failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=&lt;empty&gt; | DBField=${field == &apos;unresolved_currency_accounts&apos; ? &apos;unresolved_currency_account_count&apos; : field} | 备注=数据库无此字段&quot;
+            return
+        }
+        if (field == &apos;unresolved_currency_accounts&apos; &amp;&amp; !blank(apiVal) &amp;&amp; !blank(expVal)) {
             boolean isList = apiVal instanceof List
             BigDecimal apiCount = isList ? new BigDecimal(apiVal.size()) : null
-            BigDecimal dbCount = asNum(valueOf(dbSummary, &apos;unresolved_currency_account_count&apos;))
+            BigDecimal dbCount = asNum(expVal)
             boolean same = isList &amp;&amp; apiCount != null &amp;&amp; dbCount != null &amp;&amp; apiCount.compareTo(dbCount) == 0
             String line = &quot;summary | field=${field} | API=${apiVal} | DB_unresolved_currency_account_count=${dbCount == null ? &apos;&lt;empty&gt;&apos; : fmtNum(dbCount)} | diff=${apiCount == null || dbCount == null ? &apos;N/A&apos; : fmtNum(apiCount.subtract(dbCount).abs())} | formula=unresolved_currency_accounts must be a list and its size must equal unresolved_currency_account_count&quot;
             if (same) okLines &lt;&lt; &apos; - [PASS] | &apos; + line else failLines &lt;&lt; &apos; - [FAIL] | &apos; + line
-            return
-        }
-        if (expKey == null || blank(expVal)) {
-            failLines &lt;&lt; &quot; - [失败] | summary | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, true)} | DB=&lt;empty&gt; 数据库summary SQL未返回此字段或值为空 | DBField=${expKey ?: field}&quot;
             return
         }
         def cr = compareValue(field, apiVal, expVal, &apos;DB&apos;, true)
@@ -32330,7 +34970,8 @@ compareDrivers.eachWithIndex { Map driverRow, int idx -&gt;
     if (dbMode &amp;&amp; apiId &amp;&amp; expectedId &amp;&amp; apiId != expectedId) {
         failLines &lt;&lt; &quot; - [失败] | ${rowText} | 接口和数据库数据记录没有匹配上&quot;
     }
-    List compareFields = apiRow ? apiRow.keySet().collect { String.valueOf(it) } : expectedRow.keySet().collect { String.valueOf(it) }
+    Set compareFields = new LinkedHashSet(apiRow.keySet())
+    if (dbMode) compareFields.addAll(brokerTimeFields)
     apiFieldTotal += compareFields.size()
     compareFields.each { rawField -&gt;
         String field = String.valueOf(rawField)
@@ -32343,7 +34984,7 @@ compareDrivers.eachWithIndex { Map driverRow, int idx -&gt;
             return
         }
         if (expKey == null) {
-            String missingLine = &quot;${rowText} | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=&lt;empty&gt; ${dbMode ? &apos;数据库查询无此字段数据&apos; : &apos;CSV未配置此字段&apos;} | ${sourceName}Field=${field}&quot;
+            String missingLine = &quot;${rowText} | field=${field} | API=${renderValue(field, apiVal, &apos;API&apos;, dbMode)} | ${sourceName}=&lt;empty&gt; | ${sourceName}Field=${field} | 备注=${dbMode ? &apos;数据库无此字段&apos; : &apos;CSV未配置此字段&apos;}&quot;
             if (dbMode) failLines &lt;&lt; &apos; - [失败] | &apos; + missingLine else skipLines &lt;&lt; &apos; - [跳过] | &apos; + missingLine
             return
         }
@@ -32378,7 +35019,7 @@ if (dbMode) report &lt;&lt; &apos;DB汇总: total_orders=&apos; + (dbTotalForRep
 if (dbMode &amp;&amp; dbSummaryFeeBreakdown) report &lt;&lt; dbSummaryFeeBreakdown
 if (dbMode &amp;&amp; dbPageFeeBreakdown) report &lt;&lt; dbPageFeeBreakdown
 report &lt;&lt; &apos;对比结果统计: 失败数量=&apos; + failLines.size() + &apos; | 成功数量=&apos; + okLines.size() + &apos; | 跳过数量=&apos; + skipLines.size() + &apos; | 对比字段总数=&apos; + apiFieldTotal
-report &lt;&lt; &apos;数值规则: DB/API普通数值字段按DB为基准允许误差&lt;=10%；CSV/API普通数值字段允许误差&lt;=5%；编号类字段精确比较；时间字段API按Asia/Shanghai展示后减8小时与DB比较，允许相差&lt;=60秒。&apos;
+report &lt;&lt; &apos;数值规则: DB/API普通数值字段按DB为基准允许误差&lt;=10%；CSV/API普通数值字段允许误差&lt;=5%；编号类字段精确比较；两个 broker_ms 字段按券商时钟的整数毫秒精确比较，原有时间字段仍沿用 60 秒容差。&apos;
 report &lt;&lt; &apos;&apos;
 report &lt;&lt; &apos;【失败明细：&apos; + failLines.size() + &apos;条】&apos;
 report.addAll(failLines ? failLines : [&apos; - 无&apos;])
@@ -32395,7 +35036,7 @@ report &lt;&lt; (vars.get(&apos;pending_orders_request_body&apos;) ?: &apos;&apo
 String finalReport = report.join(&apos;\n&apos;)
 publishReport(&apos;查询多个账户挂单订单字段对比结果&apos;, finalReport, failLines.isEmpty())</stringProp>
               <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="TestPlan.comments">summary按接口summary字段逐字段对比；DB/API当前页明细按SQL行顺序循环，每条DB记录下所有SQL字段都逐字段对比API items对应行；DB/API普通数值字段按DB为基准允许误差&lt;=10%；打印成功、失败、跳过字段明细；跳过字段同时打印API与DB/CSV值。</stringProp>
+              <stringProp name="TestPlan.comments">保留汇总和分页明细对比，新增两个 broker_ms 字段的毫秒精确校验，区分字段缺失与值为空，支持按字段跳过。</stringProp>
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
@@ -38874,7 +41515,7 @@ log.info(report)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="！！23-2交易大赛-批量查询已经完全关闭的持仓生命周期✅✅-23">
         <stringProp name="TestPlan.comments">仅修改本线程组。按“交易大赛-批量查询已经完全关闭的持仓生命周期-granularity-deal.csv”执行：shujuku=1 聚合全部数据库模式账号，一次请求 /v1/positions/history/query，并将 MT4 已关闭交易及 MT5 已关闭 Position 的 Deal 聚合结果逐字段与 API 对比；shujuku=0 按当前 CSV 行进行 CSV/API 校验。响应结构、21 个历史生命周期字段、空值和名义价值语义依据 mt-hub-openapi 7.html（1.0.1-beta1.60.3）。严格区分数据库字段不存在与字段值为空。完整结果集下，数据库正常查询到记录但接口未返回该条记录时列入失败明细；存在cursor时只校验当前页，避免把其他分页记录误判为接口遗漏。排序异常处理可通过competition_history_sort_violation_policy设置skip/fail，默认skip；不影响订单关联和逐字段对比。DB模式按实例分别查询MT4_1/MT4_2/MT4_3/MT5_1/MT5_1_TS1/MT5_1_TS2，MT5_TS2沿用TS2路由。路径可迁移：统一读取granularity-deal.csv；先自检加载一次，再按同一数据集计算业务循环次数；缺文件/空数据显式失败。支持competition_history_csv_file及competition_history_data_dir变量或-J参数。</stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -40834,7 +43475,7 @@ log.info(report)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -40871,7 +43512,7 @@ log.info(report)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.51版本008.jtl</stringProp>
         <stringProp name="TestPlan.comments">D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本007.jtl
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.51版本005.jtl</stringProp>
       </ResultCollector>
@@ -40929,7 +43570,7 @@ D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本001
 D:\softer\git仓库\mercury2.0-202603111956\3333\中间件接口1.66.48版本005.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
