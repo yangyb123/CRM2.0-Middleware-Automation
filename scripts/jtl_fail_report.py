@@ -40,7 +40,7 @@ from urllib import request as urlrequest
 SCRIPT_VERSION = "4.20"
 DEFAULT_CONFIG_FILE = "jtl_fail_report_config.json"
 DEFAULT_TOKEN_CACHE_FILE = "jtl_fail_report_token_cache.json"
-DEFAULT_TEAMS_CHAT_URL = "https://teams.microsoft.com/l/chat/19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D"
+DEFAULT_TEAMS_CHAT_URL = "https://teams.microsoft.com/l/chat/19%3A7b7e7513fccc48b2aa2bf7d6a5c5e123%40thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D"
 GRAPH_BASE_URL = "https://graph.microsoft.com/v1.0"
 GRAPH_DEFAULT_SCOPES = "offline_access https://graph.microsoft.com/Files.ReadWrite https://graph.microsoft.com/ChatMessage.Send"
 

@@ -39,8 +39,8 @@
     "teams_timeout": "Teams/Webhook/Graph 请求超时时间，单位秒。",
     "teams_strict": "true=Teams 推送失败时脚本退出码为失败；false=报告仍生成，只打印推送失败提示。"
   },
-  "teams_chat_url": "https://teams.microsoft.com/l/chat/19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D",
-  "teams_chat_id": "19:4f1f0b60d3a94f90b0c883360575d0d8@thread.v2",
+  "teams_chat_url": "https://teams.microsoft.com/l/chat/19%3A7b7e7513fccc48b2aa2bf7d6a5c5e123%40thread.v2/conversations?context=%7B%22contextType%22%3A%22chat%22%7D",
+  "teams_chat_id": "19:7b7e7513fccc48b2aa2bf7d6a5c5e123@thread.v2",
   "teams_webhook_url": "https://defaultb3689b3b0e78404e8cfeab9075a215.46.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/09/workflows/23b06291a95c40e69ca2aee25a986ac3/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mKkqcqMIxjdqXxVsjVSM_ps8PiIj3fF0pDOG-x9MbBQ",
   "teams_report_url": "",
   "teams_send_file": false,
